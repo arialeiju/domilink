@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>
 @interface AppDelegate ()<UIGestureRecognizerDelegate>
 
 @end
@@ -17,6 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
       // statusBar
+    
+    //初始化应用语言
+    [SwichLanguage initUserLanguage];
+    
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     // window
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -31,6 +35,17 @@
     
     [_window setRootViewController:_rootNavigationController];
     [_window makeKeyAndVisible];
+    
+    BMKMapManager *mapManager = [[BMKMapManager alloc] init];
+    // 如果要关注网络及授权验证事件，请设定generalDelegate参数
+    BOOL ret = [mapManager start:@"Z9n7Ww98CCHscn98Qh28vKZOBIWjUrOP"  generalDelegate:nil];
+    if (!ret) {
+        NSLog(@"启动引擎失败");
+    }else
+    {
+        NSLog(@"百度模块初始化成功");
+    }
+    
     return YES;
 }
 

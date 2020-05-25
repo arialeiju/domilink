@@ -20,5 +20,6 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "Header.h"
 #endif
 #endif /* Prefix_pch */

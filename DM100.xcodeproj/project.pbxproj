@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E45F72D0247BA48A0051A88A /* appString.strings in Resources */ = {isa = PBXBuildFile; fileRef = E45F72D2247BA48A0051A88A /* appString.strings */; };
+		E45F72D7247BA51F0051A88A /* SwichLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = E45F72D5247BA51F0051A88A /* SwichLanguage.m */; };
 		E489CCE7247766C60025C7A6 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = E489CCE6247766C60025C7A6 /* AppDelegate.mm */; };
 		E489CCED247766C60025C7A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E489CCEC247766C60025C7A6 /* ViewController.m */; };
 		E489CCF0247766C60025C7A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E489CCEE247766C60025C7A6 /* Main.storyboard */; };
@@ -259,7 +261,12 @@
 
 /* Begin PBXFileReference section */
 		E437E650247788B200922720 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		E489CCE2247766C60025C7A6 /* DM100.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DM100.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E45F72D1247BA48A0051A88A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/appString.strings"; sourceTree = "<group>"; };
+		E45F72D3247BA4900051A88A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/appString.strings; sourceTree = "<group>"; };
+		E45F72D5247BA51F0051A88A /* SwichLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwichLanguage.m; sourceTree = "<group>"; };
+		E45F72D6247BA51F0051A88A /* SwichLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwichLanguage.h; sourceTree = "<group>"; };
+		E45F72D8247BA8120051A88A /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		E489CCE2247766C60025C7A6 /* Domilink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Domilink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E489CCE5247766C60025C7A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E489CCE6247766C60025C7A6 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		E489CCEB247766C60025C7A6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -546,6 +553,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E45F72D4247BA51F0051A88A /* SwichLanguage */ = {
+			isa = PBXGroup;
+			children = (
+				E45F72D5247BA51F0051A88A /* SwichLanguage.m */,
+				E45F72D6247BA51F0051A88A /* SwichLanguage.h */,
+			);
+			path = SwichLanguage;
+			sourceTree = "<group>";
+		};
 		E489CCD9247766C50025C7A6 = {
 			isa = PBXGroup;
 			children = (
@@ -560,7 +576,7 @@
 		E489CCE3247766C60025C7A6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E489CCE2247766C60025C7A6 /* DM100.app */,
+				E489CCE2247766C60025C7A6 /* Domilink.app */,
 				E489CCFD247766D00025C7A6 /* DM100Tests.xctest */,
 				E489CD08247766D00025C7A6 /* DM100UITests.xctest */,
 			);
@@ -584,7 +600,9 @@
 				E489CCF3247766D00025C7A6 /* LaunchScreen.storyboard */,
 				E489CCF6247766D00025C7A6 /* Info.plist */,
 				E489CCF7247766D00025C7A6 /* main.m */,
+				E45F72D8247BA8120051A88A /* Header.h */,
 				E48A10E52477A9CD001CB7F4 /* Prefix.pch */,
+				E45F72D2247BA48A0051A88A /* appString.strings */,
 			);
 			path = DM100;
 			sourceTree = "<group>";
@@ -844,6 +862,7 @@
 		E48A127E2477B13F001CB7F4 /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				E45F72D4247BA51F0051A88A /* SwichLanguage */,
 				E48A128C2477B40F001CB7F4 /* BaiduMaplibs */,
 			);
 			path = ThirdPart;
@@ -900,7 +919,7 @@
 			);
 			name = DM100;
 			productName = DM100;
-			productReference = E489CCE2247766C60025C7A6 /* DM100.app */;
+			productReference = E489CCE2247766C60025C7A6 /* Domilink.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E489CCFC247766D00025C7A6 /* DM100Tests */ = {
@@ -1180,6 +1199,7 @@
 				E48A11E82477B027001CB7F4 /* white_bg.PNG in Resources */,
 				E48A122F2477B027001CB7F4 /* 黄色-270.png in Resources */,
 				E48A120E2477B027001CB7F4 /* 蓝色-30.png in Resources */,
+				E45F72D0247BA48A0051A88A /* appString.strings in Resources */,
 				E48A126F2477B028001CB7F4 /* tree_ec.PNG in Resources */,
 				E48A12742477B028001CB7F4 /* back.PNG in Resources */,
 				E48A126C2477B028001CB7F4 /* fyellow.png in Resources */,
@@ -1218,6 +1238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E45F72D7247BA51F0051A88A /* SwichLanguage.m in Sources */,
 				E489CCED247766C60025C7A6 /* ViewController.m in Sources */,
 				E489CCE7247766C60025C7A6 /* AppDelegate.mm in Sources */,
 				E489CD1E247769510025C7A6 /* ItemViewController.m in Sources */,
@@ -1257,6 +1278,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E45F72D2247BA48A0051A88A /* appString.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E45F72D1247BA48A0051A88A /* zh-Hans */,
+				E45F72D3247BA4900051A88A /* en */,
+			);
+			name = appString.strings;
+			sourceTree = "<group>";
+		};
 		E489CCEE247766C60025C7A6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1412,7 +1442,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = ztinfo.domilink.DM100;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Domilink;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = (
 					"${SRCROOT}/$(PROJECT_NAME)/ThirdPart",
@@ -1444,7 +1474,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = ztinfo.domilink.DM100;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Domilink;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = (
 					"${SRCROOT}/$(PROJECT_NAME)/ThirdPart",
