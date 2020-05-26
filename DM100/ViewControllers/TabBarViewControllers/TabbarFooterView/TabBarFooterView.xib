@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TabBarFooterView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="报警" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZsC-Wm-nve">
+                    <rect key="frame" x="160" y="28" width="80" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dmx-jb-Rjf">
+                    <rect key="frame" x="240" y="28" width="80" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="列表" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9UE-Qg-YKk">
+                    <rect key="frame" x="1" y="28" width="80" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地图" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Jx-iF-jZO">
+                    <rect key="frame" x="80" y="28" width="80" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="juS-he-P36">
+                    <rect key="frame" x="1" y="0.0" width="80" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <inset key="titleEdgeInsets" minX="-76" minY="22" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="30" minY="8" maxX="30" maxY="21"/>
+                    <state key="normal" image="menu_icon_0_normal.png">
+                        <color key="titleColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected" image="menu_icon_0_pressed.png">
+                        <color key="titleColor" red="0.072113700548741819" green="0.38261225377814317" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="mainViewButtonDo:" destination="iN0-l3-epB" eventType="touchUpInside" id="Riq-LV-xSr"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3Rj-MQ-gYR">
+                    <rect key="frame" x="80" y="0.0" width="80" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <inset key="titleEdgeInsets" minX="-74" minY="22" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="30" minY="8" maxX="30" maxY="21"/>
+                    <state key="normal" image="menu_icon_1_normal.png">
+                        <color key="titleColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected" image="menu_icon_1_pressed.png">
+                        <color key="titleColor" red="0.066666666669999999" green="0.38431372549999998" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="carViewButtonDo:" destination="iN0-l3-epB" eventType="touchUpInside" id="XBf-uN-vnN"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="agn-jt-XAR">
+                    <rect key="frame" x="160" y="0.0" width="80" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <inset key="titleEdgeInsets" minX="-74" minY="22" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="30" minY="8" maxX="30" maxY="21"/>
+                    <state key="normal" image="menu_icon_2_normal.png">
+                        <color key="titleColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected" image="menu_icon_2_pressed.png">
+                        <color key="titleColor" red="0.066666666669999999" green="0.38431372549999998" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="mineViewButtonDo:" destination="iN0-l3-epB" eventType="touchUpInside" id="pWW-7Y-FHJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3pD-kE-oMN">
+                    <rect key="frame" x="240" y="0.0" width="80" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <inset key="titleEdgeInsets" minX="-76" minY="22" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="30" minY="8" maxX="30" maxY="21"/>
+                    <state key="normal" image="menu_icon_3_normal.png">
+                        <color key="titleColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected" image="menu_icon_3_pressed.png">
+                        <color key="titleColor" red="0.066666666669999999" green="0.38431372549999998" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="settingViewButtonDo:" destination="iN0-l3-epB" eventType="touchUpInside" id="PYi-bO-8g8"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" id="KWh-yr-X7h">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="carViewButton" destination="3Rj-MQ-gYR" id="arn-ti-hBm"/>
+                <outlet property="mainViewButton" destination="juS-he-P36" id="iXg-vB-XZJ"/>
+                <outlet property="mineViewButton" destination="agn-jt-XAR" id="H24-WC-i8Z"/>
+                <outlet property="mtv1" destination="9UE-Qg-YKk" id="Dq1-w9-4VP"/>
+                <outlet property="mtv2" destination="6Jx-iF-jZO" id="3LV-3h-KFa"/>
+                <outlet property="mtv3" destination="ZsC-Wm-nve" id="5ir-ZR-qz7"/>
+                <outlet property="mtv4" destination="dmx-jb-Rjf" id="eai-V8-94v"/>
+                <outlet property="settingViewButton" destination="3pD-kE-oMN" id="lxo-CA-YI6"/>
+            </connections>
+            <point key="canvasLocation" x="443.19999999999999" y="459.22038980509751"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="menu_icon_0_normal.png" width="77" height="77"/>
+        <image name="menu_icon_0_pressed.png" width="77" height="77"/>
+        <image name="menu_icon_1_normal.png" width="74" height="74"/>
+        <image name="menu_icon_1_pressed.png" width="74" height="74"/>
+        <image name="menu_icon_2_normal.png" width="74" height="76"/>
+        <image name="menu_icon_2_pressed.png" width="74" height="76"/>
+        <image name="menu_icon_3_normal.png" width="74" height="74"/>
+        <image name="menu_icon_3_pressed.png" width="74" height="74"/>
+    </resources>
+</document>

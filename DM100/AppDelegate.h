@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ItemViewController.h"
+#import "TabBarViewController.h"
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) ItemViewController *rootTabBarController;
+@property (strong, nonatomic) TabBarViewController *rootTabBarController;
 @property (strong, nonatomic, readonly) UINavigationController *rootNavigationController;
 
 @end

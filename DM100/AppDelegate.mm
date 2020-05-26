@@ -27,7 +27,7 @@
     [_window setBackgroundColor:[UIColor clearColor]];
     
     // rootViewControllers
-    _rootTabBarController = [[ItemViewController alloc] init];
+    _rootTabBarController = [[TabBarViewController alloc] init];
     _rootNavigationController = [[UINavigationController alloc] initWithRootViewController:_rootTabBarController];
     _rootNavigationController.interactivePopGestureRecognizer.enabled = YES;
     _rootNavigationController.interactivePopGestureRecognizer.delegate = self;

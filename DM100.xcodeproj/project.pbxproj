@@ -103,6 +103,101 @@
 		E452A21B247CA98C00E2C84A /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E452A20A247CA98C00E2C84A /* MJRefresh.bundle */; };
 		E452A21C247CA98C00E2C84A /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A20B247CA98C00E2C84A /* MJRefreshBaseView.m */; };
 		E452A21D247CA98C00E2C84A /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A20D247CA98C00E2C84A /* MJRefreshFooterView.m */; };
+		E452A2D3247CE7FB00E2C84A /* CheckCMDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A221247CE7FA00E2C84A /* CheckCMDViewController.xib */; };
+		E452A2D4247CE7FB00E2C84A /* CheckCMDTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A222247CE7FA00E2C84A /* CheckCMDTableViewCell.xib */; };
+		E452A2D5247CE7FB00E2C84A /* CheckCMDTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A224247CE7FA00E2C84A /* CheckCMDTableViewCell.m */; };
+		E452A2D6247CE7FB00E2C84A /* CheckCMDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A225247CE7FA00E2C84A /* CheckCMDViewController.m */; };
+		E452A2D7247CE7FB00E2C84A /* AppleAlarmMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A227247CE7FA00E2C84A /* AppleAlarmMapViewController.m */; };
+		E452A2D8247CE7FB00E2C84A /* AppleAlarmAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A229247CE7FA00E2C84A /* AppleAlarmAnnotationView.m */; };
+		E452A2D9247CE7FB00E2C84A /* CarAlarmPaopaoView.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A22A247CE7FA00E2C84A /* CarAlarmPaopaoView.m */; };
+		E452A2DA247CE7FB00E2C84A /* AppleAlarmMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A22B247CE7FA00E2C84A /* AppleAlarmMapViewController.xib */; };
+		E452A2DB247CE7FB00E2C84A /* CarAlarmMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A22D247CE7FA00E2C84A /* CarAlarmMapViewController.m */; };
+		E452A2DC247CE7FB00E2C84A /* CarAlarmMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A22E247CE7FA00E2C84A /* CarAlarmMapViewController.xib */; };
+		E452A2DD247CE7FB00E2C84A /* CarAlarmPaopaoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A230247CE7FA00E2C84A /* CarAlarmPaopaoView.xib */; };
+		E452A2DE247CE7FB00E2C84A /* SwLanguagePop.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A235247CE7FA00E2C84A /* SwLanguagePop.xib */; };
+		E452A2DF247CE7FB00E2C84A /* SwLanguagePop.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A236247CE7FA00E2C84A /* SwLanguagePop.m */; };
+		E452A2E0247CE7FB00E2C84A /* SwMapPop.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A238247CE7FA00E2C84A /* SwMapPop.xib */; };
+		E452A2E1247CE7FB00E2C84A /* SwMapPop.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A239247CE7FA00E2C84A /* SwMapPop.m */; };
+		E452A2E2247CE7FB00E2C84A /* BDDynamicTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A23D247CE7FA00E2C84A /* BDDynamicTreeNode.m */; };
+		E452A2E3247CE7FB00E2C84A /* BDDynamicTreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A23E247CE7FA00E2C84A /* BDDynamicTreeCell.m */; };
+		E452A2E4247CE7FB00E2C84A /* BDDynamicTree.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A240247CE7FA00E2C84A /* BDDynamicTree.m */; };
+		E452A2E5247CE7FB00E2C84A /* BDDynamicTreeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A242247CE7FA00E2C84A /* BDDynamicTreeCell.xib */; };
+		E452A2E6247CE7FB00E2C84A /* MapLoctionSwich.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A244247CE7FA00E2C84A /* MapLoctionSwich.m */; };
+		E452A2E7247CE7FB00E2C84A /* ExpeirViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A247247CE7FA00E2C84A /* ExpeirViewController.m */; };
+		E452A2E8247CE7FB00E2C84A /* ExpeirViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A248247CE7FA00E2C84A /* ExpeirViewController.xib */; };
+		E452A2E9247CE7FB00E2C84A /* APMainMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A24C247CE7FA00E2C84A /* APMainMapViewController.xib */; };
+		E452A2EA247CE7FB00E2C84A /* APMainMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A24E247CE7FA00E2C84A /* APMainMapViewController.m */; };
+		E452A2EB247CE7FB00E2C84A /* MainMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A24F247CE7FA00E2C84A /* MainMapViewController.xib */; };
+		E452A2EC247CE7FB00E2C84A /* MainMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A250247CE7FA00E2C84A /* MainMapViewController.m */; };
+		E452A2ED247CE7FB00E2C84A /* TabBarFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A254247CE7FA00E2C84A /* TabBarFooterView.m */; };
+		E452A2EE247CE7FB00E2C84A /* TabBarFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A255247CE7FA00E2C84A /* TabBarFooterView.xib */; };
+		E452A2EF247CE7FB00E2C84A /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A257247CE7FA00E2C84A /* TabBarViewController.xib */; };
+		E452A2F0247CE7FB00E2C84A /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A258247CE7FA00E2C84A /* TabBarViewController.m */; };
+		E452A2F1247CE7FB00E2C84A /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A25B247CE7FA00E2C84A /* SettingViewController.xib */; };
+		E452A2F2247CE7FB00E2C84A /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A25C247CE7FA00E2C84A /* SettingViewController.m */; };
+		E452A2F3247CE7FB00E2C84A /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A25F247CE7FA00E2C84A /* UIView+Frame.m */; };
+		E452A2F4247CE7FB00E2C84A /* WebCMDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A260247CE7FA00E2C84A /* WebCMDViewController.m */; };
+		E452A2F5247CE7FB00E2C84A /* WebCMDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A262247CE7FA00E2C84A /* WebCMDViewController.xib */; };
+		E452A2F6247CE7FB00E2C84A /* NSTimer+addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A263247CE7FA00E2C84A /* NSTimer+addition.m */; };
+		E452A2F7247CE7FB00E2C84A /* WYWebProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A266247CE7FA00E2C84A /* WYWebProgressLayer.m */; };
+		E452A2F8247CE7FB00E2C84A /* UpdateCarNameAndNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A26A247CE7FA00E2C84A /* UpdateCarNameAndNumberViewController.m */; };
+		E452A2F9247CE7FB00E2C84A /* DeviceDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A26B247CE7FA00E2C84A /* DeviceDetailTableViewCell.m */; };
+		E452A2FA247CE7FB00E2C84A /* UpdateCarNameAndNumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A26C247CE7FA00E2C84A /* UpdateCarNameAndNumberViewController.xib */; };
+		E452A2FB247CE7FB00E2C84A /* DeviceDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A26D247CE7FA00E2C84A /* DeviceDetailViewController.xib */; };
+		E452A2FC247CE7FB00E2C84A /* DeviceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A26E247CE7FA00E2C84A /* DeviceDetailViewController.m */; };
+		E452A2FD247CE7FB00E2C84A /* DeviceDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A26F247CE7FA00E2C84A /* DeviceDetailTableViewCell.xib */; };
+		E452A2FE247CE7FB00E2C84A /* CarAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A272247CE7FA00E2C84A /* CarAlarmViewController.m */; };
+		E452A2FF247CE7FB00E2C84A /* CarAlarmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A273247CE7FA00E2C84A /* CarAlarmViewController.xib */; };
+		E452A300247CE7FB00E2C84A /* MessageCenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A275247CE7FA00E2C84A /* MessageCenterTableViewCell.xib */; };
+		E452A301247CE7FB00E2C84A /* MessageCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A277247CE7FA00E2C84A /* MessageCenterTableViewCell.m */; };
+		E452A302247CE7FB00E2C84A /* MineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A27A247CE7FA00E2C84A /* MineViewController.xib */; };
+		E452A303247CE7FB00E2C84A /* AppVersionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A27D247CE7FA00E2C84A /* AppVersionViewController.m */; };
+		E452A304247CE7FB00E2C84A /* AppVersionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A27E247CE7FA00E2C84A /* AppVersionViewController.xib */; };
+		E452A305247CE7FB00E2C84A /* mineFuctionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A280247CE7FA00E2C84A /* mineFuctionsTableViewCell.xib */; };
+		E452A306247CE7FB00E2C84A /* mineFuctionsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A281247CE7FA00E2C84A /* mineFuctionsTableViewCell.m */; };
+		E452A307247CE7FB00E2C84A /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A284247CE7FA00E2C84A /* ChangePasswordViewController.m */; };
+		E452A308247CE7FB00E2C84A /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A285247CE7FA00E2C84A /* ChangePasswordViewController.xib */; };
+		E452A309247CE7FB00E2C84A /* ServerInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A287247CE7FA00E2C84A /* ServerInformationViewController.m */; };
+		E452A30A247CE7FB00E2C84A /* ServerInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A289247CE7FA00E2C84A /* ServerInformationViewController.xib */; };
+		E452A30B247CE7FB00E2C84A /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A28A247CE7FA00E2C84A /* MineViewController.m */; };
+		E452A30C247CE7FB00E2C84A /* CarListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A28C247CE7FA00E2C84A /* CarListViewController.m */; };
+		E452A30D247CE7FB00E2C84A /* CarListTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A28E247CE7FA00E2C84A /* CarListTableCell.xib */; };
+		E452A30E247CE7FB00E2C84A /* CarListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A28F247CE7FA00E2C84A /* CarListTableCell.m */; };
+		E452A30F247CE7FB00E2C84A /* CarListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A292247CE7FA00E2C84A /* CarListViewController.xib */; };
+		E452A310247CE7FB00E2C84A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A294247CE7FA00E2C84A /* LoginViewController.m */; };
+		E452A311247CE7FB00E2C84A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A295247CE7FA00E2C84A /* LoginViewController.xib */; };
+		E452A312247CE7FB00E2C84A /* SelectionComboBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A29A247CE7FA00E2C84A /* SelectionComboBox.xib */; };
+		E452A313247CE7FB00E2C84A /* SelectionComboBoxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A29B247CE7FA00E2C84A /* SelectionComboBoxCell.xib */; };
+		E452A314247CE7FB00E2C84A /* SelectionComboBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A29C247CE7FA00E2C84A /* SelectionComboBox.m */; };
+		E452A315247CE7FB00E2C84A /* SelectionComboBoxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A29D247CE7FA00E2C84A /* SelectionComboBoxCell.m */; };
+		E452A316247CE7FB00E2C84A /* CustomPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A2A2247CE7FA00E2C84A /* CustomPickerView.m */; };
+		E452A317247CE7FB00E2C84A /* TrackPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A2A3247CE7FA00E2C84A /* TrackPlayerView.m */; };
+		E452A318247CE7FB00E2C84A /* CustomPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A2A4247CE7FA00E2C84A /* CustomPickerView.xib */; };
+		E452A319247CE7FB00E2C84A /* PickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A2A5247CE7FA00E2C84A /* PickerView.m */; };
+		E452A31A247CE7FB00E2C84A /* TrackPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A2A7247CE7FA00E2C84A /* TrackPlayerView.xib */; };
+		E452A31B247CE7FB00E2C84A /* PickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A2A8247CE7FA00E2C84A /* PickerView.xib */; };
+		E452A31C247CE7FB00E2C84A /* AppleHistoryTrackController.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A2A9247CE7FA00E2C84A /* AppleHistoryTrackController.m */; };
+		E452A31D247CE7FB00E2C84A /* BusPointCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A2AA247CE7FA00E2C84A /* BusPointCell.xib */; };
+		E452A31E247CE7FB00E2C84A /* BusPointCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A2AB247CE7FA00E2C84A /* BusPointCell.m */; };
+		E452A31F247CE7FB00E2C84A /* APStartAndEndAnNotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A2B1247CE7FA00E2C84A /* APStartAndEndAnNotation.m */; };
+		E452A320247CE7FB00E2C84A /* APCustomPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A2B2247CE7FA00E2C84A /* APCustomPointAnnotation.m */; };
+		E452A321247CE7FB00E2C84A /* APCallOutAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A2B3247CE7FA00E2C84A /* APCallOutAnnotationView.m */; };
+		E452A322247CE7FB00E2C84A /* APCalloutMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A2B4247CE7FA00E2C84A /* APCalloutMapAnnotation.m */; };
+		E452A323247CE7FB00E2C84A /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A2B6247CE7FA00E2C84A /* HistoryCell.xib */; };
+		E452A324247CE7FB00E2C84A /* HistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A2B7247CE7FA00E2C84A /* HistoryCell.m */; };
+		E452A325247CE7FB00E2C84A /* AppleHistoryTrackController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A2BA247CE7FA00E2C84A /* AppleHistoryTrackController.xib */; };
+		E452A326247CE7FB00E2C84A /* HistoryTrackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A2BC247CE7FA00E2C84A /* HistoryTrackViewController.xib */; };
+		E452A327247CE7FB00E2C84A /* AlarmTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A2BE247CE7FA00E2C84A /* AlarmTimeView.xib */; };
+		E452A328247CE7FB00E2C84A /* AlarmTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A2C0247CE7FA00E2C84A /* AlarmTimeView.m */; };
+		E452A329247CE7FB00E2C84A /* CustomTimeSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A2C3247CE7FA00E2C84A /* CustomTimeSelectionView.xib */; };
+		E452A32A247CE7FB00E2C84A /* CustomTimeSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A2C4247CE7FA00E2C84A /* CustomTimeSelectionView.m */; };
+		E452A32B247CE7FB00E2C84A /* SelectableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A2C5247CE7FA00E2C84A /* SelectableButton.m */; };
+		E452A32C247CE7FB00E2C84A /* SelectableButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = E452A2C6247CE7FA00E2C84A /* SelectableButton.xib */; };
+		E452A32D247CE7FB00E2C84A /* CallOutAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A2CE247CE7FA00E2C84A /* CallOutAnnotationView.m */; };
+		E452A32E247CE7FB00E2C84A /* CustomPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A2CF247CE7FA00E2C84A /* CustomPointAnnotation.m */; };
+		E452A32F247CE7FB00E2C84A /* StartAndEndAnNotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A2D0247CE7FA00E2C84A /* StartAndEndAnNotation.m */; };
+		E452A330247CE7FB00E2C84A /* CalloutMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A2D1247CE7FA00E2C84A /* CalloutMapAnnotation.m */; };
+		E452A331247CE7FB00E2C84A /* HistoryTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A2D2247CE7FA00E2C84A /* HistoryTrackViewController.m */; };
 		E45F72D0247BA48A0051A88A /* appString.strings in Resources */ = {isa = PBXBuildFile; fileRef = E45F72D2247BA48A0051A88A /* appString.strings */; };
 		E45F72D7247BA51F0051A88A /* SwichLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = E45F72D5247BA51F0051A88A /* SwichLanguage.m */; };
 		E489CCE7247766C60025C7A6 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = E489CCE6247766C60025C7A6 /* AppDelegate.mm */; };
@@ -552,6 +647,156 @@
 		E452A20D247CA98C00E2C84A /* MJRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooterView.m; sourceTree = "<group>"; };
 		E452A20E247CA98C00E2C84A /* MJRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeaderView.h; sourceTree = "<group>"; };
 		E452A20F247CA98C00E2C84A /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
+		E452A220247CE7FA00E2C84A /* CheckCMDTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckCMDTableViewCell.h; sourceTree = "<group>"; };
+		E452A221247CE7FA00E2C84A /* CheckCMDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckCMDViewController.xib; sourceTree = "<group>"; };
+		E452A222247CE7FA00E2C84A /* CheckCMDTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckCMDTableViewCell.xib; sourceTree = "<group>"; };
+		E452A223247CE7FA00E2C84A /* CheckCMDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckCMDViewController.h; sourceTree = "<group>"; };
+		E452A224247CE7FA00E2C84A /* CheckCMDTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckCMDTableViewCell.m; sourceTree = "<group>"; };
+		E452A225247CE7FA00E2C84A /* CheckCMDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckCMDViewController.m; sourceTree = "<group>"; };
+		E452A227247CE7FA00E2C84A /* AppleAlarmMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleAlarmMapViewController.m; sourceTree = "<group>"; };
+		E452A228247CE7FA00E2C84A /* CarAlarmMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarAlarmMapViewController.h; sourceTree = "<group>"; };
+		E452A229247CE7FA00E2C84A /* AppleAlarmAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleAlarmAnnotationView.m; sourceTree = "<group>"; };
+		E452A22A247CE7FA00E2C84A /* CarAlarmPaopaoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarAlarmPaopaoView.m; sourceTree = "<group>"; };
+		E452A22B247CE7FA00E2C84A /* AppleAlarmMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppleAlarmMapViewController.xib; sourceTree = "<group>"; };
+		E452A22C247CE7FA00E2C84A /* AppleAlarmMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleAlarmMapViewController.h; sourceTree = "<group>"; };
+		E452A22D247CE7FA00E2C84A /* CarAlarmMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarAlarmMapViewController.m; sourceTree = "<group>"; };
+		E452A22E247CE7FA00E2C84A /* CarAlarmMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarAlarmMapViewController.xib; sourceTree = "<group>"; };
+		E452A22F247CE7FA00E2C84A /* CarAlarmPaopaoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarAlarmPaopaoView.h; sourceTree = "<group>"; };
+		E452A230247CE7FA00E2C84A /* CarAlarmPaopaoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarAlarmPaopaoView.xib; sourceTree = "<group>"; };
+		E452A231247CE7FA00E2C84A /* AppleAlarmAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleAlarmAnnotationView.h; sourceTree = "<group>"; };
+		E452A234247CE7FA00E2C84A /* SwLanguagePop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwLanguagePop.h; sourceTree = "<group>"; };
+		E452A235247CE7FA00E2C84A /* SwLanguagePop.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwLanguagePop.xib; sourceTree = "<group>"; };
+		E452A236247CE7FA00E2C84A /* SwLanguagePop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwLanguagePop.m; sourceTree = "<group>"; };
+		E452A238247CE7FA00E2C84A /* SwMapPop.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwMapPop.xib; sourceTree = "<group>"; };
+		E452A239247CE7FA00E2C84A /* SwMapPop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwMapPop.m; sourceTree = "<group>"; };
+		E452A23A247CE7FA00E2C84A /* SwMapPop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwMapPop.h; sourceTree = "<group>"; };
+		E452A23C247CE7FA00E2C84A /* BDDynamicTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDDynamicTree.h; sourceTree = "<group>"; };
+		E452A23D247CE7FA00E2C84A /* BDDynamicTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDDynamicTreeNode.m; sourceTree = "<group>"; };
+		E452A23E247CE7FA00E2C84A /* BDDynamicTreeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDDynamicTreeCell.m; sourceTree = "<group>"; };
+		E452A23F247CE7FA00E2C84A /* BDDynamicTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDDynamicTreeNode.h; sourceTree = "<group>"; };
+		E452A240247CE7FA00E2C84A /* BDDynamicTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDDynamicTree.m; sourceTree = "<group>"; };
+		E452A241247CE7FA00E2C84A /* BDDynamicTreeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDDynamicTreeCell.h; sourceTree = "<group>"; };
+		E452A242247CE7FA00E2C84A /* BDDynamicTreeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BDDynamicTreeCell.xib; sourceTree = "<group>"; };
+		E452A244247CE7FA00E2C84A /* MapLoctionSwich.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapLoctionSwich.m; sourceTree = "<group>"; };
+		E452A245247CE7FA00E2C84A /* MapLoctionSwich.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapLoctionSwich.h; sourceTree = "<group>"; };
+		E452A247247CE7FA00E2C84A /* ExpeirViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpeirViewController.m; sourceTree = "<group>"; };
+		E452A248247CE7FA00E2C84A /* ExpeirViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpeirViewController.xib; sourceTree = "<group>"; };
+		E452A249247CE7FA00E2C84A /* ExpeirViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpeirViewController.h; sourceTree = "<group>"; };
+		E452A24B247CE7FA00E2C84A /* APMainMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMainMapViewController.h; sourceTree = "<group>"; };
+		E452A24C247CE7FA00E2C84A /* APMainMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = APMainMapViewController.xib; sourceTree = "<group>"; };
+		E452A24D247CE7FA00E2C84A /* MainMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMapViewController.h; sourceTree = "<group>"; };
+		E452A24E247CE7FA00E2C84A /* APMainMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMainMapViewController.m; sourceTree = "<group>"; };
+		E452A24F247CE7FA00E2C84A /* MainMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMapViewController.xib; sourceTree = "<group>"; };
+		E452A250247CE7FA00E2C84A /* MainMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMapViewController.m; sourceTree = "<group>"; };
+		E452A253247CE7FA00E2C84A /* TabBarFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarFooterView.h; sourceTree = "<group>"; };
+		E452A254247CE7FA00E2C84A /* TabBarFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarFooterView.m; sourceTree = "<group>"; };
+		E452A255247CE7FA00E2C84A /* TabBarFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarFooterView.xib; sourceTree = "<group>"; };
+		E452A256247CE7FA00E2C84A /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		E452A257247CE7FA00E2C84A /* TabBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
+		E452A258247CE7FA00E2C84A /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		E452A25A247CE7FA00E2C84A /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		E452A25B247CE7FA00E2C84A /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		E452A25C247CE7FA00E2C84A /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		E452A25E247CE7FA00E2C84A /* NSTimer+addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+addition.h"; sourceTree = "<group>"; };
+		E452A25F247CE7FA00E2C84A /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		E452A260247CE7FA00E2C84A /* WebCMDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebCMDViewController.m; sourceTree = "<group>"; };
+		E452A261247CE7FA00E2C84A /* WYWebProgressLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYWebProgressLayer.h; sourceTree = "<group>"; };
+		E452A262247CE7FA00E2C84A /* WebCMDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebCMDViewController.xib; sourceTree = "<group>"; };
+		E452A263247CE7FA00E2C84A /* NSTimer+addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+addition.m"; sourceTree = "<group>"; };
+		E452A264247CE7FA00E2C84A /* WebCMDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebCMDViewController.h; sourceTree = "<group>"; };
+		E452A265247CE7FA00E2C84A /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		E452A266247CE7FA00E2C84A /* WYWebProgressLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYWebProgressLayer.m; sourceTree = "<group>"; };
+		E452A268247CE7FA00E2C84A /* DeviceDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceDetailTableViewCell.h; sourceTree = "<group>"; };
+		E452A269247CE7FA00E2C84A /* DeviceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceDetailViewController.h; sourceTree = "<group>"; };
+		E452A26A247CE7FA00E2C84A /* UpdateCarNameAndNumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateCarNameAndNumberViewController.m; sourceTree = "<group>"; };
+		E452A26B247CE7FA00E2C84A /* DeviceDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceDetailTableViewCell.m; sourceTree = "<group>"; };
+		E452A26C247CE7FA00E2C84A /* UpdateCarNameAndNumberViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdateCarNameAndNumberViewController.xib; sourceTree = "<group>"; };
+		E452A26D247CE7FA00E2C84A /* DeviceDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceDetailViewController.xib; sourceTree = "<group>"; };
+		E452A26E247CE7FA00E2C84A /* DeviceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceDetailViewController.m; sourceTree = "<group>"; };
+		E452A26F247CE7FA00E2C84A /* DeviceDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceDetailTableViewCell.xib; sourceTree = "<group>"; };
+		E452A270247CE7FA00E2C84A /* UpdateCarNameAndNumberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateCarNameAndNumberViewController.h; sourceTree = "<group>"; };
+		E452A272247CE7FA00E2C84A /* CarAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarAlarmViewController.m; sourceTree = "<group>"; };
+		E452A273247CE7FA00E2C84A /* CarAlarmViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarAlarmViewController.xib; sourceTree = "<group>"; };
+		E452A274247CE7FA00E2C84A /* MessageCenterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCenterTableViewCell.h; sourceTree = "<group>"; };
+		E452A275247CE7FA00E2C84A /* MessageCenterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCenterTableViewCell.xib; sourceTree = "<group>"; };
+		E452A276247CE7FA00E2C84A /* CarAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarAlarmViewController.h; sourceTree = "<group>"; };
+		E452A277247CE7FA00E2C84A /* MessageCenterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCenterTableViewCell.m; sourceTree = "<group>"; };
+		E452A279247CE7FA00E2C84A /* mineFuctionsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mineFuctionsTableViewCell.h; sourceTree = "<group>"; };
+		E452A27A247CE7FA00E2C84A /* MineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineViewController.xib; sourceTree = "<group>"; };
+		E452A27B247CE7FA00E2C84A /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		E452A27D247CE7FA00E2C84A /* AppVersionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppVersionViewController.m; sourceTree = "<group>"; };
+		E452A27E247CE7FA00E2C84A /* AppVersionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppVersionViewController.xib; sourceTree = "<group>"; };
+		E452A27F247CE7FA00E2C84A /* AppVersionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppVersionViewController.h; sourceTree = "<group>"; };
+		E452A280247CE7FA00E2C84A /* mineFuctionsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mineFuctionsTableViewCell.xib; sourceTree = "<group>"; };
+		E452A281247CE7FA00E2C84A /* mineFuctionsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mineFuctionsTableViewCell.m; sourceTree = "<group>"; };
+		E452A283247CE7FA00E2C84A /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
+		E452A284247CE7FA00E2C84A /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
+		E452A285247CE7FA00E2C84A /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
+		E452A287247CE7FA00E2C84A /* ServerInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerInformationViewController.m; sourceTree = "<group>"; };
+		E452A288247CE7FA00E2C84A /* ServerInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerInformationViewController.h; sourceTree = "<group>"; };
+		E452A289247CE7FA00E2C84A /* ServerInformationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServerInformationViewController.xib; sourceTree = "<group>"; };
+		E452A28A247CE7FA00E2C84A /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		E452A28C247CE7FA00E2C84A /* CarListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarListViewController.m; sourceTree = "<group>"; };
+		E452A28E247CE7FA00E2C84A /* CarListTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarListTableCell.xib; sourceTree = "<group>"; };
+		E452A28F247CE7FA00E2C84A /* CarListTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarListTableCell.m; sourceTree = "<group>"; };
+		E452A290247CE7FA00E2C84A /* CarListTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarListTableCell.h; sourceTree = "<group>"; };
+		E452A291247CE7FA00E2C84A /* CarListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarListViewController.h; sourceTree = "<group>"; };
+		E452A292247CE7FA00E2C84A /* CarListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarListViewController.xib; sourceTree = "<group>"; };
+		E452A294247CE7FA00E2C84A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		E452A295247CE7FA00E2C84A /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		E452A296247CE7FA00E2C84A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		E452A298247CE7FA00E2C84A /* SelectionComboBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionComboBox.h; sourceTree = "<group>"; };
+		E452A299247CE7FA00E2C84A /* SelectionComboBoxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionComboBoxCell.h; sourceTree = "<group>"; };
+		E452A29A247CE7FA00E2C84A /* SelectionComboBox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectionComboBox.xib; sourceTree = "<group>"; };
+		E452A29B247CE7FA00E2C84A /* SelectionComboBoxCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectionComboBoxCell.xib; sourceTree = "<group>"; };
+		E452A29C247CE7FA00E2C84A /* SelectionComboBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionComboBox.m; sourceTree = "<group>"; };
+		E452A29D247CE7FA00E2C84A /* SelectionComboBoxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionComboBoxCell.m; sourceTree = "<group>"; };
+		E452A2A0247CE7FA00E2C84A /* PickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerView.h; sourceTree = "<group>"; };
+		E452A2A1247CE7FA00E2C84A /* TrackPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackPlayerView.h; sourceTree = "<group>"; };
+		E452A2A2247CE7FA00E2C84A /* CustomPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPickerView.m; sourceTree = "<group>"; };
+		E452A2A3247CE7FA00E2C84A /* TrackPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackPlayerView.m; sourceTree = "<group>"; };
+		E452A2A4247CE7FA00E2C84A /* CustomPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPickerView.xib; sourceTree = "<group>"; };
+		E452A2A5247CE7FA00E2C84A /* PickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerView.m; sourceTree = "<group>"; };
+		E452A2A6247CE7FA00E2C84A /* CustomPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPickerView.h; sourceTree = "<group>"; };
+		E452A2A7247CE7FA00E2C84A /* TrackPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackPlayerView.xib; sourceTree = "<group>"; };
+		E452A2A8247CE7FA00E2C84A /* PickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerView.xib; sourceTree = "<group>"; };
+		E452A2A9247CE7FA00E2C84A /* AppleHistoryTrackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleHistoryTrackController.m; sourceTree = "<group>"; };
+		E452A2AA247CE7FA00E2C84A /* BusPointCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusPointCell.xib; sourceTree = "<group>"; };
+		E452A2AB247CE7FA00E2C84A /* BusPointCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusPointCell.m; sourceTree = "<group>"; };
+		E452A2AD247CE7FA00E2C84A /* APStartAndEndAnNotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APStartAndEndAnNotation.h; sourceTree = "<group>"; };
+		E452A2AE247CE7FA00E2C84A /* APCalloutMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APCalloutMapAnnotation.h; sourceTree = "<group>"; };
+		E452A2AF247CE7FA00E2C84A /* APCallOutAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APCallOutAnnotationView.h; sourceTree = "<group>"; };
+		E452A2B0247CE7FA00E2C84A /* APCustomPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APCustomPointAnnotation.h; sourceTree = "<group>"; };
+		E452A2B1247CE7FA00E2C84A /* APStartAndEndAnNotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APStartAndEndAnNotation.m; sourceTree = "<group>"; };
+		E452A2B2247CE7FA00E2C84A /* APCustomPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APCustomPointAnnotation.m; sourceTree = "<group>"; };
+		E452A2B3247CE7FA00E2C84A /* APCallOutAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APCallOutAnnotationView.m; sourceTree = "<group>"; };
+		E452A2B4247CE7FA00E2C84A /* APCalloutMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APCalloutMapAnnotation.m; sourceTree = "<group>"; };
+		E452A2B6247CE7FA00E2C84A /* HistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
+		E452A2B7247CE7FA00E2C84A /* HistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryCell.m; sourceTree = "<group>"; };
+		E452A2B8247CE7FA00E2C84A /* HistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryCell.h; sourceTree = "<group>"; };
+		E452A2B9247CE7FA00E2C84A /* HistoryTrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTrackViewController.h; sourceTree = "<group>"; };
+		E452A2BA247CE7FA00E2C84A /* AppleHistoryTrackController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppleHistoryTrackController.xib; sourceTree = "<group>"; };
+		E452A2BB247CE7FA00E2C84A /* AppleHistoryTrackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleHistoryTrackController.h; sourceTree = "<group>"; };
+		E452A2BC247CE7FA00E2C84A /* HistoryTrackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryTrackViewController.xib; sourceTree = "<group>"; };
+		E452A2BE247CE7FA00E2C84A /* AlarmTimeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmTimeView.xib; sourceTree = "<group>"; };
+		E452A2BF247CE7FA00E2C84A /* AlarmTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmTimeView.h; sourceTree = "<group>"; };
+		E452A2C0247CE7FA00E2C84A /* AlarmTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmTimeView.m; sourceTree = "<group>"; };
+		E452A2C1247CE7FA00E2C84A /* BusPointCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusPointCell.h; sourceTree = "<group>"; };
+		E452A2C3247CE7FA00E2C84A /* CustomTimeSelectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTimeSelectionView.xib; sourceTree = "<group>"; };
+		E452A2C4247CE7FA00E2C84A /* CustomTimeSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTimeSelectionView.m; sourceTree = "<group>"; };
+		E452A2C5247CE7FA00E2C84A /* SelectableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectableButton.m; sourceTree = "<group>"; };
+		E452A2C6247CE7FA00E2C84A /* SelectableButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectableButton.xib; sourceTree = "<group>"; };
+		E452A2C7247CE7FA00E2C84A /* CustomTimeSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTimeSelectionView.h; sourceTree = "<group>"; };
+		E452A2C8247CE7FA00E2C84A /* SelectableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectableButton.h; sourceTree = "<group>"; };
+		E452A2CA247CE7FA00E2C84A /* CustomPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPointAnnotation.h; sourceTree = "<group>"; };
+		E452A2CB247CE7FA00E2C84A /* CallOutAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallOutAnnotationView.h; sourceTree = "<group>"; };
+		E452A2CC247CE7FA00E2C84A /* StartAndEndAnNotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartAndEndAnNotation.h; sourceTree = "<group>"; };
+		E452A2CD247CE7FA00E2C84A /* CalloutMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalloutMapAnnotation.h; sourceTree = "<group>"; };
+		E452A2CE247CE7FA00E2C84A /* CallOutAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallOutAnnotationView.m; sourceTree = "<group>"; };
+		E452A2CF247CE7FA00E2C84A /* CustomPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPointAnnotation.m; sourceTree = "<group>"; };
+		E452A2D0247CE7FA00E2C84A /* StartAndEndAnNotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartAndEndAnNotation.m; sourceTree = "<group>"; };
+		E452A2D1247CE7FA00E2C84A /* CalloutMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalloutMapAnnotation.m; sourceTree = "<group>"; };
+		E452A2D2247CE7FA00E2C84A /* HistoryTrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTrackViewController.m; sourceTree = "<group>"; };
 		E45F72D1247BA48A0051A88A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/appString.strings"; sourceTree = "<group>"; };
 		E45F72D3247BA4900051A88A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/appString.strings; sourceTree = "<group>"; };
 		E45F72D5247BA51F0051A88A /* SwichLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwichLanguage.m; sourceTree = "<group>"; };
@@ -1144,6 +1389,403 @@
 			path = "../../../../domiink工程s/domilink/dimilink/ThirdPart/MJRefresh";
 			sourceTree = "<group>";
 		};
+		E452A21E247CE7FA00E2C84A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E452A21F247CE7FA00E2C84A /* CheckCMDViewController */,
+				E452A226247CE7FA00E2C84A /* CarAlarmMapView */,
+				E452A232247CE7FA00E2C84A /* Tools */,
+				E452A246247CE7FA00E2C84A /* ExpeirViewControllers */,
+				E452A24A247CE7FA00E2C84A /* MainMapViewControllers */,
+				E452A251247CE7FA00E2C84A /* TabBarViewControllers */,
+				E452A259247CE7FA00E2C84A /* SettingViewControllers */,
+				E452A25D247CE7FA00E2C84A /* WebCMDViewController */,
+				E452A267247CE7FA00E2C84A /* DeviceDetailViewController */,
+				E452A271247CE7FA00E2C84A /* CarAlarmViewController */,
+				E452A278247CE7FA00E2C84A /* MineViewControllers */,
+				E452A28B247CE7FA00E2C84A /* CarListViewControllers */,
+				E452A293247CE7FA00E2C84A /* LoginViewControllers */,
+				E452A29E247CE7FA00E2C84A /* HistoryTrackTableViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E452A21F247CE7FA00E2C84A /* CheckCMDViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E452A220247CE7FA00E2C84A /* CheckCMDTableViewCell.h */,
+				E452A221247CE7FA00E2C84A /* CheckCMDViewController.xib */,
+				E452A222247CE7FA00E2C84A /* CheckCMDTableViewCell.xib */,
+				E452A223247CE7FA00E2C84A /* CheckCMDViewController.h */,
+				E452A224247CE7FA00E2C84A /* CheckCMDTableViewCell.m */,
+				E452A225247CE7FA00E2C84A /* CheckCMDViewController.m */,
+			);
+			path = CheckCMDViewController;
+			sourceTree = "<group>";
+		};
+		E452A226247CE7FA00E2C84A /* CarAlarmMapView */ = {
+			isa = PBXGroup;
+			children = (
+				E452A227247CE7FA00E2C84A /* AppleAlarmMapViewController.m */,
+				E452A228247CE7FA00E2C84A /* CarAlarmMapViewController.h */,
+				E452A229247CE7FA00E2C84A /* AppleAlarmAnnotationView.m */,
+				E452A22A247CE7FA00E2C84A /* CarAlarmPaopaoView.m */,
+				E452A22B247CE7FA00E2C84A /* AppleAlarmMapViewController.xib */,
+				E452A22C247CE7FA00E2C84A /* AppleAlarmMapViewController.h */,
+				E452A22D247CE7FA00E2C84A /* CarAlarmMapViewController.m */,
+				E452A22E247CE7FA00E2C84A /* CarAlarmMapViewController.xib */,
+				E452A22F247CE7FA00E2C84A /* CarAlarmPaopaoView.h */,
+				E452A230247CE7FA00E2C84A /* CarAlarmPaopaoView.xib */,
+				E452A231247CE7FA00E2C84A /* AppleAlarmAnnotationView.h */,
+			);
+			path = CarAlarmMapView;
+			sourceTree = "<group>";
+		};
+		E452A232247CE7FA00E2C84A /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				E452A233247CE7FA00E2C84A /* SwLanguagePop */,
+				E452A237247CE7FA00E2C84A /* SwMapPop */,
+				E452A23B247CE7FA00E2C84A /* BDDynamicTree */,
+				E452A243247CE7FA00E2C84A /* MapLoctionSwich */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		E452A233247CE7FA00E2C84A /* SwLanguagePop */ = {
+			isa = PBXGroup;
+			children = (
+				E452A234247CE7FA00E2C84A /* SwLanguagePop.h */,
+				E452A236247CE7FA00E2C84A /* SwLanguagePop.m */,
+				E452A235247CE7FA00E2C84A /* SwLanguagePop.xib */,
+			);
+			path = SwLanguagePop;
+			sourceTree = "<group>";
+		};
+		E452A237247CE7FA00E2C84A /* SwMapPop */ = {
+			isa = PBXGroup;
+			children = (
+				E452A238247CE7FA00E2C84A /* SwMapPop.xib */,
+				E452A239247CE7FA00E2C84A /* SwMapPop.m */,
+				E452A23A247CE7FA00E2C84A /* SwMapPop.h */,
+			);
+			path = SwMapPop;
+			sourceTree = "<group>";
+		};
+		E452A23B247CE7FA00E2C84A /* BDDynamicTree */ = {
+			isa = PBXGroup;
+			children = (
+				E452A23C247CE7FA00E2C84A /* BDDynamicTree.h */,
+				E452A23D247CE7FA00E2C84A /* BDDynamicTreeNode.m */,
+				E452A23E247CE7FA00E2C84A /* BDDynamicTreeCell.m */,
+				E452A23F247CE7FA00E2C84A /* BDDynamicTreeNode.h */,
+				E452A240247CE7FA00E2C84A /* BDDynamicTree.m */,
+				E452A241247CE7FA00E2C84A /* BDDynamicTreeCell.h */,
+				E452A242247CE7FA00E2C84A /* BDDynamicTreeCell.xib */,
+			);
+			path = BDDynamicTree;
+			sourceTree = "<group>";
+		};
+		E452A243247CE7FA00E2C84A /* MapLoctionSwich */ = {
+			isa = PBXGroup;
+			children = (
+				E452A244247CE7FA00E2C84A /* MapLoctionSwich.m */,
+				E452A245247CE7FA00E2C84A /* MapLoctionSwich.h */,
+			);
+			path = MapLoctionSwich;
+			sourceTree = "<group>";
+		};
+		E452A246247CE7FA00E2C84A /* ExpeirViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E452A247247CE7FA00E2C84A /* ExpeirViewController.m */,
+				E452A248247CE7FA00E2C84A /* ExpeirViewController.xib */,
+				E452A249247CE7FA00E2C84A /* ExpeirViewController.h */,
+			);
+			path = ExpeirViewControllers;
+			sourceTree = "<group>";
+		};
+		E452A24A247CE7FA00E2C84A /* MainMapViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E452A24B247CE7FA00E2C84A /* APMainMapViewController.h */,
+				E452A24C247CE7FA00E2C84A /* APMainMapViewController.xib */,
+				E452A24D247CE7FA00E2C84A /* MainMapViewController.h */,
+				E452A24E247CE7FA00E2C84A /* APMainMapViewController.m */,
+				E452A24F247CE7FA00E2C84A /* MainMapViewController.xib */,
+				E452A250247CE7FA00E2C84A /* MainMapViewController.m */,
+			);
+			path = MainMapViewControllers;
+			sourceTree = "<group>";
+		};
+		E452A251247CE7FA00E2C84A /* TabBarViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E452A252247CE7FA00E2C84A /* TabbarFooterView */,
+				E452A256247CE7FA00E2C84A /* TabBarViewController.h */,
+				E452A258247CE7FA00E2C84A /* TabBarViewController.m */,
+				E452A257247CE7FA00E2C84A /* TabBarViewController.xib */,
+			);
+			path = TabBarViewControllers;
+			sourceTree = "<group>";
+		};
+		E452A252247CE7FA00E2C84A /* TabbarFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				E452A253247CE7FA00E2C84A /* TabBarFooterView.h */,
+				E452A254247CE7FA00E2C84A /* TabBarFooterView.m */,
+				E452A255247CE7FA00E2C84A /* TabBarFooterView.xib */,
+			);
+			path = TabbarFooterView;
+			sourceTree = "<group>";
+		};
+		E452A259247CE7FA00E2C84A /* SettingViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E452A25A247CE7FA00E2C84A /* SettingViewController.h */,
+				E452A25C247CE7FA00E2C84A /* SettingViewController.m */,
+				E452A25B247CE7FA00E2C84A /* SettingViewController.xib */,
+			);
+			path = SettingViewControllers;
+			sourceTree = "<group>";
+		};
+		E452A25D247CE7FA00E2C84A /* WebCMDViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E452A25E247CE7FA00E2C84A /* NSTimer+addition.h */,
+				E452A25F247CE7FA00E2C84A /* UIView+Frame.m */,
+				E452A260247CE7FA00E2C84A /* WebCMDViewController.m */,
+				E452A261247CE7FA00E2C84A /* WYWebProgressLayer.h */,
+				E452A262247CE7FA00E2C84A /* WebCMDViewController.xib */,
+				E452A263247CE7FA00E2C84A /* NSTimer+addition.m */,
+				E452A264247CE7FA00E2C84A /* WebCMDViewController.h */,
+				E452A265247CE7FA00E2C84A /* UIView+Frame.h */,
+				E452A266247CE7FA00E2C84A /* WYWebProgressLayer.m */,
+			);
+			path = WebCMDViewController;
+			sourceTree = "<group>";
+		};
+		E452A267247CE7FA00E2C84A /* DeviceDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E452A268247CE7FA00E2C84A /* DeviceDetailTableViewCell.h */,
+				E452A26B247CE7FA00E2C84A /* DeviceDetailTableViewCell.m */,
+				E452A26F247CE7FA00E2C84A /* DeviceDetailTableViewCell.xib */,
+				E452A269247CE7FA00E2C84A /* DeviceDetailViewController.h */,
+				E452A26E247CE7FA00E2C84A /* DeviceDetailViewController.m */,
+				E452A26D247CE7FA00E2C84A /* DeviceDetailViewController.xib */,
+				E452A270247CE7FA00E2C84A /* UpdateCarNameAndNumberViewController.h */,
+				E452A26A247CE7FA00E2C84A /* UpdateCarNameAndNumberViewController.m */,
+				E452A26C247CE7FA00E2C84A /* UpdateCarNameAndNumberViewController.xib */,
+			);
+			path = DeviceDetailViewController;
+			sourceTree = "<group>";
+		};
+		E452A271247CE7FA00E2C84A /* CarAlarmViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E452A272247CE7FA00E2C84A /* CarAlarmViewController.m */,
+				E452A273247CE7FA00E2C84A /* CarAlarmViewController.xib */,
+				E452A274247CE7FA00E2C84A /* MessageCenterTableViewCell.h */,
+				E452A275247CE7FA00E2C84A /* MessageCenterTableViewCell.xib */,
+				E452A276247CE7FA00E2C84A /* CarAlarmViewController.h */,
+				E452A277247CE7FA00E2C84A /* MessageCenterTableViewCell.m */,
+			);
+			path = CarAlarmViewController;
+			sourceTree = "<group>";
+		};
+		E452A278247CE7FA00E2C84A /* MineViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E452A279247CE7FA00E2C84A /* mineFuctionsTableViewCell.h */,
+				E452A281247CE7FA00E2C84A /* mineFuctionsTableViewCell.m */,
+				E452A280247CE7FA00E2C84A /* mineFuctionsTableViewCell.xib */,
+				E452A27B247CE7FA00E2C84A /* MineViewController.h */,
+				E452A28A247CE7FA00E2C84A /* MineViewController.m */,
+				E452A27A247CE7FA00E2C84A /* MineViewController.xib */,
+				E452A27C247CE7FA00E2C84A /* AppVersionViewController */,
+				E452A282247CE7FA00E2C84A /* ChangePasswordController */,
+				E452A286247CE7FA00E2C84A /* ServerInformationViewController */,
+			);
+			path = MineViewControllers;
+			sourceTree = "<group>";
+		};
+		E452A27C247CE7FA00E2C84A /* AppVersionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E452A27F247CE7FA00E2C84A /* AppVersionViewController.h */,
+				E452A27D247CE7FA00E2C84A /* AppVersionViewController.m */,
+				E452A27E247CE7FA00E2C84A /* AppVersionViewController.xib */,
+			);
+			path = AppVersionViewController;
+			sourceTree = "<group>";
+		};
+		E452A282247CE7FA00E2C84A /* ChangePasswordController */ = {
+			isa = PBXGroup;
+			children = (
+				E452A283247CE7FA00E2C84A /* ChangePasswordViewController.h */,
+				E452A284247CE7FA00E2C84A /* ChangePasswordViewController.m */,
+				E452A285247CE7FA00E2C84A /* ChangePasswordViewController.xib */,
+			);
+			path = ChangePasswordController;
+			sourceTree = "<group>";
+		};
+		E452A286247CE7FA00E2C84A /* ServerInformationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E452A288247CE7FA00E2C84A /* ServerInformationViewController.h */,
+				E452A287247CE7FA00E2C84A /* ServerInformationViewController.m */,
+				E452A289247CE7FA00E2C84A /* ServerInformationViewController.xib */,
+			);
+			path = ServerInformationViewController;
+			sourceTree = "<group>";
+		};
+		E452A28B247CE7FA00E2C84A /* CarListViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E452A291247CE7FA00E2C84A /* CarListViewController.h */,
+				E452A28C247CE7FA00E2C84A /* CarListViewController.m */,
+				E452A292247CE7FA00E2C84A /* CarListViewController.xib */,
+				E452A28D247CE7FA00E2C84A /* CarListTableCell */,
+			);
+			path = CarListViewControllers;
+			sourceTree = "<group>";
+		};
+		E452A28D247CE7FA00E2C84A /* CarListTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				E452A28E247CE7FA00E2C84A /* CarListTableCell.xib */,
+				E452A28F247CE7FA00E2C84A /* CarListTableCell.m */,
+				E452A290247CE7FA00E2C84A /* CarListTableCell.h */,
+			);
+			path = CarListTableCell;
+			sourceTree = "<group>";
+		};
+		E452A293247CE7FA00E2C84A /* LoginViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E452A294247CE7FA00E2C84A /* LoginViewController.m */,
+				E452A295247CE7FA00E2C84A /* LoginViewController.xib */,
+				E452A296247CE7FA00E2C84A /* LoginViewController.h */,
+				E452A297247CE7FA00E2C84A /* LoginViewComboBox */,
+			);
+			path = LoginViewControllers;
+			sourceTree = "<group>";
+		};
+		E452A297247CE7FA00E2C84A /* LoginViewComboBox */ = {
+			isa = PBXGroup;
+			children = (
+				E452A298247CE7FA00E2C84A /* SelectionComboBox.h */,
+				E452A299247CE7FA00E2C84A /* SelectionComboBoxCell.h */,
+				E452A29A247CE7FA00E2C84A /* SelectionComboBox.xib */,
+				E452A29B247CE7FA00E2C84A /* SelectionComboBoxCell.xib */,
+				E452A29C247CE7FA00E2C84A /* SelectionComboBox.m */,
+				E452A29D247CE7FA00E2C84A /* SelectionComboBoxCell.m */,
+			);
+			path = LoginViewComboBox;
+			sourceTree = "<group>";
+		};
+		E452A29E247CE7FA00E2C84A /* HistoryTrackTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E452A29F247CE7FA00E2C84A /* TrackPlayerView */,
+				E452A2A9247CE7FA00E2C84A /* AppleHistoryTrackController.m */,
+				E452A2AA247CE7FA00E2C84A /* BusPointCell.xib */,
+				E452A2AB247CE7FA00E2C84A /* BusPointCell.m */,
+				E452A2AC247CE7FA00E2C84A /* APAnnotation */,
+				E452A2B5247CE7FA00E2C84A /* HistoryCell */,
+				E452A2B9247CE7FA00E2C84A /* HistoryTrackViewController.h */,
+				E452A2BA247CE7FA00E2C84A /* AppleHistoryTrackController.xib */,
+				E452A2BB247CE7FA00E2C84A /* AppleHistoryTrackController.h */,
+				E452A2BC247CE7FA00E2C84A /* HistoryTrackViewController.xib */,
+				E452A2BD247CE7FA00E2C84A /* AlarmTimeView */,
+				E452A2C1247CE7FA00E2C84A /* BusPointCell.h */,
+				E452A2C2247CE7FA00E2C84A /* CustomTimeSelectionView */,
+				E452A2C9247CE7FA00E2C84A /* BDAnnotation */,
+				E452A2D2247CE7FA00E2C84A /* HistoryTrackViewController.m */,
+			);
+			path = HistoryTrackTableViewController;
+			sourceTree = "<group>";
+		};
+		E452A29F247CE7FA00E2C84A /* TrackPlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				E452A2A0247CE7FA00E2C84A /* PickerView.h */,
+				E452A2A1247CE7FA00E2C84A /* TrackPlayerView.h */,
+				E452A2A2247CE7FA00E2C84A /* CustomPickerView.m */,
+				E452A2A3247CE7FA00E2C84A /* TrackPlayerView.m */,
+				E452A2A4247CE7FA00E2C84A /* CustomPickerView.xib */,
+				E452A2A5247CE7FA00E2C84A /* PickerView.m */,
+				E452A2A6247CE7FA00E2C84A /* CustomPickerView.h */,
+				E452A2A7247CE7FA00E2C84A /* TrackPlayerView.xib */,
+				E452A2A8247CE7FA00E2C84A /* PickerView.xib */,
+			);
+			path = TrackPlayerView;
+			sourceTree = "<group>";
+		};
+		E452A2AC247CE7FA00E2C84A /* APAnnotation */ = {
+			isa = PBXGroup;
+			children = (
+				E452A2AD247CE7FA00E2C84A /* APStartAndEndAnNotation.h */,
+				E452A2AE247CE7FA00E2C84A /* APCalloutMapAnnotation.h */,
+				E452A2AF247CE7FA00E2C84A /* APCallOutAnnotationView.h */,
+				E452A2B0247CE7FA00E2C84A /* APCustomPointAnnotation.h */,
+				E452A2B1247CE7FA00E2C84A /* APStartAndEndAnNotation.m */,
+				E452A2B2247CE7FA00E2C84A /* APCustomPointAnnotation.m */,
+				E452A2B3247CE7FA00E2C84A /* APCallOutAnnotationView.m */,
+				E452A2B4247CE7FA00E2C84A /* APCalloutMapAnnotation.m */,
+			);
+			path = APAnnotation;
+			sourceTree = "<group>";
+		};
+		E452A2B5247CE7FA00E2C84A /* HistoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				E452A2B6247CE7FA00E2C84A /* HistoryCell.xib */,
+				E452A2B7247CE7FA00E2C84A /* HistoryCell.m */,
+				E452A2B8247CE7FA00E2C84A /* HistoryCell.h */,
+			);
+			path = HistoryCell;
+			sourceTree = "<group>";
+		};
+		E452A2BD247CE7FA00E2C84A /* AlarmTimeView */ = {
+			isa = PBXGroup;
+			children = (
+				E452A2BE247CE7FA00E2C84A /* AlarmTimeView.xib */,
+				E452A2BF247CE7FA00E2C84A /* AlarmTimeView.h */,
+				E452A2C0247CE7FA00E2C84A /* AlarmTimeView.m */,
+			);
+			path = AlarmTimeView;
+			sourceTree = "<group>";
+		};
+		E452A2C2247CE7FA00E2C84A /* CustomTimeSelectionView */ = {
+			isa = PBXGroup;
+			children = (
+				E452A2C3247CE7FA00E2C84A /* CustomTimeSelectionView.xib */,
+				E452A2C4247CE7FA00E2C84A /* CustomTimeSelectionView.m */,
+				E452A2C5247CE7FA00E2C84A /* SelectableButton.m */,
+				E452A2C6247CE7FA00E2C84A /* SelectableButton.xib */,
+				E452A2C7247CE7FA00E2C84A /* CustomTimeSelectionView.h */,
+				E452A2C8247CE7FA00E2C84A /* SelectableButton.h */,
+			);
+			path = CustomTimeSelectionView;
+			sourceTree = "<group>";
+		};
+		E452A2C9247CE7FA00E2C84A /* BDAnnotation */ = {
+			isa = PBXGroup;
+			children = (
+				E452A2CA247CE7FA00E2C84A /* CustomPointAnnotation.h */,
+				E452A2CB247CE7FA00E2C84A /* CallOutAnnotationView.h */,
+				E452A2CC247CE7FA00E2C84A /* StartAndEndAnNotation.h */,
+				E452A2CD247CE7FA00E2C84A /* CalloutMapAnnotation.h */,
+				E452A2CE247CE7FA00E2C84A /* CallOutAnnotationView.m */,
+				E452A2CF247CE7FA00E2C84A /* CustomPointAnnotation.m */,
+				E452A2D0247CE7FA00E2C84A /* StartAndEndAnNotation.m */,
+				E452A2D1247CE7FA00E2C84A /* CalloutMapAnnotation.m */,
+			);
+			path = BDAnnotation;
+			sourceTree = "<group>";
+		};
 		E45F72D4247BA51F0051A88A /* SwichLanguage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1177,6 +1819,7 @@
 		E489CCE4247766C60025C7A6 /* DM100 */ = {
 			isa = PBXGroup;
 			children = (
+				E452A21E247CE7FA00E2C84A /* ViewControllers */,
 				E452A108247CA80700E2C84A /* DataModel */,
 				E452A0EC247CA7C000E2C84A /* ConStruction */,
 				E48A127E2477B13F001CB7F4 /* ThirdPart */,
@@ -1611,13 +2254,16 @@
 				E48A12422477B027001CB7F4 /* menu_icon_2_pressed.png in Resources */,
 				E48A123B2477B027001CB7F4 /* 绿色-30.png in Resources */,
 				E48A11C42477B027001CB7F4 /* offline_car.png in Resources */,
+				E452A2E0247CE7FB00E2C84A /* SwMapPop.xib in Resources */,
 				E48A11FD2477B027001CB7F4 /* 黄色-240.png in Resources */,
 				E48A12052477B027001CB7F4 /* car_grean2_210.png in Resources */,
 				E48A125C2477B028001CB7F4 /* dy_map_offline.png in Resources */,
 				E48A11C32477B027001CB7F4 /* checkoff.png in Resources */,
 				E48A11FF2477B027001CB7F4 /* 绿色-270.png in Resources */,
+				E452A31B247CE7FB00E2C84A /* PickerView.xib in Resources */,
 				E48A12512477B028001CB7F4 /* page2b3.png in Resources */,
 				E48A12662477B028001CB7F4 /* speed_icon.png in Resources */,
+				E452A2DD247CE7FB00E2C84A /* CarAlarmPaopaoView.xib in Resources */,
 				E48A11DB2477B027001CB7F4 /* predevice.png in Resources */,
 				E48A121E2477B027001CB7F4 /* 绿色-180.png in Resources */,
 				E48A11DC2477B027001CB7F4 /* clock2_.png in Resources */,
@@ -1627,8 +2273,11 @@
 				E48A11E62477B027001CB7F4 /* stop_icon.png in Resources */,
 				E48A12152477B027001CB7F4 /* 绿色-210.png in Resources */,
 				E48A124F2477B028001CB7F4 /* drop.png in Resources */,
+				E452A2E5247CE7FB00E2C84A /* BDDynamicTreeCell.xib in Resources */,
 				E48A12262477B027001CB7F4 /* 绿色-0.png in Resources */,
+				E452A325247CE7FB00E2C84A /* AppleHistoryTrackController.xib in Resources */,
 				E48A126D2477B028001CB7F4 /* group_down.PNG in Resources */,
+				E452A323247CE7FB00E2C84A /* HistoryCell.xib in Resources */,
 				E48A12022477B027001CB7F4 /* 灰色-210.png in Resources */,
 				E48A121F2477B027001CB7F4 /* 灰色-120.png in Resources */,
 				E48A11B82477B027001CB7F4 /* add.png in Resources */,
@@ -1637,16 +2286,19 @@
 				E48A121A2477B027001CB7F4 /* car_grean2_120.png in Resources */,
 				E48A11B72477B027001CB7F4 /* pg3bt3.png in Resources */,
 				E48A11C52477B027001CB7F4 /* login_customer_close.PNG in Resources */,
+				E452A31D247CE7FB00E2C84A /* BusPointCell.xib in Resources */,
 				E48A127C2477B028001CB7F4 /* bg.JPG in Resources */,
 				E48A124D2477B028001CB7F4 /* minus.png in Resources */,
 				E48A11E32477B027001CB7F4 /* power.png in Resources */,
 				E48A11B92477B027001CB7F4 /* menu_icon_1_pressed.png in Resources */,
+				E452A305247CE7FB00E2C84A /* mineFuctionsTableViewCell.xib in Resources */,
 				E48A11C82477B027001CB7F4 /* pg3bt1.png in Resources */,
 				E48A11CA2477B027001CB7F4 /* logodomilink.png in Resources */,
 				E48A12712477B028001CB7F4 /* alert_icon.png in Resources */,
 				E48A12762477B028001CB7F4 /* pg3unlock.png in Resources */,
 				E48A12462477B028001CB7F4 /* car_offline.png in Resources */,
 				E48A125F2477B028001CB7F4 /* dy_list_move.png in Resources */,
+				E452A2FB247CE7FB00E2C84A /* DeviceDetailViewController.xib in Resources */,
 				E48A12562477B028001CB7F4 /* list_divider_line.PNG in Resources */,
 				E48A11E72477B027001CB7F4 /* login_customer.PNG in Resources */,
 				E48A11C92477B027001CB7F4 /* shebei.PNG in Resources */,
@@ -1659,7 +2311,9 @@
 				E48A12482477B028001CB7F4 /* search.png in Resources */,
 				E48A11FE2477B027001CB7F4 /* 蓝色-330.png in Resources */,
 				E48A12082477B027001CB7F4 /* 灰色-300.png in Resources */,
+				E452A2FA247CE7FB00E2C84A /* UpdateCarNameAndNumberViewController.xib in Resources */,
 				E48A126A2477B028001CB7F4 /* detail.png in Resources */,
+				E452A2F1247CE7FB00E2C84A /* SettingViewController.xib in Resources */,
 				E48A12632477B028001CB7F4 /* clock1_.png in Resources */,
 				E48A11D02477B027001CB7F4 /* square-off.png in Resources */,
 				E48A12702477B028001CB7F4 /* start_icon.png in Resources */,
@@ -1671,13 +2325,16 @@
 				E48A121B2477B027001CB7F4 /* 黄色-60.png in Resources */,
 				E48A11D72477B027001CB7F4 /* car_static.png in Resources */,
 				E48A12192477B027001CB7F4 /* 黄色-210.png in Resources */,
+				E452A326247CE7FB00E2C84A /* HistoryTrackViewController.xib in Resources */,
 				E48A11DE2477B027001CB7F4 /* acc.png in Resources */,
 				E48A11FB2477B027001CB7F4 /* 绿色-300.png in Resources */,
+				E452A308247CE7FB00E2C84A /* ChangePasswordViewController.xib in Resources */,
 				E48A11F62477B027001CB7F4 /* 蓝色-120.png in Resources */,
 				E48A11C22477B027001CB7F4 /* online_car.png in Resources */,
 				E48A12522477B028001CB7F4 /* page2b2.png in Resources */,
 				E48A12752477B028001CB7F4 /* square-on.png in Resources */,
 				E48A123D2477B027001CB7F4 /* car_gray2_0.png in Resources */,
+				E452A2FF247CE7FB00E2C84A /* CarAlarmViewController.xib in Resources */,
 				E48A12222477B027001CB7F4 /* car_grean2_30.png in Resources */,
 				E48A11F22477B027001CB7F4 /* page2a2.png in Resources */,
 				E48A12002477B027001CB7F4 /* 黄色-30.png in Resources */,
@@ -1690,6 +2347,7 @@
 				E48A123A2477B027001CB7F4 /* car_gray2_240.png in Resources */,
 				E48A120A2477B027001CB7F4 /* car_grean2_300.png in Resources */,
 				E48A12272477B027001CB7F4 /* 绿色-90.png in Resources */,
+				E452A2EE247CE7FB00E2C84A /* TabBarFooterView.xib in Resources */,
 				E48A12342477B027001CB7F4 /* 黄色-300.png in Resources */,
 				E489CCF2247766D00025C7A6 /* Assets.xcassets in Resources */,
 				E48A125E2477B028001CB7F4 /* dy_map_offline1.png in Resources */,
@@ -1718,14 +2376,19 @@
 				E48A125D2477B028001CB7F4 /* dy_list_static.png in Resources */,
 				E48A12412477B027001CB7F4 /* menu_icon_0_normal.png in Resources */,
 				E48A11F82477B027001CB7F4 /* car_gray2_270.png in Resources */,
+				E452A318247CE7FB00E2C84A /* CustomPickerView.xib in Resources */,
+				E452A2E9247CE7FB00E2C84A /* APMainMapViewController.xib in Resources */,
 				E48A12552477B028001CB7F4 /* map-bg.png in Resources */,
 				E48A11D82477B027001CB7F4 /* thumb_bar.png in Resources */,
 				E48A11F92477B027001CB7F4 /* 蓝色-240.png in Resources */,
 				E48A12132477B027001CB7F4 /* 蓝色-150.png in Resources */,
+				E452A2D4247CE7FB00E2C84A /* CheckCMDTableViewCell.xib in Resources */,
 				E48A11BE2477B027001CB7F4 /* signal0.png in Resources */,
 				E48A11CF2477B027001CB7F4 /* pg3mid1.png in Resources */,
+				E452A312247CE7FB00E2C84A /* SelectionComboBox.xib in Resources */,
 				E48A12492477B028001CB7F4 /* login_customer_arrow.PNG in Resources */,
 				E48A12782477B028001CB7F4 /* car_locate.png in Resources */,
+				E452A311247CE7FB00E2C84A /* LoginViewController.xib in Resources */,
 				E48A12612477B028001CB7F4 /* dy_map_static.png in Resources */,
 				E48A122D2477B027001CB7F4 /* car_gray2_60.png in Resources */,
 				E48A12432477B028001CB7F4 /* page4item1.png in Resources */,
@@ -1736,11 +2399,14 @@
 				E48A11BA2477B027001CB7F4 /* plus.png in Resources */,
 				E48A12442477B028001CB7F4 /* pg2ig7.png in Resources */,
 				E48A12122477B027001CB7F4 /* car_gray2_360.png in Resources */,
+				E452A2E8247CE7FB00E2C84A /* ExpeirViewController.xib in Resources */,
 				E48A11BB2477B027001CB7F4 /* pg3lock.png in Resources */,
 				E48A12202477B027001CB7F4 /* car_grean2_240.png in Resources */,
 				E48A11B42477B027001CB7F4 /* signal1.png in Resources */,
+				E452A30D247CE7FB00E2C84A /* CarListTableCell.xib in Resources */,
 				E48A12072477B027001CB7F4 /* 蓝色-180.png in Resources */,
 				E48A121D2477B027001CB7F4 /* 灰色-240.png in Resources */,
+				E452A2DC247CE7FB00E2C84A /* CarAlarmMapViewController.xib in Resources */,
 				E48A11CC2477B027001CB7F4 /* loginoff.PNG in Resources */,
 				E489CCF0247766C60025C7A6 /* Main.storyboard in Resources */,
 				E48A11D92477B027001CB7F4 /* pg3mid2.png in Resources */,
@@ -1751,7 +2417,11 @@
 				E48A12062477B027001CB7F4 /* car_gray2_300.png in Resources */,
 				E48A11F02477B027001CB7F4 /* page2a3.png in Resources */,
 				E48A12682477B028001CB7F4 /* pw_domi.png in Resources */,
+				E452A300247CE7FB00E2C84A /* MessageCenterTableViewCell.xib in Resources */,
 				E48A120B2477B027001CB7F4 /* car_gray2_210.png in Resources */,
+				E452A30A247CE7FB00E2C84A /* ServerInformationViewController.xib in Resources */,
+				E452A2F5247CE7FB00E2C84A /* WebCMDViewController.xib in Resources */,
+				E452A31A247CE7FB00E2C84A /* TrackPlayerView.xib in Resources */,
 				E48A124B2477B028001CB7F4 /* bottom1.png in Resources */,
 				E48A12622477B028001CB7F4 /* dy_panel_online.png in Resources */,
 				E48A12042477B027001CB7F4 /* 黄色-120.png in Resources */,
@@ -1760,6 +2430,7 @@
 				E48A126B2477B028001CB7F4 /* menu_icon_3_pressed.png in Resources */,
 				E48A12282477B027001CB7F4 /* 黄色-0.png in Resources */,
 				E48A11C62477B027001CB7F4 /* map_bg.PNG in Resources */,
+				E452A2FD247CE7FB00E2C84A /* DeviceDetailTableViewCell.xib in Resources */,
 				E48A120F2477B027001CB7F4 /* 黄色-90.png in Resources */,
 				E48A11CE2477B027001CB7F4 /* tree_ex.png in Resources */,
 				E48A12672477B028001CB7F4 /* page2b4.png in Resources */,
@@ -1769,27 +2440,35 @@
 				E48A12252477B027001CB7F4 /* 灰色-330.png in Resources */,
 				E48A125A2477B028001CB7F4 /* dy_map_move.png in Resources */,
 				E48A12362477B027001CB7F4 /* 绿色-330.png in Resources */,
+				E452A304247CE7FB00E2C84A /* AppVersionViewController.xib in Resources */,
+				E452A329247CE7FB00E2C84A /* CustomTimeSelectionView.xib in Resources */,
 				E48A12592477B028001CB7F4 /* dy_panel_offline.png in Resources */,
 				E48A122B2477B027001CB7F4 /* car_gray2_330.png in Resources */,
 				E48A125B2477B028001CB7F4 /* dy_list_offline.png in Resources */,
 				E48A12092477B027001CB7F4 /* 灰色-0.png in Resources */,
+				E452A2DE247CE7FB00E2C84A /* SwLanguagePop.xib in Resources */,
 				E48A12352477B027001CB7F4 /* 蓝色-270.png in Resources */,
 				E48A124E2477B028001CB7F4 /* popup.png in Resources */,
+				E452A2D3247CE7FB00E2C84A /* CheckCMDViewController.xib in Resources */,
 				E48A12772477B028001CB7F4 /* car_online.PNG in Resources */,
 				E48A122A2477B027001CB7F4 /* car_grean2_180.png in Resources */,
+				E452A2DA247CE7FB00E2C84A /* AppleAlarmMapViewController.xib in Resources */,
 				E48A11E12477B027001CB7F4 /* page4item5.png in Resources */,
 				E48A12012477B027001CB7F4 /* 灰色-30.png in Resources */,
 				E48A11EE2477B027001CB7F4 /* choose2.png in Resources */,
 				E48A11CD2477B027001CB7F4 /* ball.png in Resources */,
 				E48A127B2477B028001CB7F4 /* login_button.PNG in Resources */,
+				E452A327247CE7FB00E2C84A /* AlarmTimeView.xib in Resources */,
 				E48A11D22477B027001CB7F4 /* user_domi.png in Resources */,
 				E48A12332477B027001CB7F4 /* 蓝色-0.png in Resources */,
 				E48A123E2477B027001CB7F4 /* 蓝色-60.png in Resources */,
+				E452A2EB247CE7FB00E2C84A /* MainMapViewController.xib in Resources */,
 				E48A12572477B028001CB7F4 /* voltage.png in Resources */,
 				E48A11E52477B027001CB7F4 /* car_moving.png in Resources */,
 				E48A120C2477B027001CB7F4 /* 绿色-60.png in Resources */,
 				E48A11D52477B027001CB7F4 /* beijing.png in Resources */,
 				E48A121C2477B027001CB7F4 /* 灰色-60.png in Resources */,
+				E452A30F247CE7FB00E2C84A /* CarListViewController.xib in Resources */,
 				E48A11F52477B027001CB7F4 /* arrow1.PNG in Resources */,
 				E48A11F32477B027001CB7F4 /* page4item3.png in Resources */,
 				E48A11C12477B027001CB7F4 /* on.PNG in Resources */,
@@ -1803,9 +2482,13 @@
 				E45F72D0247BA48A0051A88A /* appString.strings in Resources */,
 				E452A21B247CA98C00E2C84A /* MJRefresh.bundle in Resources */,
 				E48A126F2477B028001CB7F4 /* tree_ec.PNG in Resources */,
+				E452A302247CE7FB00E2C84A /* MineViewController.xib in Resources */,
+				E452A2EF247CE7FB00E2C84A /* TabBarViewController.xib in Resources */,
 				E48A12742477B028001CB7F4 /* back.PNG in Resources */,
+				E452A32C247CE7FB00E2C84A /* SelectableButton.xib in Resources */,
 				E48A126C2477B028001CB7F4 /* fyellow.png in Resources */,
 				E48A12212477B027001CB7F4 /* car_grean2_330.png in Resources */,
+				E452A313247CE7FB00E2C84A /* SelectionComboBoxCell.xib in Resources */,
 				E48A12382477B027001CB7F4 /* car_gray2_120.png in Resources */,
 				E48A11DA2477B027001CB7F4 /* menu_icon_2_normal.png in Resources */,
 				E48A12792477B028001CB7F4 /* nextdevice.png in Resources */,
@@ -1841,34 +2524,51 @@
 			buildActionMask = 2147483647;
 			files = (
 				E452A1B3247CA8E800E2C84A /* NSData+CommonCrypto.m in Sources */,
+				E452A316247CE7FB00E2C84A /* CustomPickerView.m in Sources */,
+				E452A30C247CE7FB00E2C84A /* CarListViewController.m in Sources */,
 				E452A1E0247CA92700E2C84A /* SDWebImageManager.m in Sources */,
 				E452A101247CA7C000E2C84A /* UIViewController+Autorotate.m in Sources */,
 				E452A16D247CA80700E2C84A /* HistoryLocationObject.m in Sources */,
+				E452A30E247CE7FB00E2C84A /* CarListTableCell.m in Sources */,
 				E452A212247CA98C00E2C84A /* UIProgressView+AFNetworking.m in Sources */,
 				E452A100247CA7C000E2C84A /* UIViewController+AddTitle.m in Sources */,
 				E452A21C247CA98C00E2C84A /* MJRefreshBaseView.m in Sources */,
 				E452A167247CA80700E2C84A /* AlarmMessageSettingobject.m in Sources */,
+				E452A315247CE7FB00E2C84A /* SelectionComboBoxCell.m in Sources */,
 				E452A180247CA80700E2C84A /* ProviderMessageService.m in Sources */,
 				E452A186247CA80700E2C84A /* StsShowMedel.m in Sources */,
 				E45F72D7247BA51F0051A88A /* SwichLanguage.m in Sources */,
+				E452A306247CE7FB00E2C84A /* mineFuctionsTableViewCell.m in Sources */,
 				E452A17D247CA80700E2C84A /* Node.m in Sources */,
 				E452A1DB247CA92700E2C84A /* SDWebImagePrefetcher.m in Sources */,
 				E452A214247CA98C00E2C84A /* AFNetworkActivityIndicatorManager.m in Sources */,
 				E452A1B5247CA8E800E2C84A /* NSString+Base64.m in Sources */,
 				E452A181247CA80700E2C84A /* GetDeviceDetailService.m in Sources */,
+				E452A32B247CE7FB00E2C84A /* SelectableButton.m in Sources */,
+				E452A2E4247CE7FB00E2C84A /* BDDynamicTree.m in Sources */,
 				E452A1DF247CA92700E2C84A /* SDWebImageDecoder.m in Sources */,
+				E452A314247CE7FB00E2C84A /* SelectionComboBox.m in Sources */,
 				E452A21A247CA98C00E2C84A /* MJRefreshHeaderView.m in Sources */,
 				E452A17F247CA80700E2C84A /* DefenseService.m in Sources */,
 				E452A1E4247CA92700E2C84A /* SDWebImageDownloaderOperation.m in Sources */,
+				E452A31E247CE7FB00E2C84A /* BusPointCell.m in Sources */,
 				E489CCED247766C60025C7A6 /* ViewController.m in Sources */,
+				E452A32D247CE7FB00E2C84A /* CallOutAnnotationView.m in Sources */,
 				E452A182247CA80700E2C84A /* HistoryTrackService.m in Sources */,
 				E452A1A0247CA8B700E2C84A /* AFURLRequestSerialization.m in Sources */,
 				E452A164247CA80700E2C84A /* StateOfCarObject.m in Sources */,
 				E452A1E6247CA92700E2C84A /* NSData+ImageContentType.m in Sources */,
+				E452A328247CE7FB00E2C84A /* AlarmTimeView.m in Sources */,
+				E452A30B247CE7FB00E2C84A /* MineViewController.m in Sources */,
 				E452A185247CA80700E2C84A /* CarAlarmService.m in Sources */,
 				E452A216247CA98C00E2C84A /* UIButton+AFNetworking.m in Sources */,
 				E452A0FF247CA7C000E2C84A /* NSTimer+Controller.m in Sources */,
+				E452A2F7247CE7FB00E2C84A /* WYWebProgressLayer.m in Sources */,
+				E452A2E1247CE7FB00E2C84A /* SwMapPop.m in Sources */,
 				E452A1A3247CA8B700E2C84A /* AFSecurityPolicy.m in Sources */,
+				E452A2FC247CE7FB00E2C84A /* DeviceDetailViewController.m in Sources */,
+				E452A2F9247CE7FB00E2C84A /* DeviceDetailTableViewCell.m in Sources */,
+				E452A2F3247CE7FB00E2C84A /* UIView+Frame.m in Sources */,
 				E489CCE7247766C60025C7A6 /* AppDelegate.mm in Sources */,
 				E452A16B247CA80700E2C84A /* ReportFormObject.m in Sources */,
 				E452A102247CA7C000E2C84A /* RefreshableTableView.m in Sources */,
@@ -1879,14 +2579,21 @@
 				E452A16E247CA80700E2C84A /* ProviderMessageObject.m in Sources */,
 				E452A17A247CA80700E2C84A /* CarAlarmObject.m in Sources */,
 				E452A1DD247CA92700E2C84A /* UIImage+GIF.m in Sources */,
+				E452A2D5247CE7FB00E2C84A /* CheckCMDTableViewCell.m in Sources */,
 				E452A17C247CA80700E2C84A /* DefaultSettingOfDeviceObject.m in Sources */,
+				E452A31C247CE7FB00E2C84A /* AppleHistoryTrackController.m in Sources */,
+				E452A32A247CE7FB00E2C84A /* CustomTimeSelectionView.m in Sources */,
 				E452A171247CA80700E2C84A /* ElectronicFenceObject.m in Sources */,
 				E452A219247CA98C00E2C84A /* MJRefreshConst.m in Sources */,
 				E452A1B9247CA91200E2C84A /* AvatarView.m in Sources */,
+				E452A31F247CE7FB00E2C84A /* APStartAndEndAnNotation.m in Sources */,
 				E452A1A6247CA8B700E2C84A /* AFHTTPRequestOperation.m in Sources */,
+				E452A2E7247CE7FB00E2C84A /* ExpeirViewController.m in Sources */,
 				E452A169247CA80700E2C84A /* DeviceDetailObject.m in Sources */,
 				E452A211247CA98C00E2C84A /* UIAlertView+AFNetworking.m in Sources */,
 				E452A210247CA98C00E2C84A /* NSObject+MUJSONMapping.m in Sources */,
+				E452A32F247CE7FB00E2C84A /* StartAndEndAnNotation.m in Sources */,
+				E452A310247CE7FB00E2C84A /* LoginViewController.m in Sources */,
 				E452A17B247CA80700E2C84A /* ResponseObject.m in Sources */,
 				E452A162247CA80700E2C84A /* NSObject+InAppSetting.m in Sources */,
 				E452A217247CA98C00E2C84A /* UIActivityIndicatorView+AFNetworking.m in Sources */,
@@ -1894,13 +2601,24 @@
 				E452A18C247CA89700E2C84A /* MUResponseSerializer.m in Sources */,
 				E452A1E8247CA92700E2C84A /* UIImage+MultiFormat.m in Sources */,
 				E452A183247CA80700E2C84A /* UserLoginService.m in Sources */,
+				E452A307247CE7FB00E2C84A /* ChangePasswordViewController.m in Sources */,
+				E452A317247CE7FB00E2C84A /* TrackPlayerView.m in Sources */,
 				E452A1A5247CA8B700E2C84A /* AFNetworkReachabilityManager.m in Sources */,
+				E452A2EA247CE7FB00E2C84A /* APMainMapViewController.m in Sources */,
+				E452A2E3247CE7FB00E2C84A /* BDDynamicTreeCell.m in Sources */,
+				E452A324247CE7FB00E2C84A /* HistoryCell.m in Sources */,
+				E452A2F8247CE7FB00E2C84A /* UpdateCarNameAndNumberViewController.m in Sources */,
 				E452A174247CA80700E2C84A /* ShutDownResourceObject.m in Sources */,
 				E452A172247CA80700E2C84A /* GetAlarmSettingStateObject.m in Sources */,
+				E452A2D8247CE7FB00E2C84A /* AppleAlarmAnnotationView.m in Sources */,
 				E452A179247CA80700E2C84A /* StateOfDeviceObject.m in Sources */,
+				E452A309247CE7FB00E2C84A /* ServerInformationViewController.m in Sources */,
 				E452A17E247CA80700E2C84A /* GetAlarmTimeSettingObject.m in Sources */,
+				E452A320247CE7FB00E2C84A /* APCustomPointAnnotation.m in Sources */,
 				E452A165247CA80700E2C84A /* OnlineCMDObject.m in Sources */,
+				E452A301247CE7FB00E2C84A /* MessageCenterTableViewCell.m in Sources */,
 				E452A1E7247CA92700E2C84A /* UIButton+WebCache.m in Sources */,
+				E452A2EC247CE7FB00E2C84A /* MainMapViewController.m in Sources */,
 				E452A1E1247CA92700E2C84A /* SDWebImageDownloader.m in Sources */,
 				E452A173247CA80700E2C84A /* FeedBackSuggestionObject.m in Sources */,
 				E452A1DC247CA92700E2C84A /* UIImageView+WebCache.m in Sources */,
@@ -1910,12 +2628,19 @@
 				E452A1A2247CA8B700E2C84A /* AFHTTPSessionManager.m in Sources */,
 				E452A1DE247CA92700E2C84A /* SDImageCache.m in Sources */,
 				E452A1EF247CA96D00E2C84A /* MSUtil.m in Sources */,
+				E452A2E2247CE7FB00E2C84A /* BDDynamicTreeNode.m in Sources */,
+				E452A2DF247CE7FB00E2C84A /* SwLanguagePop.m in Sources */,
+				E452A2F6247CE7FB00E2C84A /* NSTimer+addition.m in Sources */,
 				E452A187247CA80700E2C84A /* UnitModel.m in Sources */,
 				E452A218247CA98C00E2C84A /* UIWebView+AFNetworking.m in Sources */,
 				E452A21D247CA98C00E2C84A /* MJRefreshFooterView.m in Sources */,
+				E452A2D6247CE7FB00E2C84A /* CheckCMDViewController.m in Sources */,
+				E452A2D9247CE7FB00E2C84A /* CarAlarmPaopaoView.m in Sources */,
 				E452A1A8247CA8B700E2C84A /* AFURLResponseSerialization.m in Sources */,
+				E452A319247CE7FB00E2C84A /* PickerView.m in Sources */,
 				E452A177247CA80700E2C84A /* AlarmTimeSettingObject.m in Sources */,
 				E452A106247CA7C000E2C84A /* UIColor+Hexstring.m in Sources */,
+				E452A331247CE7FB00E2C84A /* HistoryTrackViewController.m in Sources */,
 				E452A1B2247CA8E800E2C84A /* NSData+Base64.m in Sources */,
 				E452A176247CA80700E2C84A /* UserLoginObject.m in Sources */,
 				E452A16A247CA80700E2C84A /* GetDeviceDetailObject.m in Sources */,
@@ -1927,17 +2652,30 @@
 				E452A15F247CA80700E2C84A /* InAppSetting.m in Sources */,
 				E452A1E3247CA92700E2C84A /* UIImage+WebP.m in Sources */,
 				E452A1EE247CA96D00E2C84A /* MBProgressHUD.m in Sources */,
+				E452A321247CE7FB00E2C84A /* APCallOutAnnotationView.m in Sources */,
+				E452A2E6247CE7FB00E2C84A /* MapLoctionSwich.m in Sources */,
+				E452A2D7247CE7FB00E2C84A /* AppleAlarmMapViewController.m in Sources */,
+				E452A32E247CE7FB00E2C84A /* CustomPointAnnotation.m in Sources */,
 				E452A107247CA7C000E2C84A /* MBProgressHUD+showQuickTip.m in Sources */,
 				E452A1A1247CA8B700E2C84A /* AFHTTPRequestOperationManager.m in Sources */,
+				E452A330247CE7FB00E2C84A /* CalloutMapAnnotation.m in Sources */,
 				E452A104247CA7C000E2C84A /* NSDictionary+JsonString.m in Sources */,
 				E452A1DA247CA92700E2C84A /* UIButton+FromURL.m in Sources */,
 				E452A1B4247CA8E800E2C84A /* AESCrypt.m in Sources */,
+				E452A2F0247CE7FB00E2C84A /* TabBarViewController.m in Sources */,
+				E452A322247CE7FB00E2C84A /* APCalloutMapAnnotation.m in Sources */,
 				E452A1A4247CA8B700E2C84A /* AFURLSessionManager.m in Sources */,
 				E452A175247CA80700E2C84A /* DeviceLocationObject.m in Sources */,
 				E452A213247CA98C00E2C84A /* UIRefreshControl+AFNetworking.m in Sources */,
 				E452A170247CA80700E2C84A /* ReportFormObject.xcdatamodeld in Sources */,
 				E452A161247CA80700E2C84A /* NetWorkModel.m in Sources */,
+				E452A2ED247CE7FB00E2C84A /* TabBarFooterView.m in Sources */,
+				E452A2FE247CE7FB00E2C84A /* CarAlarmViewController.m in Sources */,
+				E452A2F4247CE7FB00E2C84A /* WebCMDViewController.m in Sources */,
+				E452A2DB247CE7FB00E2C84A /* CarAlarmMapViewController.m in Sources */,
+				E452A303247CE7FB00E2C84A /* AppVersionViewController.m in Sources */,
 				E452A103247CA7C000E2C84A /* UIImage+Rotate.m in Sources */,
+				E452A2F2247CE7FB00E2C84A /* SettingViewController.m in Sources */,
 				E452A184247CA80700E2C84A /* PostXMLDataCreater.m in Sources */,
 				E489CCF8247766D00025C7A6 /* main.m in Sources */,
 			);
