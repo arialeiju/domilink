@@ -31,7 +31,6 @@
 }
 
 - (IBAction)clickmapbutton:(id)sender {
-    NSLog(@"click");
      [SwichLanguage setUserlanguage:@"en"];
     NSString* mt=[SwichLanguage getString:@"online"];
     NSLog(@"A1=%@",mt);

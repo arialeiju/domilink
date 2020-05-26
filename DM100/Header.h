@@ -8,17 +8,7 @@
 
 #ifndef Domilink_h
 #define Domilink_h
-#import "MBProgressHUD+showQuickTip.h"
-#import "NSDictionary+ContainsKey.h"
-#import "NSObject+InAppSetting.h"
-#import "UIViewController+AddTitle.h"
-#import "UIViewController+Autorotate.h"
-#import "UIColor+Hexstring.h"
-#import "NSTimer+Controller.h"
 #import "SwichLanguage.h"
-#import "PostXMLDataCreater.h"
-#import "NetWorkModel.h"
-#import "MBProgressHUD.h"
 //#define ServerURL       @"http://plat.basegps.com:8088/AppServer/server.do"
 #define ServerURL       @"http://test.basegps.com:80/AppServer/server.do"
 //#define ServerURL       @"http://www.yidiyitian.cn:8080/AppServer/server.do"
