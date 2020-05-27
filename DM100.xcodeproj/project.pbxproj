@@ -1044,6 +1044,7 @@
 		E48A12A52477B546001CB7F4 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = mapapi.bundle; sourceTree = "<group>"; };
 		E48A12A72477B9DE001CB7F4 /* BMKLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BMKLocationKit.framework; sourceTree = "<group>"; };
 		E48A12A92477BA75001CB7F4 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		E4B9F9EF247E017900CCF85C /* Domilink.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Domilink.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1509,11 +1510,11 @@
 			isa = PBXGroup;
 			children = (
 				E452A24B247CE7FA00E2C84A /* APMainMapViewController.h */,
+				E452A24E247CE7FA00E2C84A /* APMainMapViewController.m */,
 				E452A24C247CE7FA00E2C84A /* APMainMapViewController.xib */,
 				E452A24D247CE7FA00E2C84A /* MainMapViewController.h */,
-				E452A24E247CE7FA00E2C84A /* APMainMapViewController.m */,
-				E452A24F247CE7FA00E2C84A /* MainMapViewController.xib */,
 				E452A250247CE7FA00E2C84A /* MainMapViewController.m */,
+				E452A24F247CE7FA00E2C84A /* MainMapViewController.xib */,
 			);
 			path = MainMapViewControllers;
 			sourceTree = "<group>";
@@ -1819,6 +1820,7 @@
 		E489CCE4247766C60025C7A6 /* DM100 */ = {
 			isa = PBXGroup;
 			children = (
+				E4B9F9EF247E017900CCF85C /* Domilink.entitlements */,
 				E452A21E247CE7FA00E2C84A /* ViewControllers */,
 				E452A108247CA80700E2C84A /* DataModel */,
 				E452A0EC247CA7C000E2C84A /* ConStruction */,
@@ -2860,7 +2862,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				ASSET_PACK_MANIFEST_URL_PREFIX = "";
+				CODE_SIGN_ENTITLEMENTS = DM100/Domilink.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = S3EC4C6BR7;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2892,7 +2896,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				ASSET_PACK_MANIFEST_URL_PREFIX = "";
+				CODE_SIGN_ENTITLEMENTS = DM100/Domilink.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = S3EC4C6BR7;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

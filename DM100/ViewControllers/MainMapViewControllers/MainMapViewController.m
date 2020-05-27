@@ -95,6 +95,45 @@
         [_btlabel4 setFrame:mlabel];
         //CGRect mimg=CGRectMake(<#CGFloat x#>, <#CGFloat y#>, 16, 16)
     }
+    
+    //左右栏控件适配
+    CGRect mframe2=_controlview2.frame;
+    
+    float mmY=_mapView.frame.size.height/2-mframe2.size.height;//左中 右中 起点
+    mframe2.origin.y=mmY;
+    [_controlview2 setFrame:mframe2];
+    
+    CGRect mframe1=_controlview1.frame;
+    mframe1.origin.y=mmY;
+    [_controlview1 setFrame:mframe1];
+    
+    CGRect mframe3=_controlview3.frame;
+    mframe3.origin.y=mmY-mframe3.size.height-_mapView.frame.size.height/15;
+    [_controlview3 setFrame:mframe3];
+    
+    CGRect mframe4=_controlview4.frame;
+    mframe4.origin.y=mmY-mframe4.size.height-_mapView.frame.size.height/15;
+    [_controlview4 setFrame:mframe4];
+    
+    //设置分割线
+    UIView* mline1=[[UIView alloc]initWithFrame:CGRectMake(3, 40, 24, 1)];
+    mline1.backgroundColor=[UIColor lightGrayColor];
+    [_controlview1 addSubview:mline1];
+    
+    UIView* mline2=[[UIView alloc]initWithFrame:CGRectMake(3, 40, 24, 1)];
+    mline2.backgroundColor=[UIColor lightGrayColor];
+    [_controlview2 addSubview:mline2];
+    
+    UIView* mline3=[[UIView alloc]initWithFrame:CGRectMake(3, 40, 24, 1)];
+    mline3.backgroundColor=[UIColor lightGrayColor];
+    [_controlview3 addSubview:mline3];
+    
+    UIView* mline41=[[UIView alloc]initWithFrame:CGRectMake(3, 40, 24, 1)];
+    mline41.backgroundColor=[UIColor lightGrayColor];
+    [_controlview4 addSubview:mline41];
+    UIView* mline42=[[UIView alloc]initWithFrame:CGRectMake(3, 80, 24, 1)];
+    mline42.backgroundColor=[UIColor lightGrayColor];
+    [_controlview4 addSubview:mline42];
 }
 
 // 视图被销毁

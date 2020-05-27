@@ -92,6 +92,44 @@
         [_btlabel4 setFrame:mlabel];
         //CGRect mimg=CGRectMake(<#CGFloat x#>, <#CGFloat y#>, 16, 16)
     }
+    //左右栏控件适配
+    CGRect mframe2=_controlview2.frame;
+    
+    float mmY=_mapView.frame.size.height/2-mframe2.size.height;//左中 右中 起点
+    mframe2.origin.y=mmY;
+    [_controlview2 setFrame:mframe2];
+    
+    CGRect mframe1=_controlview1.frame;
+    mframe1.origin.y=mmY;
+    [_controlview1 setFrame:mframe1];
+    
+    CGRect mframe3=_controlview3.frame;
+    mframe3.origin.y=mmY-mframe3.size.height-_mapView.frame.size.height/15;
+    [_controlview3 setFrame:mframe3];
+    
+    CGRect mframe4=_controlview4.frame;
+    mframe4.origin.y=mmY-mframe4.size.height-_mapView.frame.size.height/15;
+    [_controlview4 setFrame:mframe4];
+    
+    //设置分割线
+    UIView* mline1=[[UIView alloc]initWithFrame:CGRectMake(3, 40, 24, 1)];
+    mline1.backgroundColor=[UIColor lightGrayColor];
+    [_controlview1 addSubview:mline1];
+    
+    UIView* mline2=[[UIView alloc]initWithFrame:CGRectMake(3, 40, 24, 1)];
+    mline2.backgroundColor=[UIColor lightGrayColor];
+    [_controlview2 addSubview:mline2];
+    
+    UIView* mline3=[[UIView alloc]initWithFrame:CGRectMake(3, 40, 24, 1)];
+    mline3.backgroundColor=[UIColor lightGrayColor];
+    [_controlview3 addSubview:mline3];
+    
+    UIView* mline41=[[UIView alloc]initWithFrame:CGRectMake(3, 40, 24, 1)];
+    mline41.backgroundColor=[UIColor lightGrayColor];
+    [_controlview4 addSubview:mline41];
+    UIView* mline42=[[UIView alloc]initWithFrame:CGRectMake(3, 80, 24, 1)];
+    mline42.backgroundColor=[UIColor lightGrayColor];
+    [_controlview4 addSubview:mline42];
 }
 
 // 视图被销毁
@@ -366,6 +404,11 @@
         isSatSelect=true;
         [_TopLView1 setBackgroundColor:[UIColor grayColor]];
         [_mapView setMapType:MKMapTypeSatellite];
+    }
+    
+    if (_carAnnotationView!=nil) {
+        _carAnnotationView.image =[self getShowImage:mdevstatus AndCouse:mcouse AndLogoType:mlogoType];
+        //NSLog(@"ClickTopLButton1 IN!");
     }
 }
 -(void)ClickTopLButton2
@@ -648,6 +691,7 @@
         if (_deviceAnnotation == nil)
         {
             _deviceAnnotation = [[MKPointAnnotation alloc] init];
+            [_mapView addAnnotation:_deviceAnnotation];
         }
          if (self->_deviceAnnotation!=nil) {
              self->_deviceAnnotation.title=pinstr;
@@ -669,6 +713,9 @@
                  [_mapView addOverlay:_circle];
              }
          }
+        if (self->_carAnnotationView!=nil) {
+            self->_carAnnotationView.image =[self getShowImage:self->mdevstatus AndCouse:self->mcouse AndLogoType:self->mlogoType];
+        }
          //地图操作相关
          CLLocationCoordinate2D latestDeviceCoor = CLLocationCoordinate2DMake(ila,ilo);
          
@@ -684,9 +731,6 @@
 //                 [self->_mapView removeAnnotation:self->_deviceAnnotation];
 //             }
              
-             if (self->_carAnnotationView!=nil) {
-                 self->_carAnnotationView.image =[self getShowImage:self->mdevstatus AndCouse:self->mcouse AndLogoType:self->mlogoType];
-             }
              
              self->_deviceAnnotation.coordinate = latestDeviceCoor;
              //拉到中心点
@@ -794,14 +838,15 @@
 #pragma mark - BMKMapViewDelegate
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    _carAnnotationView = [_mapView dequeueReusableAnnotationViewWithIdentifier:@"annotationView"];
+    _carAnnotationView = [_mapView dequeueReusableAnnotationViewWithIdentifier:@"carAnnotationView"];
     if (_carAnnotationView == nil) {
-        _carAnnotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotationView"];
-        _carAnnotationView.image =[self getShowImage:mdevstatus AndCouse:mcouse AndLogoType:mlogoType];
+        _carAnnotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"carAnnotationView"];
+        //_carAnnotationView.image =[self getShowImage:mdevstatus AndCouse:mcouse AndLogoType:mlogoType];
         //_carAnnotationView.image = [UIImage imageNamed:@"黄色-30.png"];
         _carAnnotationView.centerOffset = CGPointMake(0, 0);
     }
-    
+    _carAnnotationView.image =[self getShowImage:mdevstatus AndCouse:mcouse AndLogoType:mlogoType];
+    //NSLog(@"viewForAnnotation");
     return _carAnnotationView;
 }
 
@@ -852,7 +897,7 @@
     }
     UIImage *oldimgae=[self.dataModel getMapImageWithStatus:mdevstatus AndCouser:thecouse AndLogoType:mlogoType];
     //return [self scaleImages:oldimgae toScale:0.75];
-    return [self.dataModel scaleImage:oldimgae width:0.5];
+    return [self.dataModel scaleImage:oldimgae width:0.3];
     //return [self.dataModel getMapImageWithStatus:mdevstatus AndCouser:thecouse AndLogoType:mlogoType];
 }
 //跟踪模式开启
