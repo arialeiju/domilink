@@ -897,7 +897,7 @@
     }
     UIImage *oldimgae=[self.dataModel getMapImageWithStatus:mdevstatus AndCouser:thecouse AndLogoType:mlogoType];
     //return [self scaleImages:oldimgae toScale:0.75];
-    return [self.dataModel scaleImage:oldimgae width:0.3];
+    return [self.dataModel scaleImage:oldimgae width:0.4];
     //return [self.dataModel getMapImageWithStatus:mdevstatus AndCouser:thecouse AndLogoType:mlogoType];
 }
 //跟踪模式开启

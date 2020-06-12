@@ -97,7 +97,6 @@
 		E452A215247CA98C00E2C84A /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A1FE247CA98B00E2C84A /* UIImageView+AFNetworking.m */; };
 		E452A216247CA98C00E2C84A /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A201247CA98B00E2C84A /* UIButton+AFNetworking.m */; };
 		E452A217247CA98C00E2C84A /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A202247CA98B00E2C84A /* UIActivityIndicatorView+AFNetworking.m */; };
-		E452A218247CA98C00E2C84A /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A203247CA98B00E2C84A /* UIWebView+AFNetworking.m */; };
 		E452A219247CA98C00E2C84A /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A207247CA98C00E2C84A /* MJRefreshConst.m */; };
 		E452A21A247CA98C00E2C84A /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A208247CA98C00E2C84A /* MJRefreshHeaderView.m */; };
 		E452A21B247CA98C00E2C84A /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E452A20A247CA98C00E2C84A /* MJRefresh.bundle */; };
@@ -198,6 +197,7 @@
 		E452A32F247CE7FB00E2C84A /* StartAndEndAnNotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A2D0247CE7FA00E2C84A /* StartAndEndAnNotation.m */; };
 		E452A330247CE7FB00E2C84A /* CalloutMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A2D1247CE7FA00E2C84A /* CalloutMapAnnotation.m */; };
 		E452A331247CE7FB00E2C84A /* HistoryTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A2D2247CE7FA00E2C84A /* HistoryTrackViewController.m */; };
+		E4539CC8248E2CA0006EF4C3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4539CC7248E2C9C006EF4C3 /* WebKit.framework */; };
 		E45F72D0247BA48A0051A88A /* appString.strings in Resources */ = {isa = PBXBuildFile; fileRef = E45F72D2247BA48A0051A88A /* appString.strings */; };
 		E45F72D7247BA51F0051A88A /* SwichLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = E45F72D5247BA51F0051A88A /* SwichLanguage.m */; };
 		E489CCE7247766C60025C7A6 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = E489CCE6247766C60025C7A6 /* AppDelegate.mm */; };
@@ -626,7 +626,6 @@
 		E452A1F7247CA98B00E2C84A /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		E452A1F8247CA98B00E2C84A /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		E452A1F9247CA98B00E2C84A /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
-		E452A1FA247CA98B00E2C84A /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		E452A1FB247CA98B00E2C84A /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
 		E452A1FC247CA98B00E2C84A /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
 		E452A1FD247CA98B00E2C84A /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
@@ -635,7 +634,6 @@
 		E452A200247CA98B00E2C84A /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
 		E452A201247CA98B00E2C84A /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AFNetworking.m"; sourceTree = "<group>"; };
 		E452A202247CA98B00E2C84A /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
-		E452A203247CA98B00E2C84A /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		E452A204247CA98B00E2C84A /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
 		E452A206247CA98C00E2C84A /* MJRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooterView.h; sourceTree = "<group>"; };
 		E452A207247CA98C00E2C84A /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
@@ -797,6 +795,7 @@
 		E452A2D0247CE7FA00E2C84A /* StartAndEndAnNotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartAndEndAnNotation.m; sourceTree = "<group>"; };
 		E452A2D1247CE7FA00E2C84A /* CalloutMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalloutMapAnnotation.m; sourceTree = "<group>"; };
 		E452A2D2247CE7FA00E2C84A /* HistoryTrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTrackViewController.m; sourceTree = "<group>"; };
+		E4539CC7248E2C9C006EF4C3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		E45F72D1247BA48A0051A88A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/appString.strings"; sourceTree = "<group>"; };
 		E45F72D3247BA4900051A88A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/appString.strings; sourceTree = "<group>"; };
 		E45F72D5247BA51F0051A88A /* SwichLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwichLanguage.m; sourceTree = "<group>"; };
@@ -1069,6 +1068,7 @@
 				E48A12892477B3CC001CB7F4 /* BaiduMapAPI_Search.framework in Frameworks */,
 				E48A12872477B3C6001CB7F4 /* BaiduMapAPI_Map.framework in Frameworks */,
 				E48A12852477B3BF001CB7F4 /* BaiduMapAPI_Base.framework in Frameworks */,
+				E4539CC8248E2CA0006EF4C3 /* WebKit.framework in Frameworks */,
 				E48A12812477B167001CB7F4 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1356,7 +1356,6 @@
 				E452A1F7247CA98B00E2C84A /* UIRefreshControl+AFNetworking.m */,
 				E452A1F8247CA98B00E2C84A /* UIImageView+AFNetworking.h */,
 				E452A1F9247CA98B00E2C84A /* AFNetworkActivityIndicatorManager.m */,
-				E452A1FA247CA98B00E2C84A /* UIWebView+AFNetworking.h */,
 				E452A1FB247CA98B00E2C84A /* UIActivityIndicatorView+AFNetworking.h */,
 				E452A1FC247CA98B00E2C84A /* UIAlertView+AFNetworking.h */,
 				E452A1FD247CA98B00E2C84A /* UIProgressView+AFNetworking.h */,
@@ -1365,7 +1364,6 @@
 				E452A200247CA98B00E2C84A /* UIRefreshControl+AFNetworking.h */,
 				E452A201247CA98B00E2C84A /* UIButton+AFNetworking.m */,
 				E452A202247CA98B00E2C84A /* UIActivityIndicatorView+AFNetworking.m */,
-				E452A203247CA98B00E2C84A /* UIWebView+AFNetworking.m */,
 				E452A204247CA98B00E2C84A /* AFNetworkActivityIndicatorManager.h */,
 			);
 			name = "UIKit+AFNetworking";
@@ -1554,13 +1552,13 @@
 			isa = PBXGroup;
 			children = (
 				E452A25E247CE7FA00E2C84A /* NSTimer+addition.h */,
-				E452A25F247CE7FA00E2C84A /* UIView+Frame.m */,
-				E452A260247CE7FA00E2C84A /* WebCMDViewController.m */,
-				E452A261247CE7FA00E2C84A /* WYWebProgressLayer.h */,
-				E452A262247CE7FA00E2C84A /* WebCMDViewController.xib */,
 				E452A263247CE7FA00E2C84A /* NSTimer+addition.m */,
-				E452A264247CE7FA00E2C84A /* WebCMDViewController.h */,
 				E452A265247CE7FA00E2C84A /* UIView+Frame.h */,
+				E452A25F247CE7FA00E2C84A /* UIView+Frame.m */,
+				E452A264247CE7FA00E2C84A /* WebCMDViewController.h */,
+				E452A260247CE7FA00E2C84A /* WebCMDViewController.m */,
+				E452A262247CE7FA00E2C84A /* WebCMDViewController.xib */,
+				E452A261247CE7FA00E2C84A /* WYWebProgressLayer.h */,
 				E452A266247CE7FA00E2C84A /* WYWebProgressLayer.m */,
 			);
 			path = WebCMDViewController;
@@ -2117,6 +2115,7 @@
 		E48A127F2477B167001CB7F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E4539CC7248E2C9C006EF4C3 /* WebKit.framework */,
 				E48A12A92477BA75001CB7F4 /* CoreTelephony.framework */,
 				E48A12A72477B9DE001CB7F4 /* BMKLocationKit.framework */,
 				E48A12A32477B4CC001CB7F4 /* libz.tbd */,
@@ -2634,7 +2633,6 @@
 				E452A2DF247CE7FB00E2C84A /* SwLanguagePop.m in Sources */,
 				E452A2F6247CE7FB00E2C84A /* NSTimer+addition.m in Sources */,
 				E452A187247CA80700E2C84A /* UnitModel.m in Sources */,
-				E452A218247CA98C00E2C84A /* UIWebView+AFNetworking.m in Sources */,
 				E452A21D247CA98C00E2C84A /* MJRefreshFooterView.m in Sources */,
 				E452A2D6247CE7FB00E2C84A /* CheckCMDViewController.m in Sources */,
 				E452A2D9247CE7FB00E2C84A /* CarAlarmPaopaoView.m in Sources */,
@@ -2863,8 +2861,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				ASSET_PACK_MANIFEST_URL_PREFIX = "";
 				CODE_SIGN_ENTITLEMENTS = DM100/Domilink.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = S3EC4C6BR7;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2882,6 +2881,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = ztinfo.domilink.DM100;
 				PRODUCT_NAME = Domilink;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = (
 					"${SRCROOT}/$(PROJECT_NAME)/ThirdPart",
@@ -2897,8 +2897,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				ASSET_PACK_MANIFEST_URL_PREFIX = "";
 				CODE_SIGN_ENTITLEMENTS = DM100/Domilink.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = S3EC4C6BR7;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2916,6 +2917,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = ztinfo.domilink.DM100;
 				PRODUCT_NAME = Domilink;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = (
 					"${SRCROOT}/$(PROJECT_NAME)/ThirdPart",

@@ -38,6 +38,7 @@
     NSString* mlogoType;
     NSMutableArray * mlinelist;//折线图数组
     MBProgressHUD * _HUD_userlist;
+    NSString* mloctypestr;
 }
 @end
 
@@ -53,6 +54,7 @@
     mdevstatus=@"1";
     mcouse=@"0";
     mlogoType=@"1";
+    mloctypestr=@"";
     isGSM=false;
     
 }
@@ -216,7 +218,7 @@
 
 //代码设置信息框 界面  非常重要
 #define mviewHeightH 50 //信息页面隐藏时候高度
-#define mviewHeightS 246 //信息页面显示时候高度
+#define mviewHeightS 230 //信息页面显示时候高度
 #define mviewMargin 10 //信息页面距离周边margin
 -(void)InitAllView
 {
@@ -586,6 +588,7 @@
          [weakSelf.tv3 setText:msigtime];
          //定位类型
          [weakSelf.tv1 setText:[self.inAppSetting returnthestringbytype:[ret objectForKey:@"type"]]];
+         mloctypestr=[self.inAppSetting returnthestringbytype:[ret objectForKey:@"type"]];
          //acc
          [weakSelf.tv7 setText:([accSts isEqualToString:@"1"]?[SwichLanguage getString:@"open"]:[SwichLanguage getString:@"close"])];
          //模式
@@ -846,10 +849,10 @@
         NSString* maddress=result.sematicDescription;
         NSLog(@"maddress=%@",maddress);
         if (maddress!=nil&&maddress.length>0) {
-            self.tvaddress.text=[NSString stringWithFormat:@"%@(%@)",result.address,maddress];
+            self.tvaddress.text=[NSString stringWithFormat:@"%@(%@)(%@)",result.address,maddress,mloctypestr];
         }else
         {
-            self.tvaddress.text=result.address;
+            self.tvaddress.text=[NSString stringWithFormat:@"%@(%@)",result.address,mloctypestr];
         }
     }
     else

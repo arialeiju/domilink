@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <JavaScriptCore/JavaScriptCore.h>
+#import <WebKit/WebKit.h>
 @interface WebCMDViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIWebView *webview;
+@property (weak, nonatomic) IBOutlet WKWebView *webview;
 -(void)SetType:(int)settype andImei:(NSString*)mimei;
 @end

@@ -9,7 +9,7 @@
 #import "WebCMDViewController.h"
 #import "WYWebProgressLayer.h"
 #import "AESCrypt.h"
-@interface WebCMDViewController ()<UIWebViewDelegate>
+@interface WebCMDViewController ()<WKUIDelegate,WKNavigationDelegate>
 {
     WYWebProgressLayer *_progressLayer; ///< 网页加载进度条
     float webviewheight;
@@ -65,7 +65,8 @@
         default:
             break;
     }
-    self.webview.delegate=self;
+    self.webview.UIDelegate=self;
+    self.webview.navigationDelegate=self;
     [self.webview loadRequest:[NSURLRequest requestWithURL:url]];
 }
 
@@ -73,77 +74,48 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-#pragma mark - UIWebViewDelegate
-- (void)webViewDidStartLoad:(UIWebView *)webView {
-      NSLog(@"开始");
-    if (KIsiPhoneX) {
-        _progressLayer = [WYWebProgressLayer layerWithFrame:CGRectMake(0, 65+IPXMargin, SCREEN_WIDTH, 2)];
-    }else
-    {
-        _progressLayer = [WYWebProgressLayer layerWithFrame:CGRectMake(0, 65, SCREEN_WIDTH, 2)];
-    }
-    [self.view.layer addSublayer:_progressLayer];
-    [_progressLayer startLoad];
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-    //self.title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
-    
-//    JSContext *context=[webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-//    NSString *alerjs=@"alert('test')";
-//    [context evaluateScript:alerjs];
-    
-    if (!webView.isLoading) {
-        NSString *readyState = [webView stringByEvaluatingJavaScriptFromString:@"document.readyState"];
-        BOOL complete = [readyState isEqualToString:@"complete"];
-         NSLog(@"%@", NSStringFromSelector(_cmd));
-        if (complete) {
-            [_progressLayer finishedLoad];
-            [self webViewDidFinishLoadCompletely];
-        } else {
-        }
-    }
-}
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    NSLog(@"1=%@", NSStringFromSelector(_cmd));
-    [_progressLayer finishedLoad];
-}
+//#pragma mark - UIWebViewDelegate
+//- (void)webViewDidStartLoad:(UIWebView *)webView {
+//      NSLog(@"开始");
+//    if (KIsiPhoneX) {
+//        _progressLayer = [WYWebProgressLayer layerWithFrame:CGRectMake(0, 65+IPXMargin, SCREEN_WIDTH, 2)];
+//    }else
+//    {
+//        _progressLayer = [WYWebProgressLayer layerWithFrame:CGRectMake(0, 65, SCREEN_WIDTH, 2)];
+//    }
+//    [self.view.layer addSublayer:_progressLayer];
+//    [_progressLayer startLoad];
+//}
+//
+//- (void)webViewDidFinishLoad:(UIWebView *)webView {
+//    //self.title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+//
+////    JSContext *context=[webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+////    NSString *alerjs=@"alert('test')";
+////    [context evaluateScript:alerjs];
+//
+//    if (!webView.isLoading) {
+//        NSString *readyState = [webView stringByEvaluatingJavaScriptFromString:@"document.readyState"];
+//        BOOL complete = [readyState isEqualToString:@"complete"];
+//         NSLog(@"%@", NSStringFromSelector(_cmd));
+//        if (complete) {
+//            [_progressLayer finishedLoad];
+//            [self webViewDidFinishLoadCompletely];
+//        } else {
+//        }
+//    }
+//}
+//
+//- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+//    NSLog(@"1=%@", NSStringFromSelector(_cmd));
+//    [_progressLayer finishedLoad];
+//}
 
 - (void)dealloc {
     NSLog(@"i am dealloc");
     [self cleanCacheAndCookie];
 }
 
--(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
-{
-    NSURL * url = [request URL];
-    if ([[url scheme] isEqualToString:@"js"]) {
-//        NSArray *params =[url.query componentsSeparatedByString:@"&"];
-//        
-//        NSMutableDictionary *tempDic = [NSMutableDictionary dictionary];
-//        for (NSString *paramStr in params) {
-//            NSArray *dicArray = [paramStr componentsSeparatedByString:@"="];
-//            if (dicArray.count > 1) {
-//                NSString *decodeValue = [dicArray[1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//                [tempDic setObject:decodeValue forKey:dicArray[0]];
-//            }
-//        }
-        NSString * urlStr = [url absoluteString];
-        NSString * handStr=@"js://webview?";
-        NSString* orderString=[urlStr substringFromIndex:handStr.length];
-        // NOTE: 调用支付结果开始支付
-        NSString *appScheme = @"chesafe";
-//        [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
-//            NSLog(@"orderString = %@",orderString);
-//            [self HanleThePayResult:resultDic];
-//        }];
-        //NSLog(@"tempDic:%@",tempDic);
-        return NO;
-    }
-    
-    return YES;
-}
 
 //真正加载完成处理，自动调用js登录
 - (void)webViewDidFinishLoadCompletely {
@@ -164,8 +136,12 @@
     
      NSString *sendcmd=[NSString stringWithFormat:@"%@('%@','%@','%f','%f')",jscmd,timeString,imei,webviewwidth,webviewheight];
      NSLog(@"sendcmd=%@",sendcmd);
-        JSContext *context=[self.webview valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-        [context evaluateScript:sendcmd];
+//        JSContext *context=[self.webview valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+//        [context evaluateScript:sendcmd];
+    // 调用API方法
+    [self.webview evaluateJavaScript:sendcmd completionHandler:^(id object, NSError * _Nullable error) {
+        NSLog(@"obj:%@---error:%@", object, error);
+    }];
 }
 
 /**清除缓存和cookie*/
@@ -183,5 +159,48 @@
     [cache setDiskCapacity:0];
     [cache setMemoryCapacity:0];
 }
-
+#pragma mark - WKNavigationDelegate
+/* 页面开始加载 */
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
+    NSLog(@"页面开始加载");
+        if (KIsiPhoneX) {
+            _progressLayer = [WYWebProgressLayer layerWithFrame:CGRectMake(0, 65+IPXMargin, SCREEN_WIDTH, 2)];
+        }else
+        {
+            _progressLayer = [WYWebProgressLayer layerWithFrame:CGRectMake(0, 65, SCREEN_WIDTH, 2)];
+        }
+        [self.view.layer addSublayer:_progressLayer];
+        [_progressLayer startLoad];
+}
+/* 开始返回内容 */
+- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation{
+      NSLog(@"开始返回内容");
+}
+/* 页面加载完成 */
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
+     NSLog(@"页面加载完成");
+    [self webViewDidFinishLoadCompletely];
+    [_progressLayer finishedLoad];
+}
+/* 页面加载失败 */
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation{
+      NSLog(@"页面加载失败");
+     [_progressLayer finishedLoad];
+}
+/* 在发送请求之前，决定是否跳转 */
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
+    //允许跳转
+    decisionHandler(WKNavigationActionPolicyAllow);
+    //不允许跳转
+    //decisionHandler(WKNavigationActionPolicyCancel);
+}
+/* 在收到响应后，决定是否跳转 */
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
+     
+    NSLog(@"收到响应后，决定是否跳转=%@",navigationResponse.response.URL.absoluteString);
+    //允许跳转
+    decisionHandler(WKNavigationResponsePolicyAllow);
+    //不允许跳转
+    //decisionHandler(WKNavigationResponsePolicyCancel);
+}
 @end
