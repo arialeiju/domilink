@@ -61,9 +61,12 @@
         _userNameTextField.text = self.inAppSetting.loginNo;
     }
     //开始自动登录
-    if (self.autoLoginButton.selected) {
+    NSString *userName = _userNameTextField.text;
+    NSString *password = _passWordTextField.text;
+    if (self.autoLoginButton.selected&&userName.length>0&&password.length>0) {
        //等待编写自动登录操作
-        NSLog(@"自动登录，未编写");
+        NSLog(@"自动登录");
+        [self startLoginByLoginNo:userName andPassword:password];
     }
 }
 

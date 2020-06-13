@@ -131,12 +131,12 @@
     self.dataModel.isLogin = NO;
     self.dataModel.isExperience = NO;
     self.HadLogin=false;
-    
-    self.inAppSetting.loginNo = nil;
+    //self.inAppSetting.loginNo = nil;
+    self.inAppSetting.autoLoginState=false;
     self.inAppSetting.userId = nil;
     self.inAppSetting.username=nil;
     self.inAppSetting.type= nil;
-    self.inAppSetting.password=nil;
+    //elf.inAppSetting.password=nil;
     self.inAppSetting.curloginNo=nil;
     self.inAppSetting.curuserId=nil;
     self.inAppSetting.curusername=nil;
