@@ -59,6 +59,9 @@
     [self ViewFit];
     [self initViewData];
     sstatus=@"-1";
+    
+    //后台预加载列表数据
+    [self clickTitleButton:NULL];
 }
 
 -(void)adapteCalistView
@@ -594,7 +597,7 @@
 -(void)reloadCarListby110withtype:(NSString*)type loginNo:(NSString*)loginNo
 {
     typeof(self) __weak weakSelf = self;
-    _HUD_userlist = [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
+    //_HUD_userlist = [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
     NSDictionary *bodyData = @{@"type":type,
                                @"loginNo":loginNo};
     NSDictionary *parameters = [PostXMLDataCreater createXMLDicWithCMD:110
@@ -603,7 +606,7 @@
             parameters:parameters
                success:^(ResponseObject *messageCenterObject)
      {
-         [_HUD_userlist hide:YES];
+         //[_HUD_userlist hide:YES];
          
          NSArray *detailArray = (NSArray *)[messageCenterObject.ret objectForKey:@"userList"];
          
@@ -649,7 +652,7 @@
      }
                failure:^(NSError *error)
      {
-         [_HUD_userlist hide:YES];
+         //[_HUD_userlist hide:YES];
          [MBProgressHUD showQuickTipWIthTitle:[SwichLanguage getString:@"errorA107X"] withText:nil];
      }];
     

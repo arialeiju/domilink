@@ -1425,17 +1425,17 @@
 		E452A226247CE7FA00E2C84A /* CarAlarmMapView */ = {
 			isa = PBXGroup;
 			children = (
-				E452A227247CE7FA00E2C84A /* AppleAlarmMapViewController.m */,
-				E452A228247CE7FA00E2C84A /* CarAlarmMapViewController.h */,
-				E452A229247CE7FA00E2C84A /* AppleAlarmAnnotationView.m */,
-				E452A22A247CE7FA00E2C84A /* CarAlarmPaopaoView.m */,
-				E452A22B247CE7FA00E2C84A /* AppleAlarmMapViewController.xib */,
 				E452A22C247CE7FA00E2C84A /* AppleAlarmMapViewController.h */,
+				E452A227247CE7FA00E2C84A /* AppleAlarmMapViewController.m */,
+				E452A22B247CE7FA00E2C84A /* AppleAlarmMapViewController.xib */,
+				E452A231247CE7FA00E2C84A /* AppleAlarmAnnotationView.h */,
+				E452A229247CE7FA00E2C84A /* AppleAlarmAnnotationView.m */,
+				E452A228247CE7FA00E2C84A /* CarAlarmMapViewController.h */,
 				E452A22D247CE7FA00E2C84A /* CarAlarmMapViewController.m */,
 				E452A22E247CE7FA00E2C84A /* CarAlarmMapViewController.xib */,
 				E452A22F247CE7FA00E2C84A /* CarAlarmPaopaoView.h */,
+				E452A22A247CE7FA00E2C84A /* CarAlarmPaopaoView.m */,
 				E452A230247CE7FA00E2C84A /* CarAlarmPaopaoView.xib */,
-				E452A231247CE7FA00E2C84A /* AppleAlarmAnnotationView.h */,
 			);
 			path = CarAlarmMapView;
 			sourceTree = "<group>";
@@ -1497,9 +1497,9 @@
 		E452A246247CE7FA00E2C84A /* ExpeirViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E452A249247CE7FA00E2C84A /* ExpeirViewController.h */,
 				E452A247247CE7FA00E2C84A /* ExpeirViewController.m */,
 				E452A248247CE7FA00E2C84A /* ExpeirViewController.xib */,
-				E452A249247CE7FA00E2C84A /* ExpeirViewController.h */,
 			);
 			path = ExpeirViewControllers;
 			sourceTree = "<group>";
@@ -2863,7 +2863,7 @@
 				CODE_SIGN_ENTITLEMENTS = DM100/Domilink.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S3EC4C6BR7;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2879,6 +2879,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/DM100/ThirdPart/BaiduMaplibs",
 				);
+				MARKETING_VERSION = 1.0.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = ztinfo.domilink.DM100;
 				PRODUCT_NAME = Domilink;
@@ -2900,7 +2901,7 @@
 				CODE_SIGN_ENTITLEMENTS = DM100/Domilink.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S3EC4C6BR7;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2916,6 +2917,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/DM100/ThirdPart/BaiduMaplibs",
 				);
+				MARKETING_VERSION = 1.0.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = ztinfo.domilink.DM100;
 				PRODUCT_NAME = Domilink;

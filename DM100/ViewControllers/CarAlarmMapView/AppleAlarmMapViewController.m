@@ -10,11 +10,12 @@
 #import "CarAlarmPaopaoView.h"
 #import "AppleAlarmAnnotationView.h"
 #import "MapLoctionSwich.h"
-@interface AppleAlarmMapViewController ()<MKMapViewDelegate,CarAlarmPaopaoViewDelegate>
+#import <BaiduMapAPI_Search/BMKGeocodeSearch.h>
+@interface AppleAlarmMapViewController ()<MKMapViewDelegate,BMKGeoCodeSearchDelegate,CarAlarmPaopaoViewDelegate>
 {
     CarAlarmPaopaoView * _paopaoView;
     MKPointAnnotation * _deviceAnnotation;
-    
+    BMKGeoCodeSearch * _deviceAddressSearch;
     CLLocationCoordinate2D _deviceCoor;
     NSString * _deviceSpeed;
     NSString * _deviceTime;
@@ -66,12 +67,15 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    //[self setUpDeviceAddress];
+    [self setUpDeviceAddress];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     _mapView.delegate = nil;
+    if (_deviceAddressSearch!=nil) {
+         _deviceAddressSearch.delegate = nil;
+    }
 }
 
 #pragma mark Method
@@ -116,10 +120,6 @@
 }
 
 
-//- (void)setUpDeviceAddress
-//{
-//    NSLog(@"反geo检索");
-//}
 
 #pragma mark - Data Controller
 - (NSString *)deviceStatusString
@@ -181,7 +181,6 @@
         annotationView.centerOffset = CGPointMake(0, 0);
         _paopaoView=annotationView.calloutView;
     }
-     [annotationView.calloutView.label5 setHidden:YES];//隐藏地址显示
     _paopaoView.delegate = self;
     _paopaoView.imeiLabel.text = [_deviceInfoDic valueForKey:@"name"];
     _paopaoView.timeLabel.text = [_deviceInfoDic valueForKey:@"time"];
@@ -224,4 +223,47 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void)setUpDeviceAddress
+{
+    if (_deviceAddressSearch == nil)
+    {
+        _deviceAddressSearch = [[BMKGeoCodeSearch alloc] init];
+    }
+    _deviceAddressSearch.delegate = self;
+    BMKReverseGeoCodeSearchOption * _reverseGeoCodeOption = [[BMKReverseGeoCodeSearchOption alloc] init];
+    
+    _reverseGeoCodeOption.location = _deviceCoor;
+    _reverseGeoCodeOption.isLatestAdmin = YES;
+    BOOL flag = [_deviceAddressSearch reverseGeoCode:_reverseGeoCodeOption];
+    if(flag)
+    {
+      NSLog(@"反geo检索发送成功");
+    }
+    else
+    {
+      NSLog(@"反geo检索发送失败");
+    }
+}
+#pragma mark - BMKGeoCodeSearchDelegate
+- (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeSearchResult *)result errorCode:(BMKSearchErrorCode)error
+{
+    if (error == BMK_SEARCH_NO_ERROR)
+    {
+        //[_paopaoView setAddressText:result.address];
+        NSString* maddress=result.sematicDescription;
+        NSLog(@"maddress=%@",maddress);
+        if (maddress!=nil&&maddress.length>0) {
+            [_paopaoView setAddressText:[NSString stringWithFormat:@"%@(%@)",result.address,maddress]];
+        }else
+        {
+            [_paopaoView setAddressText:result.address];
+        }
+    }
+    else
+    {
+        _paopaoView.addressLabel.text = @"";
+        NSLog(@"抱歉，未找到结果");
+    }
+}
 @end

@@ -12,7 +12,7 @@
 #import "CarAlarmViewController.h"
 #import "HistoryTrackViewController.h"
 #import "DefenseService.h"
-@interface MainMapViewController ()<BMKLocationManagerDelegate>
+@interface MainMapViewController ()<BMKLocationManagerDelegate,BMKGeoCodeSearchDelegate>
 {
     __weak IBOutlet UIView *messageView;
     CGFloat mviewHeightC;//当前信息页面高度

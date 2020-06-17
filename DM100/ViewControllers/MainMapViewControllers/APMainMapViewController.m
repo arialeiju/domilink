@@ -13,7 +13,8 @@
 #import "AppleHistoryTrackController.h"
 #import "DefenseService.h"
 #import "MapLoctionSwich.h"
-@interface APMainMapViewController ()<MKMapViewDelegate>
+#import <BaiduMapAPI_Search/BMKGeocodeSearch.h>
+@interface APMainMapViewController ()<MKMapViewDelegate,BMKGeoCodeSearchDelegate>
 {
     __weak IBOutlet UIView *messageView;
     CGFloat mviewHeightC;//当前信息页面高度
@@ -25,9 +26,13 @@
     
     CLLocationCoordinate2D _deviceCoor;
 
+    CLLocationCoordinate2D _geoCoor;
     Boolean isSatSelect;//卫星地图按钮是否被选中
     Boolean isZZSelect;//是否追踪按钮选中
     Boolean isGSM;//是否有信号强度提醒
+    
+    BMKGeoCodeSearch * _geoSearch;
+    
     MKCircle * _circle;
     CLLocationCoordinate2D _deviceDenfenseCoor;
     MKAnnotationView *_carAnnotationView;//图标logo
@@ -38,6 +43,8 @@
     NSString* mlogoType;
     NSMutableArray * mlinelist;//折线图数组
     MBProgressHUD * _HUD_userlist;
+    
+    NSString* mloctypestr;
 }
 @end
 
@@ -53,8 +60,9 @@
     mdevstatus=@"1";
     mcouse=@"0";
     mlogoType=@"1";
+    mloctypestr=@"";
     isGSM=false;
-    
+    _geoCoor=CLLocationCoordinate2DMake(0, 0);
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [self stopNSTimer];
@@ -214,7 +222,7 @@
 
 //代码设置信息框 界面  非常重要
 #define mviewHeightH 50 //信息页面隐藏时候高度
-#define mviewHeightS 246 //信息页面显示时候高度
+#define mviewHeightS 230 //信息页面显示时候高度
 #define mviewMargin 10 //信息页面距离周边margin
 -(void)InitAllView
 {
@@ -596,6 +604,7 @@
          [weakSelf.tv3 setText:msigtime];
          //定位类型
          [weakSelf.tv1 setText:[self.inAppSetting returnthestringbytype:[ret objectForKey:@"type"]]];
+         mloctypestr=[self.inAppSetting returnthestringbytype:[ret objectForKey:@"type"]];
          //acc
          [weakSelf.tv7 setText:([accSts isEqualToString:@"1"]?[SwichLanguage getString:@"open"]:[SwichLanguage getString:@"close"])];
          //模式
@@ -723,7 +732,7 @@
 //         [_mapView addOverlay:circle2];
          
          if(latestDeviceCoor.latitude==self->_deviceCoor.latitude&&latestDeviceCoor.longitude==self->_deviceCoor.longitude) {
-             NSLog(@"相同位置，不刷新退出");
+             NSLog(@"相同位置，不刷新退出ap");
          }else
          {
              //改变图标位置
@@ -759,10 +768,11 @@
              
              self->_deviceCoor=latestDeviceCoor;
              
-             //反编译 具体 中文地址
-             //[self setReverseGeoSearchWithCoor:latestDeviceCoor];
-             
          }
+        
+        //反编译 具体 中文地址
+        CLLocationCoordinate2D curDeviceCoors = CLLocationCoordinate2DMake([la floatValue],[lo floatValue]);
+        [self setReverseGeoSearchWithCoor:curDeviceCoors];
      }
                failure:^(NSError *error)
      {
@@ -968,4 +978,60 @@
     //NSLog(@"clicktipbutton");
 }
 
+//获取中文地址
+- (void)setReverseGeoSearchWithCoor:(CLLocationCoordinate2D)Coor
+{
+    
+    if(_geoSearch == nil)
+    {
+        _geoSearch = [[BMKGeoCodeSearch alloc] init];
+    }
+    if (_geoCoor.latitude==Coor.latitude&&_geoCoor.longitude==Coor.longitude) {
+        //NSLog(@"相同点，直接跳出");
+        return;
+    }else
+    {
+        _geoCoor.latitude=Coor.latitude;
+        _geoCoor.longitude=Coor.longitude;
+        //NSLog(@"不相同点，检索");
+    }
+    _geoSearch.delegate = self;
+    BMKReverseGeoCodeSearchOption * _reverseGeoCodeOption = [[BMKReverseGeoCodeSearchOption alloc] init];
+    
+    _reverseGeoCodeOption.location = _geoCoor;
+    _reverseGeoCodeOption.isLatestAdmin = YES;
+    BOOL flag = [_geoSearch reverseGeoCode:_reverseGeoCodeOption];
+    if(flag)
+    {
+        //NSLog(@"反geo检索发送成功");
+    }
+    else
+    {
+        NSLog(@"反geo检索发送失败");
+        [MBProgressHUD showQuickTipWithText:@"规划路线失败"];
+    }
+}
+
+#pragma mark - BMKGeoCodeSearchDelegate
+- (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeSearchResult *)result errorCode:(BMKSearchErrorCode)error
+{
+    if (error == BMK_SEARCH_NO_ERROR)
+    {
+        //[_paopaoView setAddressText:result.address];
+        NSString* maddress=result.sematicDescription;
+        NSLog(@"maddress=%@",maddress);
+        if (maddress!=nil&&maddress.length>0) {
+            self.tvaddress.text=[NSString stringWithFormat:@"%@(%@)(%@)",result.address,maddress,mloctypestr];
+        }else
+        {
+            self.tvaddress.text=[NSString stringWithFormat:@"%@(%@)",result.address,mloctypestr];
+        }
+    }
+    else
+    {
+        //_paopaoView.addressLabel.text = @"";
+        self.tvaddress.text=@"";
+        NSLog(@"抱歉，未找到结果");
+    }
+}
 @end
