@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "TabBarViewController.h"
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#import <BMKLocationkit/BMKLocationComponent.h>
+#import <BMKLocationkit/BMKLocationAuth.h>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,BMKLocationAuthDelegate>
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) TabBarViewController *rootTabBarController;
 @property (strong, nonatomic, readonly) UINavigationController *rootNavigationController;

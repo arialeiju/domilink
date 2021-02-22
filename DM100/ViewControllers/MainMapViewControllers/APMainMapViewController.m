@@ -63,6 +63,7 @@
     mloctypestr=@"";
     isGSM=false;
     _geoCoor=CLLocationCoordinate2DMake(0, 0);
+    [self locate];
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [self stopNSTimer];
@@ -339,6 +340,7 @@
 -(void)ClickButton1
 {
     NSLog(@"点击按钮1");
+    [self showBottomDailog];
 }
 -(void)ClickButton2
 {
@@ -1008,7 +1010,7 @@
     else
     {
         NSLog(@"反geo检索发送失败");
-        [MBProgressHUD showQuickTipWithText:@"规划路线失败"];
+        [MBProgressHUD showQuickTipWithText:[SwichLanguage getString:@"errorA109X"]];
     }
 }
 
@@ -1033,5 +1035,136 @@
         self.tvaddress.text=@"";
         NSLog(@"抱歉，未找到结果");
     }
+}
+
+//弹出底部菜单栏
+-(void)showBottomDailog
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[SwichLanguage getString:@"navtitle"] message:nil preferredStyle: UIAlertControllerStyleActionSheet];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:[SwichLanguage getString:@"cancel"] style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:[SwichLanguage getString:@"gaodemap"] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //响应回调
+        NSLog(@"点击高德地图");
+        [self selectAlerActionWithInt:2];
+    }];
+    UIAlertAction *archiveAction = [UIAlertAction actionWithTitle:[SwichLanguage getString:@"bdmap"] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //响应回调
+        NSLog(@"点击百度地图");
+        [self selectAlerActionWithInt:1];
+    }];
+    [alertController addAction:cancelAction];
+    [alertController addAction:deleteAction];
+    [alertController addAction:archiveAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+-(void)selectAlerActionWithInt:(int)setid
+{
+    if ([self.inAppSetting CkeckAppIsInstall:setid]) {
+           
+           static BOOL isLocalizings = NO;
+           if (isLocalizings)
+           {
+               return;
+           }
+           
+           isLocalizings = YES;
+           [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            UnitModel * mUnitModel=[self.inAppSetting getSelectUnit];
+            NSDictionary *bodyData = @{@"imei": [mUnitModel getImei],
+                                       @"langu":@"0"};
+            NSDictionary *parameters = [PostXMLDataCreater createXMLDicWithCMD:854
+                                                                withParameters:bodyData];
+            [NetWorkModel POST:ServerURL
+                    parameters:parameters
+                       success:^(ResponseObject *messageCenterObject)
+             {
+                 NSDictionary* ret=messageCenterObject.ret;
+                 //NSString* la=[ret objectForKey:@"la"];
+                 //NSString* lo=[ret objectForKey:@"lo"];
+                 NSString* la=[NSString stringWithFormat:@"%@",[ret objectForKey:@"la"]];
+                 NSString* lo=[NSString stringWithFormat:@"%@",[ret objectForKey:@"lo"]];
+//                float lat= [la floatValue];
+//                float lot= [lo floatValue];
+                if (setid==2) {
+                             //获取数据时候就转化了
+                    CLLocationCoordinate2D mlalo=[MapLoctionSwich bd09togcj02:[lo floatValue] and:[la floatValue]];
+                    la=[NSString stringWithFormat:@"%f",mlalo.latitude];
+                    lo=[NSString stringWithFormat:@"%f",mlalo.longitude];
+                }
+                if(la.length>0&&![la isEqualToString:@"0.0"])
+                     {
+                         [self.inAppSetting getInstalledMapAppWithEndLocation:la with:lo andtpye:setid];
+                         isLocalizings = NO;
+                         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                         
+                     }else//add by aika
+                     {
+                         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                         isLocalizings = NO;
+                         [MBProgressHUD showQuickTipWithText:[SwichLanguage getString:@"errorA110X"]];
+                     }
+                 
+             }failure:^(NSError *error)
+             {
+                [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                isLocalizings = NO;
+             }];
+    }
+}
+
+- (void)locate {
+    if ([CLLocationManager locationServicesEnabled]) {//监测权限设置
+        self.locationManager = [[CLLocationManager alloc]init];
+        self.locationManager.delegate = self;//设置代理
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;//设置精度
+        self.locationManager.distanceFilter = 1000.0f;//距离过滤
+        [self.locationManager requestAlwaysAuthorization];//位置权限申请
+        [self.locationManager startUpdatingLocation];//开始定位
+    }
+}
+#pragma mark location代理
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您还未开启定位服务，是否需要开启？" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    }];
+    UIAlertAction *queren = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSURL *setingsURL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        [[UIApplication sharedApplication]openURL:setingsURL];
+    }];
+    [alert addAction:cancel];
+    [alert addAction:queren];
+    [self.navigationController presentViewController:alert animated:YES completion:nil];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    [self.locationManager stopUpdatingLocation];//停止定位
+//地理反编码
+    CLLocation *currentLocation = [locations lastObject];
+    CLGeocoder *geoCoder = [[CLGeocoder alloc]init];
+//当系统设置为其他语言时，可利用此方法获得中文地理名称
+    NSMutableArray
+    *userDefaultLanguages = [[NSUserDefaults standardUserDefaults]objectForKey:@"AppleLanguages"];
+    // 强制 成 简体中文
+    [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithObjects:@"zh-hans", nil]forKey:@"AppleLanguages"];
+    [geoCoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        if (placemarks.count > 0) {
+            CLPlacemark *placeMark = placemarks[0];
+            NSString *city = placeMark.locality;
+            if (!city) {
+                //self.currentCity = @"⟳定位获取失败,点击重试";
+            } else {
+                //self.currentCity = placeMark.locality ;//获取当前城市
+             
+            }
+
+        } else if (error == nil && placemarks.count == 0 ) {
+        } else if (error) {
+            //self.currentCity = @"⟳定位获取失败,点击重试";
+        }
+        // 还原Device 的语言
+        [[NSUserDefaults
+          standardUserDefaults] setObject:userDefaultLanguages
+         forKey:@"AppleLanguages"];
+    }];
 }
 @end

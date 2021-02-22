@@ -51,4 +51,7 @@
 -(Boolean)checkhaddata;
 -(UnitModel*)getSelectUnit;
 -(NSString*)returnthestringbytype:(NSString*)type;
+
+- (void)getInstalledMapAppWithEndLocation:(NSString*)la with:(NSString*)lo andtpye:(int)thetype;
+-(Boolean)CkeckAppIsInstall:(int)thetype;
 @end

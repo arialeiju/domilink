@@ -15,6 +15,7 @@
 #import "HistoryTrackViewController.h"
 #import "BDDynamicTreeNode.h"
 #import "AppleHistoryTrackController.h"
+#import "SettingPlusController.h"
 @interface CarListViewController ()
 {
     NSString *strall;
@@ -283,8 +284,11 @@
 {
     NSLog(@"点击了第%ld个设置按钮",(long)sender.tag);
     UnitModel *detail = [self.inAppSetting.user_itemList objectAtIndex:sender.tag];
-    SettingViewController *mSettingViewController = [[SettingViewController alloc]initWithImei:[detail getImei] anddevicetype:detail.devType];
-    [self.navigationController pushViewController:mSettingViewController animated:YES];
+//    SettingViewController *mSettingViewController = [[SettingViewController alloc]initWithImei:[detail getImei] anddevicetype:detail.devType];
+//    [self.navigationController pushViewController:mSettingViewController animated:YES];
+    
+    SettingPlusController *mSettingPlusController = [[SettingPlusController alloc]initWithImei:[detail getImei] anddevicetype:detail.devType andImeiName:[detail getShowName]];
+    [self.navigationController pushViewController:mSettingPlusController animated:YES];
 }
 -(void)onTouchBtnTrayInCell:(UIButton *)sender
 {

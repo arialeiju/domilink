@@ -50,7 +50,7 @@
 {
     _HUD = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
     [ProviderMessageService provideMessageWithUserId:self.inAppSetting.userId
-                                             succeed:^(ProviderMessageObject *providerMessageObject) {
+                                        andloginType:self.inAppSetting.type andloginNo:self.inAppSetting.loginNo succeed:^(ProviderMessageObject *providerMessageObject) {
                                                  _serverInformationArray = [[NSMutableArray alloc] initWithObjects:
                                                                     providerMessageObject.name==NULL?@"":providerMessageObject.name,
                                                                     providerMessageObject.linkman==NULL?@"":providerMessageObject.linkman,

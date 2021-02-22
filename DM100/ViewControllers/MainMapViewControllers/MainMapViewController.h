@@ -75,6 +75,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction)clicktipbutton:(id)sender;
 
 @property (nonatomic, strong) BMKLocationManager *locationManager; //定位对象
+@property(nonatomic, copy) BMKLocatingCompletionBlock completionBlock;
 @end
 
 NS_ASSUME_NONNULL_END

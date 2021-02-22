@@ -8,10 +8,14 @@
 
 #import "ProviderMessageService.h"
 #define USERID @"userId"
+#define LOGINTYPE @"loginType"
+#define LoginNo @"loginNo"
 @implementation ProviderMessageService
-+ (void)provideMessageWithUserId:(NSString *)userId succeed:(void (^)(ProviderMessageObject *))succeed faiure:(void (^)(NSError *))failure
++ (void)provideMessageWithUserId:(NSString *)userId andloginType:(NSString *)loginType andloginNo:(NSString *)loginNo succeed:(void (^)(ProviderMessageObject *))succeed faiure:(void (^)(NSError *))failure
 {
-    NSDictionary * data = @{USERID:userId};
+    NSDictionary *data = @{USERID:userId,
+                               LOGINTYPE:loginType,
+                               LoginNo:loginNo};
     NSDictionary * parameters = [PostXMLDataCreater createXMLDicWithCMD:9 withParameters:data];
     [NetWorkModel POST:ServerURL
             parameters:parameters

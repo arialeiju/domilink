@@ -30,7 +30,7 @@
 /**
  \brief formatTimeSpan
  \details 格式化时间为：n秒前，n小时前，n分钟前<p>
- \param 2 个NSDate的时间差
+ \param 2个NSDate的时间差
  \return 已格式化的时间
  */
 -(NSString *) formatTimeSpan:(NSDate *) createdDate;

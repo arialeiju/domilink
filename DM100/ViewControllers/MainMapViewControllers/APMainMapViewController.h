@@ -11,7 +11,7 @@
 #import <MapKit/MapKit.h>
 NS_ASSUME_NONNULL_BEGIN
 
-@interface APMainMapViewController : UIViewController
+@interface APMainMapViewController : UIViewController<CLLocationManagerDelegate>
 @property (strong, nonatomic) MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIButton *btChange;//切换按钮
 - (IBAction)clickChangeButton:(id)sender;
@@ -71,6 +71,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction)SelectDownAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *imgsigal;
 - (IBAction)clicktipbutton:(id)sender;
+
+@property (nonatomic, strong) CLLocationManager *locationManager;//设置manager
 @end
 
 NS_ASSUME_NONNULL_END

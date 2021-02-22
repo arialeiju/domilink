@@ -12,9 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ProviderMessageService : NSObject
-+ (void)provideMessageWithUserId:(NSString *)userId
-                         succeed:(void(^)(ProviderMessageObject * providerMessageObject))succeed
-                          faiure:(void(^)(NSError * error))failure;
++ (void)provideMessageWithUserId:(NSString *)userId andloginType:(NSString *)loginType andloginNo:(NSString *)loginNo succeed:(void (^)(ProviderMessageObject *))succeed faiure:(void (^)(NSError *))failure;
 @end
 
 NS_ASSUME_NONNULL_END

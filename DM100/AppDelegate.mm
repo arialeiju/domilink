@@ -37,6 +37,8 @@
     [_window makeKeyAndVisible];
     
     BMKMapManager *mapManager = [[BMKMapManager alloc] init];
+    
+    [[BMKLocationAuth sharedInstance] checkPermisionWithKey:@"Z9n7Ww98CCHscn98Qh28vKZOBIWjUrOP" authDelegate:self];
     // 如果要关注网络及授权验证事件，请设定generalDelegate参数
     BOOL ret = [mapManager start:@"Z9n7Ww98CCHscn98Qh28vKZOBIWjUrOP"  generalDelegate:nil];
     if (!ret) {
@@ -49,7 +51,32 @@
     return YES;
 }
 
+- (void)onGetNetworkState:(int)iError
+{
+    if (0 == iError) {
+        NSLog(@"联网成功");
+    }
+    else{
+        NSLog(@"onGetNetworkState %d",iError);
+    }
+    
+}
 
+- (void)onGetPermissionState:(int)iError
+{
+    if (0 == iError) {
+        NSLog(@"授权成功");
+    }
+    else {
+        NSLog(@"onGetPermissionState %d",iError);
+    }
+}
+
+- (void)onCheckPermissionState:(BMKLocationAuthErrorCode)iError
+{
+    NSLog(@"location auth onGetPermissionState %ld",(long)iError);
+    
+}
 
 
 @end

@@ -13,5 +13,5 @@
 @property (weak, nonatomic) IBOutlet UITextField *newpassword_label;
 @property (weak, nonatomic) IBOutlet UITextField *surenewpassword_label;
 @property (weak, nonatomic) IBOutlet UIView *kContentView;
-
+- (id)initWithImei:(NSString *)mlog WithDeviceType:(NSString *)ttype AndShowType:(int)mid;
 @end

@@ -259,4 +259,72 @@
     }
      return [SwichLanguage getString:@"maptype4"];
 }
+
+#pragma mark ----导航方法-----------
+
+- (void)getInstalledMapAppWithEndLocation:(NSString*)la with:(NSString*)lo andtpye:(int)thetype
+{
+    switch (thetype) {
+        case 1:
+            //百度地图
+            if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"baidumap://"]]) {
+                NSMutableDictionary *baiduMapDic = [NSMutableDictionary dictionary];
+                baiduMapDic[@"title"] = [SwichLanguage getString:@"bdmap"];
+                NSString *urlString = [[NSString stringWithFormat:@"baidumap://map/navi?location=%@,%@type=DIS&src=com.gemo.outsource.carconnection",la,lo] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+            }
+            break;
+            
+        case 2:
+            //高德地图
+        {
+            NSString *urlString2 = [[NSString stringWithFormat:@"iosamap://navi?sourceApplication= &backScheme= &lat=%@&lon=%@&dev=0&style=2",la,lo] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString2]];
+        }
+            break;
+        default:
+            NSLog(@"未知参数thetype");
+            break;
+    }
+    
+}
+
+//检查特定app是否安装
+-(Boolean)CkeckAppIsInstall:(int)thetype
+{
+    
+    Boolean HasBaidumap=false;
+    switch (thetype) {
+        case 1:
+            HasBaidumap=[[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"baidumap://"]];
+            break;
+        case 2:
+            HasBaidumap=[[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"iosamap://"]];
+            break;
+        default:
+            break;
+    }
+    if (HasBaidumap) {
+        return true;
+    }else
+    {
+        NSLog(@"未安装的地图");
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            switch (thetype) {
+                case 1:
+                    [MBProgressHUD showLogTipWIthTitle:[SwichLanguage getString:@"errorMapT1"] withText:[SwichLanguage getString:@"errorMapC1"]];
+                    break;
+                case 2:
+                    [MBProgressHUD showLogTipWIthTitle:[SwichLanguage getString:@"errorMapT2"] withText:[SwichLanguage getString:@"errorMapC2"]];
+                    break;
+                default:
+                    break;
+            }
+            
+        });
+        return false;
+    }
+}
 @end

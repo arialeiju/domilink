@@ -12,6 +12,9 @@
 #import "CarAlarmViewController.h"
 #import "HistoryTrackViewController.h"
 #import "DefenseService.h"
+#import "MapLoctionSwich.h"
+#import "MyLocation.h"
+#import "RouteAnnotation.h"
 @interface MainMapViewController ()<BMKLocationManagerDelegate,BMKGeoCodeSearchDelegate>
 {
     __weak IBOutlet UIView *messageView;
@@ -39,6 +42,7 @@
     NSMutableArray * mlinelist;//折线图数组
     MBProgressHUD * _HUD_userlist;
     NSString* mloctypestr;
+    RouteAnnotation * _userLocation;//个人点图标
 }
 @end
 
@@ -56,7 +60,6 @@
     mlogoType=@"1";
     mloctypestr=@"";
     isGSM=false;
-    
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [self stopNSTimer];
@@ -137,7 +140,6 @@
     mline42.backgroundColor=[UIColor lightGrayColor];
     [_controlview4 addSubview:mline42];
 }
-
 // 视图被销毁
 - (void)dealloc {
     NSLog(@"CarListViewController界面销毁");
@@ -145,6 +147,13 @@
     {
         _mapView.delegate=nil;
     }
+    
+    [_locationManager stopUpdatingLocation];
+    _locationManager.delegate = nil;
+    
+    _locationManager = nil;
+    _completionBlock = nil;
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 /**
@@ -335,6 +344,7 @@
 -(void)ClickButton1
 {
     NSLog(@"点击按钮1");
+    [self showBottomDailog];
 }
 -(void)ClickButton2
 {
@@ -392,8 +402,10 @@
 {
     NSLog(@"点击按钮 我的，需要真机验证");
     [self TackOff];
-    _mapView.showsUserLocation=YES;
-    _mapView.userTrackingMode = BMKUserTrackingModeFollow;
+//    _mapView.showsUserLocation=YES;
+//    _mapView.userTrackingMode = BMKUserTrackingModeFollow;
+    
+    [_locationManager requestLocationWithReGeocode:NO withNetworkState:NO completionBlock:self.completionBlock];
 }
 -(void)ClickTopLButton1
 {
@@ -470,7 +482,7 @@
                                }
                                failure:^(NSError *error) {
                                    [_HUD_userlist hide:YES];
-                                   [MBProgressHUD showQuickTipWIthTitle:[SwichLanguage getString:@"errorA107X"] withText:nil];
+                                   [MBProgressHUD showQuickTipWIthTitle:[SwichLanguage getString:@"errorA106X"] withText:nil];
                                }];
 }
 
@@ -705,7 +717,13 @@
          
 //         BMKCircle *circle2 = [BMKCircle circleWithCenterCoordinate:_deviceDenfenseCoor radius:200];
 //         [_mapView addOverlay:circle2];
+        
+         if (_carAnnotationView!=nil) {
+             _carAnnotationView.image =[self getShowImage:mdevstatus AndCouse:mcouse AndLogoType:mlogoType];
+         }
          
+         self->_deviceAnnotation.coordinate = latestDeviceCoor;
+        
          if(latestDeviceCoor.latitude==self->_deviceCoor.latitude&&latestDeviceCoor.longitude==self->_deviceCoor.longitude) {
              NSLog(@"相同位置，不刷新退出");
          }else
@@ -715,11 +733,11 @@
 //                 [self->_mapView removeAnnotation:self->_deviceAnnotation];
 //             }
 //             [weakSelf setUpAnnotation];
-             if (_carAnnotationView!=nil) {
-                 _carAnnotationView.image =[self getShowImage:mdevstatus AndCouse:mcouse AndLogoType:mlogoType];
-             }
-             
-             self->_deviceAnnotation.coordinate = latestDeviceCoor;
+//             if (_carAnnotationView!=nil) {
+//                 _carAnnotationView.image =[self getShowImage:mdevstatus AndCouse:mcouse AndLogoType:mlogoType];
+//             }
+//
+//             self->_deviceAnnotation.coordinate = latestDeviceCoor;
              //拉到中心点
              if(self->isCenter||self->isTrack)
              {
@@ -787,7 +805,7 @@
                                                                 VIEWWIDTH,
                                                                 VIEWHEIGHT+120)];
     }
-    _mapView.showsUserLocation = YES;//显示定位图层
+    //_mapView.showsUserLocation = YES;//显示定位图层
     _mapView.mapType = BMKMapTypeStandard;//标准地图
     _mapView.delegate = self;
     [_mapView setShowMapScaleBar:YES];
@@ -795,10 +813,13 @@
     _mapView.rotateEnabled= NO;//禁用手势旋转
     [self.view addSubview:_mapView];
     [self.view sendSubviewToBack:_mapView];
-    //判断有没有点，需要预设中心点
     
+    [self initBlock];
+    
+    //判断有没有点，需要预设中心点
+    [self initlocationManager];
     //开启定位服务
-     [self.locationManager startUpdatingLocation];
+     //[self.locationManager startUpdatingLocation];
 }
 - (IBAction)MapZoonInAction:(id)sender {
     [_mapView zoomIn];
@@ -836,7 +857,7 @@
     else
     {
         NSLog(@"反geo检索发送失败");
-        [MBProgressHUD showQuickTipWithText:@"规划路线失败"];
+        [MBProgressHUD showQuickTipWithText:[SwichLanguage getString:@"errorA109X"]];
     }
 }
 
@@ -866,6 +887,11 @@
 #pragma mark - BMKMapViewDelegate
 - (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id<BMKAnnotation>)annotation
 {
+    if ([annotation isKindOfClass:[RouteAnnotation class]])
+    {
+        return [self getRouteAnnotationView:mapView viewForAnnotation:annotation];
+    }
+    
     _carAnnotationView = [_mapView dequeueReusableAnnotationViewWithIdentifier:@"annotationView"];
     if (_carAnnotationView == nil) {
         _carAnnotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotationView"];
@@ -876,7 +902,40 @@
     
     return _carAnnotationView;
 }
+#pragma mark - BMKMapView Delegate
 
+- (BMKAnnotationView*)getRouteAnnotationView:(BMKMapView *)mapview viewForAnnotation:(RouteAnnotation*)routeAnnotation
+{
+    BMKAnnotationView* view = nil;
+    switch (routeAnnotation.type) {
+        case 0:
+        {
+            view = [mapview dequeueReusableAnnotationViewWithIdentifier:@"start_node"];
+            if (view == nil) {
+                view = [[BMKAnnotationView alloc]initWithAnnotation:routeAnnotation reuseIdentifier:@"start_node"];
+                view.image = [UIImage imageWithContentsOfFile:[self getMyBundlePath1:@"images/icon_nav_start.png"]];
+                view.centerOffset = CGPointMake(0, -(view.frame.size.height * 0.5));
+                view.canShowCallout = TRUE;
+            }
+            view.annotation = routeAnnotation;
+        }
+            break;
+        default:
+            break;
+    }
+    
+    return view;
+}
+- (NSString*)getMyBundlePath1:(NSString *)filename
+{
+    
+    NSBundle * libBundle = MYBUNDLE ;
+    if ( libBundle && filename ){
+        NSString * s=[[libBundle resourcePath ] stringByAppendingPathComponent : filename];
+        return s;
+    }
+    return nil ;
+}
 - (BMKOverlayView *)mapView:(BMKMapView *)mapView viewForOverlay:(id <BMKOverlay>)overlay{
     if ([overlay isKindOfClass:[BMKPolyline class]]){
         BMKPolylineView *polylineView = [[BMKPolylineView alloc] initWithPolyline:overlay];
@@ -991,8 +1050,7 @@
 }
 
 #pragma mark - Lazy loading
-- (BMKLocationManager *)locationManager {
-    if (!_locationManager) {
+- (void)initlocationManager {
         //初始化BMKLocationManager类的实例
         _locationManager = [[BMKLocationManager alloc] init];
         //设置定位管理类实例的代理
@@ -1017,7 +1075,167 @@
          后开始计算。
          */
         _locationManager.locationTimeout = 10;
+}
+
+//弹出底部菜单栏
+-(void)showBottomDailog
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[SwichLanguage getString:@"navtitle"] message:nil preferredStyle: UIAlertControllerStyleActionSheet];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:[SwichLanguage getString:@"cancel"] style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:[SwichLanguage getString:@"gaodemap"] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //响应回调
+        NSLog(@"点击高德地图");
+        [self selectAlerActionWithInt:2];
+    }];
+    UIAlertAction *archiveAction = [UIAlertAction actionWithTitle:[SwichLanguage getString:@"bdmap"] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //响应回调
+        NSLog(@"点击百度地图");
+        [self selectAlerActionWithInt:1];
+    }];
+    [alertController addAction:cancelAction];
+    [alertController addAction:deleteAction];
+    [alertController addAction:archiveAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+-(void)selectAlerActionWithInt:(int)setid
+{
+    if ([self.inAppSetting CkeckAppIsInstall:setid]) {
+           
+           static BOOL isLocalizings = NO;
+           if (isLocalizings)
+           {
+               return;
+           }
+           
+           isLocalizings = YES;
+           [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            UnitModel * mUnitModel=[self.inAppSetting getSelectUnit];
+            NSDictionary *bodyData = @{@"imei": [mUnitModel getImei],
+                                       @"langu":@"0"};
+            NSDictionary *parameters = [PostXMLDataCreater createXMLDicWithCMD:854
+                                                                withParameters:bodyData];
+            [NetWorkModel POST:ServerURL
+                    parameters:parameters
+                       success:^(ResponseObject *messageCenterObject)
+             {
+                 NSDictionary* ret=messageCenterObject.ret;
+                 //NSString* la=[ret objectForKey:@"la"];
+                 //NSString* lo=[ret objectForKey:@"lo"];
+                 NSString* la=[NSString stringWithFormat:@"%@",[ret objectForKey:@"la"]];
+                 NSString* lo=[NSString stringWithFormat:@"%@",[ret objectForKey:@"lo"]];
+//                float lat= [la floatValue];
+//                float lot= [lo floatValue];
+                if (setid==2) {
+                             //获取数据时候就转化了
+                    CLLocationCoordinate2D mlalo=[MapLoctionSwich bd09togcj02:[lo floatValue] and:[la floatValue]];
+                    la=[NSString stringWithFormat:@"%f",mlalo.latitude];
+                    lo=[NSString stringWithFormat:@"%f",mlalo.longitude];
+                }
+                if(la.length>0&&![la isEqualToString:@"0.0"])
+                     {
+                         [self.inAppSetting getInstalledMapAppWithEndLocation:la with:lo andtpye:setid];
+                         isLocalizings = NO;
+                         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                         
+                     }else//add by aika
+                     {
+                         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                         isLocalizings = NO;
+                         [MBProgressHUD showQuickTipWithText:[SwichLanguage getString:@"errorA110X"]];
+                     }
+                 
+             }failure:^(NSError *error)
+             {
+                [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                isLocalizings = NO;
+             }];
     }
-    return _locationManager;
+}
+
+-(void)initLocation
+{
+    _locationManager = [[BMKLocationManager alloc] init];
+    
+    _locationManager.delegate = self;
+    
+    _locationManager.coordinateType = BMKLocationCoordinateTypeBMK09LL;
+    _locationManager.distanceFilter = kCLDistanceFilterNone;
+    _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    _locationManager.activityType = CLActivityTypeAutomotiveNavigation;
+    _locationManager.pausesLocationUpdatesAutomatically = NO;
+    _locationManager.allowsBackgroundLocationUpdates = YES;
+    _locationManager.locationTimeout = 10;
+    _locationManager.reGeocodeTimeout = 10;
+    
+}
+
+-(void)initBlock
+{
+    __weak MainMapViewController *weakSelf = self;
+    self.completionBlock = ^(BMKLocation *location, BMKLocationNetworkState state, NSError *error)
+    {
+        if (error)
+        {
+            NSLog(@"locError:{%ld - %@};", (long)error.code, error.localizedDescription);
+            
+            
+        }
+        
+        if (location.location) {//得到定位信息，添加annotation
+        
+            NSLog(@"LOC = %@",location.location);
+            NSLog(@"LOC ID= %@",location.locationID);
+            BMKPointAnnotation *pointAnnotation = [[BMKPointAnnotation alloc]init];
+            
+            pointAnnotation.coordinate = location.location.coordinate;
+            pointAnnotation.title = @"单次定位";
+            if (location.rgcData) {
+                pointAnnotation.subtitle = [location.rgcData description];
+            } else {
+                pointAnnotation.subtitle = @"rgc = null!";
+            }
+            
+            MainMapViewController *strongSelf = weakSelf;
+            
+            if (location.rgcData.poiList) {
+                for (BMKLocationPoi * poi in location.rgcData.poiList) {
+                    NSLog(@"poi = %@, %@, %f, %@, %@", poi.name, poi.addr, poi.relaiability, poi.tags, poi.uid);
+                }
+            }
+            
+            if (location.rgcData.poiRegion) {
+                NSLog(@"poiregion = %@, %@, %@", location.rgcData.poiRegion.name, location.rgcData.poiRegion.tags, location.rgcData.poiRegion.directionDesc);
+            }
+            
+           // [strongSelf updateMessage:[NSString stringWithFormat:@"当前位置信息： \n经纬度：%.6f,%.6f \n地址信息：%@ \n网络状态：%d",location.location.coordinate.latitude, location.location.coordinate.longitude, [location.rgcData description], state]];
+            NSLog(@"%@",[NSString stringWithFormat:@"当前位置信息： \n经纬度：%.6f,%.6f \n地址信息：%@ \n网络状态：%d",location.location.coordinate.latitude, location.location.coordinate.longitude, [location.rgcData description], state]);
+            //[_mapView a];
+            MyLocation * loc = [[MyLocation alloc]initWithLocation:location.location withHeading:nil];
+            [strongSelf addLocToMapView:loc];
+            
+        }
+        
+        if (location.rgcData) {
+            NSLog(@"rgc = %@",[location.rgcData description]);
+        }
+        
+        NSLog(@"netstate = %d",state);
+    };
+    
+    
+}
+- (void)addLocToMapView:(MyLocation *)loc
+{
+    [_mapView updateLocationData:loc];
+    [_mapView setCenterCoordinate:loc.location.coordinate animated:YES];
+    if (_userLocation == nil)
+    {
+        _userLocation = [[RouteAnnotation alloc] init];
+        _userLocation.type = 0;
+    }
+    _userLocation.coordinate = loc.location.coordinate;
+    _userLocation.title = @"我的位置";
+    NSArray * annotationArray = [[NSArray alloc] initWithObjects:_userLocation,nil];
+    [_mapView addAnnotations:annotationArray];
 }
 @end

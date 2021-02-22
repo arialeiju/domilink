@@ -17,7 +17,7 @@
 #import "StartAndEndAnNotation.h"
 #import "HistoryCell.h"
 #define miniScale 0.5
-@interface HistoryTrackViewController ()<BMKMapViewDelegate, TrackPlayerViewDelegate>
+@interface HistoryTrackViewController ()<BMKMapViewDelegate, TrackPlayerViewDelegate,UIGestureRecognizerDelegate>
 {
     NSArray *_historyLocations;
     CLLocationCoordinate2D *_hitoryCoors;
@@ -145,7 +145,56 @@
                                      VIEWWIDTH,
                                      VIEWHEIGHT-NAVBARHEIGHT-IPXMargin);
     _mapView = [[BMKMapView alloc] initWithFrame:mapViewFrame];
+    _mapView.rotateEnabled= NO;
+    _mapView.overlookEnabled = NO;
     [self.view addSubview:_mapView];
+    
+    // 拖动
+       UIPanGestureRecognizer *mapPanGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(mapPanGesture:)];
+       mapPanGesture.delegate = self;
+       mapPanGesture.cancelsTouchesInView = NO;
+       mapPanGesture.delaysTouchesEnded = NO;
+       [_mapView addGestureRecognizer:mapPanGesture];
+       
+       // 缩放
+       UIPinchGestureRecognizer *mapPinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(mapPinchGesture:)];
+       mapPinchGesture.delegate = self;
+       mapPinchGesture.cancelsTouchesInView = NO;
+       mapPinchGesture.delaysTouchesEnded = NO;
+       [_mapView addGestureRecognizer:mapPinchGesture];
+}
+/**
+ 百度地图拖动手势
+ 
+ @param gesture 手势
+ */
+- (void)mapPanGesture:(UIGestureRecognizer *)gesture
+{
+    if ([gesture state] == UIGestureRecognizerStateBegan) {
+        [self checkIsPlaying];
+    }
+}
+
+/**
+ 百度地图缩放手势
+ 
+ @param gesture 手势
+ */
+- (void)mapPinchGesture:(UIGestureRecognizer *)gesture
+{
+    if ([gesture state] == UIGestureRecognizerStateBegan) {
+        [self checkIsPlaying];
+    }
+}
+
+/**
+当轨迹播放过程中，就检测到手势就停止播放
+*/
+-(void)checkIsPlaying
+{
+    if (_trackPlayerView.playPauseButton.selected==YES) {
+         [_trackPlayerView.playPauseButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    }
 }
 
 - (void)viewDidLoad
@@ -277,6 +326,7 @@
 //    }
 //    _currentAnnotationView = annotationView;
 //    return annotationView;
+    
     if ([annotation isKindOfClass:[CustomPointAnnotation class]]) {
         BMKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"stopAnnotationView"];
         if (annotationView == nil)
