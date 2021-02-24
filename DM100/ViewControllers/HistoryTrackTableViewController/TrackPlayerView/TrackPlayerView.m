@@ -49,9 +49,24 @@
     {
         self.frame = frame;
 
+//        CGRect selectionFrame = _selectionView.frame;
+//        selectionFrame.origin.x = VIEWWIDTH-CGRectGetWidth(selectionFrame)-10;
+//        selectionFrame.origin.y = CGRectGetMaxY(self.frame)+20;
+//
+//        _selectionView.frame = selectionFrame;
+//
+//        _currentSpeedIndex = 2;
+        float playerviewheight;
+        if (KIsiPhoneX)
+        {
+            playerviewheight=NAVBARHEIGHT+3+20;
+        }else
+        {
+            playerviewheight=NAVBARHEIGHT+12+20;
+        }
         CGRect selectionFrame = _selectionView.frame;
         selectionFrame.origin.x = VIEWWIDTH-CGRectGetWidth(selectionFrame)-10;
-        selectionFrame.origin.y = CGRectGetMaxY(self.frame)+20;
+        selectionFrame.origin.y = playerviewheight;
         
         _selectionView.frame = selectionFrame;
         
@@ -91,7 +106,7 @@
     
     _speedFloatArr = @[[NSNumber numberWithFloat:1.0f],
                        [NSNumber numberWithFloat:0.5f],
-                       [NSNumber numberWithFloat:0.25f],
+                       [NSNumber numberWithFloat:0.35f],
                        [NSNumber numberWithFloat:0.125f],
                        [NSNumber numberWithFloat:0.08f]];
 }

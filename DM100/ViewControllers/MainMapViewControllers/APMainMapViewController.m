@@ -13,6 +13,7 @@
 #import "AppleHistoryTrackController.h"
 #import "DefenseService.h"
 #import "MapLoctionSwich.h"
+#import "SettingPlusController.h"
 #import <BaiduMapAPI_Search/BMKGeocodeSearch.h>
 @interface APMainMapViewController ()<MKMapViewDelegate,BMKGeoCodeSearchDelegate>
 {
@@ -378,8 +379,11 @@
     NSLog(@"点击按钮6");
     if ([self.inAppSetting checkhaddata]) {
         UnitModel *detail = [self.inAppSetting getSelectUnit];
-        SettingViewController *mSettingViewController = [[SettingViewController alloc]initWithImei:[detail getImei] anddevicetype:detail.devType];
-        [self.navigationController pushViewController:mSettingViewController animated:YES];
+//        SettingViewController *mSettingViewController = [[SettingViewController alloc]initWithImei:[detail getImei] anddevicetype:detail.devType];
+//        [self.navigationController pushViewController:mSettingViewController animated:YES];
+        
+        SettingPlusController *mSettingPlusController = [[SettingPlusController alloc]initWithImei:[detail getImei] anddevicetype:detail.devType andImeiName:[detail getShowName]];
+        [self.navigationController pushViewController:mSettingPlusController animated:YES];
     }
 }
 -(void)ClickTopRButton1

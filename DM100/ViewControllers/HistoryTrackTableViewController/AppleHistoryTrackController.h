@@ -13,7 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AppleHistoryTrackController : UIViewController<UIAlertViewDelegate,UITableViewDelegate,UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet RefreshableTableView *messageCenterTableView;
+@property (strong, nonatomic) IBOutlet RefreshableTableView *messageCenterTableView;
 @property (strong, nonatomic) NSMutableArray * messageArray;
 - (id)initWithImei:(NSString *)imei Withlalo:(CLLocationCoordinate2D)Coor;
 - (id)initWithImei:(NSString *)imei Withlalo:(CLLocationCoordinate2D)Coor WithStart:(NSString *)mstartstr WithEnd:(NSString *)mendstr;

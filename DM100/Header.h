@@ -54,6 +54,8 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 #define IPXMargin (KIsiPhoneX?20:0)
 #define IPXLiuHai (KIsiPhoneX?30:20)
 
+#define LineGraycolor [UIColor colorWithHexString:@"#F7F7F7"]
+
 #pragma mark - Bundle
 #define MYBUNDLE_NAME @ "mapapi.bundle"
 #define MYBUNDLE_PATH [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent: MYBUNDLE_NAME]

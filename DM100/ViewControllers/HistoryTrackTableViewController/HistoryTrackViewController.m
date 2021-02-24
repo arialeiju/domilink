@@ -48,6 +48,16 @@
     
     UIButton *_liebiaoButton;
     float selectid;
+    
+    float tableViewH;
+    UIView *btview;
+    UIImageView* mbtig;
+    float morigeBtY;//初使切换按钮的Y位置
+    
+    CGRect centerRect;//百度地图边界，用于提前加载
+    
+    BMKPolyline *polyLine;//记录线的位置
+    UIImage *myLocationImage;
 }
 @end
 
@@ -72,6 +82,11 @@
         [_mapView setCenterCoordinate:Coor animated:NO];
         [_mapView setZoomLevel:18.0f];
         isGuoluJZ=NO;
+        
+        centerRect = CGRectMake(CGRectGetWidth(_mapView.frame)/8,
+                                        _mapView.frame.origin.y+CGRectGetHeight(_mapView.frame)/8,
+                                        CGRectGetWidth(_mapView.frame)*3/4,
+                                        CGRectGetHeight(_mapView.frame)-(VIEWHEIGHT-morigeBtY)-CGRectGetHeight(_mapView.frame)/4);
     }
     return self;
 }
@@ -102,14 +117,13 @@
 - (void)setupView
 {
     _liebiaoButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    
-    [_liebiaoButton setTitle:[SwichLanguage getString:@"menu1"] forState:UIControlStateNormal];
+    [_liebiaoButton.titleLabel setFont:[UIFont systemFontOfSize:15.0f]];
+    [_liebiaoButton setTitle:[SwichLanguage getString:@"satellite"] forState:UIControlStateNormal];
     [_liebiaoButton sizeToFit];
     [_liebiaoButton setFrame:CGRectMake(10,
                                         IOS7DELTA+IPXMargin,
                                         CGRectGetWidth(_liebiaoButton.frame),
                                         44)];
-    [_liebiaoButton.titleLabel setFont:[UIFont systemFontOfSize:15.0f]];
     [_liebiaoButton addTarget:self action:@selector(click_righttop_button) forControlEvents:UIControlEventTouchUpInside];
     [self addBackButtonTitleWithTitle:[SwichLanguage getString:@"p2tv2"] withRightButton:_liebiaoButton];
     
@@ -117,25 +131,29 @@
 
 - (void)addTrackPlayerView
 {
-    float playerviewheight;
-    if (KIsiPhoneX)
-    {
-        playerviewheight=NAVBARHEIGHT+3;
-    }else
-    {
-        playerviewheight=NAVBARHEIGHT+12;
-    }
-    
+//    float playerviewheight;
+//    if (KIsiPhoneX)
+//    {
+//        playerviewheight=NAVBARHEIGHT+3;
+//    }else
+//    {
+//        playerviewheight=NAVBARHEIGHT+12;
+//    }
+//
+//    _trackPlayerView = [[TrackPlayerView alloc] initWithFrame:CGRectMake(0,
+//                                                                         playerviewheight,
+//                                                                         VIEWWIDTH,
+//                                                                         77)];
     _trackPlayerView = [[TrackPlayerView alloc] initWithFrame:CGRectMake(0,
-                                                                         playerviewheight,
+                                                                         self.view.frame.size.height-75-IPXMargin,
                                                                          VIEWWIDTH,
-                                                                         77)];
-    
+                                                                         75+IPXMargin)];
     NSLog(@"_trackPlayerView=%f||VIEWWIDTH=%f",_trackPlayerView.frame.size.width,VIEWWIDTH);
     _trackPlayerView.delegate = self;
   //  _trackPlayerView.imeiLabel.text = _imei;
     [self.view addSubview:_trackPlayerView];
     [self.view addSubview:_trackPlayerView.selectionView];
+    [self setupListButton];
 }
 
 - (void)setupMapView
@@ -149,19 +167,6 @@
     _mapView.overlookEnabled = NO;
     [self.view addSubview:_mapView];
     
-    // 拖动
-       UIPanGestureRecognizer *mapPanGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(mapPanGesture:)];
-       mapPanGesture.delegate = self;
-       mapPanGesture.cancelsTouchesInView = NO;
-       mapPanGesture.delaysTouchesEnded = NO;
-       [_mapView addGestureRecognizer:mapPanGesture];
-       
-       // 缩放
-       UIPinchGestureRecognizer *mapPinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(mapPinchGesture:)];
-       mapPinchGesture.delegate = self;
-       mapPinchGesture.cancelsTouchesInView = NO;
-       mapPinchGesture.delaysTouchesEnded = NO;
-       [_mapView addGestureRecognizer:mapPinchGesture];
 }
 /**
  百度地图拖动手势
@@ -263,9 +268,10 @@
     array = [NSArray arrayWithArray:_mapView.overlays];
     [_mapView removeOverlays:array];
     
-    BMKPolyline *polyLine = [BMKPolyline polylineWithCoordinates:_hitoryCoors
-                                                           count:_coorCounter];
-    [_mapView addOverlay:polyLine];
+    polyLine=nil;
+//    BMKPolyline *polyLine = [BMKPolyline polylineWithCoordinates:_hitoryCoors
+//                                                           count:_coorCounter];
+//    [_mapView addOverlay:polyLine];
     
     BMKCoordinateRegion region;
     region.center = _hitoryCoors[0];
@@ -289,14 +295,15 @@
     if (_carAnnotation == nil)
     {
         _carAnnotation = [[BMKPointAnnotation alloc]init];
+        [_mapView addAnnotation:_carAnnotation];
     }
     _carAnnotation.coordinate = coor;
-    [_mapView addAnnotation:_carAnnotation];
+    //[_mapView addAnnotation:_carAnnotation];
     
-    CGRect centerRect = CGRectMake(CGRectGetWidth(_mapView.frame)/4,
-                                   CGRectGetHeight(_mapView.frame)/4,
-                                   CGRectGetWidth(_mapView.frame)/2,
-                                   CGRectGetHeight(_mapView.frame)/2);
+//    CGRect centerRect = CGRectMake(CGRectGetWidth(_mapView.frame)/4,
+//                                   CGRectGetHeight(_mapView.frame)/4,
+//                                   CGRectGetWidth(_mapView.frame)/2,
+//                                   CGRectGetHeight(_mapView.frame)/2);
     CGPoint coorPoint = [_mapView convertCoordinate:coor toPointToView:_mapView];
     
     if (!CGRectContainsPoint(centerRect, coorPoint))
@@ -304,35 +311,18 @@
         [_mapView setCenterCoordinate:coor animated:YES];
     }
 
-//
-//    这样做会添加很多图钉出来
-//    
-//    BMKPointAnnotation *newPoint = [[BMKPointAnnotation alloc] init];
-//    newPoint.coordinate = coor;
-//    [_mapView addAnnotation:newPoint];
-
 }
 
 
 #pragma mark - MapViewDelegate
 - (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id<BMKAnnotation>)annotation
 {
-//    BMKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"AnnotationView"];
-//    if (annotationView == nil)
-//    {
-//        annotationView = [[BMKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"AnnotationView"];
-//        annotationView.image = [UIImage imageNamed:@"ball.png"];
-//        annotationView.centerOffset = CGPointMake(0, 0);
-//    }
-//    _currentAnnotationView = annotationView;
-//    return annotationView;
-    
     if ([annotation isKindOfClass:[CustomPointAnnotation class]]) {
         BMKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"stopAnnotationView"];
         if (annotationView == nil)
         {
             annotationView = [[BMKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"stopAnnotationView"];
-            annotationView.image = [UIImage imageNamed:@"stop_bar.png"];
+            annotationView.image = [self getMapPointImageFitSize:@"stop_bar.png"];
             annotationView.centerOffset = CGPointMake(0,-8);
             annotationView.canShowCallout=NO;
         }
@@ -379,8 +369,12 @@
     else if ([annotation isKindOfClass:[BMKPointAnnotation class]]) {
         if (_currentAnnotationView==nil) {
             _currentAnnotationView = [[BMKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"AnnotationView"];
-            _currentAnnotationView.image = [UIImage imageNamed:@"ball.png"];
+            //_currentAnnotationView.image =[self getShowImage:@"0" AndCouse:0 AndLogoType:@"0"];
             _currentAnnotationView.centerOffset = CGPointMake(0, 0);
+            
+            myLocationImage = _currentAnnotationView.image = [UIImage imageNamed:@"蓝色-0.png"];//带箭头方向的图片
+
+            //_currentAnnotationView.centerOffset = CGPointMake(0, _currentAnnotationView.frame.size.height/2);
         }
         return _currentAnnotationView;
     }
@@ -390,11 +384,19 @@
 -(UIImage*)getimagebytype:(StartAndEndAnNotation*)annotation
 {
     //0为起点，1是终点
+    UIImage* mimage;
     if (annotation.type==0) {
-        return  [UIImage imageWithContentsOfFile:[self getMyBundlePath1:@"images/icon_nav_start.png"]];;
+        mimage=  [UIImage imageWithContentsOfFile:[self getMyBundlePath1:@"images/icon_nav_start.png"]];;
     }else
     {
-        return  [UIImage imageWithContentsOfFile:[self getMyBundlePath1:@"images/icon_nav_end.png"]];;
+        mimage=  [UIImage imageWithContentsOfFile:[self getMyBundlePath1:@"images/icon_nav_end.png"]];;
+    }
+    if(KIsiPhoneX)
+    {
+        return  [self.dataModel scaleImage:mimage width:3];
+    }else
+    {
+        return mimage;
     }
 }
 
@@ -404,10 +406,11 @@
     if ([overlay isKindOfClass:[BMKPolyline class]])
     {
         BMKPolylineView* polylineView = [[BMKPolylineView alloc] initWithOverlay:overlay];
-//        polylineView.fillColor = [[UIColor cyanColor] colorWithAlphaComponent:1];
-//        polylineView.strokeColor = [[UIColor blueColor] colorWithAlphaComponent:0.7];
-        polylineView.strokeColor = [UIColor colorWithHexString:@"#00ff00"];
-        polylineView.lineWidth = 3.0;
+        [polylineView loadStrokeTextureImage:[UIImage imageNamed:@"traffic_texture_smooth"]];
+        //polylineView.strokeColor = [UIColor colorWithHexString:@"#00ff00"];
+        polylineView.lineJoinType=kBMKLineJoinRound;
+        polylineView.lineCapType=kBMKLineCapRound;
+        polylineView.lineWidth = 8.0f;//3.0;
         
         return polylineView;
     }
@@ -418,22 +421,13 @@
 - (void)sliderValueDidChangeToStep:(NSInteger)step
                       withDuration:(CGFloat)duration
 {
-//    if (step==1) {
-//        // 清除所有标志
-//        NSArray* array = [NSArray arrayWithArray:_mapView.annotations];
-//        [_mapView removeAnnotations:array];
-//        stoppoitla=0;
-//        stoppoitlo=0;
-//        startimestr=nil;
-//        endtimestr=nil;
-//    }
     if(!self.messageCenterTableView.hidden)
     {
-        [self.messageCenterTableView setHidden:YES];
+        [self clickShowTableListButton];
     }
     HistoryLocationObject *object = [_historyLocations objectAtIndex:step];
     CLLocationCoordinate2D coor = CLLocationCoordinate2DMake([object.la floatValue], [object.lo floatValue]);
-
+    
     _trackPlayerView.timeLabel.text = object.stsTime;
     _trackPlayerView.imeiLabel.text = [NSString stringWithFormat:@"%@ km/h",object.speed];
 
@@ -444,6 +438,11 @@
                      animations:^
     {
         [self setCarAnnotation:coor];
+        if(self->_currentAnnotationView!=nil)
+        {
+            //_currentAnnotationView.image=[self getShowImage:@"0" AndCouse:object.course AndLogoType:@"0"];
+            self->_currentAnnotationView.image=[self.dataModel imageRotatedByDegrees:object.course andImage:self->myLocationImage];
+        }
                      }
                      completion:^(BOOL finished)
     {
@@ -452,8 +451,26 @@
     
     if (step==_historyLocations.count-1) {
         NSLog(@"到达最后一个点");
-        [self showAlltimeAndDistance];
+        //[self showAlltimeAndDistance];
     }
+    
+    int alow=(int)_historyLocations.count;
+    CLLocationCoordinate2D coorsttt[alow];
+    for (int i = 0; i < alow; i++)
+    {
+        HistoryLocationObject *objectst = [_historyLocations objectAtIndex:i];
+        CLLocationCoordinate2D coorone = CLLocationCoordinate2DMake([objectst.la floatValue], [objectst.lo floatValue]);
+        coorsttt[i] = coorone;
+    }
+    
+    if (polyLine) {
+        [polyLine setPolylineWithCoordinates:coorsttt count:step+1];
+        return;
+    }
+    
+    NSLog(@"进入一次");
+    polyLine = [BMKPolyline polylineWithCoordinates:coorsttt count:step+1];
+    [_mapView addOverlay:polyLine];
 }
 
 - (void)timeRangeDidSelectedWithStartTime:(NSString *)startTime
@@ -866,14 +883,14 @@
 
 -(void)click_righttop_button
 {
-    NSLog(@"click_righttop_button");
-    if([self.messageCenterTableView isHidden])
-    {
-        [_trackPlayerView stopshowing];
-        [self updateTableView];
+    
+    if (_mapView.mapType==BMKMapTypeSatellite) {
+        [_mapView setMapType:BMKMapTypeStandard];
+        [_liebiaoButton setTitle:[SwichLanguage getString:@"satellite"] forState:UIControlStateNormal];
     }else
     {
-        [self.messageCenterTableView setHidden:YES];
+        [_mapView setMapType:BMKMapTypeSatellite];
+        [_liebiaoButton setTitle:[SwichLanguage getString:@"normol"] forState:UIControlStateNormal];
     }
 }
 -(void)updateTableView
@@ -891,15 +908,21 @@
 
 - (void)tableViewSetting
 {
-    if(KIsiPhoneX)
-    {
-        CGRect newfame=self.messageCenterTableView.frame;
-        newfame.origin.y=newfame.origin.y+IPXMargin;
-        newfame.size.height=newfame.size.height-IPXMargin;
-        [self.messageCenterTableView setFrame:newfame];
-    }
+//    if(KIsiPhoneX)
+//    {
+//        CGRect newfame=self.messageCenterTableView.frame;
+//        newfame.origin.y=newfame.origin.y+IPXMargin;
+//        newfame.size.height=newfame.size.height-IPXMagin;
+//        [self.messageCenterTableView setFrame:newfame];
+//    }
+    CGRect newfame=CGRectMake(0,morigeBtY-tableViewH+btview.frame.size.height, VIEWWIDTH, tableViewH);
+    self.messageCenterTableView =[[RefreshableTableView alloc] initWithFrame:newfame];
+    [self.view addSubview:self.messageCenterTableView];
+    self.messageCenterTableView.hidden=YES;
+    
     self.messageCenterTableView.delegate = self;
     self.messageCenterTableView.dataSource = self;
+    [self.messageCenterTableView setBackgroundColor:[UIColor whiteColor]];
     [self.messageCenterTableView setTableFooterView:[[UIView alloc] init]];
     [self.messageCenterTableView registerNib:[UINib nibWithNibName:@"HistoryCell" bundle:nil] forCellReuseIdentifier:@"HistoryCell"];
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -921,7 +944,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    return 27;//50
 }
 
 
@@ -930,7 +953,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
      //NSLog(@"点击一下");
     [_trackPlayerView.sliderBar setValue:indexPath.row];
-    [tableView setHidden:YES];
+    [self clickShowTableListButton];
     [self sliderValueDidChangeToStep:indexPath.row withDuration:0];
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -1003,4 +1026,83 @@
     }
     return cell;
 }
+
+// 分辨率大小调整图标大小
+-(UIImage*)getMapPointImageFitSize:(NSString*)mimagename
+{
+    UIImage* mimage=[UIImage imageNamed:mimagename];
+    if(KIsiPhoneX)
+    {
+        return  [self.dataModel scaleImage:mimage width:3];
+    }else
+    {
+        return mimage;
+    }
+}
+
+//配置列表按钮
+-(void)setupListButton
+{
+    float btH=30;//按钮高度
+    btview=[[UIView alloc] initWithFrame:CGRectMake(0,VIEWHEIGHT- _trackPlayerView.frame.size.height-btH, VIEWWIDTH, btH)];
+    [btview setBackgroundColor:[UIColor whiteColor]];
+    btview.userInteractionEnabled=YES;
+    morigeBtY=btview.frame.origin.y;
+    [self.view addSubview:btview];
+    
+    mbtig=[[UIImageView alloc] initWithFrame:CGRectMake(VIEWWIDTH/2-10,10, 20, 10)];
+    [mbtig setImage:[UIImage imageNamed:@"setupb.png"]];
+    //[mbtig setBackgroundColor:[UIColor redColor]];
+    [btview addSubview:mbtig];
+    
+    UIView *lineView1=[[UIView alloc] initWithFrame:CGRectMake(0,btH-2, VIEWWIDTH, 2)];
+    [lineView1 setBackgroundColor:LineGraycolor];
+    [btview addSubview:lineView1];
+    
+    //配资点击触发
+    UITapGestureRecognizer *tagGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickShowTableListButton)];
+    [btview addGestureRecognizer:tagGes];
+    
+    //配置table view 高度，影响列表按钮的位置变动
+    if(KIsiPhoneX)
+    {
+        tableViewH=VIEWHEIGHT/2-btH*2-_trackPlayerView.frame.size.height;
+    }else
+    {
+        tableViewH=VIEWHEIGHT/2;
+    }
+}
+
+//刷新messageview 等界面位置
+-(void)clickShowTableListButton
+{
+    float my;
+    if (_messageCenterTableView.hidden) {
+        mbtig.transform = CGAffineTransformMakeRotation(M_PI);
+        my=morigeBtY-tableViewH;
+        [_messageCenterTableView setHidden:NO];
+        [_trackPlayerView stopshowing];
+        [self updateTableView];
+    }else
+    {
+        mbtig.transform =CGAffineTransformIdentity;
+        my=morigeBtY;
+        [_messageCenterTableView setHidden:YES];
+    }
+    CGRect mrect=btview.frame;
+    mrect.origin.y=my;
+    [btview setFrame:mrect];
+}
+//获取图标要显示的类型
+-(UIImage*)getShowImage:(NSString*)mdevstatus AndCouse:(NSString*)mcouse AndLogoType:(NSString*)mlogoType
+{
+    //NSLog(@"getShowImage:mdevstatus=%@ mcouse=%@",mdevstatus,mcouse);
+    int thecouse=0;//默认方向
+    if (mcouse!=nil) {
+        thecouse=[mcouse intValue];
+    }
+    //return [self.dataModel getImageWithStatus:mdevstatus AndCouser:thecouse];
+    return [self.dataModel getMapImageWithStatus:mdevstatus AndCouser:thecouse AndLogoType:mlogoType];
+}
+
 @end

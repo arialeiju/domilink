@@ -55,6 +55,8 @@
 		E415FCEB25DE4B8E00EBC574 /* set7.png in Resources */ = {isa = PBXBuildFile; fileRef = E415FCD225DE4B8E00EBC574 /* set7.png */; };
 		E415FCEC25DE4B8E00EBC574 /* setdownb.png in Resources */ = {isa = PBXBuildFile; fileRef = E415FCD325DE4B8E00EBC574 /* setdownb.png */; };
 		E415FCED25DE4B8E00EBC574 /* set44.png in Resources */ = {isa = PBXBuildFile; fileRef = E415FCD425DE4B8E00EBC574 /* set44.png */; };
+		E43EE5AA25E384C800DD8286 /* stopb_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E43EE5A925E384C800DD8286 /* stopb_icon.png */; };
+		E43EE5AC25E384D300DD8286 /* startb_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E43EE5AB25E384D200DD8286 /* startb_icon.png */; };
 		E452A0FF247CA7C000E2C84A /* NSTimer+Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A0F1247CA7C000E2C84A /* NSTimer+Controller.m */; };
 		E452A100247CA7C000E2C84A /* UIViewController+AddTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A0F6247CA7C000E2C84A /* UIViewController+AddTitle.m */; };
 		E452A101247CA7C000E2C84A /* UIViewController+Autorotate.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A0F7247CA7C000E2C84A /* UIViewController+Autorotate.m */; };
@@ -246,6 +248,12 @@
 		E452A330247CE7FB00E2C84A /* CalloutMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A2D1247CE7FA00E2C84A /* CalloutMapAnnotation.m */; };
 		E452A331247CE7FB00E2C84A /* HistoryTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A2D2247CE7FA00E2C84A /* HistoryTrackViewController.m */; };
 		E4539CC8248E2CA0006EF4C3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4539CC7248E2C9C006EF4C3 /* WebKit.framework */; };
+		E454325325E5E8ED0070F46A /* traffic_texture_congestion.png in Resources */ = {isa = PBXBuildFile; fileRef = E454324E25E5E8ED0070F46A /* traffic_texture_congestion.png */; };
+		E454325425E5E8ED0070F46A /* traffic_texture_slow.png in Resources */ = {isa = PBXBuildFile; fileRef = E454324F25E5E8ED0070F46A /* traffic_texture_slow.png */; };
+		E454325525E5E8ED0070F46A /* traffic_texture_severe_congestion.png in Resources */ = {isa = PBXBuildFile; fileRef = E454325025E5E8ED0070F46A /* traffic_texture_severe_congestion.png */; };
+		E454325625E5E8ED0070F46A /* traffic_texture_smooth.png in Resources */ = {isa = PBXBuildFile; fileRef = E454325125E5E8ED0070F46A /* traffic_texture_smooth.png */; };
+		E454325725E5E8ED0070F46A /* traffic_texture_unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = E454325225E5E8ED0070F46A /* traffic_texture_unknown.png */; };
+		E454325925E5EB640070F46A /* sportArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E454325825E5EB640070F46A /* sportArrow.png */; };
 		E45EC3F324B3FD25002C6336 /* ElectronicFenceService.m in Sources */ = {isa = PBXBuildFile; fileRef = E45EC3F124B3FD24002C6336 /* ElectronicFenceService.m */; };
 		E45F72D0247BA48A0051A88A /* appString.strings in Resources */ = {isa = PBXBuildFile; fileRef = E45F72D2247BA48A0051A88A /* appString.strings */; };
 		E45F72D7247BA51F0051A88A /* SwichLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = E45F72D5247BA51F0051A88A /* SwichLanguage.m */; };
@@ -566,6 +574,8 @@
 		E415FCD325DE4B8E00EBC574 /* setdownb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setdownb.png; sourceTree = "<group>"; };
 		E415FCD425DE4B8E00EBC574 /* set44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = set44.png; sourceTree = "<group>"; };
 		E437E650247788B200922720 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		E43EE5A925E384C800DD8286 /* stopb_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stopb_icon.png; path = "DM100/New Group/image/stopb_icon.png"; sourceTree = SOURCE_ROOT; };
+		E43EE5AB25E384D200DD8286 /* startb_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = startb_icon.png; path = "DM100/New Group/image/startb_icon.png"; sourceTree = SOURCE_ROOT; };
 		E452A0ED247CA7C000E2C84A /* UIViewController+AddTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AddTitle.h"; sourceTree = "<group>"; };
 		E452A0EE247CA7C000E2C84A /* NSDictionary+JsonString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JsonString.h"; sourceTree = "<group>"; };
 		E452A0EF247CA7C000E2C84A /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
@@ -910,6 +920,12 @@
 		E452A2D1247CE7FA00E2C84A /* CalloutMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalloutMapAnnotation.m; sourceTree = "<group>"; };
 		E452A2D2247CE7FA00E2C84A /* HistoryTrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTrackViewController.m; sourceTree = "<group>"; };
 		E4539CC7248E2C9C006EF4C3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		E454324E25E5E8ED0070F46A /* traffic_texture_congestion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = traffic_texture_congestion.png; sourceTree = "<group>"; };
+		E454324F25E5E8ED0070F46A /* traffic_texture_slow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = traffic_texture_slow.png; sourceTree = "<group>"; };
+		E454325025E5E8ED0070F46A /* traffic_texture_severe_congestion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = traffic_texture_severe_congestion.png; sourceTree = "<group>"; };
+		E454325125E5E8ED0070F46A /* traffic_texture_smooth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = traffic_texture_smooth.png; sourceTree = "<group>"; };
+		E454325225E5E8ED0070F46A /* traffic_texture_unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = traffic_texture_unknown.png; sourceTree = "<group>"; };
+		E454325825E5EB640070F46A /* sportArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sportArrow.png; sourceTree = "<group>"; };
 		E45EC3F124B3FD24002C6336 /* ElectronicFenceService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElectronicFenceService.m; sourceTree = "<group>"; };
 		E45EC3F224B3FD25002C6336 /* ElectronicFenceService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElectronicFenceService.h; sourceTree = "<group>"; };
 		E45F72D1247BA48A0051A88A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/appString.strings"; sourceTree = "<group>"; };
@@ -1296,6 +1312,8 @@
 		E415FCB525DE3ED700EBC574 /* settingplusIcon */ = {
 			isa = PBXGroup;
 			children = (
+				E43EE5AB25E384D200DD8286 /* startb_icon.png */,
+				E43EE5A925E384C800DD8286 /* stopb_icon.png */,
 				E415FCBD25DE4B8D00EBC574 /* set1.png */,
 				E415FCC825DE4B8E00EBC574 /* set2.png */,
 				E415FCD025DE4B8E00EBC574 /* set3.png */,
@@ -1932,7 +1950,6 @@
 			isa = PBXGroup;
 			children = (
 				E452A29F247CE7FA00E2C84A /* TrackPlayerView */,
-				E452A2A9247CE7FA00E2C84A /* AppleHistoryTrackController.m */,
 				E452A2AA247CE7FA00E2C84A /* BusPointCell.xib */,
 				E452A2AB247CE7FA00E2C84A /* BusPointCell.m */,
 				E452A2AC247CE7FA00E2C84A /* APAnnotation */,
@@ -1940,8 +1957,9 @@
 				E452A2B9247CE7FA00E2C84A /* HistoryTrackViewController.h */,
 				E452A2D2247CE7FA00E2C84A /* HistoryTrackViewController.m */,
 				E452A2BC247CE7FA00E2C84A /* HistoryTrackViewController.xib */,
-				E452A2BA247CE7FA00E2C84A /* AppleHistoryTrackController.xib */,
 				E452A2BB247CE7FA00E2C84A /* AppleHistoryTrackController.h */,
+				E452A2A9247CE7FA00E2C84A /* AppleHistoryTrackController.m */,
+				E452A2BA247CE7FA00E2C84A /* AppleHistoryTrackController.xib */,
 				E452A2BD247CE7FA00E2C84A /* AlarmTimeView */,
 				E452A2C1247CE7FA00E2C84A /* BusPointCell.h */,
 				E452A2C2247CE7FA00E2C84A /* CustomTimeSelectionView */,
@@ -1954,14 +1972,14 @@
 			isa = PBXGroup;
 			children = (
 				E452A2A0247CE7FA00E2C84A /* PickerView.h */,
-				E452A2A1247CE7FA00E2C84A /* TrackPlayerView.h */,
-				E452A2A2247CE7FA00E2C84A /* CustomPickerView.m */,
-				E452A2A3247CE7FA00E2C84A /* TrackPlayerView.m */,
-				E452A2A4247CE7FA00E2C84A /* CustomPickerView.xib */,
 				E452A2A5247CE7FA00E2C84A /* PickerView.m */,
-				E452A2A6247CE7FA00E2C84A /* CustomPickerView.h */,
-				E452A2A7247CE7FA00E2C84A /* TrackPlayerView.xib */,
 				E452A2A8247CE7FA00E2C84A /* PickerView.xib */,
+				E452A2A6247CE7FA00E2C84A /* CustomPickerView.h */,
+				E452A2A2247CE7FA00E2C84A /* CustomPickerView.m */,
+				E452A2A4247CE7FA00E2C84A /* CustomPickerView.xib */,
+				E452A2A1247CE7FA00E2C84A /* TrackPlayerView.h */,
+				E452A2A3247CE7FA00E2C84A /* TrackPlayerView.m */,
+				E452A2A7247CE7FA00E2C84A /* TrackPlayerView.xib */,
 			);
 			path = TrackPlayerView;
 			sourceTree = "<group>";
@@ -2027,6 +2045,19 @@
 				E452A2D1247CE7FA00E2C84A /* CalloutMapAnnotation.m */,
 			);
 			path = BDAnnotation;
+			sourceTree = "<group>";
+		};
+		E454324D25E5E80F0070F46A /*  linepicture */ = {
+			isa = PBXGroup;
+			children = (
+				E454325825E5EB640070F46A /* sportArrow.png */,
+				E454324E25E5E8ED0070F46A /* traffic_texture_congestion.png */,
+				E454325025E5E8ED0070F46A /* traffic_texture_severe_congestion.png */,
+				E454324F25E5E8ED0070F46A /* traffic_texture_slow.png */,
+				E454325125E5E8ED0070F46A /* traffic_texture_smooth.png */,
+				E454325225E5E8ED0070F46A /* traffic_texture_unknown.png */,
+			);
+			path = " linepicture";
 			sourceTree = "<group>";
 		};
 		E45F72D4247BA51F0051A88A /* SwichLanguage */ = {
@@ -2117,6 +2148,7 @@
 		E48A10E72477B027001CB7F4 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				E454324D25E5E80F0070F46A /*  linepicture */,
 				E415FCB525DE3ED700EBC574 /* settingplusIcon */,
 				E48A10E82477B027001CB7F4 /* signal1.png */,
 				E48A10E92477B027001CB7F4 /* clock2.png */,
@@ -2530,6 +2562,7 @@
 				E4C783FC2520900C00A28EB2 /* group_up.PNG in Resources */,
 				E48A12022477B027001CB7F4 /* 灰色-210.png in Resources */,
 				E48A121F2477B027001CB7F4 /* 灰色-120.png in Resources */,
+				E43EE5AC25E384D300DD8286 /* startb_icon.png in Resources */,
 				E415FCDC25DE4B8E00EBC574 /* set6.png in Resources */,
 				E48A11B82477B027001CB7F4 /* add.png in Resources */,
 				E48A11EB2477B027001CB7F4 /* fgray.png in Resources */,
@@ -2557,6 +2590,7 @@
 				E48A12142477B027001CB7F4 /* car_gray2_30.png in Resources */,
 				E415FCE325DE4B8E00EBC574 /* setmius.png in Resources */,
 				E48A12322477B027001CB7F4 /* car_grean2_90.png in Resources */,
+				E454325925E5EB640070F46A /* sportArrow.png in Resources */,
 				E48A12372477B027001CB7F4 /* car_grean2_150.png in Resources */,
 				E415FCD825DE4B8E00EBC574 /* set4.png in Resources */,
 				E48A11E02477B027001CB7F4 /* page2a4.png in Resources */,
@@ -2584,6 +2618,7 @@
 				E48A11DE2477B027001CB7F4 /* acc.png in Resources */,
 				E48A11FB2477B027001CB7F4 /* 绿色-300.png in Resources */,
 				E452A308247CE7FB00E2C84A /* ChangePasswordViewController.xib in Resources */,
+				E454325725E5E8ED0070F46A /* traffic_texture_unknown.png in Resources */,
 				E48A11F62477B027001CB7F4 /* 蓝色-120.png in Resources */,
 				E48A11C22477B027001CB7F4 /* online_car.png in Resources */,
 				E48A12522477B028001CB7F4 /* page2b2.png in Resources */,
@@ -2691,8 +2726,10 @@
 				E48A12532477B028001CB7F4 /* menu_icon_3_normal.png in Resources */,
 				E48A126B2477B028001CB7F4 /* menu_icon_3_pressed.png in Resources */,
 				E415FCDA25DE4B8E00EBC574 /* setDown.png in Resources */,
+				E43EE5AA25E384C800DD8286 /* stopb_icon.png in Resources */,
 				E48A12282477B027001CB7F4 /* 黄色-0.png in Resources */,
 				E48A11C62477B027001CB7F4 /* map_bg.PNG in Resources */,
+				E454325525E5E8ED0070F46A /* traffic_texture_severe_congestion.png in Resources */,
 				E415FCB425DE3CFE00EBC574 /* RightImageCell.xib in Resources */,
 				E452A2FD247CE7FB00E2C84A /* DeviceDetailTableViewCell.xib in Resources */,
 				E48A120F2477B027001CB7F4 /* 黄色-90.png in Resources */,
@@ -2724,6 +2761,7 @@
 				E415FCEC25DE4B8E00EBC574 /* setdownb.png in Resources */,
 				E48A11EE2477B027001CB7F4 /* choose2.png in Resources */,
 				E48A11CD2477B027001CB7F4 /* ball.png in Resources */,
+				E454325325E5E8ED0070F46A /* traffic_texture_congestion.png in Resources */,
 				E415FCE025DE4B8E00EBC574 /* set42.png in Resources */,
 				E48A127B2477B028001CB7F4 /* login_button.PNG in Resources */,
 				E452A327247CE7FB00E2C84A /* AlarmTimeView.xib in Resources */,
@@ -2737,6 +2775,7 @@
 				E48A120C2477B027001CB7F4 /* 绿色-60.png in Resources */,
 				E48A11D52477B027001CB7F4 /* beijing.png in Resources */,
 				E415FCD725DE4B8E00EBC574 /* set41.png in Resources */,
+				E454325625E5E8ED0070F46A /* traffic_texture_smooth.png in Resources */,
 				E48A121C2477B027001CB7F4 /* 灰色-60.png in Resources */,
 				E452A30F247CE7FB00E2C84A /* CarListViewController.xib in Resources */,
 				E48A11F52477B027001CB7F4 /* arrow1.PNG in Resources */,
@@ -2775,6 +2814,7 @@
 				E415FCDE25DE4B8E00EBC574 /* set35.png in Resources */,
 				E415FCE425DE4B8E00EBC574 /* setadd.png in Resources */,
 				E48A12732477B028001CB7F4 /* setting.png in Resources */,
+				E454325425E5E8ED0070F46A /* traffic_texture_slow.png in Resources */,
 				E48A11F12477B027001CB7F4 /* model.png in Resources */,
 				E48A12542477B028001CB7F4 /* logo.PNG in Resources */,
 				E48A122C2477B027001CB7F4 /* 绿色-120.png in Resources */,

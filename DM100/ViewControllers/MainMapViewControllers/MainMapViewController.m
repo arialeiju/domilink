@@ -15,6 +15,7 @@
 #import "MapLoctionSwich.h"
 #import "MyLocation.h"
 #import "RouteAnnotation.h"
+#import "SettingPlusController.h"
 @interface MainMapViewController ()<BMKLocationManagerDelegate,BMKGeoCodeSearchDelegate>
 {
     __weak IBOutlet UIView *messageView;
@@ -382,8 +383,10 @@
     NSLog(@"点击按钮6");
     if ([self.inAppSetting checkhaddata]) {
         UnitModel *detail = [self.inAppSetting getSelectUnit];
-        SettingViewController *mSettingViewController = [[SettingViewController alloc]initWithImei:[detail getImei] anddevicetype:detail.devType];
-        [self.navigationController pushViewController:mSettingViewController animated:YES];
+//        SettingViewController *mSettingViewController = [[SettingViewController alloc]initWithImei:[detail getImei] anddevicetype:detail.devType];
+//        [self.navigationController pushViewController:mSettingViewController animated:YES];
+        SettingPlusController *mSettingPlusController = [[SettingPlusController alloc]initWithImei:[detail getImei] anddevicetype:detail.devType andImeiName:[detail getShowName]];
+        [self.navigationController pushViewController:mSettingPlusController animated:YES];
     }
 }
 -(void)ClickTopRButton1

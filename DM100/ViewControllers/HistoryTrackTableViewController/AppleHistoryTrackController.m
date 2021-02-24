@@ -49,6 +49,13 @@
     
     UIButton *_liebiaoButton;
     float selectid;
+    
+    float tableViewH;
+    UIView *btview;
+    UIImageView* mbtig;
+    float morigeBtY;//初使切换按钮的Y位置
+    
+    CGRect centerRect;//百度地图边界，用于提前加载
 }
 @end
 
@@ -77,6 +84,11 @@
          [_mapView setRegion:MKCoordinateRegionMake(mdeviceCoor, span) animated:NO];
         
         isGuoluJZ=NO;
+        
+        centerRect = CGRectMake(CGRectGetWidth(_mapView.frame)/8,
+                                        _mapView.frame.origin.y+CGRectGetHeight(_mapView.frame)/8,
+                                        CGRectGetWidth(_mapView.frame)*3/4,
+                                        CGRectGetHeight(_mapView.frame)-(VIEWHEIGHT-morigeBtY)-CGRectGetHeight(_mapView.frame)/4);
     }
     return self;
 }
@@ -109,14 +121,14 @@
 - (void)setupView
 {
     _liebiaoButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    
-    [_liebiaoButton setTitle:[SwichLanguage getString:@"menu1"] forState:UIControlStateNormal];
+    [_liebiaoButton.titleLabel setFont:[UIFont systemFontOfSize:15.0f]];
+    [_liebiaoButton setTitle:[SwichLanguage getString:@"satellite"] forState:UIControlStateNormal];
     [_liebiaoButton sizeToFit];
+    //[_liebiaoButton setTitle:[SwichLanguage getString:@"pg2mt1"] forState:UIControlStateNormal];
     [_liebiaoButton setFrame:CGRectMake(10,
                                         IOS7DELTA+IPXMargin,
                                         CGRectGetWidth(_liebiaoButton.frame),
                                         44)];
-    [_liebiaoButton.titleLabel setFont:[UIFont systemFontOfSize:15.0f]];
     [_liebiaoButton addTarget:self action:@selector(click_righttop_button) forControlEvents:UIControlEventTouchUpInside];
     [self addBackButtonTitleWithTitle:[SwichLanguage getString:@"p2tv2"] withRightButton:_liebiaoButton];
     
@@ -124,25 +136,16 @@
 
 - (void)addTrackPlayerView
 {
-    float playerviewheight;
-    if (KIsiPhoneX)
-    {
-        playerviewheight=NAVBARHEIGHT+3;
-    }else
-    {
-        playerviewheight=NAVBARHEIGHT+12;
-    }
-    
     _trackPlayerView = [[TrackPlayerView alloc] initWithFrame:CGRectMake(0,
-                                                                         playerviewheight,
+                                                                         self.view.frame.size.height-75-IPXMargin,
                                                                          VIEWWIDTH,
-                                                                         77)];
-    
+                                                                         75+IPXMargin)];
     NSLog(@"_trackPlayerView=%f||VIEWWIDTH=%f",_trackPlayerView.frame.size.width,VIEWWIDTH);
     _trackPlayerView.delegate = self;
   //  _trackPlayerView.imeiLabel.text = _imei;
     [self.view addSubview:_trackPlayerView];
     [self.view addSubview:_trackPlayerView.selectionView];
+    [self setupListButton];
 }
 
 - (void)setupMapView
@@ -248,10 +251,10 @@
     _carAnnotation.coordinate = coor;
     [_mapView addAnnotation:_carAnnotation];
     
-    CGRect centerRect = CGRectMake(CGRectGetWidth(_mapView.frame)/4,
-                                   CGRectGetHeight(_mapView.frame)/4,
-                                   CGRectGetWidth(_mapView.frame)/2,
-                                   CGRectGetHeight(_mapView.frame)/2);
+//    CGRect centerRect = CGRectMake(CGRectGetWidth(_mapView.frame)/4,
+//                                   CGRectGetHeight(_mapView.frame)/4,
+//                                   CGRectGetWidth(_mapView.frame)/2,
+//                                   CGRectGetHeight(_mapView.frame)/2);
     CGPoint coorPoint = [_mapView convertCoordinate:coor toPointToView:_mapView];
     
     if (!CGRectContainsPoint(centerRect, coorPoint))
@@ -361,10 +364,10 @@
     if ([overlay isKindOfClass:[MKPolyline class]])
     {
         MKPolylineRenderer* polylineView = [[MKPolylineRenderer alloc] initWithOverlay:overlay];
-//        polylineView.fillColor = [[UIColor cyanColor] colorWithAlphaComponent:1];
-//        polylineView.strokeColor = [[UIColor blueColor] colorWithAlphaComponent:0.7];
         polylineView.strokeColor = [UIColor colorWithHexString:@"#00ff00"];
-        polylineView.lineWidth = 3.0;
+        polylineView.lineCap=kCGLineCapRound;
+        polylineView.lineJoin=kCGLineJoinRound;
+        polylineView.lineWidth = 4.0;
         
         return polylineView;
     }
@@ -409,7 +412,7 @@
     
     if (step==_historyLocations.count-1) {
         NSLog(@"到达最后一个点");
-        [self showAlltimeAndDistance];
+       // [self showAlltimeAndDistance];
     }
 }
 
@@ -832,14 +835,23 @@
 
 -(void)click_righttop_button
 {
-    NSLog(@"click_righttop_button");
-    if([self.messageCenterTableView isHidden])
-    {
-        [_trackPlayerView stopshowing];
-        [self updateTableView];
+//    NSLog(@"click_righttop_button");
+//    if([self.messageCenterTableView isHidden])
+//    {
+//        [_trackPlayerView stopshowing];
+//        [self updateTableView];
+//    }else
+//    {
+//        [self.messageCenterTableView setHidden:YES];
+//    }
+    
+    if (_mapView.mapType==MKMapTypeSatellite) {
+        [_mapView setMapType:MKMapTypeStandard];
+        [_liebiaoButton setTitle:[SwichLanguage getString:@"satellite"] forState:UIControlStateNormal];
     }else
     {
-        [self.messageCenterTableView setHidden:YES];
+        [_mapView setMapType:MKMapTypeSatellite];
+        [_liebiaoButton setTitle:[SwichLanguage getString:@"normol"] forState:UIControlStateNormal];
     }
 }
 -(void)updateTableView
@@ -857,13 +869,17 @@
 
 - (void)tableViewSetting
 {
-    if(KIsiPhoneX)
-    {
-        CGRect newfame=self.messageCenterTableView.frame;
-        newfame.origin.y=newfame.origin.y+IPXMargin;
-        newfame.size.height=newfame.size.height-IPXMargin;
-        [self.messageCenterTableView setFrame:newfame];
-    }
+//    if(KIsiPhoneX)
+//    {
+//        CGRect newfame=self.messageCenterTableView.frame;
+//        newfame.origin.y=newfame.origin.y+IPXMargin;
+//        newfame.size.height=newfame.size.height-IPXMargin;
+//        [self.messageCenterTableView setFrame:newfame];
+//    }
+    CGRect newfame=CGRectMake(0,morigeBtY-tableViewH+btview.frame.size.height, VIEWWIDTH, tableViewH);
+     self.messageCenterTableView =[[RefreshableTableView alloc] initWithFrame:newfame];
+     [self.view addSubview:self.messageCenterTableView];
+     self.messageCenterTableView.hidden=YES;
     self.messageCenterTableView.delegate = self;
     self.messageCenterTableView.dataSource = self;
     [self.messageCenterTableView setTableFooterView:[[UIView alloc] init]];
@@ -887,7 +903,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    return 27;
 }
 
 
@@ -968,6 +984,73 @@
         cell.label1.textColor=[UIColor blackColor];
     }
     return cell;
+}
+
+// 分辨率大小调整图标大小
+-(UIImage*)getMapPointImageFitSize:(NSString*)mimagename
+{
+    UIImage* mimage=[UIImage imageNamed:mimagename];
+    if(KIsiPhoneX)
+    {
+        return  [self.dataModel scaleImage:mimage width:3];
+    }else
+    {
+        return mimage;
+    }
+}
+
+//配置列表按钮
+-(void)setupListButton
+{
+    float btH=30;//按钮高度
+    btview=[[UIView alloc] initWithFrame:CGRectMake(0,VIEWHEIGHT- _trackPlayerView.frame.size.height-btH, VIEWWIDTH, btH)];
+    [btview setBackgroundColor:[UIColor whiteColor]];
+    btview.userInteractionEnabled=YES;
+    morigeBtY=btview.frame.origin.y;
+    [self.view addSubview:btview];
+    
+    mbtig=[[UIImageView alloc] initWithFrame:CGRectMake(VIEWWIDTH/2-10,10, 20, 10)];
+    [mbtig setImage:[UIImage imageNamed:@"setupb.png"]];
+    //[mbtig setBackgroundColor:[UIColor redColor]];
+    [btview addSubview:mbtig];
+    
+    UIView *lineView1=[[UIView alloc] initWithFrame:CGRectMake(0,btH-2, VIEWWIDTH, 2)];
+    [lineView1 setBackgroundColor:LineGraycolor];
+    [btview addSubview:lineView1];
+    
+    //配资点击触发
+    UITapGestureRecognizer *tagGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickShowTableListButton)];
+    [btview addGestureRecognizer:tagGes];
+    
+    //配置table view 高度，影响列表按钮的位置变动
+    if(KIsiPhoneX)
+    {
+        tableViewH=VIEWHEIGHT/2-btH*2-_trackPlayerView.frame.size.height;
+    }else
+    {
+        tableViewH=VIEWHEIGHT/2;
+    }
+}
+
+//刷新messageview 等界面位置
+-(void)clickShowTableListButton
+{
+    float my;
+    if (_messageCenterTableView.hidden) {
+        mbtig.transform = CGAffineTransformMakeRotation(M_PI);
+        my=morigeBtY-tableViewH;
+        [_messageCenterTableView setHidden:NO];
+        [_trackPlayerView stopshowing];
+        [self updateTableView];
+    }else
+    {
+        mbtig.transform =CGAffineTransformIdentity;
+        my=morigeBtY;
+        [_messageCenterTableView setHidden:YES];
+    }
+    CGRect mrect=btview.frame;
+    mrect.origin.y=my;
+    [btview setFrame:mrect];
 }
 
 @end

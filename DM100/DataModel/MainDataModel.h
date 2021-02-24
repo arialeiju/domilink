@@ -93,4 +93,5 @@
 -(UIImage*)getImageWithLogoType:(NSString*)mlogoType AndStatus:(NSString*)deviceSts;
 
 -(UIImage*)getMapImageWithStatus:(NSString*)mstatus AndCouser:(int)mcouse AndLogoType:(NSString*)mlogoType;
+-(UIImage*)imageRotatedByDegrees:(NSString*)strdegrees andImage:(UIImage*)mImage;
 @end
