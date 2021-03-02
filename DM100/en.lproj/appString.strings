@@ -286,3 +286,17 @@
 "aldailogE1"="Is Sure To Turn On All Alarms？";
 "normol"="Normol";
 "satellite"="Satellite";
+"cmd"="CMD";
+"mediadelete"="Are You Sure To Delete Voice?";
+"mediaalarm"="Voice Alarm";
+"mediar1"="Voice Deleted Successfully";
+"mediar2"="Deletion Failed Because There Is No Corresponding Record";
+"mediar3"="Voice Deleted Failed";
+"jtdlerror1"="Time Interval Cannot Be Empty";
+"jtdlerror2"="Time interval Must Be 3s to 300S";
+"jtdlerror3"="Login Account Password Input Is Incorrect";
+"jtdltitle"="Device Recording";
+"jtdltv1"="Recording Duration:";
+"jtdltv2"="Password:";
+"jtdltv3"="Confirm Login Account Password Again";
+"locationdetails"="Location";

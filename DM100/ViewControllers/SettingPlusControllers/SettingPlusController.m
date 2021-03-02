@@ -10,7 +10,7 @@
 #import "SettingPlusCell.h"
 #import "AlarmSettingPlusController.h"
 #import "CheckCMDViewController.h"
-//#import "MediaPlayViewController.h"
+#import "MediaPlayViewController.h"
 #import "OnlineCMDService.h"
 #import "ZhouQiDailog.h"
 #import "AKRadioPopView.h"
@@ -338,9 +338,9 @@
 }
 -(void)openMediaPlayView
 {
-//    MediaPlayViewController * mediaPlayViewController = [[MediaPlayViewController alloc] init];
-//    [self.navigationController pushViewController:mediaPlayViewController animated:YES];
-    [MBProgressHUD showLogTipWIthTitle:@"提示" withText:@"音频播放功能后续添加"];
+    MediaPlayViewController * mediaPlayViewController = [[MediaPlayViewController alloc] initWithImei:_imei anddevicetype:_devicetype andImeiName:_imeiname];
+    [self.navigationController pushViewController:mediaPlayViewController animated:YES];
+    //[MBProgressHUD showLogTipWIthTitle:@"提示" withText:@"该设备不支持语音监听功能"];
 }
 
 //自定义指令

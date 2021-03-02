@@ -410,7 +410,7 @@
         //polylineView.strokeColor = [UIColor colorWithHexString:@"#00ff00"];
         polylineView.lineJoinType=kBMKLineJoinRound;
         polylineView.lineCapType=kBMKLineCapRound;
-        polylineView.lineWidth = 8.0f;//3.0;
+        polylineView.lineWidth = 6.5f;//3.0;
         
         return polylineView;
     }

@@ -10,6 +10,7 @@
 @property (nonatomic, strong) NSString      *nodeId;            //当前节点id
 @property (nonatomic, assign) BOOL          isDepartment;       //是否是部门
 @property (nonatomic, assign) BOOL          isOpen;             //是否展开的
+@property (nonatomic, assign) BOOL          isLast;             //是否子部门最后一个
 
 //检查是否根节点
 - (BOOL)isRoot;

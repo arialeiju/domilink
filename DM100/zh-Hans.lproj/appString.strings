@@ -287,3 +287,17 @@
 "aldailogE1"="确定开启全部报警？";
 "normol"="普通";
 "satellite"="卫星";
+"cmd"="指令";
+"mediadelete"="是否删除语音";
+"mediaalarm"="语音报警";
+"mediar1"="语音删除成功";
+"mediar2"="不存在对应记录导致删除失败";
+"mediar3"="语音删除失败";
+"jtdlerror1"="时间间隔不能设置为空";
+"jtdlerror2"="时间间隔范围必须为3秒～300秒";
+"jtdlerror3"="登陆的账号密码输入不正确";
+"jtdltitle"="设备录音";
+"jtdltv1"="录音时长:";
+"jtdltv2"="密码:";
+"jtdltv3"="发指令前请再次确认登陆账号的密码";
+"locationdetails"="位置详情";

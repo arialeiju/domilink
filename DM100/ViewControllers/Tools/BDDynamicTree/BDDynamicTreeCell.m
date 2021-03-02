@@ -15,7 +15,6 @@
 }
 
 
-
 - (void)fillWithNode:(BDDynamicTreeNode*)node
 {
     if (node) {
@@ -31,13 +30,21 @@
             }
             
             if (node.isOpen) {
-                self.plusImageView.image = [UIImage imageNamed:@"icon_minus"];
+                self.plusImageView.image = [UIImage imageNamed:@"tminus"];
+            }else
+            {
+                self.plusImageView.image = [UIImage imageNamed:@"tplus"];
             }
         }
         else{
             
             self.labelTitle.text = [NSString stringWithFormat:@"%@",node.name];
-            //self.avatarImageView.image = [UIImage imageNamed:@"2.jpg"];
+            if (node.isLast) {
+                self.plusImageView.image = [UIImage imageNamed:@"tend"];
+            }else
+            {
+                self.plusImageView.image = [UIImage imageNamed:@"tmiddle"];
+            }
         }
     }
 }
@@ -56,10 +63,18 @@
                                               self.plusImageView.frame.size.width,
                                               self.plusImageView.frame.size.height);
         
+        //设置 + 号的位置
+        self.userImageView.frame = CGRectMake(CGRectGetMaxX(self.plusImageView.frame)+10, self.userImageView.frame.origin.y,
+                                              self.userImageView.frame.size.width,
+                                              self.userImageView.frame.size.height);
+        
         //设置 label的位置
-        self.labelTitle.frame = CGRectMake(self.plusImageView.frame.origin.x+self.plusImageView.frame.size.width + 5/*space*/, 0,
-                                           self.contentView.frame.size.width - self.plusImageView.frame.origin.x - self.plusImageView.frame.size.width - 5 - 5/*space*/,
+        self.labelTitle.frame = CGRectMake(CGRectGetMaxX(self.userImageView.frame) + 5/*space*/, 0,
+                                           self.contentView.frame.size.width - CGRectGetMaxX(self.userImageView.frame) - 5 - 5/*space*/,
                                            self.contentView.frame.size.height);
+        
+        self.userImageView.image = [UIImage imageNamed:@"tuser-group"];
+        
     }
     else{
         self.contentView.frame = CGRectMake(self.contentView.frame.origin.x,
@@ -72,12 +87,22 @@
        self.plusImageView.frame = CGRectMake(x, self.plusImageView.frame.origin.y,
                                               self.plusImageView.frame.size.width,
                                               self.plusImageView.frame.size.height);
-        self.plusImageView.hidden=YES;
+       // self.plusImageView.hidden=YES;
         //设置 label的位置
-        self.labelTitle.frame = CGRectMake(self.plusImageView.frame.origin.x+self.plusImageView.frame.size.width + 5/*space*/, 0,
-                                           self.contentView.frame.size.width - self.plusImageView.frame.origin.x - self.plusImageView.frame.size.width - 5 - 5/*space*/,
+//        self.labelTitle.frame = CGRectMake(self.plusImageView.frame.origin.x+self.plusImageView.frame.size.width + 5/*space*/, 0,
+//                                           self.contentView.frame.size.width - self.plusImageView.frame.origin.x - self.plusImageView.frame.size.width - 5 - 5/*space*/,
+//                                           self.contentView.frame.size.height);
+        //设置 + 号的位置
+        self.userImageView.frame = CGRectMake(CGRectGetMaxX(self.plusImageView.frame)+10, self.userImageView.frame.origin.y,
+                                              self.userImageView.frame.size.width,
+                                              self.userImageView.frame.size.height);
+        
+        //设置 label的位置
+        self.labelTitle.frame = CGRectMake(CGRectGetMaxX(self.userImageView.frame) + 5/*space*/, 0,
+                                           self.contentView.frame.size.width - CGRectGetMaxX(self.userImageView.frame) - 5 - 5/*space*/,
                                            self.contentView.frame.size.height);
         
+        self.userImageView.image = [UIImage imageNamed:@"tuser-single"];
     }
 }
 

@@ -100,9 +100,17 @@
         for(BDDynamicTreeNode *node in _nodesArray) {
             if ([node.fatherNodeId isEqualToString:fatherNode.nodeId]) {
                 node.originX = fatherNode.originX + 15/*space*/;
+                node.isLast=false;
                 [array addObject:node];
                 [cellIndexPaths addObject:[NSIndexPath indexPathForRow:count++ inSection:0]];
             }
+        }
+        //判定最后一个点的位置
+        if (array.count>0) {
+            NSUInteger mcount = array.count-1;
+            BDDynamicTreeNode *nodelast=[array lastObject];
+            nodelast.isLast=true;
+            [array setObject:nodelast atIndexedSubscript:mcount];
         }
         
         if (array.count) {
