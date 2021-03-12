@@ -614,8 +614,8 @@
          
          NSArray *detailArray = (NSArray *)[messageCenterObject.ret objectForKey:@"userList"];
          
-         NSString *test=[detailArray componentsJoinedByString:@""];
-         NSLog(@"list:%@",test);
+         //NSString *test=[detailArray componentsJoinedByString:@""];
+         //NSLog(@"list:%@",test);
          
          
          if ([detailArray isEqual:[NSNull null]]) {

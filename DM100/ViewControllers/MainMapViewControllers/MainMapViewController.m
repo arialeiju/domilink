@@ -86,7 +86,7 @@
 //自动界面适配
 -(void)autoUIadapter
 {
-    NSLog(@"autoUIadapter=%f",messageView.frame.size.width);
+    //NSLog(@"autoUIadapter=%f",messageView.frame.size.width);
     float allwidth=messageView.frame.size.width;
     if (allwidth<355) {//符合要求，调整大小
         [_tv4 setFont:[UIFont systemFontOfSize:9]];
@@ -101,7 +101,8 @@
         [_btlabel4 setFrame:mlabel];
         //CGRect mimg=CGRectMake(<#CGFloat x#>, <#CGFloat y#>, 16, 16)
     }
-    
+    _tv5.adjustsFontSizeToFitWidth=YES;
+    _tv7.adjustsFontSizeToFitWidth=YES;
     //左右栏控件适配
     CGRect mframe2=_controlview2.frame;
     
@@ -149,7 +150,8 @@
         _mapView.delegate=nil;
     }
     
-    [_locationManager stopUpdatingLocation];
+    [_locationManager stopUpdatingLocation
+     ];
     _locationManager.delegate = nil;
     
     _locationManager = nil;
@@ -571,6 +573,7 @@
          NSString* model= [self checkifunupdate:[ret objectForKey:@"mode"] withStr:@""];
          NSString* deviceSts=[ret objectForKey:@"deviceSts"];
          NSString* speedstr=[ret objectForKey:@"speed"];
+         NSString* acctime=[NSString stringWithFormat:@"%@",[ret objectForKey:@"accTime"]];
          //NSLog(@"a=%@ b=%@ c=%@",model1,model2,model);
          //为图标有方向做准备
          self->mcouse=[ret objectForKey:@"course"];
@@ -604,8 +607,21 @@
          //定位类型
          [weakSelf.tv1 setText:[self.inAppSetting returnthestringbytype:[ret objectForKey:@"type"]]];
          mloctypestr=[self.inAppSetting returnthestringbytype:[ret objectForKey:@"type"]];
+        
+        
+        NSString * acctimestr=@"";
+        if (acctime!=nil&&acctime.length>4) {
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+            NSDate * accstsTime =[dateFormatter dateFromString:acctime];
+            NSTimeInterval accstsTimenSeconds = [[NSDate date] timeIntervalSinceDate:accstsTime];
+            acctimestr=[self.inAppSetting getTimeDurationWithtimeSpanInSeconds:accstsTimenSeconds];
+        }
+        NSString* accshowstr=[NSString stringWithFormat:@"%@ %@",([accSts isEqualToString:@"1"]?[SwichLanguage getString:@"open"]:[SwichLanguage getString:@"close"]),acctimestr];
+        
          //acc
-         [weakSelf.tv7 setText:([accSts isEqualToString:@"1"]?[SwichLanguage getString:@"open"]:[SwichLanguage getString:@"close"])];
+         [weakSelf.tv7 setText:accshowstr];
+        
          //模式
          [weakSelf.tv6 setText:[NSString stringWithFormat:@"%@(1/%@ 2/%@h)",model,model1,model2]];
          

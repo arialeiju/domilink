@@ -434,7 +434,7 @@
     CGFloat degrees;
     degrees=0;
     if (strdegrees!=nil) {
-        degrees=[strdegrees floatValue];
+        degrees=360-[strdegrees floatValue];
     }
     
     CGFloat width = CGImageGetWidth(mImage.CGImage);

@@ -224,7 +224,8 @@
     MKPolyline *polyLine = [MKPolyline polylineWithCoordinates:_hitoryCoors
                                                            count:_coorCounter];
     [_mapView addOverlay:polyLine];
-    
+    _carAnnotation = nil;
+    _currentAnnotationView=nil;
     MKCoordinateRegion region;
     region.center = _hitoryCoors[0];
     region.span.longitudeDelta = 0.01;

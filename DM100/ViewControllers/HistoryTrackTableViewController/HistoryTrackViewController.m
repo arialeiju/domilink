@@ -267,7 +267,8 @@
     [_mapView removeAnnotations:array];
     array = [NSArray arrayWithArray:_mapView.overlays];
     [_mapView removeOverlays:array];
-    
+    _carAnnotation = nil;
+    _currentAnnotationView=nil;
     polyLine=nil;
 //    BMKPolyline *polyLine = [BMKPolyline polylineWithCoordinates:_hitoryCoors
 //                                                           count:_coorCounter];
@@ -372,8 +373,8 @@
             //_currentAnnotationView.image =[self getShowImage:@"0" AndCouse:0 AndLogoType:@"0"];
             _currentAnnotationView.centerOffset = CGPointMake(0, 0);
             
-            myLocationImage = _currentAnnotationView.image = [UIImage imageNamed:@"蓝色-0.png"];//带箭头方向的图片
-
+            _currentAnnotationView.image = [UIImage imageNamed:@"蓝色-90.png"];//带箭头方向的图片
+            myLocationImage= [UIImage imageNamed:@"蓝色-90.png"];//带箭头方向的图片
             //_currentAnnotationView.centerOffset = CGPointMake(0, _currentAnnotationView.frame.size.height/2);
         }
         return _currentAnnotationView;
@@ -430,8 +431,7 @@
     
     _trackPlayerView.timeLabel.text = object.stsTime;
     _trackPlayerView.imeiLabel.text = [NSString stringWithFormat:@"%@ km/h",object.speed];
-
-    
+    NSLog(@"logA=%ld",(long)step);
     [UIView animateWithDuration:duration
                           delay:0.0f
                         options:UIViewAnimationOptionCurveLinear
@@ -448,7 +448,7 @@
     {
         ;
     }];
-    
+    NSLog(@"logB=%ld",(long)step);
     if (step==_historyLocations.count-1) {
         NSLog(@"到达最后一个点");
         //[self showAlltimeAndDistance];
@@ -462,12 +462,12 @@
         CLLocationCoordinate2D coorone = CLLocationCoordinate2DMake([objectst.la floatValue], [objectst.lo floatValue]);
         coorsttt[i] = coorone;
     }
-    
+    NSLog(@"logC=%ld",(long)step);
     if (polyLine) {
         [polyLine setPolylineWithCoordinates:coorsttt count:step+1];
         return;
     }
-    
+    NSLog(@"logD=%ld",(long)step);
     NSLog(@"进入一次");
     polyLine = [BMKPolyline polylineWithCoordinates:coorsttt count:step+1];
     [_mapView addOverlay:polyLine];
@@ -555,7 +555,7 @@
          
          if ([_ret isEqualToString:@"1"]) {
              NSString* mileage=(NSString *)[ret objectForKey:@"mileage"];
-             _sumOfDistance=[mileage floatValue];
+             self->_sumOfDistance=[mileage floatValue];
          }
      }
                failure:^(NSError *error)
