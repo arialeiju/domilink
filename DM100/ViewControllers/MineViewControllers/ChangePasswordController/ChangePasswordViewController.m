@@ -27,6 +27,7 @@
     if (self)
     {
         mloginNo = mlog;
+        NSLog(@"mloginNo=%@",mloginNo);
         mtype=ttype;
         showtype=mid;
         UIButton * rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -128,6 +129,7 @@
     
     typeof(self) __weak weakSelf = self;
     _HUD = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
+    
     NSDictionary *bodyData = @{@"loginNo":mloginNo,
                                @"type":mtype,
                                @"oldpassword":weakSelf.oldpassword_label.text,
@@ -140,6 +142,7 @@
      {
          [_HUD hide:YES];
          NSDictionary *ret = messageCenterObject.ret;
+        NSLog(@"ret=%@",ret);
          if ([[ret objectForKey:@"ret" ] isEqualToString:@"1"]) {
              
              [MBProgressHUD showQuickTipWIthTitle:[SwichLanguage getString:@"okS1013"] withText:nil];

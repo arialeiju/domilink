@@ -13,4 +13,10 @@
             withSmscmd:(NSString *)smscmd
                succeed:(void (^)(OnlineCMDObject *))succeed
                failure:(void (^)(NSError *))failure;
+
++ (void)setCMDwithImei:(NSString *)imei
+                        withSmscmd:(NSString *)smscmd
+                        withUserid:(NSString *)userid
+                         succeed:(void (^)(OnlineCMDObject *))succeed
+                        failure:(void (^)(NSError *))failure;
 @end

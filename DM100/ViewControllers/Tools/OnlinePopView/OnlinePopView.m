@@ -232,7 +232,7 @@
     NSLog(@"SendTheCMDToDeviceby mcmd=%@",cmd);
     _HUD = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
     [OnlineCMDService
-     setCMDwithImei:_imei withSmscmd:cmd succeed:^(OnlineCMDObject *onlineCMDObject) {
+     setCMDwithImei:_imei withSmscmd:cmd  withUserid:self.inAppSetting.userId succeed:^(OnlineCMDObject *onlineCMDObject) {
         [_HUD hide:YES];
          //[MBProgressHUD showQuickTipWithText:onlineCMDObject.smscmd];
          int resultCode= [onlineCMDObject.result intValue];

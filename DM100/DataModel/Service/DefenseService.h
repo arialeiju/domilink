@@ -21,4 +21,9 @@ typedef enum : NSUInteger {
                    success:(void(^)(ResponseObject *))success
                    failure:(void(^)(NSError *error))failure;
 
++ (void)setDefenseWithImei:(NSString *)imei
+           withDefenseType:(DefenseType)defenseType
+           withUserid:(NSString *)userid
+                   success:(void (^)(ResponseObject *))success
+                   failure:(void (^)(NSError *))failure;
 @end

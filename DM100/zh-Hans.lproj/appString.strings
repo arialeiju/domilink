@@ -181,6 +181,8 @@
 "hislist2"="定位时间";
 "hislist3"="定位类型";
 "hislist4"="坐标";
+"hislist5"="海拔高度";
+"hislist6"="精度类型";
 "hisall1"="总里程";
 "hisall2"="总静止时长";
 "hisall3"="静止了";
@@ -195,7 +197,7 @@
 "SatSigal"="卫星信号:";
 "Energy"="电量电压:";
 "page2tipT"="三个数值";
-"page2tipC"="GSM信号强度/GPS卫星/北斗卫星";
+"page2tipC"="网络信号强度/北斗卫星/GPS卫星";
 "gaodemap"="高德地图";
 "navtitle"="导航辅助";
 "errorA109X"="规划路线失败";
@@ -301,3 +303,8 @@
 "jtdltv2"="密码:";
 "jtdltv3"="发指令前请再次确认登陆账号的密码";
 "locationdetails"="位置详情";
+"accuracyType1"="普通定位";
+"accuracyType2"="差分定位";
+"accuracyType4"="固定解定位";
+"accuracyType5"="浮点定位";
+"accuracyType6"="推算定位";

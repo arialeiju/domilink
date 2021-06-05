@@ -10,7 +10,42 @@
 
 @implementation HistoryLocationObject
 
-@synthesize course, speed, stsTime, lo, la,deviceSts,locateSts;
+@synthesize course, speed, stsTime, lo, la,deviceSts,locateSts,altitude,accuracyType;
+
+
+-(NSString*)getaAltitude
+{
+    if (self.altitude<1) {
+        return @"--";
+    }else
+    {
+        return [NSString stringWithFormat:@"%0.2f",self.altitude];
+    }
+}
+
+-(NSString*)getAccuracyType
+{
+    switch (accuracyType) {
+        case 1:
+            return [SwichLanguage getString:@"accuracyType1"];
+            break;
+        case 2:
+            return [SwichLanguage getString:@"accuracyType2"];
+            break;
+        case 4:
+            return [SwichLanguage getString:@"accuracyType4"];
+            break;
+        case 5:
+            return [SwichLanguage getString:@"accuracyType5"];
+            break;
+        case 6:
+            return [SwichLanguage getString:@"accuracyType6"];
+            break;
+        default:
+            return @"--";
+            break;
+    }
+}
 
 -(NSString*)getDescribeBystsTime
 {

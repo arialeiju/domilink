@@ -259,7 +259,7 @@
 //转化方向  0代表静止 ，1代表离线 ，2代表过期 ，3代表行驶中；
 -(UIImage*)getImageWithStatus:(NSString*)mstatus AndCouser:(int)mcouse
 {
-    NSLog(@"getImageWithStatus:mcouse=%d",mcouse);
+    //NSLog(@"getImageWithStatus:mcouse=%d",mcouse);
     NSString *imagename=@"灰色-0.png";
     if ([mstatus isEqualToString:@"1"]) {//离线
         //imagename=@"car_green2.png";

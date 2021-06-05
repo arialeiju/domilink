@@ -202,10 +202,11 @@
          }
 
          
-         if (loginObject.imeiList.count==0) {
-             [MBProgressHUD showQuickTipWIthTitle:@"登陆失败" withText:@"没有数据"];
-             return ;
-         }else{
+//         if (loginObject.imeiList.count==0) {
+        
+//             [MBProgressHUD showQuickTipWIthTitle:@"登陆失败" withText:@"没有数据"];
+//             return ;
+//         }else{
              
              // 保存登录用户名
              [self saveUserName:userName];
@@ -221,7 +222,7 @@
              [self bandingAliAccout:userName];
              //NSLog(@"登陆完成，打开页面");
              [self opeanTabView];
-         } }
+         }
       failure:^(NSError *error)
      {
          [weakSelf->_HUD hide:YES];

@@ -57,6 +57,11 @@
     
     CGRect centerRect;//百度地图边界，用于提前加载
 }
+
+@property (nonatomic, strong) HistoryScrollCell *aroundCell;
+@property (nonatomic,assign) float cellLastX; //最后的cell的移动距离
+@property(nonatomic,strong)NSArray *topArr;
+@property (nonatomic, strong) UIScrollView *topScrollView;
 @end
 
 @implementation AppleHistoryTrackController
@@ -308,7 +313,10 @@
             calloutannotationview = [[APCallOutAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"calloutview"];
             
             BusPointCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"BusPointCell" owner:self options:nil] objectAtIndex:0];
-            
+            cell.label1.adjustsFontSizeToFitWidth=YES;
+            cell.label2.adjustsFontSizeToFitWidth=YES;
+            [cell.label1 setText:[SwichLanguage getString:@"his1"]];
+            [cell.label2 setText:[SwichLanguage getString:@"his2"]];
             [calloutannotationview.contentView addSubview:cell];
             calloutannotationview.busInfoView = cell;
         }
@@ -884,11 +892,15 @@
     self.messageCenterTableView.delegate = self;
     self.messageCenterTableView.dataSource = self;
     [self.messageCenterTableView setTableFooterView:[[UIView alloc] init]];
-    [self.messageCenterTableView registerNib:[UINib nibWithNibName:@"HistoryCell" bundle:nil] forCellReuseIdentifier:@"HistoryCell"];
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.messageArray = [NSMutableArray array];
     // [self.messageCenterTableView.header beginRefreshing];//刷新加载
     [self.view bringSubviewToFront:self.messageCenterTableView];
+    
+    self.topArr = @[[SwichLanguage getString:@"hislist2"],[SwichLanguage getString:@"hislist3"], [SwichLanguage getString:@"hislist4"], [SwichLanguage getString:@"hislist5"], [SwichLanguage getString:@"hislist6"]];
+    // 注册一个
+    extern NSString *tapCellScrollNotification;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scrollMove:) name:tapCellScrollNotification object:nil];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -904,7 +916,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 27;
+    return 44;
 }
 
 
@@ -919,72 +931,94 @@
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     
-    UIControl *titileView = [[UIControl alloc] initWithFrame:CGRectMake(0, 0,self.messageCenterTableView.frame.size.width, 30)];
-    titileView.backgroundColor = [UIColor blackColor];
-    
-    float mainwith=self.messageCenterTableView.frame.size.width;
-    UILabel *titleLable = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, mainwith/8,20)];
-    titleLable.textColor = [UIColor whiteColor];
-    titleLable.font = [UIFont systemFontOfSize:14];
-    titleLable.text = [SwichLanguage getString:@"hislist1"];
-    titleLable.adjustsFontSizeToFitWidth=YES;
-    titleLable.minimumScaleFactor=miniScale;
-    titleLable.textAlignment=NSTextAlignmentCenter;
-    [titileView addSubview:titleLable];
-    
-    UILabel *mileageLable = [[UILabel alloc] initWithFrame:CGRectMake(mainwith/8, 5, mainwith/4,20)];
-    mileageLable.textColor = [UIColor whiteColor];
-    mileageLable.font = [UIFont systemFontOfSize:14];
-    mileageLable.text =[SwichLanguage getString:@"hislist2"];
-    mileageLable.adjustsFontSizeToFitWidth=YES;
-    mileageLable.textAlignment=NSTextAlignmentCenter;
-    mileageLable.minimumScaleFactor=miniScale;
-    [titileView addSubview:mileageLable];
-    
-    
-    UILabel *oilLable = [[UILabel alloc] initWithFrame:CGRectMake(mainwith*3/8, 5, mainwith/4,20)];
-    oilLable.textColor = [UIColor whiteColor];
-    oilLable.font = [UIFont systemFontOfSize:14];
-    oilLable.text =[SwichLanguage getString:@"hislist3"];;
-    oilLable.textAlignment=NSTextAlignmentCenter;
-    oilLable.adjustsFontSizeToFitWidth=YES;
-    oilLable.minimumScaleFactor=miniScale;
-    [titileView addSubview:oilLable];
-    
-    UILabel *durationLable = [[UILabel alloc] initWithFrame:CGRectMake(mainwith*5/8, 5, mainwith*3/8,20)];
-    durationLable.textColor = [UIColor whiteColor];
-    durationLable.font = [UIFont systemFontOfSize:14];
-    durationLable.text =[SwichLanguage getString:@"hislist4"];;
-    durationLable.textAlignment=NSTextAlignmentCenter;
-    durationLable.adjustsFontSizeToFitWidth=YES;
-    durationLable.minimumScaleFactor=miniScale;
-    [titileView addSubview:durationLable];
-    
-    return titileView;
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 40)];
+        headerView.backgroundColor = [UIColor whiteColor];
+        
+        CGFloat lblW = self.view.bounds.size.width / 5;
+        
+        UILabel *titleLbl = [UILabel new];
+        titleLbl.frame = CGRectMake(0, 0, 48, 40);
+        titleLbl.text = [SwichLanguage getString:@"hislist1"];
+        titleLbl.backgroundColor = [UIColor colorWithWhite:0.2 alpha:0.2];
+        titleLbl.font = [UIFont systemFontOfSize:14];
+        titleLbl.textAlignment = NSTextAlignmentCenter;
+        [headerView addSubview:titleLbl];
+        
+        self.topScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(48, 0, self.view.bounds.size.width-48, 40)];
+        self.topScrollView.showsVerticalScrollIndicator = NO;
+        self.topScrollView.showsHorizontalScrollIndicator = NO;
+        self.topScrollView.backgroundColor = [UIColor colorWithWhite:0.2 alpha:0.2];
+        
+        
+        //CGFloat labelW = self.view.bounds.size.width / 5;
+        CGFloat labelW = 80;
+        [self.topArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            UILabel *label = [UILabel new];
+            switch (idx) {
+                case 0:
+                    label.frame = CGRectMake(labelW * idx, 0, labelW, 40);
+                    break;
+                case 1:
+                    label.frame = CGRectMake(labelW * idx, 0, labelW, 40);
+                    break;
+                case 2:
+                    label.frame = CGRectMake(labelW * idx, 0, labelW+70, 40);
+                    break;
+                case 3:
+                    label.frame = CGRectMake(labelW * idx+70, 0, labelW, 40);
+                    break;
+                case 4:
+                    label.frame = CGRectMake(labelW * idx+70, 0, labelW, 40);
+                    break;
+                default:
+                    break;
+            }
+            label.text = self.topArr[idx];
+            label.font = [UIFont systemFontOfSize:14];
+            label.backgroundColor = [UIColor clearColor];
+            label.textAlignment = NSTextAlignmentCenter;
+            [self.topScrollView addSubview:label];
+        }];
+        self.topScrollView.contentSize = CGSizeMake(lblW * self.topArr.count+70, 0);
+        self.topScrollView.delegate = self;
+        
+        [headerView addSubview:self.topScrollView];
+        
+        return headerView;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 30;
+    return 40;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //CarLogCell *cell = [CarLogCell cellWithTableView:tableView];
-    static NSString * identifier = @"HistoryCell";
-    HistoryCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-    HistoryLocationObject *object = [_historyLocations objectAtIndex:indexPath.row];
-    cell.label1.text=[NSString stringWithFormat:@"%ld",(indexPath.row+1)];
-    cell.label2.text=object.getDescribeBystsTime;
-    cell.label3.text=object.getDescribeBylocateSts;
-    cell.label4.text=object.getDescribeBylalo;
-    if(selectid==indexPath.row)
+    static NSString *cellID = @"cellID";
+    
+    _aroundCell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    
+    if (!_aroundCell)
     {
-        cell.label1.textColor=[UIColor blueColor];
-    }else
-    {
-        cell.label1.textColor=[UIColor blackColor];
+        _aroundCell = [[HistoryScrollCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
-    return cell;
+    
+
+    _aroundCell.tableView = self.messageCenterTableView;
+    __weak typeof(self) weakSelf = self;
+    _aroundCell.tapCellClick = ^(NSIndexPath *indexPath) {
+        [weakSelf tableView:tableView didSelectRowAtIndexPath:indexPath];
+    };
+    HistoryLocationObject *object = [_historyLocations objectAtIndex:indexPath.row];
+    SS_Model *model= [[SS_Model alloc]init];
+    model.title=[NSString stringWithFormat:@"%ld",(indexPath.row+1)];
+    model.str1=object.getDescribeBystsTime;
+    model.str2=object.getDescribeBylocateSts;
+    model.str3=object.getDescribeBylalo;
+    model.str4=object.getaAltitude;
+    model.str5=object.getAccuracyType;
+    
+    [_aroundCell initWithCellModel:model andArray:self.topArr];
+    return _aroundCell;
 }
 
 // 分辨率大小调整图标大小
@@ -1053,5 +1087,33 @@
     mrect.origin.y=my;
     [btview setFrame:mrect];
 }
+#pragma mark-- UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    
+    if ([scrollView isEqual:self.topScrollView])
+    {
+        CGPoint offSet = _aroundCell.rightScrollView.contentOffset;
+        offSet.x = scrollView.contentOffset.x;
+        _aroundCell.rightScrollView.contentOffset = offSet;
+    }
+    if ([scrollView isEqual:self.messageCenterTableView])
+    {
+        // 发送通知
+        [[NSNotificationCenter defaultCenter] postNotificationName:tapCellScrollNotification object:self userInfo:@{@"cellOffX":@(self.cellLastX)}];
+    }
+    
+}
 
+-(void)scrollMove:(NSNotification*)notification
+{
+    NSDictionary *noticeInfo = notification.userInfo;
+    NSObject *obj = notification.object;
+    float x = [noticeInfo[@"cellOffX"] floatValue];
+    self.cellLastX = x;
+    CGPoint offSet = self.topScrollView.contentOffset;
+    offSet.x = x;
+    self.topScrollView.contentOffset = offSet;
+    obj = nil;
+}
 @end

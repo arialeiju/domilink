@@ -96,15 +96,15 @@
 "seviceaddress"="Service Address:";
 "ztinfo"="DomiLink Technology Co., Ltd.";
 
-"p2tv1"="Navigation";
+"p2tv1"="Navi";
 "p2tv2"="Track";
-"p2tv3"="Defence On";
-"p2tv4"="Defence Off";
+"p2tv3"="On";
+"p2tv4"="Off";
 "power"="Power:";
 "model"="Model:";
 "volt"="Voltage:";
-"sigtime"="Heartbeat time:";
-"loctime"="Location time:";
+"sigtime"="NET Time:";
+"loctime"="POI Time:";
 "loctype"="Location type:";
 "cmdtv1"="CMD type:";
 "cmdtv2"="CMD state:";
@@ -179,9 +179,11 @@
 "back"="Back";
 "nodata"="No more data";
 "hislist1"="ID";
-"hislist2"="Location Time";
-"hislist3"="Location Type";
+"hislist2"="Time";
+"hislist3"="Type";
 "hislist4"="Coordinate";
+"hislist5"="Altitude";
+"hislist6"="Accuracy";
 "hisall1"="Total mileage";
 "hisall2"="Total Rest time";
 "hisall3"="Rest time is";
@@ -193,10 +195,10 @@
 "JizhangHit1"="Base station filtered";
 "JizhangHit2"="Base station unfiltered";
 "JizhangHit3"="Base station selected(No/Yes)";
-"SatSigal"="Sigal:";
-"Energy"="Energy:";
+"SatSigal"="Signal:";
+"Energy"="Power:";
 "page2tipT"="Three Parameters";
-"page2tipC"="GSM Sigal/GPS Satellite/Beidou Satellite";
+"page2tipC"="Network Signal/BDS Satellite/GPS Satellite";
 "gaodemap"="Auto Navi Map";
 "navtitle"="Navigation Aids";
 "errorA109X"="Failed to plan route";
@@ -300,3 +302,8 @@
 "jtdltv2"="Password:";
 "jtdltv3"="Confirm Login Account Password Again";
 "locationdetails"="Location";
+"accuracyType1"="Normal";
+"accuracyType2"="Difference";
+"accuracyType4"="Fixed";
+"accuracyType5"="Float";
+"accuracyType6"="Calculation";

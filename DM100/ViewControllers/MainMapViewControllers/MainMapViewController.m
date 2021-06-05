@@ -44,6 +44,11 @@
     MBProgressHUD * _HUD_userlist;
     NSString* mloctypestr;
     RouteAnnotation * _userLocation;//个人点图标
+    
+    UILabel* mcountdownlabel;
+    int mRefreshTime;//定位刷新的间隔时间 目前只有 10 和 3两种
+    int mCDTime;//显示的倒计时时间
+    NSTimer *_CDTimer;//倒计时定时器
 }
 @end
 
@@ -61,6 +66,8 @@
     mlogoType=@"1";
     mloctypestr=@"";
     isGSM=false;
+    mRefreshTime=10;
+    mCDTime=10;
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [self stopNSTimer];
@@ -75,6 +82,7 @@
         [self UpdateViewLanguage];
         [self setUpAnnotation];
         [self autoUIadapter];
+        [self setCountDownLabel];
         NeedLoadView=false;
     }
     
@@ -225,6 +233,18 @@
     [self.TopLlabel3 setText:[SwichLanguage getString:@"pg2mt3"]];
     [self.TopRlabel1 setText:[SwichLanguage getString:@"pg2mt4"]];
     [self.TopRlabel2 setText:[SwichLanguage getString:@"pg2mt5"]];
+    
+    [self.tvlabel2 sizeToFit];
+    [self.tvlabel3 sizeToFit];
+    //NSLog(@"self.tvlabel lengB=%f ",CGRectGetMaxX(self.tvlabel2.frame));
+    
+    CGRect ml2Rect=self.tv2.frame;
+    ml2Rect.origin.x=CGRectGetMaxX(self.tvlabel2.frame)+5;
+    [self.tv2 setFrame:ml2Rect];
+    
+    CGRect ml3Rect=self.tv3.frame;
+    ml3Rect.origin.x=CGRectGetMaxX(self.tvlabel3.frame)+5;
+    [self.tv3 setFrame:ml3Rect];
 }
 
 
@@ -249,8 +269,8 @@
     _btlabel5.adjustsFontSizeToFitWidth=YES;
     _btlabel6.adjustsFontSizeToFitWidth=YES;
     _tvlabel1.adjustsFontSizeToFitWidth=YES;
-    _tvlabel2.adjustsFontSizeToFitWidth=YES;
-    _tvlabel3.adjustsFontSizeToFitWidth=YES;
+//    _tvlabel2.adjustsFontSizeToFitWidth=YES;
+//    _tvlabel3.adjustsFontSizeToFitWidth=YES;
     _tvlabel4.adjustsFontSizeToFitWidth=YES;
     _tvlabel5.adjustsFontSizeToFitWidth=YES;
     _tvlabel6.adjustsFontSizeToFitWidth=YES;
@@ -466,6 +486,7 @@
     UnitModel* mdata=[self.inAppSetting getSelectUnit];
     [DefenseService setDefenseWithImei:[mdata getImei]
                        withDefenseType:(misBufang?DefenseTypeSet:DefenseTypeRemove)
+                            withUserid:self.inAppSetting.userId
                                success:^(ResponseObject *responseObject) {
                                    [_HUD_userlist hide:YES];
                                    
@@ -502,18 +523,22 @@
         [_refreshTimer invalidate];
         _refreshTimer = nil;
     }
+    
+    [self stopCDTimer];
 }
 
 -(void)startNSTimer
 {
     [self stopNSTimer];
-    _refreshTimer = [NSTimer scheduledTimerWithTimeInterval:nstimers
+    _refreshTimer = [NSTimer scheduledTimerWithTimeInterval:mRefreshTime
                                                      target:self
                                                    selector:@selector(refreshaction)
                                                    userInfo:nil
                                                     repeats:YES];
     [_refreshTimer fire];
      //NSLog(@"startNSTimer");
+    
+    [self reStartCDTimer];
 }
 -(void)reStartNSTimer
 {
@@ -522,13 +547,14 @@
     }else
     {
         [_refreshTimer fire];
+        [self reStartCDTimer];
     }
 }
 //定时器触发
 -(void)refreshaction
 {
     if([self.inAppSetting checkhaddata]) {//检测有选中
-        //NSLog(@"refreshaction");
+        NSLog(@"refreshaction refreshtime=%d",mRefreshTime);
         //reloadCarListby854();
         if (_HUD_userlist!=nil) {
             [_HUD_userlist setHidden:YES];
@@ -536,6 +562,8 @@
         }
         [self reloadCarListby854];
     }
+    
+    //mCDTime=mRefreshTime;
 }
 
 /**
@@ -554,6 +582,8 @@
                success:^(ResponseObject *messageCenterObject)
      {
          NSDictionary* ret=messageCenterObject.ret;
+        
+        //NSLog(@"ret=%@",ret);
          //NSString* la=[ret objectForKey:@"la"];
          //NSString* lo=[ret objectForKey:@"lo"];
          NSString* la=[NSString stringWithFormat:@"%@",[ret objectForKey:@"la"]];
@@ -588,7 +618,7 @@
         }
         
          NSString* accSts=[ret objectForKey:@"accSts"];
-         NSLog(@"accSts=%@",accSts);
+         //NSLog(@"accSts=%@",accSts);
          //NSString* delon=[ret objectForKey:@"delon"];
          //NSString* delat=[ret objectForKey:@"delat"];
          NSString* delon=[NSString stringWithFormat:@"%@",[ret objectForKey:@"delon"]];
@@ -647,7 +677,7 @@
 //             NSString* gpsStar=[NSString stringWithFormat:@"%@",[ret objectForKey:@"gpsStar"]];
 //             NSString* beidouStar=[NSString stringWithFormat:@"%@",[ret objectForKey:@"beidouStar"]];
 //             NSString* gsmSignal=[NSString stringWithFormat:@"%@",[ret objectForKey:@"gsmSignal"]];
-             [weakSelf.tv4 setText:[NSString stringWithFormat:@"%@/%@/%@",gsmSignal,gpsStar,beidouStar]];
+             [weakSelf.tv4 setText:[NSString stringWithFormat:@"%@/%@/%@",gsmSignal,beidouStar,gpsStar]];
              int mgsm= [gsmSignal intValue];
              if(mgsm>=24)//满信号
              {
@@ -742,7 +772,12 @@
          }
          
          self->_deviceAnnotation.coordinate = latestDeviceCoor;
-        
+        //拉到中心点
+        if(self->isCenter||self->isTrack)
+        {
+            self->isCenter=false;
+            self->_mapView.centerCoordinate=latestDeviceCoor;
+        }
          if(latestDeviceCoor.latitude==self->_deviceCoor.latitude&&latestDeviceCoor.longitude==self->_deviceCoor.longitude) {
              NSLog(@"相同位置，不刷新退出");
          }else
@@ -757,12 +792,7 @@
 //             }
 //
 //             self->_deviceAnnotation.coordinate = latestDeviceCoor;
-             //拉到中心点
-             if(self->isCenter||self->isTrack)
-             {
-                 self->isCenter=false;
-                 self->_mapView.centerCoordinate=latestDeviceCoor;
-             }
+
              //绘画线条
              if (self->isTrack) {
                  if (self->_deviceCoor.latitude<1||self->_deviceCoor.longitude<1) {//不在中国内，去掉
@@ -1010,6 +1040,10 @@
         [mlinelist removeAllObjects];
     }
     isTrack=true;
+    
+    //刷新修改成3秒一次
+    mRefreshTime=3;
+    [self startNSTimer];
 }
 //跟踪模式关闭
 -(void)TackOff{
@@ -1023,13 +1057,17 @@
         [mlinelist removeAllObjects];
         mlinelist=nil;
     }
+    
+    //刷新修改成10秒一次
+    mRefreshTime=10;
+    [self startNSTimer];
 }
 
 //地图页面点击了上下切换按钮 true是上 false是下
 -(void)clickUpOrDownLay:(Boolean)b {
     // TODO Auto-generated method stub
     int listsize=(int)self.inAppSetting.user_itemList.count;
-    [self TackOff];
+    //[self TackOff];
     if(listsize<2)
     {
         [self.controlview1 setHidden:YES];
@@ -1058,12 +1096,21 @@
         }
     }
     [self goPage2AndUpdate];
-    [self reStartNSTimer];
+    //[self reStartNSTimer];
+    
+    [self ClickTopRButton1];
 }
 
 - (IBAction)clicktipbutton:(id)sender {
     if (isGSM) {
-        [MBProgressHUD showLogTipWIthTitle:[SwichLanguage getString:@"page2tipT"] withText:[SwichLanguage getString:@"page2tipC"]];
+        MBProgressHUD *hub=[MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
+        [hub setMode:MBProgressHUDModeText];
+        hub.labelText=[SwichLanguage getString:@"page2tipT"] ;
+        hub.detailsLabelText=[SwichLanguage getString:@"page2tipC"];
+        
+        CGFloat mmargin=self.tvlabel4.frame.origin.y+self.mapView.frame.size.height/2-mviewHeightS-TABBARHEIGHT-mviewMargin-60;
+        hub.yOffset=mmargin;
+        [hub hide:YES afterDelay:3.0];
     }
     //NSLog(@"clicktipbutton");
 }
@@ -1256,5 +1303,59 @@
     _userLocation.title = @"我的位置";
     NSArray * annotationArray = [[NSArray alloc] initWithObjects:_userLocation,nil];
     [_mapView addAnnotations:annotationArray];
+}
+
+/*
+ *设置倒计时显示的label
+ */
+-(void)setCountDownLabel
+{
+    mcountdownlabel=[[UILabel alloc]initWithFrame:CGRectMake(10, 10+IPXLiuHai, 30, 20)];
+    mcountdownlabel.text=@"10s";
+    mcountdownlabel.textColor=[UIColor redColor];
+    mcountdownlabel.font=[UIFont systemFontOfSize:15.0f];
+    [self.view addSubview:mcountdownlabel];
+}
+/**
+ *  倒计时 定时器
+ */
+-(void)stopCDTimer
+{
+    //NSLog(@"stopNSTimer");
+    if (_CDTimer != nil)
+    {
+        [_CDTimer invalidate];
+        _CDTimer = nil;
+    }
+}
+
+-(void)startCDTimer
+{
+    [self stopCDTimer];
+    _CDTimer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                     target:self
+                                                   selector:@selector(updateCDaction)
+                                                   userInfo:nil
+                                                    repeats:YES];
+    [_CDTimer fire];
+     //NSLog(@"startNSTimer");
+}
+-(void)reStartCDTimer
+{
+    mCDTime=mRefreshTime;//最新的刷新时间
+    if (_CDTimer==nil) {
+        [self startCDTimer];
+    }else
+    {
+        [_CDTimer fire];
+    }
+}
+-(void)updateCDaction
+{
+    mcountdownlabel.text=[NSString stringWithFormat:@"%ds",mCDTime];
+    mCDTime--;
+    if (mCDTime<1) {
+        mCDTime=mRefreshTime;
+    }
 }
 @end

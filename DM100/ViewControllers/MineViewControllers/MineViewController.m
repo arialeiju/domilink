@@ -126,8 +126,8 @@
                 break;
         case 2:
         {
-            ChangePasswordViewController * mChangePasswordViewController = [[ChangePasswordViewController alloc] init];
-            [self.navigationController pushViewController:mChangePasswordViewController animated:YES];
+            ChangePasswordViewController * changePasswordViewController = [[ChangePasswordViewController alloc] initWithImei:self.inAppSetting.loginNo WithDeviceType:@"0" AndShowType:0];
+            [self.navigationController pushViewController:changePasswordViewController animated:YES];
         }
             break;
         case 3:
