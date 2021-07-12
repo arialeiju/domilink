@@ -17,7 +17,7 @@
  */
 @property (strong, retain) NSMutableArray *user_itemList;//车辆参数列表
 @property(nonatomic,assign)int selectid;//user_itemList选中当前显示设备  0为默认第一位
-@property(nonatomic,assign)int LangNo;//语言版本 -1未设置  0中文 1英文
+@property(nonatomic,readwrite)BOOL isPushOk;//是否网易云推送初始化成功
 @property(nonatomic,assign)int mapType;//地图版本 默认0  0苹果地图 1百度地图
 @property (nonatomic, strong) NSString * type;//记录登录类型
 @property (nonatomic, strong) NSString *loginNo;//登录帐号

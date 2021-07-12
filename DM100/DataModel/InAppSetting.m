@@ -8,12 +8,13 @@
 
 #import "InAppSetting.h"
 #import "AppDelegate.h"
+#import <CloudPushSDK/CloudPushSDK.h>
 //#import <CloudPushSDK/CloudPushSDK.h>//by aika test
 @implementation InAppSetting
 
 @synthesize user_itemList;
 @synthesize selectid;
-@synthesize LangNo;//语言版本 -1未设置  0中文 1英文
+@synthesize isPushOk;//是否网易云推送初始化成功
 @synthesize mapType;//地图版本 默认0  0谷歌地图 1百度地图
 @synthesize type;//记录登录类型
 @synthesize userId;//用户ID
@@ -35,6 +36,7 @@
                       s_inAppSetting.HadLogin=false;
                       s_inAppSetting.user_itemList= [NSMutableArray array];
                       s_inAppSetting.selectid=0;
+                      s_inAppSetting.isPushOk=false;
                   });
     return s_inAppSetting;
 }
@@ -155,15 +157,43 @@
     
     self.indexPath=nil;
     
-// by aika test
-//    [CloudPushSDK unbindAccount:^(CloudPushCallbackResult *res) {
-//        if (res.success) {
-//            NSLog(@"unbindAccount  success");
-//        } else {
-//            NSLog(@"unbindAccount  failed, error: %@", res.error);
-//        }
-//
-//    }];
+    [self delectPushId];
+}
+
+//注销当前绑定的推送id
+-(void)delectPushId
+{
+    if (self.inAppSetting.isPushOk) {
+        
+        NSDictionary *bodyData = @{@"pushId":[CloudPushSDK getDeviceId] };
+        NSDictionary *parameters = [PostXMLDataCreater createXMLDicWithCMD:801
+                                                            withParameters:bodyData];
+        [NetWorkModel POST:ServerURL
+                parameters:parameters
+                   success:^(ResponseObject *messageCenterObject)
+         {
+             NSDictionary *ret = messageCenterObject.ret;
+           // NSLog(@"801返回=%@",ret);
+            int mretcode=[[ret objectForKey:@"retCode" ] intValue];
+             if (mretcode==1) {
+
+                 NSLog(@"解除绑定成功");
+             }else
+             {
+                 NSString* msgstr=(NSString *)[messageCenterObject.ret objectForKey:@"retMsg"];
+                 if (msgstr.length==0) {
+                     [MBProgressHUD showQuickTipWIthTitle:@"解除绑定推送服务失败" withText:nil];
+                 }else
+                 {
+                     [MBProgressHUD showQuickTipWIthTitle:msgstr withText:nil];
+                 }
+             }
+         }
+                   failure:^(NSError *error)
+         {
+            //[MBProgressHUD showQuickTipWIthTitle:[SwichLanguage getString:@"绑定推送服务失败2"] withText:nil];
+         }];
+    }
 }
 - (NSString *)getTimeDurationWithtimeSpanInSeconds:(NSTimeInterval )timeSpanInSeconds
 {

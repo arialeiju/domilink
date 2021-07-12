@@ -863,7 +863,8 @@
         _userLocation.coordinate =CLLocationCoordinate2DMake([startlocation.la floatValue], [startlocation.lo floatValue]);
         [_mapView addAnnotation:_userLocation];
         
-        //标记终点
+        //标记终点1989515
+        
         HistoryLocationObject *endlocation=[array objectAtIndex:array.count-1];
         StartAndEndAnNotation *_userLocation1 = [[StartAndEndAnNotation alloc] init];
         _userLocation1.type = 1;

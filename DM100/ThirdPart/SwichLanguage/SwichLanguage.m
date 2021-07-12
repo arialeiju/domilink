@@ -46,7 +46,20 @@ static NSBundle *bundle = nil;
     return language;
 }
 
-
+//获取当前语言代号
+//-1未设置  0中文 1英文
++(int)userLanguageType{
+    int mtype;
+    mtype=1;
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    NSString *language = [def valueForKey:LocalLanguageKey];
+    if ([language hasPrefix:@"en"]) {
+        mtype=1;
+    }else if ([language hasPrefix:@"zh"]) {
+        mtype=0;
+    }
+    return mtype;
+}
 
 //设置语言
 +(void)setUserlanguage:(NSString *)language{

@@ -32,8 +32,8 @@
 #define SYSTEMVERSION   [[[UIDevice currentDevice] systemVersion] floatValue]
 //#define KIsiPhoneX      ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
-#define AliAppKey   @"28571630"
-#define AliAppSecret @"b4a0dd18cee5177661a9e0b98da574ef"
+#define AliAppKey   @"333458437"
+#define AliAppSecret @"3949402524bc479c8d4b88aa465b55c7"
 
 #define KIsiPhoneX \
 ({BOOL isPhoneX = NO;\

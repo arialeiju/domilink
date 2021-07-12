@@ -504,6 +504,16 @@
 		E4C6F9F024B81DDB004E629B /* RouteAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6F9EF24B81DDB004E629B /* RouteAnnotation.m */; };
 		E4C783FB2520900C00A28EB2 /* group_down.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E4C783F92520900C00A28EB2 /* group_down.PNG */; };
 		E4C783FC2520900C00A28EB2 /* group_up.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E4C783FA2520900C00A28EB2 /* group_up.PNG */; };
+		E4E89BEC267840300006B7AA /* AliyunEmasServices-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4E89BEB267840300006B7AA /* AliyunEmasServices-Info.plist */; };
+		E4E89BF4267843AA0006B7AA /* CloudPushSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E89BF3267843AA0006B7AA /* CloudPushSDK.framework */; };
+		E4E89BFA267843D40006B7AA /* AlicloudUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E89BF9267843D40006B7AA /* AlicloudUtils.framework */; };
+		E4E89BFF267843DC0006B7AA /* AlicloudSender.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E89BFE267843DC0006B7AA /* AlicloudSender.framework */; };
+		E4E89C04267843E90006B7AA /* EMASRest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E89C03267843E90006B7AA /* EMASRest.framework */; };
+		E4E89C09267843EF0006B7AA /* UTMini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E89C08267843EF0006B7AA /* UTMini.framework */; };
+		E4E89C0E267843F80006B7AA /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E89C0D267843F80006B7AA /* UTDID.framework */; };
+		E4E89C13267844610006B7AA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E48A12A92477BA75001CB7F4 /* CoreTelephony.framework */; };
+		E4E89C152678477A0006B7AA /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E89C142678477A0006B7AA /* UserNotifications.framework */; };
+		E4E89C1D267848E40006B7AA /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E89C122678442F0006B7AA /* libresolv.tbd */; };
 		E4E99A6F25EDBBF1009FC641 /* tend.png in Resources */ = {isa = PBXBuildFile; fileRef = E4E99A6925EDBBF1009FC641 /* tend.png */; };
 		E4E99A7025EDBBF1009FC641 /* tuser-group.png in Resources */ = {isa = PBXBuildFile; fileRef = E4E99A6A25EDBBF1009FC641 /* tuser-group.png */; };
 		E4E99A7125EDBBF1009FC641 /* tmiddle.png in Resources */ = {isa = PBXBuildFile; fileRef = E4E99A6B25EDBBF1009FC641 /* tmiddle.png */; };
@@ -1227,6 +1237,15 @@
 		E4C6F9EF24B81DDB004E629B /* RouteAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteAnnotation.m; sourceTree = "<group>"; };
 		E4C783F92520900C00A28EB2 /* group_down.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = group_down.PNG; sourceTree = "<group>"; };
 		E4C783FA2520900C00A28EB2 /* group_up.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = group_up.PNG; sourceTree = "<group>"; };
+		E4E89BEB267840300006B7AA /* AliyunEmasServices-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AliyunEmasServices-Info.plist"; sourceTree = "<group>"; };
+		E4E89BF3267843AA0006B7AA /* CloudPushSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CloudPushSDK.framework; sourceTree = "<group>"; };
+		E4E89BF9267843D40006B7AA /* AlicloudUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlicloudUtils.framework; sourceTree = "<group>"; };
+		E4E89BFE267843DC0006B7AA /* AlicloudSender.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlicloudSender.framework; sourceTree = "<group>"; };
+		E4E89C03267843E90006B7AA /* EMASRest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EMASRest.framework; sourceTree = "<group>"; };
+		E4E89C08267843EF0006B7AA /* UTMini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTMini.framework; sourceTree = "<group>"; };
+		E4E89C0D267843F80006B7AA /* UTDID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTDID.framework; sourceTree = "<group>"; };
+		E4E89C122678442F0006B7AA /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		E4E89C142678477A0006B7AA /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		E4E99A6925EDBBF1009FC641 /* tend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tend.png; sourceTree = "<group>"; };
 		E4E99A6A25EDBBF1009FC641 /* tuser-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tuser-group.png"; sourceTree = "<group>"; };
 		E4E99A6B25EDBBF1009FC641 /* tmiddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmiddle.png; sourceTree = "<group>"; };
@@ -1253,19 +1272,28 @@
 				E48A129E2477B4B7001CB7F4 /* QuartzCore.framework in Frameworks */,
 				E48A129C2477B4B2001CB7F4 /* OpenGLES.framework in Frameworks */,
 				E48A129A2477B4AC001CB7F4 /* libsqlite3.0.tbd in Frameworks */,
+				E4E89C04267843E90006B7AA /* EMASRest.framework in Frameworks */,
 				E48A12982477B4A5001CB7F4 /* libc++.tbd in Frameworks */,
 				E48A12832477B192001CB7F4 /* CoreLocation.framework in Frameworks */,
 				E48A12962477B494001CB7F4 /* CoreGraphics.framework in Frameworks */,
+				E4E89BF4267843AA0006B7AA /* CloudPushSDK.framework in Frameworks */,
+				E4E89C152678477A0006B7AA /* UserNotifications.framework in Frameworks */,
 				E48A12942477B474001CB7F4 /* libssl.a in Frameworks */,
 				E48A12932477B468001CB7F4 /* libcrypto.a in Frameworks */,
 				E46DF91125E73D7F00E6CBC2 /* libopencore-amrnb.a in Frameworks */,
+				E4E89C1D267848E40006B7AA /* libresolv.tbd in Frameworks */,
+				E4E89C13267844610006B7AA /* CoreTelephony.framework in Frameworks */,
+				E4E89C09267843EF0006B7AA /* UTMini.framework in Frameworks */,
+				E4E89C0E267843F80006B7AA /* UTDID.framework in Frameworks */,
 				E48A128B2477B3D2001CB7F4 /* BaiduMapAPI_Utils.framework in Frameworks */,
 				E48A12892477B3CC001CB7F4 /* BaiduMapAPI_Search.framework in Frameworks */,
 				E48A12872477B3C6001CB7F4 /* BaiduMapAPI_Map.framework in Frameworks */,
+				E4E89BFF267843DC0006B7AA /* AlicloudSender.framework in Frameworks */,
 				E48A12852477B3BF001CB7F4 /* BaiduMapAPI_Base.framework in Frameworks */,
 				E4539CC8248E2CA0006EF4C3 /* WebKit.framework in Frameworks */,
 				E46DF91225E73D7F00E6CBC2 /* libopencore-amrwb.a in Frameworks */,
 				E48A12812477B167001CB7F4 /* MapKit.framework in Frameworks */,
+				E4E89BFA267843D40006B7AA /* AlicloudUtils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2197,6 +2225,7 @@
 		E489CCD9247766C50025C7A6 = {
 			isa = PBXGroup;
 			children = (
+				E4E89BEB267840300006B7AA /* AliyunEmasServices-Info.plist */,
 				E489CCE4247766C60025C7A6 /* DM100 */,
 				E489CD00247766D00025C7A6 /* DM100Tests */,
 				E489CD0B247766D00025C7A6 /* DM100UITests */,
@@ -2521,6 +2550,14 @@
 		E48A127F2477B167001CB7F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E4E89C142678477A0006B7AA /* UserNotifications.framework */,
+				E4E89C122678442F0006B7AA /* libresolv.tbd */,
+				E4E89C0D267843F80006B7AA /* UTDID.framework */,
+				E4E89C08267843EF0006B7AA /* UTMini.framework */,
+				E4E89C03267843E90006B7AA /* EMASRest.framework */,
+				E4E89BFE267843DC0006B7AA /* AlicloudSender.framework */,
+				E4E89BF9267843D40006B7AA /* AlicloudUtils.framework */,
+				E4E89BF3267843AA0006B7AA /* CloudPushSDK.framework */,
 				E4539CC7248E2C9C006EF4C3 /* WebKit.framework */,
 				E48A12A92477BA75001CB7F4 /* CoreTelephony.framework */,
 				E48A12A72477B9DE001CB7F4 /* BMKLocationKit.framework */,
@@ -2913,6 +2950,7 @@
 				E48A12012477B027001CB7F4 /* 灰色-30.png in Resources */,
 				E415FCEC25DE4B8E00EBC574 /* setdownb.png in Resources */,
 				E48A11EE2477B027001CB7F4 /* choose2.png in Resources */,
+				E4E89BEC267840300006B7AA /* AliyunEmasServices-Info.plist in Resources */,
 				E48A11CD2477B027001CB7F4 /* ball.png in Resources */,
 				E454325325E5E8ED0070F46A /* traffic_texture_congestion.png in Resources */,
 				E415FCE025DE4B8E00EBC574 /* set42.png in Resources */,
@@ -3371,7 +3409,7 @@
 				CODE_SIGN_ENTITLEMENTS = DM100/Domilink.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = S3EC4C6BR7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
@@ -3389,7 +3427,7 @@
 					"$(PROJECT_DIR)/DM100/ThirdPart/BaiduMaplibs",
 					"$(PROJECT_DIR)/DM100/ThirdPart/VoiceConvert",
 				);
-				MARKETING_VERSION = 1.0.7;
+				MARKETING_VERSION = 1.0.8;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = ztinfo.domilink.DM100;
 				PRODUCT_NAME = Domilink;
@@ -3411,7 +3449,7 @@
 				CODE_SIGN_ENTITLEMENTS = DM100/Domilink.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = S3EC4C6BR7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
@@ -3429,7 +3467,7 @@
 					"$(PROJECT_DIR)/DM100/ThirdPart/BaiduMaplibs",
 					"$(PROJECT_DIR)/DM100/ThirdPart/VoiceConvert",
 				);
-				MARKETING_VERSION = 1.0.7;
+				MARKETING_VERSION = 1.0.8;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = ztinfo.domilink.DM100;
 				PRODUCT_NAME = Domilink;

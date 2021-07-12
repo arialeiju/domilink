@@ -12,7 +12,7 @@
 #import "TabBarViewController.h"
 #import "SwichLanguage.h"
 #import "SwLanguagePop.h"
-//#import <CloudPushSDK/CloudPushSDK.h>//aika test
+#import <CloudPushSDK/CloudPushSDK.h>
 @interface LoginViewController ()<UITextFieldDelegate, SelectionComboBoxDelegate,SwLanguagePopDelegate>
 {
     MBProgressHUD * _HUD;
@@ -374,6 +374,50 @@
 //            }
 //
 //        }];//aika test
+//        NSLog(@"isPushOk 2=%d",self.inAppSetting.isPushOk);
+        if (self.inAppSetting.isPushOk) {
+//            NSLog(@"isPush type =%@",self.inAppSetting.type);
+//            NSLog(@"isPush loginNo =%@",self.inAppSetting.loginNo);
+//            NSLog(@"isPush userId =%@",self.inAppSetting.userId);
+//            NSLog(@"isPush userLanguageType =%d",[SwichLanguage userLanguageType]);
+//            NSLog(@"isPush deviceid =%@",[CloudPushSDK getDeviceId]);
+            
+            NSDictionary *bodyData = @{@"osType":@"2",
+                                       @"loginType":self.inAppSetting.type,
+                                       @"loginNo":self.inAppSetting.loginNo,
+                                       @"userId":self.inAppSetting.userId,
+                                       @"pushId":[CloudPushSDK getDeviceId],
+                                       @"language":[NSString stringWithFormat:@"%d",[SwichLanguage userLanguageType]],
+                                       @"pushMode":@"1"
+                                        };
+            NSDictionary *parameters = [PostXMLDataCreater createXMLDicWithCMD:800
+                                                                withParameters:bodyData];
+            [NetWorkModel POST:ServerURL
+                    parameters:parameters
+                       success:^(ResponseObject *messageCenterObject)
+             {
+                 NSDictionary *ret = messageCenterObject.ret;
+                NSLog(@"800返回=%@",ret);
+                int mretcode=[[ret objectForKey:@"retCode" ] intValue];
+                 if (mretcode==1) {
+
+                     NSLog(@"绑定成功");
+                 }else
+                 {
+                     NSString* msgstr=(NSString *)[messageCenterObject.ret objectForKey:@"retMsg"];
+                     if (msgstr.length==0) {
+                         [MBProgressHUD showQuickTipWIthTitle:@"绑定推送服务失败" withText:nil];
+                     }else
+                     {
+                         [MBProgressHUD showQuickTipWIthTitle:msgstr withText:nil];
+                     }
+                 }
+             }
+                       failure:^(NSError *error)
+             {
+                //[MBProgressHUD showQuickTipWIthTitle:[SwichLanguage getString:@"绑定推送服务失败2"] withText:nil];
+             }];
+        }
     }
 }
 @end

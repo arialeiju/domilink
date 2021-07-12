@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(NSString *)userLanguage;//获取应用当前语言
 +(void)setUserlanguage:(NSString *)language;//设置当前语言
 +(NSString*)getString:(NSString*)mkey;//获取当前语言设置的字符串
++(int)userLanguageType;
 @end
 
 NS_ASSUME_NONNULL_END
