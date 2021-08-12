@@ -596,14 +596,16 @@
          NSString* gsmSignal=[NSString stringWithFormat:@"%@",[ret objectForKey:@"gsmSignal"]];
          //NSLog(@"a=%@ b=%@ c=%@",gpsStar,beidouStar,gsmSignal);
          
-         NSString* mloctime=[ret objectForKey:@"stsTime"];
-         NSString* msigtime=[ret objectForKey:@"signalTime"];
+         //NSString* mloctime=[ret objectForKey:@"stsTime"];
+         //NSString* msigtime=[ret objectForKey:@"signalTime"];
+         NSString* mloctime=[self.inAppSetting ChangeGMT8toSysTime:[ret objectForKey:@"stsTime"]];
+         NSString* msigtime=[self.inAppSetting ChangeGMT8toSysTime:[ret objectForKey:@"signalTime"]];
          NSString* model1= [self checkifunupdate:[ret objectForKey:@"model1"] withStr:@""];
          NSString* model2= [self checkifunupdate:[ret objectForKey:@"model2"] withStr:@""];
          NSString* model= [self checkifunupdate:[ret objectForKey:@"mode"] withStr:@""];
          NSString* deviceSts=[ret objectForKey:@"deviceSts"];
          NSString* speedstr=[ret objectForKey:@"speed"];
-         NSString* acctime=[NSString stringWithFormat:@"%@",[ret objectForKey:@"accTime"]];
+         NSString* acctime=[self.inAppSetting ChangeGMT8toSysTime:[NSString stringWithFormat:@"%@",[ret objectForKey:@"accTime"]]];
          //NSLog(@"a=%@ b=%@ c=%@",model1,model2,model);
          //为图标有方向做准备
          self->mcouse=[ret objectForKey:@"course"];

@@ -12,6 +12,7 @@
 #import "TabBarViewController.h"
 #import "SwichLanguage.h"
 #import "SwLanguagePop.h"
+#import "SwServerPop.h"
 #import <CloudPushSDK/CloudPushSDK.h>
 @interface LoginViewController ()<UITextFieldDelegate, SelectionComboBoxDelegate,SwLanguagePopDelegate>
 {
@@ -319,6 +320,10 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)ClickServerButton:(id)sender {
+    [self showServerPopView];
+}
+
 - (IBAction)ClickChangeButton:(id)sender {
     //修改语言
 //    NSString *language = [SwichLanguage userLanguage];
@@ -337,6 +342,7 @@
 {
      //   [_changeButton setTitle:[[SwichLanguage bundle] localizedStringForKey:@"button"value:nil table:@"English"] forState:UIControlStateNormal];
     [_changeButton setTitle:[SwichLanguage getString:@"languageswitch"] forState:UIControlStateNormal];
+    [_serverButton setTitle:[SwichLanguage getString:@"servertitle"] forState:UIControlStateNormal];
     [_loginButton setTitle:[SwichLanguage getString:@"login"] forState:UIControlStateNormal];
     [_label1 setText:[SwichLanguage getString:@"ck1"]];
     [_label2 setText:[SwichLanguage getString:@"ck2"]];
@@ -350,6 +356,13 @@
     SwLanguagePop * mSwLanguagePop = [[SwLanguagePop alloc]init];
     mSwLanguagePop.delegate=self;
     [mSwLanguagePop showInView:[UIApplication sharedApplication].keyWindow];
+}
+
+//显示服务器选择框
+-(void)showServerPopView
+{
+    SwServerPop * mSwSeverPop = [[SwServerPop alloc]init];
+    [mSwSeverPop showInView:[UIApplication sharedApplication].keyWindow];
 }
 
 #pragma mark - customPickerViewDelegate

@@ -27,10 +27,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction)clickRememberPassword:(UIButton*)sender;
 - (IBAction)clickAutoLogin:(UIButton*)sender;
 @property (weak, nonatomic) IBOutlet UIButton *changeButton;
+@property (weak, nonatomic) IBOutlet UIButton *serverButton;
 
 @property (weak, nonatomic) IBOutlet UILabel *label1;
 @property (weak, nonatomic) IBOutlet UILabel *label2;
 - (IBAction)ClickChangeButton:(id)sender;
+- (IBAction)ClickServerButton:(id)sender;
 @end
 
 NS_ASSUME_NONNULL_END

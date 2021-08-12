@@ -258,6 +258,14 @@
 		E45EC3F324B3FD25002C6336 /* ElectronicFenceService.m in Sources */ = {isa = PBXBuildFile; fileRef = E45EC3F124B3FD24002C6336 /* ElectronicFenceService.m */; };
 		E45F72D0247BA48A0051A88A /* appString.strings in Resources */ = {isa = PBXBuildFile; fileRef = E45F72D2247BA48A0051A88A /* appString.strings */; };
 		E45F72D7247BA51F0051A88A /* SwichLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = E45F72D5247BA51F0051A88A /* SwichLanguage.m */; };
+		E469588426B78FBB000FC2F8 /* SwServerPop.m in Sources */ = {isa = PBXBuildFile; fileRef = E469588326B78FBB000FC2F8 /* SwServerPop.m */; };
+		E469588926B7909C000FC2F8 /* SwServerPop.xib in Resources */ = {isa = PBXBuildFile; fileRef = E469588826B7909C000FC2F8 /* SwServerPop.xib */; };
+		E46BCF0726A8050C008D876A /* set47.png in Resources */ = {isa = PBXBuildFile; fileRef = E46BCF0126A8050C008D876A /* set47.png */; };
+		E46BCF0826A8050C008D876A /* set48.png in Resources */ = {isa = PBXBuildFile; fileRef = E46BCF0226A8050C008D876A /* set48.png */; };
+		E46BCF0926A8050C008D876A /* set46.png in Resources */ = {isa = PBXBuildFile; fileRef = E46BCF0326A8050C008D876A /* set46.png */; };
+		E46BCF0A26A8050C008D876A /* set410.png in Resources */ = {isa = PBXBuildFile; fileRef = E46BCF0426A8050C008D876A /* set410.png */; };
+		E46BCF0B26A8050C008D876A /* set45.png in Resources */ = {isa = PBXBuildFile; fileRef = E46BCF0526A8050C008D876A /* set45.png */; };
+		E46BCF0C26A8050C008D876A /* set49.png in Resources */ = {isa = PBXBuildFile; fileRef = E46BCF0626A8050C008D876A /* set49.png */; };
 		E46DF8F125E738B000E6CBC2 /* MediaPlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E46DF8EE25E738B000E6CBC2 /* MediaPlayViewController.xib */; };
 		E46DF8F225E738B000E6CBC2 /* MediaPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46DF8EF25E738B000E6CBC2 /* MediaPlayViewController.m */; };
 		E46DF8F925E738C900E6CBC2 /* MediaPlayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E46DF8F425E738C900E6CBC2 /* MediaPlayCell.m */; };
@@ -968,6 +976,15 @@
 		E45F72D5247BA51F0051A88A /* SwichLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwichLanguage.m; sourceTree = "<group>"; };
 		E45F72D6247BA51F0051A88A /* SwichLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwichLanguage.h; sourceTree = "<group>"; };
 		E45F72D8247BA8120051A88A /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		E469588226B78FBB000FC2F8 /* SwServerPop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwServerPop.h; sourceTree = "<group>"; };
+		E469588326B78FBB000FC2F8 /* SwServerPop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwServerPop.m; sourceTree = "<group>"; };
+		E469588826B7909C000FC2F8 /* SwServerPop.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwServerPop.xib; sourceTree = "<group>"; };
+		E46BCF0126A8050C008D876A /* set47.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = set47.png; path = ../../../../../../../Downloads/set47.png; sourceTree = "<group>"; };
+		E46BCF0226A8050C008D876A /* set48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = set48.png; path = ../../../../../../../Downloads/set48.png; sourceTree = "<group>"; };
+		E46BCF0326A8050C008D876A /* set46.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = set46.png; path = ../../../../../../../Downloads/set46.png; sourceTree = "<group>"; };
+		E46BCF0426A8050C008D876A /* set410.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = set410.png; path = ../../../../../../../Downloads/set410.png; sourceTree = "<group>"; };
+		E46BCF0526A8050C008D876A /* set45.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = set45.png; path = ../../../../../../../Downloads/set45.png; sourceTree = "<group>"; };
+		E46BCF0626A8050C008D876A /* set49.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = set49.png; path = ../../../../../../../Downloads/set49.png; sourceTree = "<group>"; };
 		E46DF8EE25E738B000E6CBC2 /* MediaPlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MediaPlayViewController.xib; sourceTree = "<group>"; };
 		E46DF8EF25E738B000E6CBC2 /* MediaPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaPlayViewController.m; sourceTree = "<group>"; };
 		E46DF8F025E738B000E6CBC2 /* MediaPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaPlayViewController.h; sourceTree = "<group>"; };
@@ -1420,6 +1437,12 @@
 				E415FCC725DE4B8E00EBC574 /* set42.png */,
 				E415FCC625DE4B8E00EBC574 /* set43.png */,
 				E415FCD425DE4B8E00EBC574 /* set44.png */,
+				E46BCF0526A8050C008D876A /* set45.png */,
+				E46BCF0326A8050C008D876A /* set46.png */,
+				E46BCF0626A8050C008D876A /* set49.png */,
+				E46BCF0126A8050C008D876A /* set47.png */,
+				E46BCF0226A8050C008D876A /* set48.png */,
+				E46BCF0426A8050C008D876A /* set410.png */,
 				E415FCCB25DE4B8E00EBC574 /* setadd.png */,
 				E415FCC125DE4B8D00EBC574 /* setDown.png */,
 				E415FCD325DE4B8E00EBC574 /* setdownb.png */,
@@ -1793,6 +1816,7 @@
 		E452A232247CE7FA00E2C84A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				E469588126B78DBA000FC2F8 /* SwServerPop */,
 				E46DF90025E73BAC00E6CBC2 /* OnlinePopView */,
 				E452A233247CE7FA00E2C84A /* SwLanguagePop */,
 				E452A237247CE7FA00E2C84A /* SwMapPop */,
@@ -2162,6 +2186,16 @@
 				E45F72D6247BA51F0051A88A /* SwichLanguage.h */,
 			);
 			path = SwichLanguage;
+			sourceTree = "<group>";
+		};
+		E469588126B78DBA000FC2F8 /* SwServerPop */ = {
+			isa = PBXGroup;
+			children = (
+				E469588226B78FBB000FC2F8 /* SwServerPop.h */,
+				E469588326B78FBB000FC2F8 /* SwServerPop.m */,
+				E469588826B7909C000FC2F8 /* SwServerPop.xib */,
+			);
+			path = SwServerPop;
 			sourceTree = "<group>";
 		};
 		E46DF8ED25E7386600E6CBC2 /* MediaPlayViewController */ = {
@@ -2725,6 +2759,7 @@
 				E452A2DD247CE7FB00E2C84A /* CarAlarmPaopaoView.xib in Resources */,
 				E48A11DB2477B027001CB7F4 /* predevice.png in Resources */,
 				E4E99A7125EDBBF1009FC641 /* tmiddle.png in Resources */,
+				E46BCF0826A8050C008D876A /* set48.png in Resources */,
 				E4E99A7225EDBBF1009FC641 /* tuser-single.png in Resources */,
 				E48A121E2477B027001CB7F4 /* 绿色-180.png in Resources */,
 				E48A11DC2477B027001CB7F4 /* clock2_.png in Resources */,
@@ -2754,6 +2789,7 @@
 				E48A11C52477B027001CB7F4 /* login_customer_close.PNG in Resources */,
 				E452A31D247CE7FB00E2C84A /* BusPointCell.xib in Resources */,
 				E48A127C2477B028001CB7F4 /* bg.JPG in Resources */,
+				E46BCF0B26A8050C008D876A /* set45.png in Resources */,
 				E48A124D2477B028001CB7F4 /* minus.png in Resources */,
 				E48A11E32477B027001CB7F4 /* power.png in Resources */,
 				E48A11B92477B027001CB7F4 /* menu_icon_1_pressed.png in Resources */,
@@ -2799,6 +2835,7 @@
 				E48A11D72477B027001CB7F4 /* car_static.png in Resources */,
 				E48A12192477B027001CB7F4 /* 黄色-210.png in Resources */,
 				E452A326247CE7FB00E2C84A /* HistoryTrackViewController.xib in Resources */,
+				E46BCF0C26A8050C008D876A /* set49.png in Resources */,
 				E48A11DE2477B027001CB7F4 /* acc.png in Resources */,
 				E48A11FB2477B027001CB7F4 /* 绿色-300.png in Resources */,
 				E452A308247CE7FB00E2C84A /* ChangePasswordViewController.xib in Resources */,
@@ -2924,10 +2961,12 @@
 				E48A11CE2477B027001CB7F4 /* tree_ex.png in Resources */,
 				E415FCE125DE4B8E00EBC574 /* set2.png in Resources */,
 				E48A12672477B028001CB7F4 /* page2b4.png in Resources */,
+				E469588926B7909C000FC2F8 /* SwServerPop.xib in Resources */,
 				E48A11D32477B027001CB7F4 /* fblue.png in Resources */,
 				E48A11EF2477B027001CB7F4 /* page4item2.png in Resources */,
 				E48A12502477B028001CB7F4 /* update_device.PNG in Resources */,
 				E48679A8260ED17F007C259F /* cell_narrow.png in Resources */,
+				E46BCF0A26A8050C008D876A /* set410.png in Resources */,
 				E48A12252477B027001CB7F4 /* 灰色-330.png in Resources */,
 				E48A125A2477B028001CB7F4 /* dy_map_move.png in Resources */,
 				E48A12362477B027001CB7F4 /* 绿色-330.png in Resources */,
@@ -2998,6 +3037,7 @@
 				E48A11DA2477B027001CB7F4 /* menu_icon_2_normal.png in Resources */,
 				E48A12792477B028001CB7F4 /* nextdevice.png in Resources */,
 				E415FCD925DE4B8E00EBC574 /* set34.png in Resources */,
+				E46BCF0926A8050C008D876A /* set46.png in Resources */,
 				E48A124A2477B028001CB7F4 /* cap_dailog_back.png in Resources */,
 				E48A11FA2477B027001CB7F4 /* 黄色-330.png in Resources */,
 				E415FC8E25DE3CFE00EBC574 /* AlarmSettingPlusCell.xib in Resources */,
@@ -3010,6 +3050,7 @@
 				E48A11F12477B027001CB7F4 /* model.png in Resources */,
 				E48A12542477B028001CB7F4 /* logo.PNG in Resources */,
 				E48A122C2477B027001CB7F4 /* 绿色-120.png in Resources */,
+				E46BCF0726A8050C008D876A /* set47.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3107,6 +3148,7 @@
 				E452A219247CA98C00E2C84A /* MJRefreshConst.m in Sources */,
 				E415FCAE25DE3CFE00EBC574 /* SettingPlusController.m in Sources */,
 				E452A1B9247CA91200E2C84A /* AvatarView.m in Sources */,
+				E469588426B78FBB000FC2F8 /* SwServerPop.m in Sources */,
 				E452A31F247CE7FB00E2C84A /* APStartAndEndAnNotation.m in Sources */,
 				E452A1A6247CA8B700E2C84A /* AFHTTPRequestOperation.m in Sources */,
 				E452A2E7247CE7FB00E2C84A /* ExpeirViewController.m in Sources */,
@@ -3427,7 +3469,7 @@
 					"$(PROJECT_DIR)/DM100/ThirdPart/BaiduMaplibs",
 					"$(PROJECT_DIR)/DM100/ThirdPart/VoiceConvert",
 				);
-				MARKETING_VERSION = 1.0.8;
+				MARKETING_VERSION = 1.0.10;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = ztinfo.domilink.DM100;
 				PRODUCT_NAME = Domilink;
@@ -3467,7 +3509,7 @@
 					"$(PROJECT_DIR)/DM100/ThirdPart/BaiduMaplibs",
 					"$(PROJECT_DIR)/DM100/ThirdPart/VoiceConvert",
 				);
-				MARKETING_VERSION = 1.0.8;
+				MARKETING_VERSION = 1.0.10;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = ztinfo.domilink.DM100;
 				PRODUCT_NAME = Domilink;

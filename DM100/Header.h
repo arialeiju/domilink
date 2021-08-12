@@ -20,8 +20,13 @@
 #import "PostXMLDataCreater.h"
 #import "NetWorkModel.h"
 //#define ServerURL       @"http://plat.basegps.com:8088/AppServer/server.do"
-#define ServerURL       @"http://test.basegps.com:80/AppServer/server.do"
+#define ServerURL       [InAppSetting instance].mServerURL
+//#define ServerURL       @"http://test.basegps.com:80/AppServer/server.do"
 //#define ServerURL       @"http://www.yidiyitian.cn:8080/AppServer/server.do"
+
+#define TServerURL1       @"http://plat.domilink.com:80/AppServer/server.do"
+#define TServerURL2       @"http://test.basegps.com:80/AppServer/server.do"
+
 #pragma mark - Device Data
 
 //#define testTyte TRUE

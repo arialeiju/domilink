@@ -15,6 +15,9 @@
     // Initialization code
     self.plabel.textColor=[UIColor colorWithHexString:@"#333333"];
     [self.topline setBackgroundColor:[UIColor colorWithHexString:@"#F7F7F7"]];
+    if ([SwichLanguage userLanguageType]==1) {
+        self.plabel.adjustsFontSizeToFitWidth=YES;
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

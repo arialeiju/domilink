@@ -315,11 +315,12 @@
         _currentEndTime = [dateFormatter stringFromDate:now];
         spe=@"1";
     }
-    
+    NSString* _mstarttime=[self.inAppSetting ChangeSysTimetoGMT8:_currentStartTime];
+    NSString* _mendtime=[self.inAppSetting ChangeSysTimetoGMT8:_currentEndTime];
     if (_delegate && [_delegate respondsToSelector:@selector(timeRangeDidSelectedWithStartTime:withEndTime:withSpe:)])
     {
-        [_delegate timeRangeDidSelectedWithStartTime:_currentStartTime
-                                         withEndTime:_currentEndTime
+        [_delegate timeRangeDidSelectedWithStartTime:_mstarttime
+                                         withEndTime:_mendtime
                                          withSpe:spe];
     }
     

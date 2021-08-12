@@ -141,7 +141,9 @@
 {
     static NSString * identifier = @"MediaPlayCell";
     MediaPlayCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-    cell.timelabel.text=[[self.messageArray objectAtIndex:indexPath.row] objectForKey:@"sendTime"];
+    
+    NSString* msendtime=[[self.messageArray objectAtIndex:indexPath.row] objectForKey:@"sendTime"];
+    cell.timelabel.text=[self.inAppSetting ChangeGMT8toSysTime:msendtime];
     cell.voicelenthlabel.text=[[[self.messageArray objectAtIndex:indexPath.row] objectForKey:@"timeLength"] stringByAppendingString:@"\""];
     
     cell.urlname=[[self.messageArray objectAtIndex:indexPath.row] objectForKey:@"url"];
@@ -181,13 +183,14 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     NSString* sendtime=[[self.messageArray objectAtIndex:indexPath.row] objectForKey:@"sendTime"];
+    NSString* changetime=[self.inAppSetting ChangeGMT8toSysTime:sendtime];
     NSString* lalo=[[self.messageArray objectAtIndex:indexPath.row] objectForKey:@"position"];
     NSArray *array = [lalo componentsSeparatedByString:@","];
     NSLog(@"didSelectRowAtIndexPath array0=%@ array1=%@",array[0],array[1]);
     if (array.count>1) {
     
     
-     NSDictionary *bodyData = @{@"time":sendtime,
+     NSDictionary *bodyData = @{@"time":changetime,
                                 @"str":[SwichLanguage getString:@"mediaalarm"],
                                 @"imei":_imei,
                                 @"name":_imeiname,
@@ -239,7 +242,7 @@
          
          // [_HUD hide:YES];
          NSDictionary *ret = messageCenterObject.ret;
-       // NSLog(@"ret=%@",ret);
+        NSLog(@"ret=%@",ret);
              NSArray *responseArray = (NSArray *)[ret objectForKey:@"msgList"];
              [weakSelf.messageArray removeAllObjects];//清空
              for (NSDictionary *dic in responseArray)

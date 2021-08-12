@@ -15,7 +15,8 @@
 #import "MapLoctionSwich.h"
 #import "SettingPlusController.h"
 #import <BaiduMapAPI_Search/BMKGeocodeSearch.h>
-@interface APMainMapViewController ()<MKMapViewDelegate,BMKGeoCodeSearchDelegate>
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>
+@interface APMainMapViewController ()<MKMapViewDelegate,BMKGeoCodeSearchDelegate,BMKPoiSearchDelegate>
 {
     __weak IBOutlet UIView *messageView;
     CGFloat mviewHeightC;//当前信息页面高度
@@ -46,12 +47,14 @@
     MBProgressHUD * _HUD_userlist;
     
     NSString* mloctypestr;
-    
+    NSString* madrrstr;
     UILabel* mcountdownlabel;
     int mRefreshTime;//定位刷新的间隔时间 目前只有 10 和 3两种
     int mCDTime;//显示的倒计时时间
     NSTimer *_CDTimer;//倒计时定时器
+    
 }
+@property (strong, nonatomic) BMKPoiSearch *poiSearch;//苹果地图中文转换器
 @end
 
 @implementation APMainMapViewController
@@ -67,8 +70,11 @@
     mcouse=@"0";
     mlogoType=@"1";
     mloctypestr=@"";
+    madrrstr=@"";
     isGSM=false;
     _geoCoor=CLLocationCoordinate2DMake(0, 0);
+    _poiSearch=[[BMKPoiSearch alloc] init];
+    _poiSearch.delegate=self;
     [self locate];
 }
 - (void)viewWillDisappear:(BOOL)animated{
@@ -318,6 +324,11 @@
     _controlview4.layer.masksToBounds = YES;
     _controlview4.layer.borderWidth = 1;
     _controlview4.layer.borderColor = [[UIColor colorWithRed:199.0/255.0 green:199.0/255.0 blue:199.0/255.0 alpha:1] CGColor];
+    
+    UITapGestureRecognizer *tapGesaddress = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ClickTvaddress)];
+    [_tvaddress addGestureRecognizer:tapGesaddress];
+    _tvaddress.userInteractionEnabled = YES; //可被点击
+
 }
 //刷新messageview 等界面位置。 1 - 显示  ，  2 -隐藏详细内容
 -(void)updataViewShowWithType:(int)mtype
@@ -591,14 +602,14 @@
          NSString* gsmSignal=[NSString stringWithFormat:@"%@",[ret objectForKey:@"gsmSignal"]];
          //NSLog(@"a=%@ b=%@ c=%@",gpsStar,beidouStar,gsmSignal);
          
-         NSString* mloctime=[ret objectForKey:@"stsTime"];
-         NSString* msigtime=[ret objectForKey:@"signalTime"];
+         NSString* mloctime=[self.inAppSetting ChangeGMT8toSysTime:[ret objectForKey:@"stsTime"]];
+         NSString* msigtime=[self.inAppSetting ChangeGMT8toSysTime:[ret objectForKey:@"signalTime"]];
          NSString* model1= [self checkifunupdate:[ret objectForKey:@"model1"] withStr:@""];
          NSString* model2= [self checkifunupdate:[ret objectForKey:@"model2"] withStr:@""];
          NSString* model= [self checkifunupdate:[ret objectForKey:@"mode"] withStr:@""];
          NSString* deviceSts=[ret objectForKey:@"deviceSts"];
          NSString* speedstr=[ret objectForKey:@"speed"];
-         NSString* acctime=[NSString stringWithFormat:@"%@",[ret objectForKey:@"accTime"]];
+         NSString* acctime=[self.inAppSetting ChangeGMT8toSysTime:[NSString stringWithFormat:@"%@",[ret objectForKey:@"accTime"]]];
          //NSLog(@"a=%@ b=%@ c=%@",model1,model2,model);
          //为图标有方向做准备
          self->mcouse=[ret objectForKey:@"course"];
@@ -815,6 +826,8 @@
         //反编译 具体 中文地址
         CLLocationCoordinate2D curDeviceCoors = CLLocationCoordinate2DMake([la floatValue],[lo floatValue]);
         [self setReverseGeoSearchWithCoor:curDeviceCoors];
+        
+        //[self setReverseGeoSearchWithCoor:latestDeviceCoor];
      }
                failure:^(NSError *error)
      {
@@ -1045,6 +1058,7 @@
     //NSLog(@"clicktipbutton");
 }
 
+
 //获取中文地址
 - (void)setReverseGeoSearchWithCoor:(CLLocationCoordinate2D)Coor
 {
@@ -1086,11 +1100,31 @@
     {
         //[_paopaoView setAddressText:result.address];
         NSString* maddress=result.sematicDescription;
+        madrrstr=result.address;
         NSLog(@"maddress=%@",maddress);
         if (maddress!=nil&&maddress.length>0) {
             self.tvaddress.text=[NSString stringWithFormat:@"%@(%@)(%@)",result.address,maddress,mloctypestr];
         }else
         {
+            //初始化请求参数类BMKNearbySearchOption的实例
+            BMKPOINearbySearchOption *nearbyOption = [[BMKPOINearbySearchOption alloc] init];
+            //检索关键字，必选
+            nearbyOption.keywords = @[@"大学",@"College",@"bank",@"hospital",@"Park",@"hotel"];
+            //检索中心点的经纬度，必选
+            nearbyOption.location = result.location;
+            //nearbyOption.location =  CLLocationCoordinate2DMake(40.051231, 116.282051);;
+            //检索半径，单位是米。
+            nearbyOption.radius = 2000;
+            //是否严格限定召回结果在设置检索半径范围内。默认值为false。
+            nearbyOption.isRadiusLimit = NO;
+            nearbyOption.pageIndex = 0;
+            nearbyOption.pageSize = 2;
+            BOOL flag = [_poiSearch poiSearchNearBy:nearbyOption];
+            if (flag) {
+                NSLog(@"POI周边检索成功");
+            } else {
+                NSLog(@"POI周边检索失败");
+            }
             self.tvaddress.text=[NSString stringWithFormat:@"%@(%@)",result.address,mloctypestr];
         }
     }
@@ -1284,6 +1318,36 @@
     mCDTime--;
     if (mCDTime<1) {
         mCDTime=mRefreshTime;
+    }
+}
+
+
+//点击地址，进行具体地址转化
+-(void)ClickTvaddress
+{
+    NSLog(@"ClickTvaddress");
+}
+
+#pragma mark - BMKPoiSearchDelegate
+/**
+ *返回POI搜索结果
+ *@param searcher 搜索对象
+ *@param poiResult 搜索结果列表
+ *@param errorCode 错误码，@see BMKSearchErrorCode
+ */
+- (void)onGetPoiResult:(BMKPoiSearch*)searcher result:(BMKPOISearchResult*)poiResult errorCode:(BMKSearchErrorCode)errorCode {
+    //BMKSearchErrorCode错误码，BMK_SEARCH_NO_ERROR：检索结果正常返回
+    NSLog(@"BMKSearchErrorCode=%u",errorCode);
+    if (errorCode == BMK_SEARCH_NO_ERROR) {
+        //在此处理正常结果
+        NSLog(@"检索结果返回成功：%@",poiResult.poiInfoList);
+        BMKPoiInfo *mpoi=poiResult.poiInfoList[0];
+        self.tvaddress.text=[NSString stringWithFormat:@"%@(%@)(%@)",madrrstr,mpoi.address,mloctypestr];
+    }
+    else if (errorCode == BMK_SEARCH_AMBIGUOUS_KEYWORD) {
+        NSLog(@"检索词有歧义");
+    } else {
+        NSLog(@"其他检索结果错误码相关处理");
     }
 }
 @end

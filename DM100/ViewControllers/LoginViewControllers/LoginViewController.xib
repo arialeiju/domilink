@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,6 +19,7 @@
                 <outlet property="passWordTextField" destination="j1K-vU-Inu" id="M6Y-lL-uUe"/>
                 <outlet property="passWordView" destination="QAK-eT-QQ9" id="2wx-eW-esE"/>
                 <outlet property="rememberPasswordButton" destination="EAE-cl-wkO" id="QsU-Ic-ZCc"/>
+                <outlet property="serverButton" destination="sd9-fc-f02" id="N7W-7J-1ua"/>
                 <outlet property="userNameImageView" destination="UsJ-k3-uN6" id="ZVp-uj-s0k"/>
                 <outlet property="userNameTextField" destination="yo2-js-3pr" id="32d-EM-1Xd"/>
                 <outlet property="userNameView" destination="neA-pC-wZU" id="7s1-6r-0Wt"/>
@@ -104,7 +103,7 @@
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0g-jF-Boa">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0g-jF-Boa">
                     <rect key="frame" x="26" y="382" width="322" height="45"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.25246018171310425" green="0.31103122234344482" blue="0.44382017850875854" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -155,14 +154,24 @@
                     <rect key="frame" x="142" y="57" width="90" height="90"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOy-ub-V29">
-                    <rect key="frame" x="26" y="435" width="322" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOy-ub-V29">
+                    <rect key="frame" x="191" y="435" width="157" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="语言切换">
                         <color key="titleColor" red="0.25246018170000001" green="0.31103122230000002" blue="0.4438201785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="ClickChangeButton:" destination="-1" eventType="touchUpInside" id="ERA-I4-41v"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sd9-fc-f02">
+                    <rect key="frame" x="26" y="435" width="157" height="30"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="线路切换">
+                        <color key="titleColor" red="0.25246018170000001" green="0.31103122230000002" blue="0.4438201785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="ClickServerButton:" destination="-1" eventType="touchUpInside" id="VGZ-fN-dgg"/>
                     </connections>
                 </button>
             </subviews>
@@ -174,7 +183,7 @@
         <image name="drop.png" width="64" height="64"/>
         <image name="loginoff.PNG" width="25" height="25"/>
         <image name="loginon.PNG" width="25" height="25"/>
-        <image name="logodomilink.png" width="254" height="254"/>
+        <image name="logodomilink.png" width="190.5" height="190.5"/>
         <image name="pw_domi.png" width="79" height="79"/>
         <image name="user_domi.png" width="79" height="79"/>
     </resources>

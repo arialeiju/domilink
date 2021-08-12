@@ -183,7 +183,7 @@
     }
     _paopaoView.delegate = self;
     _paopaoView.imeiLabel.text = [_deviceInfoDic valueForKey:@"name"];
-    _paopaoView.timeLabel.text = [_deviceInfoDic valueForKey:@"time"];
+    _paopaoView.timeLabel.text = [self.inAppSetting ChangeGMT8toSysTime: [_deviceInfoDic valueForKey:@"time"]];
     _paopaoView.statusLabel.text = [self deviceStatusString];
     _paopaoView.alarmType.text = [_deviceInfoDic valueForKey:@"str"];
     

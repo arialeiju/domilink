@@ -21,8 +21,11 @@
     UIView *_backgroundView;
     BOOL isopenKeyboard;
     NSString* tIMEI;
+    int tshowtype;
     NSString* sday;
     NSString* _strshowday;
+    
+    int mpoit;//记录位置 默认1
 }
 - (id)init
 {
@@ -49,7 +52,7 @@
         //[title setBackgroundColor:[UIColor colorWithHexString:@"#00B7EE"]];
         isopenKeyboard=false;
         
-        _dataSource=[[NSMutableArray alloc] initWithObjects: @"1",@"00:00",nil];
+        _dataSource=[[NSMutableArray alloc] init];
         [self initTabelView];
     }
     return self;
@@ -73,9 +76,10 @@
     _strshowday=[SwichLanguage getString:@"day"];
 }
 
-- (void)showInView:(UIView *)view andIMEI:(NSString*)mimti
+- (void)showInView:(UIView *)view andIMEI:(NSString*)mimti andShowType:(int)mtype
 {
     tIMEI=mimti;
+    tshowtype=mtype;
     if (_backgroundView == nil)
     {
         _backgroundView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -114,7 +118,20 @@
     UILabel * titlelabel= [[UILabel alloc]initWithFrame:CGRectMake(0, mY, mW, 30)];
     titlelabel.font = [UIFont systemFontOfSize:15];
     titlelabel.textAlignment = NSTextAlignmentCenter;
-    titlelabel.text=[SwichLanguage getString:@"offline2"];
+    
+    if (tshowtype==0) {
+        titlelabel.text=[SwichLanguage getString:@"offline2"];
+        mpoit=0;
+        [_dataSource addObject:@"00:00"];
+    }else
+    {
+        titlelabel.text=[SwichLanguage getString:@"offline5"];
+        mpoit=1;
+        [_dataSource addObject:@"1"];
+        [_dataSource addObject:@"00:00"];
+    }
+    
+    
     titlelabel.textColor=[UIColor blackColor];
     [self addSubview:titlelabel];
     mY=mY+titlelabel.frame.size.height+10;
@@ -174,18 +191,30 @@
     NSLog(@"askthebutton");
     if ([self.delegate respondsToSelector:@selector(SureButtonDingShiAction:)]) {
         NSMutableString *mstrs=[[NSMutableString alloc] init];
-        [mstrs appendFormat:@"MODE,1"];
-        for (int i=1; i<self.dataSource.count; i++) {
+        
+        if(mpoit==0)
+        {
+            [mstrs appendFormat:@"Mode,21"];
+        }else
+        {
+            [mstrs appendFormat:@"Mode,1"];
+        }
+        
+        for (int i=mpoit; i<self.dataSource.count; i++) {
             NSString* mmain=[self.dataSource objectAtIndex:i];
             NSArray *array = [mmain componentsSeparatedByString:@":"];
             if (array.count>1) {
                 [mstrs appendFormat:@",%@%@",array[0],array[1]];
             }
         }
-        if (sday.length<2) {
-            sday=[NSString stringWithFormat:@"0%@",sday];
+        
+        if (mpoit==1) {//闹铃上报才匹配日期
+            if (sday.length<2) {
+                sday=[NSString stringWithFormat:@"0%@",sday];
+            }
+            [mstrs appendFormat:@",%@",sday];
         }
-        [mstrs appendFormat:@",%@",sday];
+        
         NSString* mcmd=mstrs;
         [self.delegate SureButtonDingShiAction:mcmd];
     }
@@ -193,7 +222,7 @@
 }
 
 - (IBAction)DoNewAddAction:(id)sender {
-    if (self.dataSource.count<6) {
+    if (self.dataSource.count<(mpoit+5)) {
         [self.dataSource addObject:@"00:00"];
         [self tableViewHadChage];
     }else
@@ -233,11 +262,11 @@
          cell = [[[NSBundle mainBundle]loadNibNamed:@"DSViewCell" owner:self options:nil] lastObject];
      }
     NSString * buttonStr = self.dataSource[indexPath.row];
-    if (indexPath.row==0) {
+    if (mpoit!=0&&indexPath.row==0) {
         cell.titlelabel.text=[SwichLanguage getString:@"uploadtime"];
         cell.contentlabel.text=[NSString stringWithFormat:@"%@%@",buttonStr,_strshowday];
         [cell.lastbutton setHidden:YES];
-    }else if(indexPath.row==1)
+    }else if(indexPath.row==mpoit)
     {
         cell.titlelabel.text=[SwichLanguage getString:@"popt2"];
         cell.contentlabel.text=buttonStr;
@@ -275,7 +304,7 @@
 - (void)DoMinusAction:(NSInteger)SectionItem
 {
     //NSLog(@"SectionItem=%ld",(long)SectionItem);
-    if (self.dataSource.count>2) {
+    if (self.dataSource.count>(mpoit+1)) {
         [self.dataSource removeObjectAtIndex:SectionItem];
         [self tableViewHadChage];
     }
@@ -284,7 +313,7 @@
 - (void)DoSelectTime:(NSInteger)SectionItem
 {
     NSLog(@"SectionItem=%ld",(long)SectionItem);
-    if (SectionItem>0) {
+    if (SectionItem>(mpoit-1)) {
         AKTimePicker *pickerView = [[AKTimePicker alloc]initDatePackerWithStartHour:@"00" endHour:@"25" period:1 showtype:1 response:^(NSString *str) {
             NSString *mstring = str;
             //NSLog(@"str = %@",mstring);

@@ -25,7 +25,6 @@
 //#ifdef DEBUG
 //    imei = @"684611121300020";
 //#endif
-    
     NSDictionary *bodyData = @{kImei:imei,
                                kStartTime:startTime,
                                kEndTime:endTime,
@@ -51,7 +50,8 @@
                 //判断是不是最后一个点
                 if ((i+1)<mcount) {
                     HistoryLocationObject *hnext = [[HistoryLocationObject alloc] initWithJSON:[responseArray objectAtIndex:i+1]];
-                    
+                    NSString* mtime=hnext.stsTime;
+                    hnext.stsTime=[HistoryTrackService ChangeGMT8toSysTime:mtime];
                     float ila1= [histroyPoint.la floatValue];
                     float ilo1= [histroyPoint.lo floatValue];
                     float ila2= [hnext.la floatValue];
@@ -74,7 +74,8 @@
         {
             for (int i=0; i<mcount; i++) {
                 HistoryLocationObject *histroyPoint = [[HistoryLocationObject alloc] initWithJSON:[responseArray objectAtIndex:i]];
-                
+                NSString* mtime=histroyPoint.stsTime;
+                histroyPoint.stsTime=[HistoryTrackService ChangeGMT8toSysTime:mtime];
                 //判断是不是最后一个点
                 if ((i+1)<mcount) {
                     HistoryLocationObject *hnext = [[HistoryLocationObject alloc] initWithJSON:[responseArray objectAtIndex:i+1]];
@@ -172,5 +173,32 @@
     } else if (w1 > w2)
         ret = 360 - ret;
     return ret;
+}
+
+
+//某一时区时间转化为手机本地系统时间
++(NSString*)ChangeGMT8toSysTime:(NSString*)mStime
+{
+    NSDateFormatter  *dateformatter=[[NSDateFormatter alloc] init];
+    [dateformatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *startDate = [dateformatter dateFromString:mStime];
+    
+    NSTimeZone* sourceTimeZone = [NSTimeZone timeZoneWithName:@"Asia/Shanghai"];//或GMT
+    //设置转换后的目标日期时区
+    NSTimeZone* destinationTimeZone = [NSTimeZone localTimeZone];
+    //得到源日期与世界标准时间的偏移量
+    NSInteger sourceGMTOffset = [sourceTimeZone secondsFromGMTForDate:startDate];
+    //目标日期与本地时区的偏移量
+    NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:startDate];
+    //得到时间偏移量的差值
+    NSTimeInterval interval = destinationGMTOffset - sourceGMTOffset;
+    //转为现在时间
+    NSDate* destinationDateNow = [[NSDate alloc] initWithTimeInterval:interval sinceDate:startDate];
+    
+    NSString *startDateStr = [dateformatter stringFromDate:destinationDateNow];
+    //NSLog(@"转化前时间:%@",mStime);
+    //NSLog(@"转化后时间:%@",startDateStr);//这是最终转好的时间
+    
+    return startDateStr;
 }
 @end

@@ -160,7 +160,7 @@
     self.carAlarmInformationDictionary = [self.carAlarmInformationArray objectAtIndex:indexPath.row];
     cell.messageLabel.text = [self.carAlarmInformationDictionary objectForKey:@"str"];
     cell.nameLabel.text = [self.carAlarmInformationDictionary objectForKey:@"name"];
-    cell.timeLabel.text = [self.carAlarmInformationDictionary objectForKey:@"time"];
+    cell.timeLabel.text = [self.inAppSetting ChangeGMT8toSysTime:[self.carAlarmInformationDictionary objectForKey:@"time"]];
     // Configure the cell...
     return cell;
 }

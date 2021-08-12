@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *tiplabel;
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, weak) id <DingShiDailogDelegate> delegate ;
-- (void)showInView:(UIView *)view andIMEI:(NSString*)mimti;
+- (void)showInView:(UIView *)view andIMEI:(NSString*)mimti andShowType:(int)mtype;
 -(void)hide;
 - (IBAction)DoNewAddAction:(id)sender;
 @end

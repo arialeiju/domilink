@@ -26,6 +26,7 @@
 @synthesize dict;
 @synthesize indexPath;
 @synthesize _dataSource;
+@synthesize mServerURL;
 + (instancetype)instance
 {
     static dispatch_once_t pred = 0;
@@ -37,6 +38,8 @@
                       s_inAppSetting.user_itemList= [NSMutableArray array];
                       s_inAppSetting.selectid=0;
                       s_inAppSetting.isPushOk=false;
+                      //s_inAppSetting.mServerURL=TServerURL1;
+                      [s_inAppSetting CheckServerURL];
                   });
     return s_inAppSetting;
 }
@@ -65,6 +68,18 @@
 - (int)mapType
 {
     return (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"Key_UserDefault_mapType"];
+}
+
+- (void)setMServerURL:(NSString *)mmServerURL
+{
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:mmServerURL forKey:@"Key_UserDefault_mServerURL"];
+    [userDefaults synchronize];
+}
+
+- (NSString *)mServerURL
+{
+    return [[NSUserDefaults standardUserDefaults] stringForKey:@"Key_UserDefault_mServerURL"];
 }
 
 - (void)setPassword:(NSString *)password
@@ -355,6 +370,62 @@
             
         });
         return false;
+    }
+}
+
+
+//某一时区时间转化为手机本地系统时间
+-(NSString*)ChangeGMT8toSysTime:(NSString*)mStime
+{
+    NSDateFormatter  *dateformatter=[[NSDateFormatter alloc] init];
+    [dateformatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *startDate = [dateformatter dateFromString:mStime];
+    NSDate *startTime = [self getNowDateFromatAnDate:startDate];
+    NSString *startDateStr = [dateformatter stringFromDate:startTime];
+    //NSLog(@"转化前时间:%@",mStime);
+    //NSLog(@"转化后时间:%@",startDateStr);//这是最终转好的时间
+    
+    return startDateStr;
+}
+- (NSDate *)getNowDateFromatAnDate:(NSDate *)anyDate
+{
+    //设置源日期时区
+    NSTimeZone* sourceTimeZone = [NSTimeZone timeZoneWithName:@"Asia/Shanghai"];//或GMT
+    //设置转换后的目标日期时区
+    NSTimeZone* destinationTimeZone = [NSTimeZone localTimeZone];
+    //得到源日期与世界标准时间的偏移量
+    NSInteger sourceGMTOffset = [sourceTimeZone secondsFromGMTForDate:anyDate];
+    //目标日期与本地时区的偏移量
+    NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:anyDate];
+    //得到时间偏移量的差值
+    NSTimeInterval interval = destinationGMTOffset - sourceGMTOffset;
+    //转为现在时间
+    NSDate* destinationDateNow = [[NSDate alloc] initWithTimeInterval:interval sinceDate:anyDate];
+    return destinationDateNow;
+}
+
+//手机本地系统时间转化为指定时区时间（东8区）
+-(NSString*)ChangeSysTimetoGMT8:(NSString*)mStime
+{
+    //NSString *startTime = @"2015-07-11 12:30:00";
+    NSDateFormatter  *dateformatter=[[NSDateFormatter alloc] init];
+    [dateformatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *startDate = [dateformatter dateFromString:mStime];
+    
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"Asia/Shanghai"]];
+    //转化为东八区的时间，即背景时间
+    //NSLog(@"北京时间 %@",[formatter stringFromDate:startDate]);
+    NSString* mr=[formatter stringFromDate:startDate];
+    return mr;
+}
+
+-(void)CheckServerURL
+{
+    if (![self.mServerURL isEqualToString:TServerURL2]) {
+        [self setMServerURL:TServerURL1];
     }
 }
 @end

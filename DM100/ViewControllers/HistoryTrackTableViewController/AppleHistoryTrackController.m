@@ -925,7 +925,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
      //NSLog(@"点击一下");
     [_trackPlayerView.sliderBar setValue:indexPath.row];
-    [tableView setHidden:YES];
+    [self clickShowTableListButton];
     [self sliderValueDidChangeToStep:indexPath.row withDuration:0];
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section

@@ -85,10 +85,10 @@
 "okS1013"="The account password has been modified successfully. Please login again!";
 
 "setitem2"="Set Fence Range";
-"setitem3"="Online CMD";
-"setitem4"="Offline CMD";
+"setitem3"="Engineering Instruction";
+"setitem4"="User Commamnd";
 "setitem5"="Vibration Alarm Level";
-"setitem6"="Voice Monitoring";
+"setitem6"="Anti Theft Recording";
 "setitem7"="CMD List History";
 "setitem8"="Custom Instruction";
 "setitem9"="Alarm Settings";
@@ -216,8 +216,15 @@
 "online2"="Query parameters";
 "online3"="Query State";
 "online4"="Query Location";
-"online5"="Oil Power Control";
+"online5"="Remote Locking";
 "online6"="Reboot Device";
+"online7"="Remote Unlocking";
+"online8"="Query Bluetooth Name";
+"online9"="Modify Bluetooth Name";
+"online10"="BLE Connection Failure Times Report";
+"blenote1"="Limit 14 Characters";
+"blenote2"="Please Enter The Number Of Failures(1~255)";
+"blenote3"="Tips:Bluetooth Connection Failure Will Be Reported Automatically After Reaching The Set Number Of Times";
 "send"="Send";
 "cmdtip"="Input Custom Instructions";
 "error"="Error";
@@ -232,9 +239,10 @@
 "cmderror8"="The Device Does Not Support Offline Command Operation";
 "tips"="Tips";
 "offline1"="Location Type";
-"offline2"="Regular Reporting";
-"offline3"="Periodic Reporting";
-"offline4"="Real Time Reporting";
+"offline2"="Sports Reporting Model";
+"offline3"="Periodic Reporting Model[5-360min]";
+"offline4"="Real Time Online Model";
+"offline5"="Alarm Clock Reporting Model";
 "loctype1"="LBS Mode";
 "loctype2"="GPS Mode Is Preferred, And LBS Mode Is Used When Conditions Are Not Met";
 "loctype3"="WI-FI Loction Mode Is Preferred, And LBS Mode Is Used When Conditions Are Not Met";
@@ -308,3 +316,6 @@
 "accuracyType5"="Float";
 "accuracyType6"="Calculation";
 "push1"="Electronic Fence Alarm";
+"server1"="Internation";
+"server2"="HK";
+"servertitle"="Server Setting";

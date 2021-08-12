@@ -1,71 +1,71 @@
 {
   "images" : [
     {
+      "filename" : "launch960英文.jpg",
       "idiom" : "iphone",
-      "filename" : "launch960-4.jpg",
       "scale" : "1x"
     },
     {
+      "filename" : "launch1136英文.jpg",
       "idiom" : "iphone",
-      "filename" : "launch960-3.jpg",
       "scale" : "2x"
     },
     {
+      "filename" : "launch960英文-1.jpg",
       "idiom" : "iphone",
-      "filename" : "launch960-2.jpg",
       "scale" : "3x"
     },
     {
+      "filename" : "launch960英文-2.jpg",
       "idiom" : "iphone",
-      "filename" : "launch960-1.jpg",
-      "subtype" : "retina4",
-      "scale" : "1x"
+      "scale" : "1x",
+      "subtype" : "retina4"
     },
     {
+      "filename" : "launch1136英文-2.jpg",
       "idiom" : "iphone",
-      "filename" : "launch960.jpg",
-      "subtype" : "retina4",
-      "scale" : "2x"
+      "scale" : "2x",
+      "subtype" : "retina4"
     },
     {
+      "filename" : "launch2436英文-2.jpg",
       "idiom" : "iphone",
-      "filename" : "launch1136-3.jpg",
-      "subtype" : "retina4",
-      "scale" : "3x"
+      "scale" : "3x",
+      "subtype" : "retina4"
     },
     {
+      "filename" : "launch2436英文-3.jpg",
       "idiom" : "iphone",
-      "filename" : "launch1136.jpg",
-      "subtype" : "736h",
-      "scale" : "3x"
+      "scale" : "3x",
+      "subtype" : "736h"
     },
     {
+      "filename" : "launch1136英文-3.jpg",
       "idiom" : "iphone",
-      "filename" : "launch1136-1.jpg",
-      "subtype" : "667h",
-      "scale" : "2x"
+      "scale" : "2x",
+      "subtype" : "667h"
     },
     {
+      "filename" : "launch2436英文-1.jpg",
       "idiom" : "iphone",
-      "filename" : "launch1136-2.jpg",
-      "subtype" : "2436h",
-      "scale" : "3x"
+      "scale" : "3x",
+      "subtype" : "2436h"
     },
     {
+      "filename" : "launch2436英文.jpg",
       "idiom" : "iphone",
-      "filename" : "launch2436.jpg",
-      "subtype" : "2688h",
-      "scale" : "3x"
+      "scale" : "3x",
+      "subtype" : "2688h"
     },
     {
+      "filename" : "launch1136英文-1.jpg",
       "idiom" : "iphone",
-      "filename" : "launch2436-1.jpg",
-      "subtype" : "1792h",
-      "scale" : "2x"
+      "scale" : "2x",
+      "subtype" : "1792h"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

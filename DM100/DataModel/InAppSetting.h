@@ -41,6 +41,9 @@
 @property (strong, retain) NSMutableArray *_dataSource;
 @property (strong, retain) NSIndexPath *indexPath;
 
+//动态修改服务器连接
+@property (nonatomic, strong) NSString *mServerURL;//服务器地址
+
 // user data
 /*--------------------------------------------------*/
 
@@ -54,4 +57,6 @@
 
 - (void)getInstalledMapAppWithEndLocation:(NSString*)la with:(NSString*)lo andtpye:(int)thetype;
 -(Boolean)CkeckAppIsInstall:(int)thetype;
+-(NSString*)ChangeGMT8toSysTime:(NSString*)mStime;
+-(NSString*)ChangeSysTimetoGMT8:(NSString*)mStime;
 @end

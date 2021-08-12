@@ -388,16 +388,16 @@
              object.devName= [dic objectForKey:@"devName"];
              object.devType= [dic objectForKey:@"devType"];
              object.useSts= [dic objectForKey:@"useSts"];
-             object.sigTime= [dic objectForKey:@"sigTime"];
              NSString* mspeed=[NSString stringWithFormat:@"%@",[dic objectForKey:@"speed"] ];
              object.speed= [mspeed floatValue];
-             object.locTime= [dic objectForKey:@"locTime"];
              object.logoType= [dic objectForKey:@"logoType"];
              object.la= [dic objectForKey:@"la"];
              object.lo= [dic objectForKey:@"lo"];
              object.course= [dic objectForKey:@"course"];
-             
-             //object.logoType=@"2";
+//             object.locTime= [dic objectForKey:@"locTime"];
+//             object.sigTime= [dic objectForKey:@"sigTime"];
+             object.locTime=[self.inAppSetting ChangeGMT8toSysTime: [dic objectForKey:@"locTime"]];
+             object.sigTime=[self.inAppSetting ChangeGMT8toSysTime:  [dic objectForKey:@"sigTime"]];
              
              [self.inAppSetting.user_itemList addObject:object];
              //[_deviceArray addObject:object];
@@ -471,15 +471,16 @@
              object.devName= [dic objectForKey:@"devName"];
              object.devType= [dic objectForKey:@"devType"];
              object.useSts= [dic objectForKey:@"useSts"];
-             object.sigTime= [dic objectForKey:@"sigTime"];
+             //object.sigTime= [dic objectForKey:@"sigTime"];
              NSString* mspeed=[NSString stringWithFormat:@"%@",[dic objectForKey:@"speed"] ];
              object.speed= [mspeed floatValue];
-             object.locTime= [dic objectForKey:@"locTime"];
+             //object.locTime= [dic objectForKey:@"locTime"];
              object.logoType= [dic objectForKey:@"logoType"];
              object.la= [dic objectForKey:@"la"];
              object.lo= [dic objectForKey:@"lo"];
              object.course= [dic objectForKey:@"course"];
-             
+             object.locTime=[self.inAppSetting ChangeGMT8toSysTime: [dic objectForKey:@"locTime"]];
+             object.sigTime=[self.inAppSetting ChangeGMT8toSysTime:  [dic objectForKey:@"sigTime"]];
              [self.inAppSetting.user_itemList addObject:object];
              //[_deviceArray addObject:object];
              //[_allArray addObject:object];
