@@ -17,5 +17,5 @@
                   pageno:(NSString *)pageno
                  succeed:(void(^)(CarAlarmObject * carAlarmObject))succeed
                  failure:(void(^)(NSError * error))failure;
-
++ (void)CarAlarmWithType:(NSString *)type loginNo:(NSString *)loginNo language:(NSString*)language pageno:(NSString *)pageno succeed:(void (^)(CarAlarmObject *))succeed failure:(void (^)(NSError *))failure;
 @end

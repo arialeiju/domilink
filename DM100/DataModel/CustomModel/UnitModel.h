@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *lo;
 @property (nonatomic, strong) NSString *course;
 @property (nonatomic, strong) NSString *logoType;
+@property (nonatomic, strong) NSString *isDefense;
 @property (nonatomic, assign) float speed;
 
 -(NSString*)getShowName;
@@ -33,6 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSString*)getlocTime;
 -(double)getLat;
 -(double)getLot;
+-(UIImage*)getImage;
 -(StsShowModel*)getShowStatu;
 @end
 

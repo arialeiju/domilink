@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#define carlisttablecellH 70
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CarListTableCell : UITableViewCell

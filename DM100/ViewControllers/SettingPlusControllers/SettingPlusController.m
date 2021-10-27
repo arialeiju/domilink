@@ -146,8 +146,8 @@
 -(void)initUserCMDView
 {
     //位置类型
-    [_offlinelist addObject:[SwichLanguage getString:@"offline1"]];
-    [_offlineIconlist addObject:[SwichLanguage getString:@"set41"]];
+    //[_offlinelist addObject:[SwichLanguage getString:@"offline1"]];
+    //[_offlineIconlist addObject:[SwichLanguage getString:@"set41"]];
     
 
     //运动上报模式

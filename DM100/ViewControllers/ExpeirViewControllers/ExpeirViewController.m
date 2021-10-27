@@ -92,6 +92,7 @@
     {
         [CarAlarmService CarAlarmWithType:[self getType]
                                   loginNo:[self getLoginNo]
+                                 language:[NSString stringWithFormat:@"%d",[SwichLanguage userLanguageType]]
                                    pageno:@"1"
                                   succeed:^(CarAlarmObject *carAlarmObject)
          {
@@ -120,6 +121,7 @@
         {
             [CarAlarmService CarAlarmWithType:[self getType]
                                       loginNo:[self getLoginNo]
+                                     language:[NSString stringWithFormat:@"%d",[SwichLanguage userLanguageType]]
                                        pageno:[NSString stringWithFormat:@"%d",_pageno + 1]
                                       succeed:^(CarAlarmObject *carAlarmObject) {
                                           _pageno = [carAlarmObject.pageno intValue];

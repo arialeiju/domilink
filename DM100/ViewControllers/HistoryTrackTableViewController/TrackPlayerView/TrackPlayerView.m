@@ -77,7 +77,7 @@
         _currentStartTime = [formatter stringFromDate:[NSDate date]];
         _currentEndTime = [formatter stringFromDate:[NSDate date]];
         
-        isGuoluJZ=NO;
+        isGuoluJZ=YES;
         
         [self setupData];
         

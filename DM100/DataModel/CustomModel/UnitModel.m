@@ -8,7 +8,7 @@
 
 #import "UnitModel.h"
 @implementation UnitModel
-@synthesize devImei,devName,carNumber,devType,devSts,useSts,sigTime,locTime,la,lo,course,speed,logoType;
+@synthesize devImei,devName,carNumber,devType,devSts,useSts,sigTime,locTime,la,lo,course,speed,logoType,isDefense;
 //获取显示的名字
 -(NSString*)getShowName
 {
@@ -140,5 +140,53 @@
     mStsShowModel.StsId=setid;
     return mStsShowModel;
 }
-    
+//获取展示用的imgge
+-(UIImage*)getImage
+{
+    UIImage * mimage;
+    //NSLog(@"getImage isDefense=%@ useSts=%@ devSts=%@",isDefense,useSts,devSts);
+    StsShowModel* mstatus=[self getShowStatu];
+    if ([self.isDefense isEqualToString:@"1"])
+    {
+        switch (mstatus.StsId) {
+            case 0:
+                 mimage=[UIImage imageNamed:@"orangeb.png"];
+                break;
+            case 1:
+                mimage=[UIImage imageNamed:@"greenb.png"];
+                break;
+            case 2:
+                mimage=[UIImage imageNamed:@"blueb.png"];
+                break;
+            case 3:
+                mimage=[UIImage imageNamed:@"grayb.png"];
+                break;
+                
+            default:
+                mimage=[UIImage imageNamed:@"grayb.png"];
+                break;
+        }
+    }else
+    {
+        switch (mstatus.StsId) {
+            case 0:
+                 mimage=[UIImage imageNamed:@"orangec.png"];
+                break;
+            case 1:
+                mimage=[UIImage imageNamed:@"greenc.png"];
+                break;
+            case 2:
+                mimage=[UIImage imageNamed:@"bluec.png"];
+                break;
+            case 3:
+                mimage=[UIImage imageNamed:@"grayc.png"];
+                break;
+                
+            default:
+                mimage=[UIImage imageNamed:@"grayc.png"];
+                break;
+        }
+    }
+    return mimage;
+}
 @end

@@ -16,6 +16,7 @@
 #import "BDDynamicTreeNode.h"
 #import "AppleHistoryTrackController.h"
 #import "SettingPlusController.h"
+#import "SettingGridViewController.h"
 @interface CarListViewController ()
 {
     NSString *strall;
@@ -120,7 +121,13 @@
                                   VIEWWIDTH,
                                   _viewtitle.frame.size.height);
         [_viewtitle setFrame:mframe];
+        UIView *mtopview=[[UIView alloc]initWithFrame:CGRectMake(0, 0, VIEWWIDTH, IPXLiuHai)];
+        
+        mtopview.backgroundColor=TopBarUIcolor;
+        [self.view addSubview:mtopview];
     }
+    [_titlebutton setBackgroundColor:TopBarUIcolor];
+    [_btseach setBackgroundColor:TopBarUIcolor];
     float theheight=_viewseach.frame.size.height/8;
     [_viewseach.layer setMasksToBounds:YES];
     [_viewseach.layer setCornerRadius:theheight];
@@ -131,7 +138,8 @@
     maskLayer.frame = _btall.bounds;
     maskLayer.path = maskPath.CGPath;
     _btall.layer.mask = maskLayer;
-    _btall.layer.borderColor = [[UIColor colorWithHexString:@"#4f6db7"]CGColor];//设置边框颜色
+    //_btall.layer.borderColor = [[UIColor colorWithHexString:@"#4f6db7"]CGColor];//设置边框颜色
+    _btall.layer.borderColor = TopBarUIcolor.CGColor;//设置边框颜色
     _btall.layer.borderWidth = 1.0f;
     //设置 离线 按钮画右圆角
     UIBezierPath *maskPath1 = [UIBezierPath bezierPathWithRoundedRect:_btoffline.bounds byRoundingCorners:UIRectCornerTopRight | UIRectCornerBottomRight cornerRadii:CGSizeMake(2, 2)];
@@ -139,15 +147,20 @@
     maskLayer1.frame = _btoffline.bounds;
     maskLayer1.path = maskPath1.CGPath;
     _btoffline.layer.mask = maskLayer1;
-    _btoffline.layer.borderColor = [[UIColor colorWithHexString:@"#4f6db7"]CGColor];//设置边框颜色
+    //_btoffline.layer.borderColor = [[UIColor colorWithHexString:@"#4f6db7"]CGColor];//设置边框颜色
+    _btoffline.layer.borderColor = TopBarUIcolor.CGColor;//设置边框颜色
     _btoffline.layer.borderWidth = 1.0f;
     
-    _btonline.layer.borderColor = [[UIColor colorWithHexString:@"#4f6db7"]CGColor];//设置边框颜色
+    //_btonline.layer.borderColor = [[UIColor colorWithHexString:@"#4f6db7"]CGColor];//设置边框颜色
+    _btonline.layer.borderColor = TopBarUIcolor.CGColor;//设置边框颜色
     _btonline.layer.borderWidth = 1.0f;
     
-    [_btall setBackgroundImage:[UIColor createImageWithColor:[UIColor colorWithHexString:@"#4f6db7"]] forState:UIControlStateSelected];
-    [_btoffline setBackgroundImage:[UIColor createImageWithColor:[UIColor colorWithHexString:@"#4f6db7"]] forState:UIControlStateSelected];
-    [_btonline setBackgroundImage:[UIColor createImageWithColor:[UIColor colorWithHexString:@"#4f6db7"]] forState:UIControlStateSelected];
+//    [_btall setBackgroundImage:[UIColor createImageWithColor:[UIColor colorWithHexString:@"#4f6db7"]] forState:UIControlStateSelected];
+//    [_btoffline setBackgroundImage:[UIColor createImageWithColor:[UIColor colorWithHexString:@"#4f6db7"]] forState:UIControlStateSelected];
+//    [_btonline setBackgroundImage:[UIColor createImageWithColor:[UIColor colorWithHexString:@"#4f6db7"]] forState:UIControlStateSelected];
+    [_btall setBackgroundImage:[UIColor createImageWithColor:TopBarUIcolor] forState:UIControlStateSelected];
+    [_btoffline setBackgroundImage:[UIColor createImageWithColor:TopBarUIcolor] forState:UIControlStateSelected];
+    [_btonline setBackgroundImage:[UIColor createImageWithColor:TopBarUIcolor] forState:UIControlStateSelected];
     _btall.selected=true;
     
 }
@@ -193,7 +206,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 80.0;
+    return carlisttablecellH;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -223,46 +236,49 @@
     cell.bt3.tag=indexPath.row;
     
     //数据刷新
-    UnitModel *detail = [self.inAppSetting.user_itemList objectAtIndex:indexPath.row];
-    cell.tvname.text=[detail getShowName];
-    StsShowModel* mStsShowModel=[detail getShowStatu];
-    cell.tvtime.text=mStsShowModel.TimeStr;
-    cell.tvstatus.text=mStsShowModel.Sts;
-    
-    if([detail.logoType isEqualToString:@"23"])//23 为摩托车
+    if(self.inAppSetting.user_itemList.count>0)
     {
-            switch (mStsShowModel.StsId) {
-                case 1:
-                    [cell.imgstatus setImage:[UIImage imageNamed:@"dy_list_static.png"]];
-                    break;
-                case 2:
-                    [cell.imgstatus setImage:[UIImage imageNamed:@"dy_list_move.png"]];
-                    break;
-                case 0:
-                case 3:
-                default:
-                    [cell.imgstatus setImage:[UIImage imageNamed:@"dy_list_offline.png"]];
-                    break;
-            }
-    }else
-    {
-        switch (mStsShowModel.StsId) {
-            case 0:
-                [cell.imgstatus setImage:[UIImage imageNamed:@"car_expire.png"]];
-                break;
-            case 1:
-                [cell.imgstatus setImage:[UIImage imageNamed:@"car_static.png"]];
-                break;
-            case 2:
-                [cell.imgstatus setImage:[UIImage imageNamed:@"car_moving.png"]];
-                break;
-            case 3:
-                [cell.imgstatus setImage:[UIImage imageNamed:@"car_offline.png"]];
-                break;
-            default:
-                [cell.imgstatus setImage:[UIImage imageNamed:@"car_offline.png"]];
-                break;
-        }
+        UnitModel *detail = [self.inAppSetting.user_itemList objectAtIndex:indexPath.row];
+        cell.tvname.text=[detail getShowName];
+        StsShowModel* mStsShowModel=[detail getShowStatu];
+        cell.tvtime.text=mStsShowModel.TimeStr;
+        cell.tvstatus.text=mStsShowModel.Sts;
+        [cell.imgstatus setImage:[detail getImage]];
+//        if([detail.logoType isEqualToString:@"23"])//23 为摩托车
+//        {
+//                switch (mStsShowModel.StsId) {
+//                    case 1:
+//                        [cell.imgstatus setImage:[UIImage imageNamed:@"dy_list_static.png"]];
+//                        break;
+//                    case 2:
+//                        [cell.imgstatus setImage:[UIImage imageNamed:@"dy_list_move.png"]];
+//                        break;
+//                    case 0:
+//                    case 3:
+//                    default:
+//                        [cell.imgstatus setImage:[UIImage imageNamed:@"dy_list_offline.png"]];
+//                        break;
+//                }
+//        }else
+//        {
+//            switch (mStsShowModel.StsId) {
+//                case 0:
+//                    [cell.imgstatus setImage:[UIImage imageNamed:@"car_expire.png"]];
+//                    break;
+//                case 1:
+//                    [cell.imgstatus setImage:[UIImage imageNamed:@"car_static.png"]];
+//                    break;
+//                case 2:
+//                    [cell.imgstatus setImage:[UIImage imageNamed:@"car_moving.png"]];
+//                    break;
+//                case 3:
+//                    [cell.imgstatus setImage:[UIImage imageNamed:@"car_offline.png"]];
+//                    break;
+//                default:
+//                    [cell.imgstatus setImage:[UIImage imageNamed:@"car_offline.png"]];
+//                    break;
+//            }
+//        }
     }
     return cell;
 }
@@ -284,10 +300,11 @@
 {
     NSLog(@"点击了第%ld个设置按钮",(long)sender.tag);
     UnitModel *detail = [self.inAppSetting.user_itemList objectAtIndex:sender.tag];
-//    SettingViewController *mSettingViewController = [[SettingViewController alloc]initWithImei:[detail getImei] anddevicetype:detail.devType];
-//    [self.navigationController pushViewController:mSettingViewController animated:YES];
     
-    SettingPlusController *mSettingPlusController = [[SettingPlusController alloc]initWithImei:[detail getImei] anddevicetype:detail.devType andImeiName:[detail getShowName]];
+//    SettingPlusController *mSettingPlusController = [[SettingPlusController alloc]initWithImei:[detail getImei] anddevicetype:detail.devType andImeiName:[detail getShowName]];
+//    [self.navigationController pushViewController:mSettingPlusController animated:YES];
+    
+    SettingGridViewController *mSettingPlusController = [[SettingGridViewController alloc]initWithImei:[detail getImei] anddevicetype:detail.devType andImeiName:[detail getShowName]];
     [self.navigationController pushViewController:mSettingPlusController animated:YES];
 }
 -(void)onTouchBtnTrayInCell:(UIButton *)sender
@@ -394,6 +411,7 @@
              object.la= [dic objectForKey:@"la"];
              object.lo= [dic objectForKey:@"lo"];
              object.course= [dic objectForKey:@"course"];
+             object.isDefense= [dic objectForKey:@"isDefense"];
 //             object.locTime= [dic objectForKey:@"locTime"];
 //             object.sigTime= [dic objectForKey:@"sigTime"];
              object.locTime=[self.inAppSetting ChangeGMT8toSysTime: [dic objectForKey:@"locTime"]];
@@ -479,6 +497,7 @@
              object.la= [dic objectForKey:@"la"];
              object.lo= [dic objectForKey:@"lo"];
              object.course= [dic objectForKey:@"course"];
+             object.isDefense= [dic objectForKey:@"isDefense"];
              object.locTime=[self.inAppSetting ChangeGMT8toSysTime: [dic objectForKey:@"locTime"]];
              object.sigTime=[self.inAppSetting ChangeGMT8toSysTime:  [dic objectForKey:@"sigTime"]];
              [self.inAppSetting.user_itemList addObject:object];

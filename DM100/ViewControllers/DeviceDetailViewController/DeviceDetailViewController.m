@@ -168,6 +168,34 @@
     return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView shouldShowMenuForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.row==3)
+    {
+        return YES;
+    }else
+    {
+        return NO;
+    }
+}
+- (BOOL)tableView:(UITableView *)tableView canPerformAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender
+{
+    if (action == @selector(copy:)) {
+    return YES;
+    }
+    return NO;
+}
+- (void)tableView:(UITableView *)tableView performAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender
+{
+
+    if (action == @selector(copy:)) {
+    //根据自己需求，修改需要复制cell中的文字
+        DeviceDetailTableViewCell *cell = (DeviceDetailTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+        UIPasteboard *pasteBoard = [UIPasteboard generalPasteboard]; // 黏贴板
+        [pasteBoard setString:cell.InfoLabel.text];
+    }
+
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 //    if (indexPath.row == 6) {

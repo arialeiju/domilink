@@ -57,6 +57,29 @@
 		E415FCED25DE4B8E00EBC574 /* set44.png in Resources */ = {isa = PBXBuildFile; fileRef = E415FCD425DE4B8E00EBC574 /* set44.png */; };
 		E43EE5AA25E384C800DD8286 /* stopb_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E43EE5A925E384C800DD8286 /* stopb_icon.png */; };
 		E43EE5AC25E384D300DD8286 /* startb_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E43EE5AB25E384D200DD8286 /* startb_icon.png */; };
+		E43F15F027112A1E004A4C42 /* gridu3.png in Resources */ = {isa = PBXBuildFile; fileRef = E43F15E127112A1D004A4C42 /* gridu3.png */; };
+		E43F15F127112A1E004A4C42 /* gridc5.png in Resources */ = {isa = PBXBuildFile; fileRef = E43F15E227112A1D004A4C42 /* gridc5.png */; };
+		E43F15F227112A1E004A4C42 /* gridu5.png in Resources */ = {isa = PBXBuildFile; fileRef = E43F15E327112A1D004A4C42 /* gridu5.png */; };
+		E43F15F327112A1E004A4C42 /* gridm2.png in Resources */ = {isa = PBXBuildFile; fileRef = E43F15E427112A1D004A4C42 /* gridm2.png */; };
+		E43F15F427112A1E004A4C42 /* gridu1.png in Resources */ = {isa = PBXBuildFile; fileRef = E43F15E527112A1D004A4C42 /* gridu1.png */; };
+		E43F15F527112A1E004A4C42 /* gridm1.png in Resources */ = {isa = PBXBuildFile; fileRef = E43F15E627112A1D004A4C42 /* gridm1.png */; };
+		E43F15F627112A1E004A4C42 /* gridc3.png in Resources */ = {isa = PBXBuildFile; fileRef = E43F15E727112A1D004A4C42 /* gridc3.png */; };
+		E43F15F727112A1E004A4C42 /* gridc4.png in Resources */ = {isa = PBXBuildFile; fileRef = E43F15E827112A1E004A4C42 /* gridc4.png */; };
+		E43F15F827112A1E004A4C42 /* gridc1.png in Resources */ = {isa = PBXBuildFile; fileRef = E43F15E927112A1E004A4C42 /* gridc1.png */; };
+		E43F15F927112A1E004A4C42 /* gridm3.png in Resources */ = {isa = PBXBuildFile; fileRef = E43F15EA27112A1E004A4C42 /* gridm3.png */; };
+		E43F15FA27112A1E004A4C42 /* gridc2.png in Resources */ = {isa = PBXBuildFile; fileRef = E43F15EB27112A1E004A4C42 /* gridc2.png */; };
+		E43F15FB27112A1E004A4C42 /* gridu4.png in Resources */ = {isa = PBXBuildFile; fileRef = E43F15EC27112A1E004A4C42 /* gridu4.png */; };
+		E43F15FC27112A1E004A4C42 /* gridu6.png in Resources */ = {isa = PBXBuildFile; fileRef = E43F15ED27112A1E004A4C42 /* gridu6.png */; };
+		E43F15FD27112A1E004A4C42 /* gridm4.png in Resources */ = {isa = PBXBuildFile; fileRef = E43F15EE27112A1E004A4C42 /* gridm4.png */; };
+		E43F15FE27112A1E004A4C42 /* gridu2.png in Resources */ = {isa = PBXBuildFile; fileRef = E43F15EF27112A1E004A4C42 /* gridu2.png */; };
+		E43F160527113416004A4C42 /* GridFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = E43F160327113416004A4C42 /* GridFooterView.m */; };
+		E43F160627113416004A4C42 /* GridFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43F160427113416004A4C42 /* GridFooterView.xib */; };
+		E4413F822713D4CD003BAF57 /* FenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4413F802713D4CD003BAF57 /* FenceViewController.m */; };
+		E4413F832713D4CD003BAF57 /* FenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4413F812713D4CD003BAF57 /* FenceViewController.xib */; };
+		E4413F8B2713DDD3003BAF57 /* AddFenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4413F892713DDD3003BAF57 /* AddFenceViewController.m */; };
+		E4413F8C2713DDD3003BAF57 /* AddFenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4413F8A2713DDD3003BAF57 /* AddFenceViewController.xib */; };
+		E4413F9727141ADD003BAF57 /* map_alert_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E4413F9627141ADC003BAF57 /* map_alert_bg.png */; };
+		E44DE6C726DE038B003A204C /* position.png in Resources */ = {isa = PBXBuildFile; fileRef = E44DE6C626DE038B003A204C /* position.png */; };
 		E452A0FF247CA7C000E2C84A /* NSTimer+Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A0F1247CA7C000E2C84A /* NSTimer+Controller.m */; };
 		E452A100247CA7C000E2C84A /* UIViewController+AddTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A0F6247CA7C000E2C84A /* UIViewController+AddTitle.m */; };
 		E452A101247CA7C000E2C84A /* UIViewController+Autorotate.m in Sources */ = {isa = PBXBuildFile; fileRef = E452A0F7247CA7C000E2C84A /* UIViewController+Autorotate.m */; };
@@ -254,10 +277,28 @@
 		E454325625E5E8ED0070F46A /* traffic_texture_smooth.png in Resources */ = {isa = PBXBuildFile; fileRef = E454325125E5E8ED0070F46A /* traffic_texture_smooth.png */; };
 		E454325725E5E8ED0070F46A /* traffic_texture_unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = E454325225E5E8ED0070F46A /* traffic_texture_unknown.png */; };
 		E454325925E5EB640070F46A /* sportArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E454325825E5EB640070F46A /* sportArrow.png */; };
+		E45BE28C2715272B00454AAC /* FenceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E45BE28A2715272B00454AAC /* FenceCell.m */; };
+		E45BE28D2715272B00454AAC /* FenceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E45BE28B2715272B00454AAC /* FenceCell.xib */; };
+		E45BE29327152CE500454AAC /* FenceClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E45BE29227152CE500454AAC /* FenceClass.m */; };
+		E45BE2A22715772D00454AAC /* greenc.png in Resources */ = {isa = PBXBuildFile; fileRef = E45BE29A2715772C00454AAC /* greenc.png */; };
+		E45BE2A32715772D00454AAC /* bluec.png in Resources */ = {isa = PBXBuildFile; fileRef = E45BE29B2715772C00454AAC /* bluec.png */; };
+		E45BE2A42715772D00454AAC /* orangeb.png in Resources */ = {isa = PBXBuildFile; fileRef = E45BE29C2715772C00454AAC /* orangeb.png */; };
+		E45BE2A52715772D00454AAC /* grayc.png in Resources */ = {isa = PBXBuildFile; fileRef = E45BE29D2715772C00454AAC /* grayc.png */; };
+		E45BE2A62715772D00454AAC /* blueb.png in Resources */ = {isa = PBXBuildFile; fileRef = E45BE29E2715772C00454AAC /* blueb.png */; };
+		E45BE2A72715772D00454AAC /* greenb.png in Resources */ = {isa = PBXBuildFile; fileRef = E45BE29F2715772C00454AAC /* greenb.png */; };
+		E45BE2A82715772D00454AAC /* grayb.png in Resources */ = {isa = PBXBuildFile; fileRef = E45BE2A02715772D00454AAC /* grayb.png */; };
+		E45BE2A92715772D00454AAC /* orangec.png in Resources */ = {isa = PBXBuildFile; fileRef = E45BE2A12715772D00454AAC /* orangec.png */; };
+		E45BE2AE2715776A00454AAC /* addCar.png in Resources */ = {isa = PBXBuildFile; fileRef = E45BE2AD2715776A00454AAC /* addCar.png */; };
 		E45CABA426049A7600AD0BBE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E45CABA626049A7600AD0BBE /* InfoPlist.strings */; };
 		E45EC3F324B3FD25002C6336 /* ElectronicFenceService.m in Sources */ = {isa = PBXBuildFile; fileRef = E45EC3F124B3FD24002C6336 /* ElectronicFenceService.m */; };
 		E45F72D0247BA48A0051A88A /* appString.strings in Resources */ = {isa = PBXBuildFile; fileRef = E45F72D2247BA48A0051A88A /* appString.strings */; };
 		E45F72D7247BA51F0051A88A /* SwichLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = E45F72D5247BA51F0051A88A /* SwichLanguage.m */; };
+		E465D930270FE0770031DDC6 /* SettingGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E465D92E270FE0770031DDC6 /* SettingGridViewController.m */; };
+		E465D931270FE0770031DDC6 /* SettingGridViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E465D92F270FE0770031DDC6 /* SettingGridViewController.xib */; };
+		E465D938270FE1970031DDC6 /* SettingGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E465D936270FE1970031DDC6 /* SettingGridViewCell.m */; };
+		E465D939270FE1970031DDC6 /* SettingGridViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E465D937270FE1970031DDC6 /* SettingGridViewCell.xib */; };
+		E465D940271036B10031DDC6 /* GridHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E465D93E271036B10031DDC6 /* GridHeaderView.m */; };
+		E465D941271036B10031DDC6 /* GridHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E465D93F271036B10031DDC6 /* GridHeaderView.xib */; };
 		E469588426B78FBB000FC2F8 /* SwServerPop.m in Sources */ = {isa = PBXBuildFile; fileRef = E469588326B78FBB000FC2F8 /* SwServerPop.m */; };
 		E469588926B7909C000FC2F8 /* SwServerPop.xib in Resources */ = {isa = PBXBuildFile; fileRef = E469588826B7909C000FC2F8 /* SwServerPop.xib */; };
 		E46BCF0726A8050C008D876A /* set47.png in Resources */ = {isa = PBXBuildFile; fileRef = E46BCF0126A8050C008D876A /* set47.png */; };
@@ -529,6 +570,10 @@
 		E4E99A7325EDBBF1009FC641 /* tminus.png in Resources */ = {isa = PBXBuildFile; fileRef = E4E99A6D25EDBBF1009FC641 /* tminus.png */; };
 		E4E99A7425EDBBF1009FC641 /* tplus.png in Resources */ = {isa = PBXBuildFile; fileRef = E4E99A6E25EDBBF1009FC641 /* tplus.png */; };
 		E4EF225C2665DC6D007C9488 /* stop_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = E4EF225B2665DC6C007C9488 /* stop_bar.png */; };
+		E4F0B1AC27213AC800E70A3D /* gridu7.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F0B1A827213AC700E70A3D /* gridu7.png */; };
+		E4F0B1AD27213AC800E70A3D /* gridu9.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F0B1A927213AC700E70A3D /* gridu9.png */; };
+		E4F0B1AE27213AC800E70A3D /* gridu10.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F0B1AA27213AC700E70A3D /* gridu10.png */; };
+		E4F0B1AF27213AC800E70A3D /* gridu8.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F0B1AB27213AC800E70A3D /* gridu8.png */; };
 		E4F549A0265E2CF0009BE1C7 /* HistoryScrollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F5499F265E2CF0009BE1C7 /* HistoryScrollCell.m */; };
 		E4F549A6265E2F00009BE1C7 /* SS_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F549A5265E2F00009BE1C7 /* SS_Model.m */; };
 /* End PBXBuildFile section */
@@ -617,6 +662,32 @@
 		E437E650247788B200922720 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		E43EE5A925E384C800DD8286 /* stopb_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stopb_icon.png; path = "DM100/New Group/image/stopb_icon.png"; sourceTree = SOURCE_ROOT; };
 		E43EE5AB25E384D200DD8286 /* startb_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = startb_icon.png; path = "DM100/New Group/image/startb_icon.png"; sourceTree = SOURCE_ROOT; };
+		E43F15E127112A1D004A4C42 /* gridu3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gridu3.png; sourceTree = "<group>"; };
+		E43F15E227112A1D004A4C42 /* gridc5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gridc5.png; sourceTree = "<group>"; };
+		E43F15E327112A1D004A4C42 /* gridu5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gridu5.png; sourceTree = "<group>"; };
+		E43F15E427112A1D004A4C42 /* gridm2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gridm2.png; sourceTree = "<group>"; };
+		E43F15E527112A1D004A4C42 /* gridu1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gridu1.png; sourceTree = "<group>"; };
+		E43F15E627112A1D004A4C42 /* gridm1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gridm1.png; sourceTree = "<group>"; };
+		E43F15E727112A1D004A4C42 /* gridc3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gridc3.png; sourceTree = "<group>"; };
+		E43F15E827112A1E004A4C42 /* gridc4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gridc4.png; sourceTree = "<group>"; };
+		E43F15E927112A1E004A4C42 /* gridc1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gridc1.png; sourceTree = "<group>"; };
+		E43F15EA27112A1E004A4C42 /* gridm3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gridm3.png; sourceTree = "<group>"; };
+		E43F15EB27112A1E004A4C42 /* gridc2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gridc2.png; sourceTree = "<group>"; };
+		E43F15EC27112A1E004A4C42 /* gridu4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gridu4.png; sourceTree = "<group>"; };
+		E43F15ED27112A1E004A4C42 /* gridu6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gridu6.png; sourceTree = "<group>"; };
+		E43F15EE27112A1E004A4C42 /* gridm4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gridm4.png; sourceTree = "<group>"; };
+		E43F15EF27112A1E004A4C42 /* gridu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gridu2.png; sourceTree = "<group>"; };
+		E43F160227113416004A4C42 /* GridFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GridFooterView.h; sourceTree = "<group>"; };
+		E43F160327113416004A4C42 /* GridFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GridFooterView.m; sourceTree = "<group>"; };
+		E43F160427113416004A4C42 /* GridFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridFooterView.xib; sourceTree = "<group>"; };
+		E4413F7F2713D4CD003BAF57 /* FenceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FenceViewController.h; sourceTree = "<group>"; };
+		E4413F802713D4CD003BAF57 /* FenceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FenceViewController.m; sourceTree = "<group>"; };
+		E4413F812713D4CD003BAF57 /* FenceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FenceViewController.xib; sourceTree = "<group>"; };
+		E4413F882713DDD3003BAF57 /* AddFenceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddFenceViewController.h; sourceTree = "<group>"; };
+		E4413F892713DDD3003BAF57 /* AddFenceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddFenceViewController.m; sourceTree = "<group>"; };
+		E4413F8A2713DDD3003BAF57 /* AddFenceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFenceViewController.xib; sourceTree = "<group>"; };
+		E4413F9627141ADC003BAF57 /* map_alert_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_alert_bg.png; sourceTree = "<group>"; };
+		E44DE6C626DE038B003A204C /* position.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = position.png; sourceTree = "<group>"; };
 		E452A0ED247CA7C000E2C84A /* UIViewController+AddTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AddTitle.h"; sourceTree = "<group>"; };
 		E452A0EE247CA7C000E2C84A /* NSDictionary+JsonString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JsonString.h"; sourceTree = "<group>"; };
 		E452A0EF247CA7C000E2C84A /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
@@ -967,6 +1038,20 @@
 		E454325125E5E8ED0070F46A /* traffic_texture_smooth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = traffic_texture_smooth.png; sourceTree = "<group>"; };
 		E454325225E5E8ED0070F46A /* traffic_texture_unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = traffic_texture_unknown.png; sourceTree = "<group>"; };
 		E454325825E5EB640070F46A /* sportArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sportArrow.png; sourceTree = "<group>"; };
+		E45BE2892715272B00454AAC /* FenceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FenceCell.h; sourceTree = "<group>"; };
+		E45BE28A2715272B00454AAC /* FenceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FenceCell.m; sourceTree = "<group>"; };
+		E45BE28B2715272B00454AAC /* FenceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FenceCell.xib; sourceTree = "<group>"; };
+		E45BE29127152CE500454AAC /* FenceClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FenceClass.h; sourceTree = "<group>"; };
+		E45BE29227152CE500454AAC /* FenceClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FenceClass.m; sourceTree = "<group>"; };
+		E45BE29A2715772C00454AAC /* greenc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenc.png; sourceTree = "<group>"; };
+		E45BE29B2715772C00454AAC /* bluec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluec.png; sourceTree = "<group>"; };
+		E45BE29C2715772C00454AAC /* orangeb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeb.png; sourceTree = "<group>"; };
+		E45BE29D2715772C00454AAC /* grayc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayc.png; sourceTree = "<group>"; };
+		E45BE29E2715772C00454AAC /* blueb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueb.png; sourceTree = "<group>"; };
+		E45BE29F2715772C00454AAC /* greenb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenb.png; sourceTree = "<group>"; };
+		E45BE2A02715772D00454AAC /* grayb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayb.png; sourceTree = "<group>"; };
+		E45BE2A12715772D00454AAC /* orangec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangec.png; sourceTree = "<group>"; };
+		E45BE2AD2715776A00454AAC /* addCar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addCar.png; sourceTree = "<group>"; };
 		E45CABA526049A7600AD0BBE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E45CABAA26049A7B00AD0BBE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		E45EC3F124B3FD24002C6336 /* ElectronicFenceService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElectronicFenceService.m; sourceTree = "<group>"; };
@@ -976,6 +1061,15 @@
 		E45F72D5247BA51F0051A88A /* SwichLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwichLanguage.m; sourceTree = "<group>"; };
 		E45F72D6247BA51F0051A88A /* SwichLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwichLanguage.h; sourceTree = "<group>"; };
 		E45F72D8247BA8120051A88A /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		E465D92D270FE0770031DDC6 /* SettingGridViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingGridViewController.h; sourceTree = "<group>"; };
+		E465D92E270FE0770031DDC6 /* SettingGridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingGridViewController.m; sourceTree = "<group>"; };
+		E465D92F270FE0770031DDC6 /* SettingGridViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingGridViewController.xib; sourceTree = "<group>"; };
+		E465D935270FE1970031DDC6 /* SettingGridViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingGridViewCell.h; sourceTree = "<group>"; };
+		E465D936270FE1970031DDC6 /* SettingGridViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingGridViewCell.m; sourceTree = "<group>"; };
+		E465D937270FE1970031DDC6 /* SettingGridViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingGridViewCell.xib; sourceTree = "<group>"; };
+		E465D93D271036B10031DDC6 /* GridHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GridHeaderView.h; sourceTree = "<group>"; };
+		E465D93E271036B10031DDC6 /* GridHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GridHeaderView.m; sourceTree = "<group>"; };
+		E465D93F271036B10031DDC6 /* GridHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridHeaderView.xib; sourceTree = "<group>"; };
 		E469588226B78FBB000FC2F8 /* SwServerPop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwServerPop.h; sourceTree = "<group>"; };
 		E469588326B78FBB000FC2F8 /* SwServerPop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwServerPop.m; sourceTree = "<group>"; };
 		E469588826B7909C000FC2F8 /* SwServerPop.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwServerPop.xib; sourceTree = "<group>"; };
@@ -1270,6 +1364,10 @@
 		E4E99A6D25EDBBF1009FC641 /* tminus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tminus.png; sourceTree = "<group>"; };
 		E4E99A6E25EDBBF1009FC641 /* tplus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tplus.png; sourceTree = "<group>"; };
 		E4EF225B2665DC6C007C9488 /* stop_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop_bar.png; sourceTree = "<group>"; };
+		E4F0B1A827213AC700E70A3D /* gridu7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gridu7.png; sourceTree = "<group>"; };
+		E4F0B1A927213AC700E70A3D /* gridu9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gridu9.png; sourceTree = "<group>"; };
+		E4F0B1AA27213AC700E70A3D /* gridu10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gridu10.png; sourceTree = "<group>"; };
+		E4F0B1AB27213AC800E70A3D /* gridu8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gridu8.png; sourceTree = "<group>"; };
 		E4F5499E265E2CF0009BE1C7 /* HistoryScrollCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistoryScrollCell.h; sourceTree = "<group>"; };
 		E4F5499F265E2CF0009BE1C7 /* HistoryScrollCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistoryScrollCell.m; sourceTree = "<group>"; };
 		E4F549A4265E2F00009BE1C7 /* SS_Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SS_Model.h; sourceTree = "<group>"; };
@@ -1453,6 +1551,59 @@
 				E415FCCF25DE4B8E00EBC574 /* setupb.png */,
 			);
 			path = settingplusIcon;
+			sourceTree = "<group>";
+		};
+		E43F15E027112A02004A4C42 /* gridview */ = {
+			isa = PBXGroup;
+			children = (
+				E4413F9627141ADC003BAF57 /* map_alert_bg.png */,
+				E43F15E927112A1E004A4C42 /* gridc1.png */,
+				E43F15EB27112A1E004A4C42 /* gridc2.png */,
+				E43F15E727112A1D004A4C42 /* gridc3.png */,
+				E43F15E827112A1E004A4C42 /* gridc4.png */,
+				E43F15E227112A1D004A4C42 /* gridc5.png */,
+				E43F15E627112A1D004A4C42 /* gridm1.png */,
+				E43F15E427112A1D004A4C42 /* gridm2.png */,
+				E43F15EA27112A1E004A4C42 /* gridm3.png */,
+				E43F15EE27112A1E004A4C42 /* gridm4.png */,
+				E43F15E527112A1D004A4C42 /* gridu1.png */,
+				E43F15EF27112A1E004A4C42 /* gridu2.png */,
+				E43F15E127112A1D004A4C42 /* gridu3.png */,
+				E43F15EC27112A1E004A4C42 /* gridu4.png */,
+				E43F15E327112A1D004A4C42 /* gridu5.png */,
+				E43F15ED27112A1E004A4C42 /* gridu6.png */,
+				E4F0B1A827213AC700E70A3D /* gridu7.png */,
+				E4F0B1AB27213AC800E70A3D /* gridu8.png */,
+				E4F0B1A927213AC700E70A3D /* gridu9.png */,
+				E4F0B1AA27213AC700E70A3D /* gridu10.png */,
+			);
+			path = gridview;
+			sourceTree = "<group>";
+		};
+		E4413F7E2713D305003BAF57 /* FenceViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E4413F872713DD5C003BAF57 /* AddFenceViewController */,
+				E4413F7F2713D4CD003BAF57 /* FenceViewController.h */,
+				E4413F802713D4CD003BAF57 /* FenceViewController.m */,
+				E4413F812713D4CD003BAF57 /* FenceViewController.xib */,
+				E45BE2892715272B00454AAC /* FenceCell.h */,
+				E45BE28A2715272B00454AAC /* FenceCell.m */,
+				E45BE28B2715272B00454AAC /* FenceCell.xib */,
+				E45BE29127152CE500454AAC /* FenceClass.h */,
+				E45BE29227152CE500454AAC /* FenceClass.m */,
+			);
+			path = FenceViewController;
+			sourceTree = "<group>";
+		};
+		E4413F872713DD5C003BAF57 /* AddFenceViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E4413F882713DDD3003BAF57 /* AddFenceViewController.h */,
+				E4413F892713DDD3003BAF57 /* AddFenceViewController.m */,
+				E4413F8A2713DDD3003BAF57 /* AddFenceViewController.xib */,
+			);
+			path = AddFenceViewController;
 			sourceTree = "<group>";
 		};
 		E452A0EC247CA7C000E2C84A /* ConStruction */ = {
@@ -1762,6 +1913,8 @@
 		E452A21E247CE7FA00E2C84A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E4413F7E2713D305003BAF57 /* FenceViewController */,
+				E465D92C270FDFBB0031DDC6 /* SettingGridViewController */,
 				E46DF8ED25E7386600E6CBC2 /* MediaPlayViewController */,
 				E415FC4425DE3BE200EBC574 /* SettingPlusControllers */,
 				E452A21F247CE7FA00E2C84A /* CheckCMDViewController */,
@@ -2179,6 +2332,22 @@
 			path = " linepicture";
 			sourceTree = "<group>";
 		};
+		E45BE299271576D700454AAC /* carliststatus */ = {
+			isa = PBXGroup;
+			children = (
+				E45BE2AD2715776A00454AAC /* addCar.png */,
+				E45BE29E2715772C00454AAC /* blueb.png */,
+				E45BE29B2715772C00454AAC /* bluec.png */,
+				E45BE2A02715772D00454AAC /* grayb.png */,
+				E45BE29D2715772C00454AAC /* grayc.png */,
+				E45BE29F2715772C00454AAC /* greenb.png */,
+				E45BE29A2715772C00454AAC /* greenc.png */,
+				E45BE29C2715772C00454AAC /* orangeb.png */,
+				E45BE2A12715772D00454AAC /* orangec.png */,
+			);
+			path = carliststatus;
+			sourceTree = "<group>";
+		};
 		E45F72D4247BA51F0051A88A /* SwichLanguage */ = {
 			isa = PBXGroup;
 			children = (
@@ -2186,6 +2355,25 @@
 				E45F72D6247BA51F0051A88A /* SwichLanguage.h */,
 			);
 			path = SwichLanguage;
+			sourceTree = "<group>";
+		};
+		E465D92C270FDFBB0031DDC6 /* SettingGridViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E465D92D270FE0770031DDC6 /* SettingGridViewController.h */,
+				E465D92E270FE0770031DDC6 /* SettingGridViewController.m */,
+				E465D92F270FE0770031DDC6 /* SettingGridViewController.xib */,
+				E465D935270FE1970031DDC6 /* SettingGridViewCell.h */,
+				E465D936270FE1970031DDC6 /* SettingGridViewCell.m */,
+				E465D937270FE1970031DDC6 /* SettingGridViewCell.xib */,
+				E465D93D271036B10031DDC6 /* GridHeaderView.h */,
+				E465D93E271036B10031DDC6 /* GridHeaderView.m */,
+				E465D93F271036B10031DDC6 /* GridHeaderView.xib */,
+				E43F160227113416004A4C42 /* GridFooterView.h */,
+				E43F160327113416004A4C42 /* GridFooterView.m */,
+				E43F160427113416004A4C42 /* GridFooterView.xib */,
+			);
+			path = SettingGridViewController;
 			sourceTree = "<group>";
 		};
 		E469588126B78DBA000FC2F8 /* SwServerPop */ = {
@@ -2337,12 +2525,15 @@
 		E48A10E72477B027001CB7F4 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				E45BE299271576D700454AAC /* carliststatus */,
+				E43F15E027112A02004A4C42 /* gridview */,
 				E4E99A6825EDBBD2009FC641 /* treelist */,
 				E454324D25E5E80F0070F46A /*  linepicture */,
 				E415FCB525DE3ED700EBC574 /* settingplusIcon */,
 				E48A10E82477B027001CB7F4 /* signal1.png */,
 				E48A10E92477B027001CB7F4 /* clock2.png */,
 				E48A10EA2477B027001CB7F4 /* main_car.png */,
+				E44DE6C626DE038B003A204C /* position.png */,
 				E48A10EB2477B027001CB7F4 /* pg3bt3.png */,
 				E48A10EC2477B027001CB7F4 /* add.png */,
 				E48A10ED2477B027001CB7F4 /* menu_icon_1_pressed.png */,
@@ -2768,6 +2959,7 @@
 				E48A11F42477B027001CB7F4 /* car_expire.png in Resources */,
 				E48A11DF2477B027001CB7F4 /* page4item4.png in Resources */,
 				E48A11E62477B027001CB7F4 /* stop_icon.png in Resources */,
+				E43F160627113416004A4C42 /* GridFooterView.xib in Resources */,
 				E48A12152477B027001CB7F4 /* 绿色-210.png in Resources */,
 				E48A124F2477B028001CB7F4 /* drop.png in Resources */,
 				E452A2E5247CE7FB00E2C84A /* BDDynamicTreeCell.xib in Resources */,
@@ -2799,6 +2991,7 @@
 				E48A11CA2477B027001CB7F4 /* logodomilink.png in Resources */,
 				E48A12712477B028001CB7F4 /* alert_icon.png in Resources */,
 				E48A12762477B028001CB7F4 /* pg3unlock.png in Resources */,
+				E45BE28D2715272B00454AAC /* FenceCell.xib in Resources */,
 				E48A12462477B028001CB7F4 /* car_offline.png in Resources */,
 				E48A125F2477B028001CB7F4 /* dy_list_move.png in Resources */,
 				E452A2FB247CE7FB00E2C84A /* DeviceDetailViewController.xib in Resources */,
@@ -2806,17 +2999,22 @@
 				E48A11E72477B027001CB7F4 /* login_customer.PNG in Resources */,
 				E48A11C92477B027001CB7F4 /* shebei.PNG in Resources */,
 				E48A12142477B027001CB7F4 /* car_gray2_30.png in Resources */,
+				E43F15F527112A1E004A4C42 /* gridm1.png in Resources */,
 				E415FCE325DE4B8E00EBC574 /* setmius.png in Resources */,
 				E48A12322477B027001CB7F4 /* car_grean2_90.png in Resources */,
 				E4E99A7325EDBBF1009FC641 /* tminus.png in Resources */,
+				E45BE2A32715772D00454AAC /* bluec.png in Resources */,
 				E454325925E5EB640070F46A /* sportArrow.png in Resources */,
 				E48A12372477B027001CB7F4 /* car_grean2_150.png in Resources */,
 				E415FCD825DE4B8E00EBC574 /* set4.png in Resources */,
+				E43F15F127112A1E004A4C42 /* gridc5.png in Resources */,
 				E48A11E02477B027001CB7F4 /* page2a4.png in Resources */,
 				E48A11C72477B027001CB7F4 /* choose.png in Resources */,
 				E48A12452477B028001CB7F4 /* page2a1.png in Resources */,
+				E43F15FE27112A1E004A4C42 /* gridu2.png in Resources */,
 				E415FCEA25DE4B8E00EBC574 /* setUp.png in Resources */,
 				E4E99A7025EDBBF1009FC641 /* tuser-group.png in Resources */,
+				E4413F9727141ADD003BAF57 /* map_alert_bg.png in Resources */,
 				E48A12482477B028001CB7F4 /* search.png in Resources */,
 				E48A11FE2477B027001CB7F4 /* 蓝色-330.png in Resources */,
 				E48A12082477B027001CB7F4 /* 灰色-300.png in Resources */,
@@ -2825,6 +3023,7 @@
 				E452A2F1247CE7FB00E2C84A /* SettingViewController.xib in Resources */,
 				E48A12632477B028001CB7F4 /* clock1_.png in Resources */,
 				E48A11D02477B027001CB7F4 /* square-off.png in Resources */,
+				E43F15FB27112A1E004A4C42 /* gridu4.png in Resources */,
 				E48A12702477B028001CB7F4 /* start_icon.png in Resources */,
 				E48A126E2477B028001CB7F4 /* menu_icon_1_normal.png in Resources */,
 				E48A12692477B028001CB7F4 /* icon_plus.png in Resources */,
@@ -2847,6 +3046,7 @@
 				E48A123D2477B027001CB7F4 /* car_gray2_0.png in Resources */,
 				E452A2FF247CE7FB00E2C84A /* CarAlarmViewController.xib in Resources */,
 				E48A12222477B027001CB7F4 /* car_grean2_30.png in Resources */,
+				E4F0B1AE27213AC800E70A3D /* gridu10.png in Resources */,
 				E48A11F22477B027001CB7F4 /* page2a2.png in Resources */,
 				E48A12002477B027001CB7F4 /* 黄色-30.png in Resources */,
 				E48A12232477B027001CB7F4 /* 绿色-150.png in Resources */,
@@ -2867,6 +3067,7 @@
 				E48A12242477B027001CB7F4 /* car_gray2_180.png in Resources */,
 				E48A11E92477B027001CB7F4 /* login_customer_close_press.PNG in Resources */,
 				E48A12392477B027001CB7F4 /* car_grean2_0.png in Resources */,
+				E43F15FC27112A1E004A4C42 /* gridu6.png in Resources */,
 				E48A127D2477B028001CB7F4 /* checkon.png in Resources */,
 				E48A123F2477B027001CB7F4 /* car_info.PNG in Resources */,
 				E48A124C2477B028001CB7F4 /* page2b1.png in Resources */,
@@ -2903,27 +3104,35 @@
 				E415FCE525DE4B8E00EBC574 /* set32.png in Resources */,
 				E452A312247CE7FB00E2C84A /* SelectionComboBox.xib in Resources */,
 				E48A12492477B028001CB7F4 /* login_customer_arrow.PNG in Resources */,
+				E4413F8C2713DDD3003BAF57 /* AddFenceViewController.xib in Resources */,
 				E48A12782477B028001CB7F4 /* car_locate.png in Resources */,
 				E452A311247CE7FB00E2C84A /* LoginViewController.xib in Resources */,
 				E48A12612477B028001CB7F4 /* dy_map_static.png in Resources */,
 				E48A122D2477B027001CB7F4 /* car_gray2_60.png in Resources */,
+				E45BE2A82715772D00454AAC /* grayb.png in Resources */,
 				E48A12432477B028001CB7F4 /* page4item1.png in Resources */,
 				E46DF8F125E738B000E6CBC2 /* MediaPlayViewController.xib in Resources */,
 				E48A12402477B027001CB7F4 /* fgreen.png in Resources */,
 				E48A11EC2477B027001CB7F4 /* icon_minus.png in Resources */,
 				E48A12172477B027001CB7F4 /* 灰色-270.png in Resources */,
 				E48A11EA2477B027001CB7F4 /* page4item6.png in Resources */,
+				E4F0B1AC27213AC800E70A3D /* gridu7.png in Resources */,
 				E45CABA426049A7600AD0BBE /* InfoPlist.strings in Resources */,
+				E44DE6C726DE038B003A204C /* position.png in Resources */,
 				E48A11BA2477B027001CB7F4 /* plus.png in Resources */,
 				E48A12442477B028001CB7F4 /* pg2ig7.png in Resources */,
+				E45BE2A52715772D00454AAC /* grayc.png in Resources */,
 				E48A12122477B027001CB7F4 /* car_gray2_360.png in Resources */,
 				E452A2E8247CE7FB00E2C84A /* ExpeirViewController.xib in Resources */,
 				E48A11BB2477B027001CB7F4 /* pg3lock.png in Resources */,
+				E45BE2A92715772D00454AAC /* orangec.png in Resources */,
 				E415FCDF25DE4B8E00EBC574 /* set43.png in Resources */,
+				E43F15F027112A1E004A4C42 /* gridu3.png in Resources */,
 				E48A12202477B027001CB7F4 /* car_grean2_240.png in Resources */,
 				E48A11B42477B027001CB7F4 /* signal1.png in Resources */,
 				E452A30D247CE7FB00E2C84A /* CarListTableCell.xib in Resources */,
 				E48A12072477B027001CB7F4 /* 蓝色-180.png in Resources */,
+				E43F15F927112A1E004A4C42 /* gridm3.png in Resources */,
 				E48A121D2477B027001CB7F4 /* 灰色-240.png in Resources */,
 				E452A2DC247CE7FB00E2C84A /* CarAlarmMapViewController.xib in Resources */,
 				E48A11CC2477B027001CB7F4 /* loginoff.PNG in Resources */,
@@ -2933,10 +3142,13 @@
 				E48A11BF2477B027001CB7F4 /* signal2.png in Resources */,
 				E48A12A62477B546001CB7F4 /* mapapi.bundle in Resources */,
 				E48A127A2477B028001CB7F4 /* login_customer_close_.png in Resources */,
+				E45BE2A62715772D00454AAC /* blueb.png in Resources */,
+				E4F0B1AD27213AC800E70A3D /* gridu9.png in Resources */,
 				E48A11D12477B027001CB7F4 /* pg3bt4.png in Resources */,
 				E48A12062477B027001CB7F4 /* car_gray2_300.png in Resources */,
 				E48A11F02477B027001CB7F4 /* page2a3.png in Resources */,
 				E415FCE725DE4B8E00EBC574 /* set5.png in Resources */,
+				E43F15F227112A1E004A4C42 /* gridu5.png in Resources */,
 				E48A12682477B028001CB7F4 /* pw_domi.png in Resources */,
 				E452A300247CE7FB00E2C84A /* MessageCenterTableViewCell.xib in Resources */,
 				E48A120B2477B027001CB7F4 /* car_gray2_210.png in Resources */,
@@ -2956,20 +3168,24 @@
 				E48A11C62477B027001CB7F4 /* map_bg.PNG in Resources */,
 				E454325525E5E8ED0070F46A /* traffic_texture_severe_congestion.png in Resources */,
 				E415FCB425DE3CFE00EBC574 /* RightImageCell.xib in Resources */,
+				E43F15F727112A1E004A4C42 /* gridc4.png in Resources */,
 				E452A2FD247CE7FB00E2C84A /* DeviceDetailTableViewCell.xib in Resources */,
 				E48A120F2477B027001CB7F4 /* 黄色-90.png in Resources */,
 				E48A11CE2477B027001CB7F4 /* tree_ex.png in Resources */,
 				E415FCE125DE4B8E00EBC574 /* set2.png in Resources */,
+				E43F15FD27112A1E004A4C42 /* gridm4.png in Resources */,
 				E48A12672477B028001CB7F4 /* page2b4.png in Resources */,
 				E469588926B7909C000FC2F8 /* SwServerPop.xib in Resources */,
 				E48A11D32477B027001CB7F4 /* fblue.png in Resources */,
 				E48A11EF2477B027001CB7F4 /* page4item2.png in Resources */,
+				E43F15FA27112A1E004A4C42 /* gridc2.png in Resources */,
 				E48A12502477B028001CB7F4 /* update_device.PNG in Resources */,
 				E48679A8260ED17F007C259F /* cell_narrow.png in Resources */,
 				E46BCF0A26A8050C008D876A /* set410.png in Resources */,
 				E48A12252477B027001CB7F4 /* 灰色-330.png in Resources */,
 				E48A125A2477B028001CB7F4 /* dy_map_move.png in Resources */,
 				E48A12362477B027001CB7F4 /* 绿色-330.png in Resources */,
+				E45BE2A22715772D00454AAC /* greenc.png in Resources */,
 				E452A304247CE7FB00E2C84A /* AppVersionViewController.xib in Resources */,
 				E4E99A7425EDBBF1009FC641 /* tplus.png in Resources */,
 				E452A329247CE7FB00E2C84A /* CustomTimeSelectionView.xib in Resources */,
@@ -2985,6 +3201,7 @@
 				E48A12772477B028001CB7F4 /* car_online.PNG in Resources */,
 				E48A122A2477B027001CB7F4 /* car_grean2_180.png in Resources */,
 				E452A2DA247CE7FB00E2C84A /* AppleAlarmMapViewController.xib in Resources */,
+				E43F15F427112A1E004A4C42 /* gridu1.png in Resources */,
 				E48A11E12477B027001CB7F4 /* page4item5.png in Resources */,
 				E48A12012477B027001CB7F4 /* 灰色-30.png in Resources */,
 				E415FCEC25DE4B8E00EBC574 /* setdownb.png in Resources */,
@@ -2993,6 +3210,7 @@
 				E48A11CD2477B027001CB7F4 /* ball.png in Resources */,
 				E454325325E5E8ED0070F46A /* traffic_texture_congestion.png in Resources */,
 				E415FCE025DE4B8E00EBC574 /* set42.png in Resources */,
+				E45BE2A42715772D00454AAC /* orangeb.png in Resources */,
 				E48A127B2477B028001CB7F4 /* login_button.PNG in Resources */,
 				E452A327247CE7FB00E2C84A /* AlarmTimeView.xib in Resources */,
 				E48A11D22477B027001CB7F4 /* user_domi.png in Resources */,
@@ -3003,6 +3221,7 @@
 				E48A12572477B028001CB7F4 /* voltage.png in Resources */,
 				E48A11E52477B027001CB7F4 /* car_moving.png in Resources */,
 				E48A120C2477B027001CB7F4 /* 绿色-60.png in Resources */,
+				E465D941271036B10031DDC6 /* GridHeaderView.xib in Resources */,
 				E48A11D52477B027001CB7F4 /* beijing.png in Resources */,
 				E415FCD725DE4B8E00EBC574 /* set41.png in Resources */,
 				E454325625E5E8ED0070F46A /* traffic_texture_smooth.png in Resources */,
@@ -3018,30 +3237,39 @@
 				E415FC8F25DE3CFE00EBC574 /* SettingPlusCell.xib in Resources */,
 				E48A11E82477B027001CB7F4 /* white_bg.PNG in Resources */,
 				E48A122F2477B027001CB7F4 /* 黄色-270.png in Resources */,
+				E45BE2A72715772D00454AAC /* greenb.png in Resources */,
 				E415FCA725DE3CFE00EBC574 /* DSViewCell.xib in Resources */,
 				E48A120E2477B027001CB7F4 /* 蓝色-30.png in Resources */,
 				E45F72D0247BA48A0051A88A /* appString.strings in Resources */,
 				E452A21B247CA98C00E2C84A /* MJRefresh.bundle in Resources */,
+				E43F15F627112A1E004A4C42 /* gridc3.png in Resources */,
+				E43F15F827112A1E004A4C42 /* gridc1.png in Resources */,
 				E4C783FB2520900C00A28EB2 /* group_down.PNG in Resources */,
+				E465D939270FE1970031DDC6 /* SettingGridViewCell.xib in Resources */,
 				E48A126F2477B028001CB7F4 /* tree_ec.PNG in Resources */,
 				E452A302247CE7FB00E2C84A /* MineViewController.xib in Resources */,
 				E452A2EF247CE7FB00E2C84A /* TabBarViewController.xib in Resources */,
+				E45BE2AE2715776A00454AAC /* addCar.png in Resources */,
 				E48A12742477B028001CB7F4 /* back.PNG in Resources */,
 				E452A32C247CE7FB00E2C84A /* SelectableButton.xib in Resources */,
 				E415FCA525DE3CFE00EBC574 /* SettingPlusController.xib in Resources */,
 				E48A126C2477B028001CB7F4 /* fyellow.png in Resources */,
 				E48A12212477B027001CB7F4 /* car_grean2_330.png in Resources */,
+				E43F15F327112A1E004A4C42 /* gridm2.png in Resources */,
 				E452A313247CE7FB00E2C84A /* SelectionComboBoxCell.xib in Resources */,
 				E48A12382477B027001CB7F4 /* car_gray2_120.png in Resources */,
+				E4F0B1AF27213AC800E70A3D /* gridu8.png in Resources */,
 				E415FCB025DE3CFE00EBC574 /* ZhouQiDailog.xib in Resources */,
 				E48A11DA2477B027001CB7F4 /* menu_icon_2_normal.png in Resources */,
 				E48A12792477B028001CB7F4 /* nextdevice.png in Resources */,
 				E415FCD925DE4B8E00EBC574 /* set34.png in Resources */,
+				E465D931270FE0770031DDC6 /* SettingGridViewController.xib in Resources */,
 				E46BCF0926A8050C008D876A /* set46.png in Resources */,
 				E48A124A2477B028001CB7F4 /* cap_dailog_back.png in Resources */,
 				E48A11FA2477B027001CB7F4 /* 黄色-330.png in Resources */,
 				E415FC8E25DE3CFE00EBC574 /* AlarmSettingPlusCell.xib in Resources */,
 				E48A12312477B027001CB7F4 /* 灰色-180.png in Resources */,
+				E4413F832713D4CD003BAF57 /* FenceViewController.xib in Resources */,
 				E415FCDE25DE4B8E00EBC574 /* set35.png in Resources */,
 				E415FCE425DE4B8E00EBC574 /* setadd.png in Resources */,
 				E48A12732477B028001CB7F4 /* setting.png in Resources */,
@@ -3098,6 +3326,7 @@
 				E452A1DB247CA92700E2C84A /* SDWebImagePrefetcher.m in Sources */,
 				E452A214247CA98C00E2C84A /* AFNetworkActivityIndicatorManager.m in Sources */,
 				E452A1B5247CA8E800E2C84A /* NSString+Base64.m in Sources */,
+				E465D940271036B10031DDC6 /* GridHeaderView.m in Sources */,
 				E452A181247CA80700E2C84A /* GetDeviceDetailService.m in Sources */,
 				E452A32B247CE7FB00E2C84A /* SelectableButton.m in Sources */,
 				E452A2E4247CE7FB00E2C84A /* BDDynamicTree.m in Sources */,
@@ -3151,6 +3380,7 @@
 				E469588426B78FBB000FC2F8 /* SwServerPop.m in Sources */,
 				E452A31F247CE7FB00E2C84A /* APStartAndEndAnNotation.m in Sources */,
 				E452A1A6247CA8B700E2C84A /* AFHTTPRequestOperation.m in Sources */,
+				E465D930270FE0770031DDC6 /* SettingGridViewController.m in Sources */,
 				E452A2E7247CE7FB00E2C84A /* ExpeirViewController.m in Sources */,
 				E4F549A0265E2CF0009BE1C7 /* HistoryScrollCell.m in Sources */,
 				E452A169247CA80700E2C84A /* DeviceDetailObject.m in Sources */,
@@ -3169,6 +3399,7 @@
 				E415FCA825DE3CFE00EBC574 /* DingShiPicker.m in Sources */,
 				E452A183247CA80700E2C84A /* UserLoginService.m in Sources */,
 				E452A307247CE7FB00E2C84A /* ChangePasswordViewController.m in Sources */,
+				E45BE29327152CE500454AAC /* FenceClass.m in Sources */,
 				E452A317247CE7FB00E2C84A /* TrackPlayerView.m in Sources */,
 				E415FCA925DE3CFE00EBC574 /* DSViewCell.m in Sources */,
 				E415FCB325DE3CFE00EBC574 /* LGJFoldHeaderView.m in Sources */,
@@ -3177,13 +3408,16 @@
 				E452A2E3247CE7FB00E2C84A /* BDDynamicTreeCell.m in Sources */,
 				E46DF90425E73BEE00E6CBC2 /* OnlinePopView.m in Sources */,
 				E46DF8FA25E738C900E6CBC2 /* HJAudioBubbleConfig.m in Sources */,
+				E4413F8B2713DDD3003BAF57 /* AddFenceViewController.m in Sources */,
 				E452A324247CE7FB00E2C84A /* HistoryCell.m in Sources */,
+				E43F160527113416004A4C42 /* GridFooterView.m in Sources */,
 				E452A2F8247CE7FB00E2C84A /* UpdateCarNameAndNumberViewController.m in Sources */,
 				E452A174247CA80700E2C84A /* ShutDownResourceObject.m in Sources */,
 				E452A172247CA80700E2C84A /* GetAlarmSettingStateObject.m in Sources */,
 				E452A2D8247CE7FB00E2C84A /* AppleAlarmAnnotationView.m in Sources */,
 				E452A179247CA80700E2C84A /* StateOfDeviceObject.m in Sources */,
 				E45EC3F324B3FD25002C6336 /* ElectronicFenceService.m in Sources */,
+				E45BE28C2715272B00454AAC /* FenceCell.m in Sources */,
 				E452A309247CE7FB00E2C84A /* ServerInformationViewController.m in Sources */,
 				E415FCAB25DE3CFE00EBC574 /* DSView.m in Sources */,
 				E452A17E247CA80700E2C84A /* GetAlarmTimeSettingObject.m in Sources */,
@@ -3240,7 +3474,9 @@
 				E452A1DA247CA92700E2C84A /* UIButton+FromURL.m in Sources */,
 				E415FCB125DE3CFE00EBC574 /* AKRadioPopView.m in Sources */,
 				E452A1B4247CA8E800E2C84A /* AESCrypt.m in Sources */,
+				E4413F822713D4CD003BAF57 /* FenceViewController.m in Sources */,
 				E452A2F0247CE7FB00E2C84A /* TabBarViewController.m in Sources */,
+				E465D938270FE1970031DDC6 /* SettingGridViewCell.m in Sources */,
 				E452A322247CE7FB00E2C84A /* APCalloutMapAnnotation.m in Sources */,
 				E452A1A4247CA8B700E2C84A /* AFURLSessionManager.m in Sources */,
 				E452A175247CA80700E2C84A /* DeviceLocationObject.m in Sources */,
@@ -3451,7 +3687,7 @@
 				CODE_SIGN_ENTITLEMENTS = DM100/Domilink.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = S3EC4C6BR7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
@@ -3459,7 +3695,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Prefix.pch";
 				HEADER_SEARCH_PATHS = "${SRCROOT}/$(PROJECT_NAME)/ThirdPart";
 				INFOPLIST_FILE = DM100/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3469,7 +3705,7 @@
 					"$(PROJECT_DIR)/DM100/ThirdPart/BaiduMaplibs",
 					"$(PROJECT_DIR)/DM100/ThirdPart/VoiceConvert",
 				);
-				MARKETING_VERSION = 1.0.10;
+				MARKETING_VERSION = 1.0.11;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = ztinfo.domilink.DM100;
 				PRODUCT_NAME = Domilink;
@@ -3491,7 +3727,7 @@
 				CODE_SIGN_ENTITLEMENTS = DM100/Domilink.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = S3EC4C6BR7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
@@ -3499,7 +3735,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Prefix.pch";
 				HEADER_SEARCH_PATHS = "${SRCROOT}/$(PROJECT_NAME)/ThirdPart";
 				INFOPLIST_FILE = DM100/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3509,7 +3745,7 @@
 					"$(PROJECT_DIR)/DM100/ThirdPart/BaiduMaplibs",
 					"$(PROJECT_DIR)/DM100/ThirdPart/VoiceConvert",
 				);
-				MARKETING_VERSION = 1.0.10;
+				MARKETING_VERSION = 1.0.11;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = ztinfo.domilink.DM100;
 				PRODUCT_NAME = Domilink;

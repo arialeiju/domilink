@@ -23,12 +23,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *bt1;//导航
 @property (weak, nonatomic) IBOutlet UIView *bt5;//详情
 @property (weak, nonatomic) IBOutlet UIView *bt6;//设置
+@property (weak, nonatomic) IBOutlet UIView *bt7;//定位
 @property (weak, nonatomic) IBOutlet UILabel *btlabel4;
 @property (weak, nonatomic) IBOutlet UILabel *btlabel3;
 @property (weak, nonatomic) IBOutlet UILabel *btlabel2;
 @property (weak, nonatomic) IBOutlet UILabel *btlabel1;
 @property (weak, nonatomic) IBOutlet UILabel *btlabel5;
 @property (weak, nonatomic) IBOutlet UILabel *btlabel6;
+@property (weak, nonatomic) IBOutlet UILabel *btlabel7;
 
 @property (weak, nonatomic) IBOutlet UILabel *tvname;//设备名
 @property (weak, nonatomic) IBOutlet UILabel *tvstatus;//显示状态

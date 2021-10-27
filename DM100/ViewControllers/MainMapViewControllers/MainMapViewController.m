@@ -16,6 +16,8 @@
 #import "MyLocation.h"
 #import "RouteAnnotation.h"
 #import "SettingPlusController.h"
+#import "OnlineCMDService.h"
+#import "SettingGridViewController.h"
 @interface MainMapViewController ()<BMKLocationManagerDelegate,BMKGeoCodeSearchDelegate>
 {
     __weak IBOutlet UIView *messageView;
@@ -49,6 +51,8 @@
     int mRefreshTime;//定位刷新的间隔时间 目前只有 10 和 3两种
     int mCDTime;//显示的倒计时时间
     NSTimer *_CDTimer;//倒计时定时器
+    
+    MBProgressHUD * _HUD;
 }
 @end
 
@@ -85,7 +89,7 @@
         [self setCountDownLabel];
         NeedLoadView=false;
     }
-    
+    [self updataViewShowWithType:ShowType];
     [self Page2BeginToShow];
     [self startNSTimer];
     [_mapView viewWillAppear];
@@ -222,6 +226,7 @@
     [self.btlabel4 setText:[SwichLanguage getString:@"p2tv4"]];
     [self.btlabel5 setText:[SwichLanguage getString:@"details"]];
     [self.btlabel6 setText:[SwichLanguage getString:@"setting"]];
+    [self.btlabel7 setText:[SwichLanguage getString:@"location"]];
     [self.tvlabel1 setText:[SwichLanguage getString:@"loctype"]];
     [self.tvlabel2 setText:[SwichLanguage getString:@"loctime"]];
     [self.tvlabel3 setText:[SwichLanguage getString:@"sigtime"]];
@@ -268,6 +273,7 @@
     _btlabel4.adjustsFontSizeToFitWidth=YES;
     _btlabel5.adjustsFontSizeToFitWidth=YES;
     _btlabel6.adjustsFontSizeToFitWidth=YES;
+    _btlabel7.adjustsFontSizeToFitWidth=YES;
     _tvlabel1.adjustsFontSizeToFitWidth=YES;
 //    _tvlabel2.adjustsFontSizeToFitWidth=YES;
 //    _tvlabel3.adjustsFontSizeToFitWidth=YES;
@@ -296,6 +302,8 @@
     [_bt5 addGestureRecognizer:tapGes5];
     UITapGestureRecognizer *tapGes6 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ClickButton6)];
     [_bt6 addGestureRecognizer:tapGes6];
+    UITapGestureRecognizer *tapGes7 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ClickButton7)];
+    [_bt7 addGestureRecognizer:tapGes7];
     UITapGestureRecognizer *tapGesTL1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ClickTopLButton1)];
     [_TopLView1 addGestureRecognizer:tapGesTL1];
     UITapGestureRecognizer *tapGesTL2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ClickTopLButton2)];
@@ -310,6 +318,8 @@
     _bt5.layer.masksToBounds = YES;
     _bt6.layer.cornerRadius=5.0f;
     _bt6.layer.masksToBounds = YES;
+    _bt7.layer.cornerRadius=5.0f;
+    _bt7.layer.masksToBounds = YES;
     _controlview1.layer.cornerRadius=5.0f;
     _controlview1.layer.masksToBounds = YES;
     _controlview1.layer.borderWidth = 1;
@@ -355,7 +365,17 @@
     [self.btChange setFrame:CGRectMake(VIEWWIDTH-mviewMargin-25, originY-24-mviewMargin/2, 25, 25)];//25X25
     [self.bt5 setFrame:CGRectMake(mviewMargin, originY-30-mviewMargin/2, 70, 30)];// 70X30
     [self.bt6 setFrame:CGRectMake(mviewMargin+self.bt5.frame.size.width+mviewMargin/2, originY-30-mviewMargin/2, 70, 30)];//70x30
+    
+    if([SwichLanguage userLanguageType]==1)
+    {
+        [self.bt7 setFrame:CGRectMake(mviewMargin+self.bt5.frame.size.width*2+mviewMargin, originY-30-mviewMargin/2, 80, 30)];//70x30
+    }else
+    {
+        [self.bt7 setFrame:CGRectMake(mviewMargin+self.bt5.frame.size.width*2+mviewMargin, originY-30-mviewMargin/2, 70, 30)];//70x30
+    }
 }
+
+
 - (IBAction)clickChangeButton:(id)sender {
     if (ShowType==1) {
         [self updataViewShowWithType:2];//隐藏
@@ -407,10 +427,18 @@
         UnitModel *detail = [self.inAppSetting getSelectUnit];
 //        SettingViewController *mSettingViewController = [[SettingViewController alloc]initWithImei:[detail getImei] anddevicetype:detail.devType];
 //        [self.navigationController pushViewController:mSettingViewController animated:YES];
-        SettingPlusController *mSettingPlusController = [[SettingPlusController alloc]initWithImei:[detail getImei] anddevicetype:detail.devType andImeiName:[detail getShowName]];
+        SettingGridViewController *mSettingPlusController = [[SettingGridViewController alloc]initWithImei:[detail getImei] anddevicetype:detail.devType andImeiName:[detail getShowName]];
         [self.navigationController pushViewController:mSettingPlusController animated:YES];
     }
 }
+
+//定位按钮
+-(void)ClickButton7
+{
+    NSLog(@"点击按钮7");
+    [self SendTheCMDToDeviceby:@"123"];
+}
+
 -(void)ClickTopRButton1
 {
     NSLog(@"点击按钮 车");
@@ -1359,5 +1387,65 @@
     if (mCDTime<1) {
         mCDTime=mRefreshTime;
     }
+}
+//自定义指令
+-(void) SendTheCMDToDeviceby:(NSString*)cmd
+{
+    NSLog(@"SendTheCMDToDeviceby mcmd=%@",cmd);
+    if ([self.inAppSetting checkhaddata]) {
+    _HUD = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
+    
+        UnitModel *detail = [self.inAppSetting getSelectUnit];
+    
+    [OnlineCMDService
+     setCMDwithImei:[detail getImei] withSmscmd:cmd  withUserid:self.inAppSetting.userId succeed:^(OnlineCMDObject *onlineCMDObject) {
+        [_HUD hide:YES];
+         //[MBProgressHUD showQuickTipWithText:onlineCMDObject.smscmd];
+         int resultCode= [onlineCMDObject.result intValue];
+
+         switch (resultCode) {
+             case 0:
+                 [self ShowTheResultDailog:[SwichLanguage getString:@"cmderror0"] Title:nil];
+                 break;
+             case 1:
+                 if (onlineCMDObject.content.length>0) {
+                     if([onlineCMDObject.smscmd isEqualToString:@"123"])
+                     {
+                         [self ShowTheResultDailog:onlineCMDObject.content Title:[SwichLanguage getString:@"online4"]];
+                     }else
+                     {
+                         [self ShowTheResultDailog:onlineCMDObject.content Title:nil];
+                     }
+                 }else
+                 {
+                     [self ShowTheResultDailog:[SwichLanguage getString:@"cmderror1"] Title:nil];
+                 }
+                 break;
+             default:
+                 [self ShowTheResultDailog:[SwichLanguage getString:@"cmderror7"] Title:nil];
+                 break;
+         }
+         
+     }
+     failure:^(NSError *error) {
+         [_HUD hide:YES];
+         [MBProgressHUD showQuickTipWithText:[SwichLanguage getString:@"networkerror"]];
+     }];
+    }
+}
+
+#pragma mark - show the result dailog
+-(void)ShowTheResultDailog:(NSString*)content Title:(NSString*)title
+{
+    //设置帐号
+    UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:title
+                                                         message:content
+                                                        delegate:self
+                                               cancelButtonTitle:[SwichLanguage getString:@"sure"]
+                                               otherButtonTitles:nil, nil
+                               ];
+    alertView.alertViewStyle=UIAlertViewStyleDefault;
+    alertView.tag=10;
+    [alertView show];
 }
 @end

@@ -25,6 +25,7 @@
                 <outlet property="bt4" destination="cka-iu-Shl" id="m0o-oI-IlP"/>
                 <outlet property="bt5" destination="dF0-ac-sQw" id="66H-O3-Ike"/>
                 <outlet property="bt6" destination="53V-9D-oUa" id="jNM-lB-Ns1"/>
+                <outlet property="bt7" destination="hpG-pF-r5w" id="3Np-Aa-diT"/>
                 <outlet property="btChange" destination="4rS-DS-PEt" id="Hja-lR-CTX"/>
                 <outlet property="btimg1" destination="Yjf-BF-IQp" id="4CU-7o-g75"/>
                 <outlet property="btimg2" destination="51l-pI-fOS" id="R18-5d-fyZ"/>
@@ -36,6 +37,7 @@
                 <outlet property="btlabel4" destination="aQm-pD-i0X" id="5vU-yp-0oh"/>
                 <outlet property="btlabel5" destination="scM-5w-Z1w" id="sSh-sq-rnD"/>
                 <outlet property="btlabel6" destination="AGp-8K-5Nn" id="7v3-Pw-RP3"/>
+                <outlet property="btlabel7" destination="RyO-Mt-1g9" id="HK7-4W-uAw"/>
                 <outlet property="controlview1" destination="vUQ-Wf-bsW" id="QOr-65-E4L"/>
                 <outlet property="controlview2" destination="yLy-Qu-Sh7" id="KME-iE-cGs"/>
                 <outlet property="controlview3" destination="Z8i-xw-0aa" id="ujP-pr-2FO"/>
@@ -518,6 +520,24 @@
                     </subviews>
                     <color key="backgroundColor" red="0.044597861010000003" green="0.26370903150000002" blue="0.53919394759999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hpG-pF-r5w">
+                    <rect key="frame" x="166" y="397" width="70" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RyO-Mt-1g9">
+                            <rect key="frame" x="30" y="0.0" width="36" height="30"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="position.png" translatesAutoresizingMaskIntoConstraints="NO" id="MDN-b3-nNs">
+                            <rect key="frame" x="5" y="5" width="20" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.044597861010000003" green="0.26370903150000002" blue="0.53919394759999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.26174888559999998" green="0.77512051199999998" blue="0.1881192693" alpha="1" colorSpace="calibratedRGB"/>
             <point key="canvasLocation" x="50.399999999999999" y="465.51724137931041"/>
@@ -541,6 +561,7 @@
         <image name="page2b3.png" width="89" height="89"/>
         <image name="page2b4.png" width="89" height="89"/>
         <image name="pg2ig7.png" width="185.25" height="185.25"/>
+        <image name="position.png" width="64" height="64"/>
         <image name="power.png" width="52" height="52"/>
         <image name="setting.png" width="65" height="65"/>
         <image name="upbt.png" width="84" height="84"/>

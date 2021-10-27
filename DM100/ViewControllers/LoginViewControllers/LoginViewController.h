@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *userNameImageView;
 @property (weak, nonatomic) IBOutlet UIView *passWordView;
-@property (weak, nonatomic) IBOutlet UITextField *passWordTextField;
+@property (strong, nonatomic) IBOutlet UITextField *passWordTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *passWordImageView;
 
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;

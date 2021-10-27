@@ -59,6 +59,8 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 #define IPXMargin (KIsiPhoneX?20:0)
 #define IPXLiuHai (KIsiPhoneX?30:20)
 
+#define CarListFontSize 13//列表界面字体统一大小
+#define TopBarUIcolor [UIColor colorWithRed:6/255.0 green:123/255.0 blue:206/255.0 alpha:1]
 #define LineGraycolor [UIColor colorWithHexString:@"#F7F7F7"]
 
 #pragma mark - Bundle

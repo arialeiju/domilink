@@ -88,7 +88,7 @@
         MKCoordinateSpan span = MKCoordinateSpanMake(0.005,0.005);
          [_mapView setRegion:MKCoordinateRegionMake(mdeviceCoor, span) animated:NO];
         
-        isGuoluJZ=NO;
+        isGuoluJZ=YES;
         
         centerRect = CGRectMake(CGRectGetWidth(_mapView.frame)/8,
                                         _mapView.frame.origin.y+CGRectGetHeight(_mapView.frame)/8,
@@ -118,7 +118,7 @@
         CLLocationCoordinate2D mdeviceCoor=[MapLoctionSwich bd09togcj02:Coor.longitude and:Coor.latitude];
         MKCoordinateSpan span = MKCoordinateSpanMake(0.005,0.005);
          [_mapView setRegion:MKCoordinateRegionMake(mdeviceCoor, span) animated:NO];
-        isGuoluJZ=NO;
+        isGuoluJZ=YES;
     }
     return self;
 }

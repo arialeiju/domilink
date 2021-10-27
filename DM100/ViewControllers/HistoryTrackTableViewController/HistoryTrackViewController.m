@@ -87,7 +87,7 @@
         [self tableViewSetting];
         [_mapView setCenterCoordinate:Coor animated:NO];
         [_mapView setZoomLevel:18.0f];
-        isGuoluJZ=NO;
+        isGuoluJZ=YES;
         
         centerRect = CGRectMake(CGRectGetWidth(_mapView.frame)/8,
                                         _mapView.frame.origin.y+CGRectGetHeight(_mapView.frame)/8,
@@ -115,7 +115,7 @@
         [self tableViewSetting];
         [_mapView setCenterCoordinate:Coor animated:NO];
         [_mapView setZoomLevel:18.0f];
-        isGuoluJZ=NO;
+        isGuoluJZ=YES;
     }
     return self;
 }
