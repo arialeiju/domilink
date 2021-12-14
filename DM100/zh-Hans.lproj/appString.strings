@@ -342,3 +342,6 @@
 "modifyfencefail"="修改电子围栏失败";
 "modifyfenceok"="修改电子围栏成功";
 "modifyfence"="修改电子围栏";
+"notactivate"="未激活";
+"activateok"="激活成功";
+"activatefail"="激活失败";

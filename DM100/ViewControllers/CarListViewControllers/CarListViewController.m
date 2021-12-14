@@ -244,6 +244,12 @@
         cell.tvtime.text=mStsShowModel.TimeStr;
         cell.tvstatus.text=mStsShowModel.Sts;
         [cell.imgstatus setImage:[detail getImage]];
+        if (detail.isActivate==0) {
+            [cell.tvstatus setTextColor:[UIColor redColor]];
+        }else
+        {
+            [cell.tvstatus setTextColor:[UIColor blackColor]];
+        }
 //        if([detail.logoType isEqualToString:@"23"])//23 为摩托车
 //        {
 //                switch (mStsShowModel.StsId) {
@@ -416,7 +422,7 @@
 //             object.sigTime= [dic objectForKey:@"sigTime"];
              object.locTime=[self.inAppSetting ChangeGMT8toSysTime: [dic objectForKey:@"locTime"]];
              object.sigTime=[self.inAppSetting ChangeGMT8toSysTime:  [dic objectForKey:@"sigTime"]];
-             
+             object.isActivate=[[dic objectForKey:@"enableSts"]intValue];
              [self.inAppSetting.user_itemList addObject:object];
              //[_deviceArray addObject:object];
              //[_allArray addObject:object];
@@ -500,6 +506,7 @@
              object.isDefense= [dic objectForKey:@"isDefense"];
              object.locTime=[self.inAppSetting ChangeGMT8toSysTime: [dic objectForKey:@"locTime"]];
              object.sigTime=[self.inAppSetting ChangeGMT8toSysTime:  [dic objectForKey:@"sigTime"]];
+             object.isActivate=[[dic objectForKey:@"enableSts"]intValue];
              [self.inAppSetting.user_itemList addObject:object];
              //[_deviceArray addObject:object];
              //[_allArray addObject:object];

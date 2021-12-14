@@ -19,6 +19,7 @@
 #import "AKRadioPopView.h"
 #import "DingShiDailog.h"
 #import "ChangePasswordViewController.h"
+#import "IAPViewController.h"
 @interface SettingGridViewController ()<ZhouQiDailogDelegate,DingShiDailogDelegate>
 {
     NSString *_imei;
@@ -77,11 +78,13 @@
     [self.dataArr1 addObject:[SwichLanguage getString:@"setitem7"]];
     [self.dataArr1 addObject:[SwichLanguage getString:@"page4item7"]];
     [self.dataArr1 addObject:[SwichLanguage getString:@"setitem10"]];
+    //[self.dataArr1 addObject:[SwichLanguage getString:@"充值中心"]];
     
     [self.imageArr1 addObject:@"gridm1"];
     [self.imageArr1 addObject:@"gridm2"];
     [self.imageArr1 addObject:@"gridm3"];
     [self.imageArr1 addObject:@"gridm4"];
+    //[self.imageArr1 addObject:@"gridm4"];
     
     [self.dataArr2 addObject:[SwichLanguage getString:@"offline2"]];
     [self.dataArr2 addObject:[SwichLanguage getString:@"offline3"]];
@@ -243,7 +246,12 @@
                 [self.navigationController pushViewController:changePasswordViewController animated:YES];
             }
                 break;
-                
+            case 4:
+            {//充值中心
+                IAPViewController* mIAPViewController = [[IAPViewController alloc]initWithImei:_imei];
+                [self.navigationController pushViewController:mIAPViewController animated:YES];
+            }
+                break;
             default:
                 break;
         }

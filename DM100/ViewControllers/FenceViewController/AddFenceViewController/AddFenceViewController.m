@@ -8,7 +8,7 @@
 
 #import "AddFenceViewController.h"
 #import "MapLoctionSwich.h"
-@interface AddFenceViewController ()<MKMapViewDelegate>
+@interface AddFenceViewController ()<MKMapViewDelegate,UITextFieldDelegate>
 {
     UIButton *_liebiaoButton;
     Boolean NeedLoadView;//优化保证只加载界面刷新一次
@@ -29,6 +29,8 @@
     
     MBProgressHUD * _HUD;
     NSString *_strfencename;
+    
+    UIView *bgview;
 }
 @end
 
@@ -90,6 +92,13 @@
         [self addBackButtonTitleWithTitle:[SwichLanguage getString:@"modifyfence"] withRightButton:_liebiaoButton];
     }
     self.namefield.placeholder=[SwichLanguage getString:@"name"];
+    
+    //添加通知，来控制键盘和输入框的位置
+
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardWillShowNotification object:nil];//键盘的弹出
+
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];//键盘的消失
+    
     
 }
 -(void)click_righttop_button
@@ -170,6 +179,8 @@
     CGRect mr=self.namefield.frame;
     mr.size.width=self.submitbutton.frame.origin.x-mr.origin.x-8;
     [self.namefield setFrame:mr];
+    
+    [self initBGview];
 }
 
 -(void)setupMapView
@@ -414,5 +425,70 @@
 -(void)closeView
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark ----- 键盘显示的时候的处理
+
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    [bgview setHidden:NO];
+    //获得键盘的大小
+
+    NSDictionary* info = [aNotification userInfo];
+
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+
+    
+
+    [UIView beginAnimations:nil context:nil];
+
+    [UIView setAnimationDuration:0.25];
+
+    [UIView setAnimationCurve:7];
+
+    self.view.frame = CGRectMake(0,-kbSize.height , self.view.frame.size.width, self.view.frame.size.height);
+
+    [UIView commitAnimations];
+}
+
+
+#pragma mark -----    键盘消失的时候的处理
+
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    [bgview setHidden:YES];
+    [UIView beginAnimations:nil context:nil];
+
+    [UIView setAnimationDuration:0.25];
+
+    [UIView setAnimationCurve:7];
+
+    self.view.frame = CGRectMake(0, 0,self.view.frame.size.width, self.view.frame.size.height);
+
+    [UIView commitAnimations];
+}
+-(void)dealloc
+
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+
+}
+
+//初始化弹出键盘时候的灰色界面
+-(void)initBGview
+{
+    bgview=[[UIView alloc]initWithFrame: CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    bgview.backgroundColor=[UIColor clearColor];
+    [self.view addSubview:bgview];
+    [self.view bringSubviewToFront:bgview];
+    [bgview setHidden:YES];
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(done:)];
+    tapGestureRecognizer.numberOfTapsRequired = 1;
+    [bgview addGestureRecognizer:tapGestureRecognizer];
+}
+
+- (void)done:(id)sender
+{
+     [self.namefield resignFirstResponder];
 }
 @end

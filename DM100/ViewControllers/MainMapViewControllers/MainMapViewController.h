@@ -78,6 +78,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) BMKLocationManager *locationManager; //定位对象
 @property(nonatomic, copy) BMKLocatingCompletionBlock completionBlock;
+- (IBAction)clicksetactivatebutton:(id)sender;
+
 @end
 
 NS_ASSUME_NONNULL_END

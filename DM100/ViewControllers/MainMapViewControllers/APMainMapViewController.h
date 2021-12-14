@@ -75,6 +75,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction)clicktipbutton:(id)sender;
 
 @property (nonatomic, strong) CLLocationManager *locationManager;//设置manager
+- (IBAction)clicksetactivatebutton:(id)sender;
 @end
 
 NS_ASSUME_NONNULL_END

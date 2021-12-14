@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "UnitModel.h"
+
+//激活弹出框协议
+@protocol isActivateDelegate<NSObject>
+-(void)SetActivateOk;
+@end
+
 @interface InAppSetting : NSObject
 
 +(instancetype) instance;
@@ -41,6 +47,8 @@
 @property (strong, retain) NSMutableArray *_dataSource;
 @property (strong, retain) NSIndexPath *indexPath;
 
+//激活弹出框协议
+@property (nonatomic, retain)id<isActivateDelegate> delegate;
 //动态修改服务器连接
 @property (nonatomic, strong) NSString *mServerURL;//服务器地址
 
@@ -59,4 +67,5 @@
 -(Boolean)CkeckAppIsInstall:(int)thetype;
 -(NSString*)ChangeGMT8toSysTime:(NSString*)mStime;
 -(NSString*)ChangeSysTimetoGMT8:(NSString*)mStime;
+-(void)showSetActivateDailog:(UIViewController *)mcontroller andIMEI:(NSString*)mImei;
 @end

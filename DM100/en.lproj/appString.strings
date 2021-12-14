@@ -341,3 +341,6 @@
 "modifyfencefail"="Failed To Modified Electronic Fence";
 "modifyfenceok"="SuccessFully Modified Electronic Fence";
 "modifyfence"="Modify Electronic Fence";
+"notactivate"="Inactivated";
+"activateok"="Activation Succeeded";
+"activatefail"="Activation Failed";

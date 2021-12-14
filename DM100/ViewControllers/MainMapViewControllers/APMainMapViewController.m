@@ -18,7 +18,7 @@
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>
 #import "OnlineCMDService.h"
 #import "SettingGridViewController.h"
-@interface APMainMapViewController ()<MKMapViewDelegate,BMKGeoCodeSearchDelegate,BMKPoiSearchDelegate>
+@interface APMainMapViewController ()<MKMapViewDelegate,BMKGeoCodeSearchDelegate,BMKPoiSearchDelegate,isActivateDelegate>
 {
     __weak IBOutlet UIView *messageView;
     CGFloat mviewHeightC;//当前信息页面高度
@@ -55,6 +55,7 @@
     int mCDTime;//显示的倒计时时间
     NSTimer *_CDTimer;//倒计时定时器
     MBProgressHUD * _HUD;
+    int isactivate;//是否激活状态
 }
 @property (strong, nonatomic) BMKPoiSearch *poiSearch;//苹果地图中文转换器
 @end
@@ -73,6 +74,7 @@
     mlogoType=@"1";
     mloctypestr=@"";
     madrrstr=@"";
+    isactivate=0;
     isGSM=false;
     _geoCoor=CLLocationCoordinate2DMake(0, 0);
     _poiSearch=[[BMKPoiSearch alloc] init];
@@ -189,6 +191,7 @@
         [_tvname setText:[mUnitModel getName]];
         [_tv2 setText:[mUnitModel getsigTime]];
         [_tv3 setText:[mUnitModel getlocTime]];
+        isactivate=mUnitModel.isActivate;
         //_deviceCoor = CLLocationCoordinate2DMake([mUnitModel getLat], [mUnitModel getLot]);
         _deviceCoor=[MapLoctionSwich bd09togcj02:[mUnitModel getLot] and:[mUnitModel getLat]];
         //地图  预设中心点
@@ -721,7 +724,22 @@
         
         [weakSelf.imgSts setImage:[weakSelf.dataModel getImageWithLogoType:self->mlogoType AndStatus:deviceSts]];
         
-         if([deviceSts isEqualToString:@"1"]){
+        int mactivate=[[ret objectForKey:@"enableSts"]intValue];
+        if (mactivate==0) {//设置颜色
+            [weakSelf.tvstatus setTextColor:[UIColor redColor]];
+            [weakSelf.tvname setTextColor:[UIColor redColor]];
+        }else
+        {
+            [weakSelf.tvstatus setTextColor:[UIColor blackColor]];
+            [weakSelf.tvname setTextColor:[UIColor blackColor]];
+        }
+        
+        self->isactivate=mactivate;
+        
+        if (mactivate==0) {
+            [weakSelf.tvstatus setText:[SwichLanguage getString:@"notactivate"]];
+            pinstr=[SwichLanguage getString:@"notactivate"];
+        }else if([deviceSts isEqualToString:@"1"]){
              [weakSelf.tvstatus setText:[SwichLanguage getString:@"offline"]];
              //[weakSelf.imgSts setImage:[UIImage imageNamed:@"offline_car.png"]];
              
@@ -1433,5 +1451,20 @@
     alertView.alertViewStyle=UIAlertViewStyleDefault;
     alertView.tag=10;
     [alertView show];
+}
+- (IBAction)clicksetactivatebutton:(id)sender {
+    if ([self.inAppSetting checkhaddata]) {
+        UnitModel *detail = [self.inAppSetting getSelectUnit];
+        if (isactivate==0) {
+            NSLog(@"激活设备操作");
+            self.inAppSetting.delegate=self;
+            [self.inAppSetting showSetActivateDailog:self andIMEI:detail.devImei];
+        }
+    }
+}
+-(void)SetActivateOk
+{
+    NSLog(@"SetActivateOk2");
+    [self reStartNSTimer];
 }
 @end

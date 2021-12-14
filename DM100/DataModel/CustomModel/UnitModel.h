@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *logoType;
 @property (nonatomic, strong) NSString *isDefense;
 @property (nonatomic, assign) float speed;
-
+@property (nonatomic, assign) int isActivate;//是否激活
 -(NSString*)getShowName;
 -(NSString*)getImei;
 -(NSString*)getName;

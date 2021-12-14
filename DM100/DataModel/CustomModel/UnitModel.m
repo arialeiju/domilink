@@ -96,7 +96,11 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSDate * nowDate = [NSDate date];
-    if([self.useSts isEqualToString:@"0"])
+    if(self.isActivate==0)//未激活
+    {
+        sts=[SwichLanguage getString:@"notactivate"];
+        setid=4;
+    }else if([self.useSts isEqualToString:@"0"])
     {
         sts=[SwichLanguage getString:@"expire"];
         setid=0;

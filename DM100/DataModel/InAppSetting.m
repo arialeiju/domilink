@@ -428,4 +428,52 @@
         [self setMServerURL:TServerURL1];
     }
 }
+
+//显示激活提醒弹出框
+-(void)showSetActivateDailog:(UIViewController *)mcontroller andIMEI:(NSString*)mImei
+{
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:mImei
+                                                                    message:@"是否激活该设备?"
+                                                             preferredStyle:UIAlertControllerStyleAlert];
+     
+     UIAlertAction* okAction = [UIAlertAction actionWithTitle:[SwichLanguage getString:@"sure"] style:UIAlertActionStyleDefault
+                                                           handler:^(UIAlertAction * action) {
+         
+         NSDictionary *bodyData =@{@"imei":mImei,
+                                   @"loginNo":self.loginNo,
+                                   @"loginType":self.type
+                                     };
+          NSDictionary *parameters = [PostXMLDataCreater createXMLDicWithCMD:503
+                                                              withParameters:bodyData];
+          [NetWorkModel POST:ServerURL
+                  parameters:parameters
+                     success:^(ResponseObject *messageCenterObject)
+           {
+               NSDictionary *ret = messageCenterObject.ret;
+               NSLog(@"send503CMD ret=%@",ret);
+               int mretcode=[[ret objectForKey:@"stsCode" ] intValue];
+               if (mretcode==1) {
+                   [MBProgressHUD showLogTipWIthTitle:nil withText:[SwichLanguage getString:@"activateok"]];
+                   [self.delegate SetActivateOk];
+               }else
+               {
+                 [MBProgressHUD showLogTipWIthTitle:nil withText:[SwichLanguage getString:@"activatefail"]];
+             }
+           }
+                     failure:^(NSError *error)
+           {
+              [MBProgressHUD showLogTipWIthTitle:[SwichLanguage getString:@"tips"] withText:[SwichLanguage getString:@"activatefail"]];
+           }];
+         
+     }];
+     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:[SwichLanguage getString:@"cancel"] style:UIAlertActionStyleCancel
+                                                          handler:^(UIAlertAction * action) {
+                                                              //响应事件
+                                                              //NSLog(@"action = %@", alert.textFields);
+                                                          }];
+
+     [alert addAction:okAction];
+     [alert addAction:cancelAction];
+     [mcontroller presentViewController:alert animated:YES completion:nil];
+}
 @end

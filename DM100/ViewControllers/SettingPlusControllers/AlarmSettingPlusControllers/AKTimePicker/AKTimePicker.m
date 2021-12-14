@@ -222,10 +222,12 @@
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     if (component == 0) {
         //return hourArray[row];
-        return [NSString stringWithFormat:@"%@%@",hourArray[row],_strhour];
+        //return [NSString stringWithFormat:@"%@%@",hourArray[row],_strhour];
+        return [NSString stringWithFormat:@"%@",hourArray[row]];
 
     } else {
-        return [NSString stringWithFormat:@"%@%@",minArray[row],_strmin];
+        //return [NSString stringWithFormat:@"%@%@",minArray[row],_strmin];
+        return [NSString stringWithFormat:@"%@",minArray[row]];
     }
 }
 

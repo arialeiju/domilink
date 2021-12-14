@@ -345,6 +345,13 @@
                                 <action selector="clicktipbutton:" destination="-1" eventType="touchUpInside" id="6Dh-jQ-iRf"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqG-7b-GJA">
+                            <rect key="frame" x="0.0" y="0.0" width="355" height="40"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <connections>
+                                <action selector="clicksetactivatebutton:" destination="-1" eventType="touchUpInside" id="Lto-ZS-OJS"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>

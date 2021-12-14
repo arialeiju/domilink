@@ -290,6 +290,10 @@
 		E45BE2A92715772D00454AAC /* orangec.png in Resources */ = {isa = PBXBuildFile; fileRef = E45BE2A12715772D00454AAC /* orangec.png */; };
 		E45BE2AE2715776A00454AAC /* addCar.png in Resources */ = {isa = PBXBuildFile; fileRef = E45BE2AD2715776A00454AAC /* addCar.png */; };
 		E45CABA426049A7600AD0BBE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E45CABA626049A7600AD0BBE /* InfoPlist.strings */; };
+		E45E5B032728ED9A00F09CF7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45E5B022728ED9A00F09CF7 /* StoreKit.framework */; };
+		E45E5B082728EF3200F09CF7 /* IAPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E45E5B062728EF3200F09CF7 /* IAPViewController.m */; };
+		E45E5B092728EF3200F09CF7 /* IAPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E45E5B072728EF3200F09CF7 /* IAPViewController.xib */; };
+		E45E5B0D272928C500F09CF7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45E5B022728ED9A00F09CF7 /* StoreKit.framework */; };
 		E45EC3F324B3FD25002C6336 /* ElectronicFenceService.m in Sources */ = {isa = PBXBuildFile; fileRef = E45EC3F124B3FD24002C6336 /* ElectronicFenceService.m */; };
 		E45F72D0247BA48A0051A88A /* appString.strings in Resources */ = {isa = PBXBuildFile; fileRef = E45F72D2247BA48A0051A88A /* appString.strings */; };
 		E45F72D7247BA51F0051A88A /* SwichLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = E45F72D5247BA51F0051A88A /* SwichLanguage.m */; };
@@ -1054,6 +1058,10 @@
 		E45BE2AD2715776A00454AAC /* addCar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addCar.png; sourceTree = "<group>"; };
 		E45CABA526049A7600AD0BBE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E45CABAA26049A7B00AD0BBE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		E45E5B022728ED9A00F09CF7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E45E5B052728EF3200F09CF7 /* IAPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAPViewController.h; sourceTree = "<group>"; };
+		E45E5B062728EF3200F09CF7 /* IAPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IAPViewController.m; sourceTree = "<group>"; };
+		E45E5B072728EF3200F09CF7 /* IAPViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IAPViewController.xib; sourceTree = "<group>"; };
 		E45EC3F124B3FD24002C6336 /* ElectronicFenceService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElectronicFenceService.m; sourceTree = "<group>"; };
 		E45EC3F224B3FD25002C6336 /* ElectronicFenceService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElectronicFenceService.h; sourceTree = "<group>"; };
 		E45F72D1247BA48A0051A88A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/appString.strings"; sourceTree = "<group>"; };
@@ -1382,6 +1390,7 @@
 				E48A12AA2477BA75001CB7F4 /* CoreTelephony.framework in Frameworks */,
 				E48A12A82477B9DE001CB7F4 /* BMKLocationKit.framework in Frameworks */,
 				E48A12A42477B4CC001CB7F4 /* libz.tbd in Frameworks */,
+				E45E5B0D272928C500F09CF7 /* StoreKit.framework in Frameworks */,
 				E48A12A22477B4C4001CB7F4 /* SystemConfiguration.framework in Frameworks */,
 				E48A12A02477B4BD001CB7F4 /* Security.framework in Frameworks */,
 				E48A129E2477B4B7001CB7F4 /* QuartzCore.framework in Frameworks */,
@@ -1406,6 +1415,7 @@
 				E4E89BFF267843DC0006B7AA /* AlicloudSender.framework in Frameworks */,
 				E48A12852477B3BF001CB7F4 /* BaiduMapAPI_Base.framework in Frameworks */,
 				E4539CC8248E2CA0006EF4C3 /* WebKit.framework in Frameworks */,
+				E45E5B032728ED9A00F09CF7 /* StoreKit.framework in Frameworks */,
 				E46DF91225E73D7F00E6CBC2 /* libopencore-amrwb.a in Frameworks */,
 				E48A12812477B167001CB7F4 /* MapKit.framework in Frameworks */,
 				E4E89BFA267843D40006B7AA /* AlicloudUtils.framework in Frameworks */,
@@ -1913,6 +1923,7 @@
 		E452A21E247CE7FA00E2C84A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E45E5B042728EEE600F09CF7 /* IAPViewController */,
 				E4413F7E2713D305003BAF57 /* FenceViewController */,
 				E465D92C270FDFBB0031DDC6 /* SettingGridViewController */,
 				E46DF8ED25E7386600E6CBC2 /* MediaPlayViewController */,
@@ -2348,6 +2359,16 @@
 			path = carliststatus;
 			sourceTree = "<group>";
 		};
+		E45E5B042728EEE600F09CF7 /* IAPViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E45E5B052728EF3200F09CF7 /* IAPViewController.h */,
+				E45E5B062728EF3200F09CF7 /* IAPViewController.m */,
+				E45E5B072728EF3200F09CF7 /* IAPViewController.xib */,
+			);
+			path = IAPViewController;
+			sourceTree = "<group>";
+		};
 		E45F72D4247BA51F0051A88A /* SwichLanguage */ = {
 			isa = PBXGroup;
 			children = (
@@ -2775,6 +2796,7 @@
 		E48A127F2477B167001CB7F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E45E5B022728ED9A00F09CF7 /* StoreKit.framework */,
 				E4E89C142678477A0006B7AA /* UserNotifications.framework */,
 				E4E89C122678442F0006B7AA /* libresolv.tbd */,
 				E4E89C0D267843F80006B7AA /* UTDID.framework */,
@@ -3051,6 +3073,7 @@
 				E48A12002477B027001CB7F4 /* 黄色-30.png in Resources */,
 				E48A12232477B027001CB7F4 /* 绿色-150.png in Resources */,
 				E48A12302477B027001CB7F4 /* 绿色-240.png in Resources */,
+				E45E5B092728EF3200F09CF7 /* IAPViewController.xib in Resources */,
 				E48A11F72477B027001CB7F4 /* car_grean2_60.png in Resources */,
 				E4E99A6F25EDBBF1009FC641 /* tend.png in Resources */,
 				E48A12642477B028001CB7F4 /* menu_icon_0_pressed.png in Resources */,
@@ -3334,6 +3357,7 @@
 				E452A314247CE7FB00E2C84A /* SelectionComboBox.m in Sources */,
 				E452A21A247CA98C00E2C84A /* MJRefreshHeaderView.m in Sources */,
 				E4F549A6265E2F00009BE1C7 /* SS_Model.m in Sources */,
+				E45E5B082728EF3200F09CF7 /* IAPViewController.m in Sources */,
 				E452A17F247CA80700E2C84A /* DefenseService.m in Sources */,
 				E452A1E4247CA92700E2C84A /* SDWebImageDownloaderOperation.m in Sources */,
 				E452A31E247CE7FB00E2C84A /* BusPointCell.m in Sources */,
@@ -3687,7 +3711,7 @@
 				CODE_SIGN_ENTITLEMENTS = DM100/Domilink.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = S3EC4C6BR7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
@@ -3705,7 +3729,7 @@
 					"$(PROJECT_DIR)/DM100/ThirdPart/BaiduMaplibs",
 					"$(PROJECT_DIR)/DM100/ThirdPart/VoiceConvert",
 				);
-				MARKETING_VERSION = 1.0.11;
+				MARKETING_VERSION = 1.0.12;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = ztinfo.domilink.DM100;
 				PRODUCT_NAME = Domilink;
@@ -3727,7 +3751,7 @@
 				CODE_SIGN_ENTITLEMENTS = DM100/Domilink.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = S3EC4C6BR7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
@@ -3745,7 +3769,7 @@
 					"$(PROJECT_DIR)/DM100/ThirdPart/BaiduMaplibs",
 					"$(PROJECT_DIR)/DM100/ThirdPart/VoiceConvert",
 				);
-				MARKETING_VERSION = 1.0.11;
+				MARKETING_VERSION = 1.0.12;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = ztinfo.domilink.DM100;
 				PRODUCT_NAME = Domilink;
