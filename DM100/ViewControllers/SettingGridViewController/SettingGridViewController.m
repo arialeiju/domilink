@@ -912,20 +912,20 @@
     [self.imageArr2 removeAllObjects];
     
 
-    //运动上报模式
+    //省电运动上报
     [self.dataArr2 addObject:[SwichLanguage getString:@"offline2"]];
     [self.imageArr2 addObject:@"gridu1"];
-    //实时在线模式
+    //在线运动上报
     [self.dataArr2 addObject:[SwichLanguage getString:@"offline4"]];
     [self.imageArr2 addObject:@"gridu3"];
 
     
     if(basetype==1)
     {
-        //周期上报模式
+        //省电定时上报
         [self.dataArr2 addObject:[SwichLanguage getString:@"offline3"]];
         [self.imageArr2 addObject:@"gridu2"];
-        //闹铃上报模式
+        //省电闹铃上报
         [self.dataArr2  addObject:[SwichLanguage getString:@"offline5"]];
         [self.imageArr2 addObject:[SwichLanguage getString:@"gridu7"]];
     }

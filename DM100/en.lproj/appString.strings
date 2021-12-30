@@ -239,10 +239,10 @@
 "cmderror8"="The Device Does Not Support Offline Command Operation";
 "tips"="Tips";
 "offline1"="Location Type";
-"offline2"="Sports Reporting Model";
-"offline3"="Periodic Reporting";
-"offline4"="Real Time Online";
-"offline5"="Alarm Clock Reporting Model";
+"offline2"="Power Saving And Sports Reporting";
+"offline3"="Power Saving And Regular Reporting";
+"offline4"="Online Sports Reporting";
+"offline5"="Power Saving And Alarm Clock Reporting";
 "offline6"="Oil Power Control";
 "loctype1"="LBS Mode";
 "loctype2"="GPS Mode Is Preferred, And LBS Mode Is Used When Conditions Are Not Met";

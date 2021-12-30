@@ -238,10 +238,10 @@
 "cmderror8"="该设备不支持离线指令操作";
 "tips"="提示信息";
 "offline1"="位置类型";
-"offline2"="运动上报模式";
-"offline3"="周期上报";
-"offline4"="实时在线模式";
-"offline5"="闹铃上报模式";
+"offline2"="省电运动上报";
+"offline3"="省电定时上报";
+"offline4"="在线运动上报";
+"offline5"="省电闹铃上报";
 "offline6"="油电控制";
 "loctype1"="基站定位";
 "loctype2"="优先使用GPS定位，不满足条件时使用基站定位";
