@@ -194,6 +194,7 @@
 "JizhangHit1"="基站已过滤";
 "JizhangHit2"="基站未过滤";
 "JizhangHit3"="是否基站过滤(否/是)";
+"JizhangHit4"="是否Wifi过滤(否/是)";
 "SatSigal"="卫星信号:";
 "Energy"="电量电压:";
 "page2tipT"="三个数值";

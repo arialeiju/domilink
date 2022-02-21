@@ -30,7 +30,7 @@
     
     CustomTimeSelectionView *_timeSelectionView;
     BOOL isGuoluJZ;//是否过滤基站数据
-
+    BOOL isGuoluWifi;//是否过滤wifi数据
 }
 @end
 
@@ -78,7 +78,7 @@
         _currentEndTime = [formatter stringFromDate:[NSDate date]];
         
         isGuoluJZ=YES;
-        
+        isGuoluWifi=YES;
         [self setupData];
         
         [self setupView];
@@ -209,6 +209,7 @@
                                                                    withDateFormatter:@"yyyy-MM-dd HH:mm:ss"];
         _timeSelectionView.delegate = self;
         [_timeSelectionView.jizhangSwitchButton setOn:isGuoluJZ];
+        [_timeSelectionView.wifiSwitchButton setOn:isGuoluWifi];
     }
     [_timeSelectionView showInView:[UIApplication sharedApplication].keyWindow];
 }
@@ -455,7 +456,7 @@
     return message;
 }
 
--(void)ThejizhangStatusChange:(BOOL)theStatus
+-(void)ThejizhangStatusChange:(BOOL)theStatus 
 {
     isGuoluJZ=theStatus;
     //NSLog(@"ThejizhangStatusChange=theStatus=%@",theStatus==YES?@"yes":@"no");
@@ -469,5 +470,21 @@
     {
         [self.showJZstatusView setText:[SwichLanguage getString:@"JizhangHit2"]];
     }
+}
+
+-(void)TheWifiStatusChange:(BOOL)theStatus
+{
+    isGuoluWifi=theStatus;
+    //NSLog(@"ThejizhangStatusChange=theStatus=%@",theStatus==YES?@"yes":@"no");
+    if ([_delegate respondsToSelector:@selector(ThejizhangStatusChange:)])
+    {
+        [_delegate TheWifiStatusChange:theStatus];
+    }
+//    if (theStatus) {
+//        [self.showJZstatusView setText:[SwichLanguage getString:@"JizhangHit1"]];
+//    }else
+//    {
+//        [self.showJZstatusView setText:[SwichLanguage getString:@"JizhangHit2"]];
+//    }
 }
 @end

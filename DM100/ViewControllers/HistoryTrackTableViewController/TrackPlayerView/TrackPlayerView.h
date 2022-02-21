@@ -22,6 +22,7 @@
                               withEndTime:(NSString *)endTime
                                     withSpe:(NSString *)spe;
 -(void)ThejizhangStatusChange:(BOOL)theStatus;
+-(void)TheWifiStatusChange:(BOOL)theWifi;
 @end
 
 @interface TrackPlayerView : UIView

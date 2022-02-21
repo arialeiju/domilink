@@ -17,6 +17,7 @@
                     withEndTime:(NSString *)endTime
                     withSpe:(NSString *)spe
                    withJZStatus:(BOOL)isGuolvJZ
+                    withWifiStatus:(BOOL)isGuolvWifi
                         success:(void(^)(NSArray *array))success
                         failure:(void(^)(NSError *error))failure;
 +(double)getAngleLat1:(double)lat1 withLng1:(double)lng1 withLat2:(double)lat2 withLng2:(double)lng2;

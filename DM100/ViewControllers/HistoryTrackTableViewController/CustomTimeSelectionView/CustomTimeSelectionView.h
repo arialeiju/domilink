@@ -24,6 +24,9 @@
 
 //是否过滤基站传输
 -(void)ThejizhangStatusChange:(BOOL)theStatus;
+
+//是否过滤wifi传输
+-(void)TheWifiStatusChange:(BOOL)theStatus;
 @end
 
 @interface CustomTimeSelectionView : UIView
@@ -38,6 +41,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *startTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *endTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *jizhanglabel;
+@property (weak, nonatomic) IBOutlet UILabel *wifilabel;
 
 
 - (id)initWithSelectionArray:(NSArray *)selections
@@ -48,5 +52,7 @@
 - (void)hide;
 @property (weak, nonatomic) IBOutlet UISwitch *jizhangSwitchButton;
 - (IBAction)clickjizhangButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UISwitch *wifiSwitchButton;
+- (IBAction)clickwifiButton:(id)sender;
 
 @end

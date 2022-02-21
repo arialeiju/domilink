@@ -953,12 +953,12 @@
     [self.dataArr2  addObject:[SwichLanguage getString:@"online6"]];
     [self.imageArr2 addObject:[SwichLanguage getString:@"gridu6"]];
     
-    if([self IsNeedAntiReCording])
-    {
+    //if([self IsNeedAntiReCording])
+    //{
         //语音监听
         [self.dataArr2 addObject:[SwichLanguage getString:@"setitem6"]];
         [self.imageArr2 addObject:[SwichLanguage getString:@"gridu4"]];
-    }
+    //}
     
     if([self IsNeedAntiLock])
     {

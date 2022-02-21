@@ -188,8 +188,19 @@
     NSDictionary *deviceInfo = [self.messageArray objectAtIndex:indexPath.row];
     cell.order_name.text=[NSString stringWithFormat:@"%@", [deviceInfo objectForKey:@"order_name"]] ;
     cell.order_sts.text=[NSString stringWithFormat:@"%@", [deviceInfo objectForKey:@"order_sts"]] ;
-    cell.send_time.text=[NSString stringWithFormat:@"%@", [deviceInfo objectForKey:@"send_time"]] ;
-    cell.sts_time.text=[NSString stringWithFormat:@"%@", [deviceInfo objectForKey:@"sts_time"]] ;
+//    cell.send_time.text=[NSString stringWithFormat:@"%@", [deviceInfo objectForKey:@"send_time"]] ;
+//    cell.sts_time.text=[NSString stringWithFormat:@"%@", [deviceInfo objectForKey:@"sts_time"]] ;
+    
+    NSString* msendtime=[NSString stringWithFormat:@"%@", [deviceInfo objectForKey:@"send_time"]] ;
+    NSString* mststime=[NSString stringWithFormat:@"%@", [deviceInfo objectForKey:@"sts_time"]] ;
+    if ([msendtime isEqual:@"1970-01-01 00:00:00"]) {
+        msendtime=@"";
+    }
+    if ([mststime isEqual:@"1970-01-01 00:00:00"]) {
+        mststime=@"";
+    }
+    cell.send_time.text=msendtime;
+    cell.sts_time.text=mststime;
     cell.result.text=[NSString stringWithFormat:@"%@", [deviceInfo objectForKey:@"result"]] ;
     return cell;
 }

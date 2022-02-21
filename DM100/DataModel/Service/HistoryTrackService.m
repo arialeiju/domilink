@@ -19,6 +19,7 @@
                     withEndTime:(NSString *)endTime
                         withSpe:(NSString *)spe
                         withJZStatus:(BOOL)isGuolvJZ
+                        withWifiStatus:(BOOL)isGuolvWifi
                         success:(void (^)(NSArray *))success
                         failure:(void (^)(NSError *))failure
 {
@@ -67,7 +68,17 @@
                 }
                 
                 if (! [histroyPoint.locateSts isEqualToString:@"1"]) {
+                    
+                    //判断要不要wifi过滤
+                    if(isGuolvWifi)
+                    {
+                        if (![histroyPoint.locateSts isEqualToString:@"2"]) {
                                      [newArray addObject:histroyPoint];
+                        }
+                    }else
+                    {
+                        [newArray addObject:histroyPoint];
+                    }
                 }
             }
         }else
@@ -94,7 +105,16 @@
                     }
                 }
                 
-                [newArray addObject:histroyPoint];
+                //判断要不要wifi过滤
+                if(isGuolvWifi)
+                {
+                    if (![histroyPoint.locateSts isEqualToString:@"2"]) {
+                                 [newArray addObject:histroyPoint];
+                    }
+                }else
+                {
+                    [newArray addObject:histroyPoint];
+                }
             }
         }
 

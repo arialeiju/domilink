@@ -131,6 +131,8 @@
     self.endTimeLabel.adjustsFontSizeToFitWidth=YES;
     [self.jizhanglabel setText:[SwichLanguage getString:@"JizhangHit3"]];
     self.jizhanglabel.adjustsFontSizeToFitWidth=YES;
+    [self.wifilabel setText:[SwichLanguage getString:@"JizhangHit4"]];
+    self.wifilabel.adjustsFontSizeToFitWidth=YES;
     [self.confirmButton setTitle:[SwichLanguage getString:@"sure"] forState:UIControlStateNormal];
     [self.cancelButton setTitle:[SwichLanguage getString:@"cancel"] forState:UIControlStateNormal];
 }
@@ -376,5 +378,11 @@
         [_delegate ThejizhangStatusChange:swt.on];
     }
 
+}
+- (IBAction)clickwifiButton:(UISwitch *)swt{
+    if ([_delegate respondsToSelector:@selector(TheWifiStatusChange:)])
+    {
+        [_delegate TheWifiStatusChange:swt.on];
+    }
 }
 @end

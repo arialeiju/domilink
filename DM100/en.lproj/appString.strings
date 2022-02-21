@@ -192,9 +192,10 @@
 "speed3"="Normal";
 "speed4"="Fast";
 "speed5"="Very fast";
-"JizhangHit1"="Base station filtered";
-"JizhangHit2"="Base station unfiltered";
-"JizhangHit3"="Base station selected(No/Yes)";
+"JizhangHit1"="Base station Filtered";
+"JizhangHit2"="Base station Unfiltered";
+"JizhangHit3"="Base Station Filtered(No/Yes)";
+"JizhangHit4"="Wifi Filtered(No/Yes)";
 "SatSigal"="Signal:";
 "Energy"="Power:";
 "page2tipT"="Three Parameters";

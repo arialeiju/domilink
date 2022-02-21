@@ -46,7 +46,7 @@
     float _sumOfDistance;
 
     BOOL isGuoluJZ;//是否过滤基站数据
-    
+    BOOL isGuoluWifi;//是否过滤wifi数据
     UIButton *_liebiaoButton;
     float selectid;
     
@@ -89,7 +89,7 @@
          [_mapView setRegion:MKCoordinateRegionMake(mdeviceCoor, span) animated:NO];
         
         isGuoluJZ=YES;
-        
+        isGuoluWifi=YES;
         centerRect = CGRectMake(CGRectGetWidth(_mapView.frame)/8,
                                         _mapView.frame.origin.y+CGRectGetHeight(_mapView.frame)/8,
                                         CGRectGetWidth(_mapView.frame)*3/4,
@@ -119,6 +119,7 @@
         MKCoordinateSpan span = MKCoordinateSpanMake(0.005,0.005);
          [_mapView setRegion:MKCoordinateRegionMake(mdeviceCoor, span) animated:NO];
         isGuoluJZ=YES;
+        isGuoluWifi=YES;
     }
     return self;
 }
@@ -436,6 +437,7 @@
                                      withEndTime:endTime
                                       withSpe:spe
                                        withJZStatus:isGuoluJZ
+                                  withWifiStatus:isGuoluWifi
                                          success:^(NSArray *newArray)
     {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -841,7 +843,11 @@
     NSLog(@"ThejizhangStatusChange=theStatus=%@",theStatus==YES?@"yes":@"no");
     isGuoluJZ=theStatus;
 }
-
+-(void)TheWifiStatusChange:(BOOL)theWifi
+{
+    NSLog(@"ThejizhangStatusChange=theWifi=%@",theWifi==YES?@"yes":@"no");
+    isGuoluWifi=theWifi;
+}
 -(void)click_righttop_button
 {
 //    NSLog(@"click_righttop_button");
